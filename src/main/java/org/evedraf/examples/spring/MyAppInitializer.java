@@ -1,12 +1,10 @@
 package org.evedraf.examples.spring;
 
-import org.evedraf.examples.spring.business.Logic;
+import org.evedraf.examples.spring.config.AspectsConfig;
 import org.evedraf.examples.spring.config.BusinessConfig;
-import org.evedraf.examples.spring.model.Player;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.evedraf.examples.spring.config.ControllerConfig;
 
+import org.evedraf.examples.spring.config.SecurityConfig;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 /**
@@ -16,17 +14,26 @@ public class MyAppInitializer extends AbstractAnnotationConfigDispatcherServletI
 
     @Override
     protected Class<?>[] getRootConfigClasses() {
-        return new Class<?>[0];
+
+        return new Class<?>[]{
+                AspectsConfig.class,
+                BusinessConfig.class,
+                ControllerConfig.class,
+                SecurityConfig.class
+        };
     }
 
     @Override
     protected Class<?>[] getServletConfigClasses() {
-        return new Class<?>[0];
+
+        return new Class<?>[]{
+                ControllerConfig.class
+        };
     }
 
     @Override
     protected String[] getServletMappings() {
-        return new String[0];
+        return new String[]{"/services/*"};
     }
 
     /*public static void main(String[] args) {
@@ -34,7 +41,7 @@ public class MyAppInitializer extends AbstractAnnotationConfigDispatcherServletI
         ApplicationContext ctx =
                 new AnnotationConfigApplicationContext("org/evedraf/examples/spring/config");
 
-        Logic p = ctx.getBean(Logic.class);
+        PlayerLogic p = ctx.getBean(PlayerLogic.class);
         p.simpleLogicMethod(2);
     }*/
 }

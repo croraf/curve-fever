@@ -1,5 +1,6 @@
 package org.evedraf.examples.spring.aspect;
 
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.springframework.context.annotation.ComponentScan;
@@ -12,8 +13,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class MySimpleAspect {
 
-    @Before("execution(public * simpleLogicMethod(int))")
-    public void loggingAspect(){
-        System.out.println("Logging Aspect run");
+    @Before("execution(public * org.evedraf.examples.spring.business.PlayerLogic.*(..))")
+    public void loggingAspect(JoinPoint joinPoint){
+
+
+        System.out.println("Logging Aspect: PlayerLogic's method " + joinPoint.getSignature().toString() + " started.");
     }
 }

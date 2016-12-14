@@ -1,12 +1,18 @@
 package org.evedraf.examples.spring.model;
 
-import org.evedraf.examples.spring.business.Message;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * Created by Korisnik on 13.12.2016..
  */
+
+@Entity
 public class Player {
 
+    @Id
+    private int id;
     private int points;
     private int coins;
 
@@ -32,5 +38,13 @@ public class Player {
 
     public void setCoins(int coins) {
         this.coins = coins;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
