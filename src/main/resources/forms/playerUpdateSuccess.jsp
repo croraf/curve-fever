@@ -5,6 +5,7 @@
 <head>
     <title>Getting Started: Handling Form Submission</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="style1.css" />
 </head>
 
 <body>
@@ -16,6 +17,6 @@
     <p> points: ${player.points} </p>
     <p> coins: ${player.coins} </p>
 
-    <a href="/curve-fever/services/players/update/playerUpdateForm">Update another player.</a>
+    <a href="/curve-fever/services/playersForm">Update another player.</a>
 </body>
 </html>

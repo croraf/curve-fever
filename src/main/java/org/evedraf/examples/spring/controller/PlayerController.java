@@ -35,26 +35,6 @@ public class PlayerController {
 
         return playerLogic.getPlayerById(id);
     }
-
-    @GetMapping(value = "update/playerUpdateForm")
-    public String getPlayerForm(){
-        return "playerUpdateForm";
-    }
-
-    @PostMapping(value = "update/playerUpdateFormSubmit" /*value = "{id}"*/)
-    public String updatePlayerById(/*@PathVariable(name = "id") int id,*/ @Valid @ModelAttribute Player player, BindingResult errors){
-
-        if (errors.hasFieldErrors()){
-            for (FieldError error : errors.getFieldErrors() ) {
-                System.out.println(error.getField() + ": " + error.getRejectedValue() + " - " + error.getDefaultMessage());
-            }
-        }
-
-        System.out.println("usao je u form1_submit");
-        playerLogic.updatePlayerById(player);
-
-        return "playerUpdateSuccess";
-    }
 }
 
 /*

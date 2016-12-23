@@ -13,7 +13,7 @@
         <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
     </form> -->
 
-    <form action="/curve-fever/services/players/update/playerUpdateFormSubmit" method="post" accept-charset="utf-8">
+    <form action="/curve-fever/services/playersForm" method="post" accept-charset="utf-8">
     	<p>Id: <input type="text" name="id" /></p>
     	<p>Points: <input type="text" name="points" /></p>
         <p>Coins: <input type="text" name="coins" /></p>
