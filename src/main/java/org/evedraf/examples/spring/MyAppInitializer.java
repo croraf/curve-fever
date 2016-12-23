@@ -2,7 +2,7 @@ package org.evedraf.examples.spring;
 
 import org.evedraf.examples.spring.config.AspectsConfig;
 import org.evedraf.examples.spring.config.BusinessConfig;
-import org.evedraf.examples.spring.config.ControllerConfig;
+import org.evedraf.examples.spring.config.WebConfig;
 
 import org.evedraf.examples.spring.config.SecurityConfig;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
@@ -18,7 +18,7 @@ public class MyAppInitializer extends AbstractAnnotationConfigDispatcherServletI
         return new Class<?>[]{
                 AspectsConfig.class,
                 BusinessConfig.class,
-                ControllerConfig.class,
+                WebConfig.class,
                 SecurityConfig.class
         };
     }
@@ -27,7 +27,7 @@ public class MyAppInitializer extends AbstractAnnotationConfigDispatcherServletI
     protected Class<?>[] getServletConfigClasses() {
 
         return new Class<?>[]{
-                ControllerConfig.class
+                WebConfig.class
         };
     }
 

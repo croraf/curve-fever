@@ -31,4 +31,13 @@ public class PlayerDao {
 
         return sessionFactory.getCurrentSession().get(Player.class, id);
     }
+
+    public void updatePlayer(Player player){
+
+        Player playerOld = sessionFactory.getCurrentSession().get(Player.class, player.getId());
+        playerOld.setCoins(player.getCoins());
+        playerOld.setPoints(player.getPoints());
+
+        //TODO hopefully here it is commited
+    }
 }

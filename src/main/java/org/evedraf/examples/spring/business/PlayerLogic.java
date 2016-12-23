@@ -30,4 +30,10 @@ public class PlayerLogic {
 
         return playerDao.getPlayerById(id);
     }
+
+    @Transactional
+    public void updatePlayerById(Player player) {
+
+        playerDao.updatePlayer(player);
+    }
 }

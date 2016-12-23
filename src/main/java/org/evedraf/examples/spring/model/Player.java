@@ -2,6 +2,8 @@ package org.evedraf.examples.spring.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -13,7 +15,10 @@ public class Player {
 
     @Id
     private int id;
+
+    @Max(value = 100, message = "prevelika vr")
     private int points;
+
     private int coins;
 
     public Player() {
