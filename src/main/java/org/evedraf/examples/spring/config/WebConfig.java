@@ -18,7 +18,7 @@ public class WebConfig {
     @Bean
     ViewResolver getViewResolver(){
 
-        ViewResolver viewResolver = new InternalResourceViewResolver("/WEB-INF/classes/forms/", ".jsp");
+        ViewResolver viewResolver = new InternalResourceViewResolver("/views/", ".jsp");
         return viewResolver;
     }
 }
