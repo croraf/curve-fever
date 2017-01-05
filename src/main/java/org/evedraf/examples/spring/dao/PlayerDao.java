@@ -5,38 +5,38 @@ import org.evedraf.examples.spring.model.Player;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import javax.xml.bind.annotation.XmlRootElement;
-import java.util.ArrayList;
 import java.util.List;
 
-@Component
+@Repository
 public class PlayerDao {
 
-   /* @Autowired
+    @Autowired
     SessionFactory sessionFactory;
-*/
+
 
     public List<Player> getPlayers(){
 
+        Session session = sessionFactory.getCurrentSession();
 
-        List<Player> players = new ArrayList<Player>();
-        players.add(new Player(1, 22, 30));
-        players.add(new Player(2, 20, 31));
+        List<Player> players =
+                session.createQuery("FROM Player", Player.class).list();
 
         return players;
     }
 
     public Player getPlayerById(int id){
 
-        return new Player(id, 20, 30);
+        return sessionFactory.getCurrentSession().get(Player.class, id);
     }
 
     public void updatePlayer(Player player){
 
-        return;
+        Player playerOld = sessionFactory.getCurrentSession().get(Player.class, player.getId());
+        playerOld.setCoins(player.getCoins());
+        playerOld.setPoints(player.getPoints());
 
         //TODO hopefully here it is commited
     }
