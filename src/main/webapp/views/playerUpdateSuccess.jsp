@@ -5,13 +5,11 @@
 <head>
     <title>Getting Started: Handling Form Submission</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link rel="stylesheet" type="text/css" href="/curve-fever/resources/style1.css" />
+
 </head>
 
 <body>
-	<h1>Result</h1>
-    <!-- <p th:text="'id: ' + ${greeting.id}" />
-    <p th:text="'content: ' + ${greeting.content}" /> -->
+	<h1>Player was successfully updated</h1>
 
     <p> id: ${player.id} </p>
     <p> points: ${player.points} </p>

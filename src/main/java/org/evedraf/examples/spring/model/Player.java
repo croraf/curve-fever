@@ -16,7 +16,7 @@ public class Player {
     @Id
     private int id;
 
-    @Max(value = 100, message = "prevelika vr")
+    @Max(value = 100, message = "prevelika vrijednost bodova")
     private int points;
 
     private int coins;
@@ -25,6 +25,11 @@ public class Player {
     }
 
     public Player(int coins, int points) {
+        this.coins = coins;
+        this.points = points;
+    }
+
+    public Player(int id, int coins, int points) {
         this.coins = coins;
         this.points = points;
     }

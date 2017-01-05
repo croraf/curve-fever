@@ -5,6 +5,7 @@ import org.evedraf.examples.spring.model.Message;
 import org.evedraf.examples.spring.model.Player;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,20 +25,23 @@ public class PlayerFormController {
     private PlayerLogic playerLogic;
 
     @GetMapping
-    public String getPlayerForm(){
+    public String getPlayerForm(Model model){
+
+        model.addAttribute("player", new Player());
         return "playerUpdateForm";
     }
 
     @PostMapping
-    public String updatePlayer(@Valid @ModelAttribute Player player, BindingResult errors){
+    public String updatePlayer(@Valid @ModelAttribute Player player, BindingResult bindingResult){
 
-        if (errors.hasFieldErrors()){
-            for (FieldError error : errors.getFieldErrors() ) {
+        if (bindingResult.hasFieldErrors()){
+            for (FieldError error : bindingResult.getFieldErrors() ) {
                 System.out.println(error.getField() + ": " + error.getRejectedValue() + " - " + error.getDefaultMessage());
             }
+
+            return "playerUpdateForm";
         }
 
-        System.out.println("usao je u form1_submit");
         playerLogic.updatePlayerById(player);
 
         return "playerUpdateSuccess";

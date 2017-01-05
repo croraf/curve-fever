@@ -1,24 +1,28 @@
 <!DOCTYPE HTML>
-<!-- <html xmlns:th="http://www.thymeleaf.org"> -->
+
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 <head>
     <title>Getting Started: Handling Form Submission</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="/curve-fever/static/style1.css" />
 </head>
 <body>
-	<h1>Form</h1>
-    <!-- <form action="#" th:action="@{/greeting}" th:object="${greeting}" method="post">
-    	<p>Id: <input type="text" th:field="*{id}" /></p>
-        <p>Message: <input type="text" th:field="*{content}" /></p>
-        <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
-    </form> -->
+	<h1>Update player</h1>
 
-    <form action="/curve-fever/services/playersForm" method="post" accept-charset="utf-8">
-    	<p>Id: <input type="text" name="id" /></p>
-    	<p>Points: <input type="text" name="points" /></p>
-        <p>Coins: <input type="text" name="coins" /></p>
+    <form:form action="/curve-fever/services/playersForm" method="post" 
+               modelAttribute = "player">
+    	<p>
+    	    Id: <form:input type="text" path="id" /> <form:errors path="id" cssClass="error"/>
+    	</p>
+    	<p>
+    	    Points: <form:input type="text" path="points" /> <form:errors path="points" cssClass="error" />
+    	</p>
+        <p>
+            Coins: <form:input type="text" path="coins" /> <form:errors path="coins" cssClass="error" />
+        </p>
 
         <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
-    </form>
+    </form:form>
 </body>
 </html>
