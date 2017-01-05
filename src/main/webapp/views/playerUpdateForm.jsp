@@ -13,7 +13,7 @@
     <form:form action="/services/playersForm" method="post"
                modelAttribute = "player">
     	<p>
-    	    Name: <form:input type="text" path="name" /> <form:errors path="id" cssClass="error"/>
+    	    Name: <form:input type="text" path="name" /> <form:errors path="name" cssClass="error"/>
     	</p>
     	<!-- <p>
     	    Points: <form:input type="text" path="points" /> <form:errors path="points" cssClass="error" />
