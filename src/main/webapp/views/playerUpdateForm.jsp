@@ -11,7 +11,7 @@
 	<h1>Update player</h1>
 
     <form:form action="/services/playersForm" method="post"
-               modelAttribute = "player">
+               modelAttribute = "player1">
     	<p>
     	    Name: <form:input type="text" path="name" /> <form:errors path="name" cssClass="error"/>
     	</p>
