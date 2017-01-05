@@ -23,7 +23,7 @@ public class PlayerDao {
 
 
         List<Player> players = new ArrayList<Player>();
-        players.add(new Player(1, 20, 30));
+        players.add(new Player(1, 22, 30));
         players.add(new Player(2, 20, 31));
 
         return players;
