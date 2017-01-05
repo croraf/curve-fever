@@ -16,6 +16,8 @@ public class Player {
     @Id
     private int id;
 
+    private String name;
+
     @Max(value = 100, message = "prevelika vrijednost bodova")
     private int points;
 
@@ -24,12 +26,7 @@ public class Player {
     public Player() {
     }
 
-    public Player(int coins, int points) {
-        this.coins = coins;
-        this.points = points;
-    }
-
-    public Player(int id, int coins, int points) {
+    public Player(String name) {
         this.coins = coins;
         this.points = points;
     }
