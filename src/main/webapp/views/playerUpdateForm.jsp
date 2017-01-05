@@ -5,12 +5,12 @@
 <head>
     <title>Getting Started: Handling Form Submission</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link rel="stylesheet" type="text/css" href="/curve-fever/static/style1.css" />
+    <link rel="stylesheet" type="text/css" href="/static/style1.css" />
 </head>
 <body>
 	<h1>Update player</h1>
 
-    <form:form action="/curve-fever/services/playersForm" method="post" 
+    <form:form action="/services/playersForm" method="post"
                modelAttribute = "player">
     	<p>
     	    Id: <form:input type="text" path="id" /> <form:errors path="id" cssClass="error"/>

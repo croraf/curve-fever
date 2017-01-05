@@ -15,6 +15,6 @@
     <p> points: ${player.points} </p>
     <p> coins: ${player.coins} </p>
 
-    <a href="/curve-fever/services/playersForm">Update another player.</a>
+    <a href="/services/playersForm">Update another player.</a>
 </body>
 </html>
