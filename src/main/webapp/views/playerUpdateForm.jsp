@@ -15,12 +15,12 @@
     	<p>
     	    Name: <form:input type="text" path="name" /> <form:errors path="id" cssClass="error"/>
     	</p>
-    	<p>
+    	<!-- <p>
     	    Points: <form:input type="text" path="points" /> <form:errors path="points" cssClass="error" />
     	</p>
         <p>
             Coins: <form:input type="text" path="coins" /> <form:errors path="coins" cssClass="error" />
-        </p>
+        </p> -->
 
         <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
     </form:form>

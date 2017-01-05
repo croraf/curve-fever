@@ -12,6 +12,7 @@
 	<h1>Player was successfully updated</h1>
 
     <p> id: ${player.id} </p>
+    <p> id: ${player.name} </p>
     <p> points: ${player.points} </p>
     <p> coins: ${player.coins} </p>
 

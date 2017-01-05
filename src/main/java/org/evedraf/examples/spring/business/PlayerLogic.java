@@ -36,4 +36,10 @@ public class PlayerLogic {
 
         playerDao.updatePlayer(player);
     }
+
+    @Transactional
+    public Player increasePlayerCoins(String playerName) {
+
+        return playerDao.increasePlayerCoins(playerName);
+    }
 }

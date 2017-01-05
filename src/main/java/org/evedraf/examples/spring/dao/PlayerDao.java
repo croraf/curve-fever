@@ -40,4 +40,11 @@ public class PlayerDao {
 
         //TODO hopefully here it is commited
     }
+
+    public Player increasePlayerCoins(String playerName) {
+
+        Player player = sessionFactory.getCurrentSession().get(Player.class, playerName);
+        player.setCoins(player.getCoins() + 1);
+        return player;
+    }
 }
