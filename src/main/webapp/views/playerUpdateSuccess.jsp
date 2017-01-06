@@ -14,7 +14,7 @@
     <p> points: ${player.points} </p>
     <p> coins: ${player.coins} </p>
 
-    <a href="/services/playersForm">Update another player.</a>
-    <a href="/services/players">List active players.</a>
+    <p><a href="/services/playersForm">Update another player.</a></p>
+    <p><a href="/services/players">List active players.</a></p>
 </body>
 </html>

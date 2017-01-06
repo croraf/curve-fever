@@ -15,6 +15,6 @@
 	    <p>${player}</p>
 	</c:forEach>
 
-    <a href="/services/playersForm">Update another player.</a>
+    <p><a href="/services/playersForm">Update another player.</a></p>
 </body>
 </html>
