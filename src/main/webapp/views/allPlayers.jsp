@@ -27,7 +27,7 @@
 	    <p><a href="/services/playersForm">Update another player.</a></p>
 	</div>
 
-	<audio autoplay loop volume="0.2" >
+	<audio autoplay loop volume="0.05" >
         <source src="/static/Virgo_Rosa.ogg" type="audio/ogg">
         Your browser does not support the audio element.
     </audio>
