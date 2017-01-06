@@ -29,7 +29,7 @@ public class PlayerFormController {
     }
 
     @PostMapping
-    public String enterPlayer(@RequestParam String playerName, Model model){
+    public String enterPlayer(@RequestParam("name") String playerName, Model model){
 
         Player player = playerLogic.increasePlayerCoins(playerName);
 
