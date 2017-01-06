@@ -17,3 +17,9 @@
 #playersList {
 	width: 300px;
 }
+
+#mute {
+	position: absolute;
+	left: 800;
+	top: 620;
+}

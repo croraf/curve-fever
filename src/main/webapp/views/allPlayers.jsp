@@ -12,7 +12,7 @@
     <script type="text/javascript">
     	window.onload = function() {
 		    var backgroundAudio=document.getElementById("backgroundAudio");
-		    backgroundAudio.volume=0.15;
+		    backgroundAudio.volume=0.1;
 		    backgroundAudio.play();
 		}
     </script>
@@ -21,6 +21,10 @@
 
 	<div id = "board">
 		<img src="/static/tableTop.jpg" height="520" width="600" title="battleField">
+	</div>
+
+	<div id = "mute">
+		MUTE
 	</div>
 
 	<div id = "playersList">
