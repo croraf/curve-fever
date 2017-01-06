@@ -14,8 +14,10 @@ window.onload = function() {
 
         if (backgroundAudio.paused) {
             backgroundAudio.play();
+            mute.getElementsByTagName("i")[0].innerHTML = "volume_up"
         } else {
             backgroundAudio.pause();
+            mute.getElementsByTagName("i")[0].innerHTML = "volume_off"
         }
     };
 

@@ -29,7 +29,7 @@
         </div>
 
 		<div id = "mute">
-			MUTE
+			<i class="material-icons">volume_up</i>
 		</div>
 
 		<div id = "playersList">
