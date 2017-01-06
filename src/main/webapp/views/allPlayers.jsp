@@ -8,6 +8,13 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" type="text/css" href="/static/style1.css" />
     <link rel="stylesheet" type="text/css" href="/static/battleScreen.css" />
+    
+    <script type="text/javascript">
+    	window.onload = function() {
+	    var backgroundAudio=document.getElementById("backgroundAudio");
+	    backgroundAudio.volume=0.2;
+}
+    </script>
 </head>
 <body>
 
@@ -27,7 +34,7 @@
 	    <p><a href="/services/playersForm">Update another player.</a></p>
 	</div>
 
-	<audio autoplay loop volume="0.05" >
+	<audio id= "backgroundAudio" autoplay loop>
         <source src="/static/Virgo_Rosa.ogg" type="audio/ogg">
         Your browser does not support the audio element.
     </audio>
