@@ -73,9 +73,9 @@ window.onload = function() {
         ctx.stroke();
 
         if (steerDirection === "left"){
-            direction = direction - Math.PI/16;
+            direction = direction - Math.PI/24;
         } else if (steerDirection === "right"){
-            direction = direction + Math.PI/16;
+            direction = direction + Math.PI/24;
         }
 
         currentCoordX = (currentCoordX + speed*Math.cos(direction)) % canvas.width;
@@ -83,31 +83,50 @@ window.onload = function() {
 
         if (started === true) {
          
-            setTimeout(drawCircle, 50);
+            setTimeout(drawCircle, 60);
         }
     }
 
-    var body = document.getElementsByTagName("body");
 
-    var steerDirection = "ahead";
 
     //TODO check what true means
     canvas.addEventListener("keydown", steer, true);
     canvas.addEventListener("keyup", unSteer, true);
 
+    var body = document.getElementsByTagName("body");
+    var steerDirection = "ahead";
+    var leftPressed = false;
+    var rightPressed = false;
+
     function steer(event){
 
         if (event.keyCode === 37){
+            leftPressed = true;
             steerDirection = "left";
         } else if (event.keyCode === 39){
+            rightPressed = true;
             steerDirection = "right";
         }
 
     }
 
     function unSteer(event){
-        if (event.keyCode === 37 || event.keyCode === 39){
-            steerDirection = "ahead";
+        if (event.keyCode === 37) {
+
+            leftPressed = false;
+            if (rightPressed) {
+                steerDirection = "right";
+            } else {
+                steerDirection = "ahead";
+            }
+        } else if (event.keyCode === 39){
+
+            rightPressed = false;
+            if (leftPressed){
+                steerDirection = "left";
+            } else {
+                steerDirection = "ahead";
+            }
         }
     }
 };
