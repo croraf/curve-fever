@@ -19,7 +19,7 @@
     </form>
     	
 
-    <!--
+    <%--
     <form:form action="/services/playersForm" method="post"
                modelAttribute = "player1">
     	<p>
@@ -33,6 +33,6 @@
         </p> 
 
         <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
-    </form:form>-->
+    </form:form>--%>
 </body>
 </html>
