@@ -24,7 +24,7 @@
 
 <body>
 
-		<canvas id="board" />
+		<canvas id="board"></canvas>
 
 		<div id = "mute">
 			MUTE
@@ -42,13 +42,6 @@
 
 		    <p><a href="/services/playersForm">Pick another player</a></p>
 		</div>
-
-
-
-	    
-
-	    
-
 
 
 
