@@ -18,7 +18,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Entity
 public class Player {
 
-    @Generated(GenerationTime.INSERT)
+    //@Generated(GenerationTime.INSERT)
     @Column (insertable = true)
     private int id;
 
