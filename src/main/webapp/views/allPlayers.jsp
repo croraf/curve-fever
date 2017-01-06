@@ -20,9 +20,9 @@
 	    <link rel="stylesheet" type="text/css" href="/static/battleScreen.css" />
 </head>
 
-<body>
+<body tabindex="1" id="body">
 
-		<canvas id="board" width="600" height="520" tabindex="1"></canvas>
+		<canvas id="board" width="600" height="520"></canvas>
 
         <div id = "start">
             START/STOP

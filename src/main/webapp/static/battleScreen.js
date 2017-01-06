@@ -19,9 +19,9 @@ window.onload = function() {
         }
     };
 
-    var board=document.getElementById("board");
+    var canvas=document.getElementById("board");
 
-    board.onclick = function(event) {
+    canvas.onclick = function(event) {
 
         var boardAudio=document.getElementById("boardAudio");
         boardAudio.volume = 0.4
@@ -29,13 +29,10 @@ window.onload = function() {
         //boardAudio.play();
     };
 
-
-    var canvas = document.getElementById("board");
     var ctx = canvas.getContext("2d");
 
     canvas.onclick = function(event){
 
-        var rect = canvas.getBoundingClientRect();
         var x = event.pageX - canvas.offsetLeft;
         var y = event.pageY - canvas.offsetTop;
 
@@ -89,11 +86,13 @@ window.onload = function() {
 
 
 
-    //TODO check what true means
-    canvas.addEventListener("keydown", steer, true);
-    canvas.addEventListener("keyup", unSteer, true);
 
-    var body = document.getElementsByTagName("body");
+    var body = document.getElementById("body");
+
+    //TODO check what true means - its the bubling/capturing
+    body.addEventListener("keydown", steer, true);
+    body.addEventListener("keyup", unSteer, true);
+
     var steerDirection = "ahead";
     var leftPressed = false;
     var rightPressed = false;
