@@ -18,9 +18,11 @@
 	<div id = "playersList">
 		<h1>All players</h1>
 
-		<c:forEach items = "${players}" var = "player">
-		    <p>Id: ${player.id},  Name: ${player.name},  Points: ${player.points},  Coins: ${player.coins} </p>
-		</c:forEach>
+		<div id = "playersListContent">
+			<c:forEach items = "${players}" var = "player">
+			    <p>Id: ${player.id},  Name: ${player.name},  Points: ${player.points},  Coins: ${player.coins} </p>
+			</c:forEach>
+		</div>
 
 	    <p><a href="/services/playersForm">Update another player.</a></p>
 	</div>
