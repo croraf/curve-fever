@@ -4,7 +4,7 @@ window.onload = function() {
     var backgroundAudio=document.getElementById("backgroundAudio");
     backgroundAudio.volume=0.1;
     //TODO temprorary disable play background on start
-    //backgroundAudio.play();
+    backgroundAudio.play();
 
     var mute=document.getElementById("mute");
 
@@ -64,7 +64,7 @@ window.onload = function() {
     var currentCoordX = 5;
     var currentCoordY = 5;
     var direction = Math.PI/3;
-    var speed = 3.5;
+    var speed = 3.6;
 
     function drawCircle(){
 
@@ -83,7 +83,7 @@ window.onload = function() {
 
         if (started === true) {
          
-            setTimeout(drawCircle, 50);
+            setTimeout(drawCircle, 55);
         }
     }
 
