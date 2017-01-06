@@ -83,7 +83,7 @@ window.onload = function() {
 
         if (started === true) {
          
-            setTimeout(drawCircle, 60);
+            setTimeout(drawCircle, 50);
         }
     }
 
