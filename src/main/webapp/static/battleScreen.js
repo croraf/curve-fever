@@ -64,7 +64,7 @@ window.onload = function() {
     var currentCoordX = 5;
     var currentCoordY = 5;
     var direction = Math.PI/3;
-    var speed = 4;
+    var speed = 3.5;
 
     function drawCircle(){
 
@@ -73,9 +73,9 @@ window.onload = function() {
         ctx.stroke();
 
         if (steerDirection === "left"){
-            direction = direction - Math.PI/64;
+            direction = direction - Math.PI/16;
         } else if (steerDirection === "right"){
-            direction = direction + Math.PI/64;
+            direction = direction + Math.PI/16;
         }
 
         currentCoordX = (currentCoordX + speed*Math.cos(direction)) % canvas.width;
@@ -83,7 +83,7 @@ window.onload = function() {
 
         if (started === true) {
          
-            setTimeout(drawCircle, 80);
+            setTimeout(drawCircle, 50);
         }
     }
 
