@@ -65,7 +65,7 @@
 			</c:forEach>
 		</div>
 
-	    <p><a href="/services/playersForm">Update another player.</a></p>
+	    <p><a href="/services/playersForm">Pick another player</a></p>
 	</div>
 
 	<audio id= "backgroundAudio" loop>

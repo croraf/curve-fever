@@ -7,14 +7,14 @@
 </head>
 
 <body>
-	<h1>Player was successfully updated</h1>
+	<h1>Player was successfully picked</h1>
 
     <p> Id: ${player.id} </p>
     <p> Name: ${player.name} </p>
     <p> Points: ${player.points} </p>
     <p> Coins: ${player.coins} </p>
 
-    <p><a href="/services/playersForm">Update another player.</a></p>
-    <p><a href="/services/players">List active players.</a></p>
+    <p><a href="/services/playersForm">Pick another player</a></p>
+    <p><a href="/services/players">List active players</a></p>
 </body>
 </html>

@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="/static/style1.css" />
 </head>
 <body>
-	<h1>Update player</h1>
+	<h1>Pick player</h1>
 
     <form action="/services/playersForm" method="post">
     	<p>
