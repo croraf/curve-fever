@@ -11,7 +11,7 @@
 <body>
 	<h1>All players</h1>
 
-	<c:forEach items = ${players} var = "player">
+	<c:forEach items = "${players}" var = "player">
 	    <p>${player}</p>
 	</c:forEach>
 
