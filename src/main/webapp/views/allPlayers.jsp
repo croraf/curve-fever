@@ -20,12 +20,12 @@
 		    backgroundAudio.play();
 		};
 
-		mute=document.getElementById("mute");
+		var mute=document.getElementById("mute");
 		
 		mute.onclick = function(event) {
 			
 			var backgroundAudio=document.getElementById("backgroundAudio");
-			
+
 			if (backgroundAudio.paused) {
 				backgroundAudio.play();
 			} else {
