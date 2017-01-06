@@ -6,13 +6,13 @@
 <head>
     <title>Battlefield</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link rel="stylesheet" type="text/css" href="../static/style1.css" />
-    <link rel="stylesheet" type="text/css" href="../static/battleScreen.css" />
+    <link rel="stylesheet" type="text/css" href="/static/style1.css" />
+    <link rel="stylesheet" type="text/css" href="/static/battleScreen.css" />
 </head>
 <body>
 
 	<div id = "board">
-		<img src="../static/tableTop.jpg" height="450" width="600" title="Ja sam ploca">
+		<img src="/static/tableTop.jpg" height="450" width="600" title="Ja sam ploca">
 	</div>
 
 	<div id = "playersList">

@@ -5,7 +5,7 @@
 <head>
     <title>Log in</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link rel="stylesheet" type="text/css" href="../static/style1.css" />
+    <link rel="stylesheet" type="text/css" href="/static/style1.css" />
 </head>
 <body>
 	<h1>Update player</h1>
