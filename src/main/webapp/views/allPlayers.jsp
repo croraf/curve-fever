@@ -19,40 +19,7 @@
     <link rel="stylesheet" type="text/css" href="/static/style1.css" />
     <link rel="stylesheet" type="text/css" href="/static/battleScreen.css" />
     
-    <script type="text/javascript">
-    	
-    	window.onload = function() {
-		    
-		    var backgroundAudio=document.getElementById("backgroundAudio");
-		    backgroundAudio.volume=0.1;
-		    backgroundAudio.play();
-
-		    var mute=document.getElementById("mute");
-		
-			mute.onclick = function(event) {
-				
-				backgroundAudio=document.getElementById("backgroundAudio");
-
-				if (backgroundAudio.paused) {
-					backgroundAudio.play();
-				} else {
-					backgroundAudio.pause();
-				}
-			};
-
-			var board=document.getElementById("board");
-
-			board.onclick = function(event) {
-				
-				var boardAudio=document.getElementById("boardAudio");
-                boardAudio.volume = 0.4
-				boardAudio.play();
-			};
-		};
-
-		
-
-    </script>
+    <script type="text/javascript" src="/static/battleScreen.js"></script>
 </head>
 <body>
 
@@ -81,6 +48,8 @@
         <source src="/static/Virgo_Rosa.ogg" type="audio/ogg">
         Your browser does not support the audio element.
     </audio>
+
+    <canvas id="myCanvas" width="400" height="400" style="border: 1px solid #000000;" />
 
     <audio id= "boardAudio">
         <source src="/static/soundOnBoardClick.ogg" type="audio/ogg">

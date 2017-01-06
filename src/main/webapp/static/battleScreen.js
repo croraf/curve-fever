@@ -26,5 +26,18 @@ window.onload = function() {
         boardAudio.volume = 0.4
         boardAudio.play();
     };
+
+
+    var canvas = document.getElementById("myCanvas"),
+    var ctx = canvas.getContext("2d");
+
+    //canvas.width = 903;
+    //canvas.height = 657;
+    var canvasImage = new Image();
+    canvasImage.src = "/static/tableTop.jpg";
+    canvasImage.onload = function () {
+        
+        ctx.drawImage(canvasImage, 0, 0);
+    }
 };
 
