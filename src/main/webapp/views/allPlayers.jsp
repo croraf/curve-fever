@@ -6,12 +6,19 @@
 <head>
     <title>Battlefield</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
     <link rel="stylesheet" type="text/css" href="/static/style1.css" />
     <link rel="stylesheet" type="text/css" href="/static/battleScreen.css" />
     
     <script type="text/javascript">
-
-    	
     	
     	window.onload = function() {
 		    
@@ -63,6 +70,12 @@
         <source src="/static/Virgo_Rosa.ogg" type="audio/ogg">
         Your browser does not support the audio element.
     </audio>
+
+    <body>
+          <!--Import jQuery before materialize.js-->
+          <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+     </body>
 	
 </body>
 </html>
