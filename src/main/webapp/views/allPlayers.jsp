@@ -45,7 +45,7 @@
 			board.onclick = function(event) {
 				
 				var boardAudio=document.getElementById("boardAudio");
-
+                boardAudio.volume = 0.4
 				boardAudio.play();
 			};
 		};
