@@ -61,19 +61,21 @@ window.onload = function() {
 
     }
 
-    var currentCoord = 5;
+    var currentCoordX = 5;
+    var currentCoordY = 5;
 
     function drawCircle(){
 
         ctx.beginPath();
-        ctx.arc(currentCoord, currentCoord, 5, 0, 2*Math.PI);
+        ctx.arc(currentCoordX, currentCoordY, 5, 0, 2*Math.PI);
         ctx.stroke();
 
-        currentCoord = currentCoord + 3;
+        currentCoordX = (currentCoordX + 3) % canvas.width;
+        currentCoordY = (currentCoordY + 3) % canvas.height;
 
         if (started === true) {
          
-            setTimeout(drawCircle, 1000);
+            setTimeout(drawCircle, 300);
         }
     }
 };
