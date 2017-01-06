@@ -1,5 +1,8 @@
 package org.evedraf.examples.spring.model;
 
+import org.hibernate.annotations.Generated;
+import org.hibernate.annotations.GenerationTime;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -14,7 +17,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Entity
 public class Player {
 
-    @GeneratedValue
+    @Generated(GenerationTime.INSERT)
     private int id;
 
     @Id
