@@ -11,9 +11,10 @@
     
     <script type="text/javascript">
     	window.onload = function() {
-	    var backgroundAudio=document.getElementById("backgroundAudio");
-	    backgroundAudio.volume=0.2;
-}
+		    var backgroundAudio=document.getElementById("backgroundAudio");
+		    backgroundAudio.volume=0.15;
+		    backgroundAudio.play();
+		}
     </script>
 </head>
 <body>
@@ -34,7 +35,7 @@
 	    <p><a href="/services/playersForm">Update another player.</a></p>
 	</div>
 
-	<audio id= "backgroundAudio" autoplay loop>
+	<audio id= "backgroundAudio" loop>
         <source src="/static/Virgo_Rosa.ogg" type="audio/ogg">
         Your browser does not support the audio element.
     </audio>
