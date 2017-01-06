@@ -11,7 +11,9 @@
 <body>
 	<h1>All players</h1>
 
-	<c:forEach items = ${players} />
+	<c:forEach items = ${players} var = "player">
+	    <p>${player}</p>
+	</c:forEach>
 
     <a href="/services/playersForm">Update another player.</a>
 </body>
