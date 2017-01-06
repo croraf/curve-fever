@@ -25,7 +25,7 @@
 		    
 		    var backgroundAudio=document.getElementById("backgroundAudio");
 		    backgroundAudio.volume=0.1;
-		    backgroundAudio.play();
+		    //backgroundAudio.play();
 
 		    var mute=document.getElementById("mute");
 		
@@ -56,7 +56,8 @@
 	</div>
 
 	<div id = "playersList">
-		<h1>All players</h1>
+		
+		<h5>All players</h5>
 
 		<div id = "playersListContent">
 			<c:forEach items = "${players}" var = "player">
