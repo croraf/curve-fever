@@ -40,7 +40,7 @@ window.onload = function() {
         var y = event.pageY - canvas.offsetTop;
 
         ctx.beginPath();
-        ctx.arc(x/2, y/2, 5, 0, 2*Math.PI);
+        ctx.arc(x, y/2, 5, 0, 2*Math.PI);
         ctx.stroke();
     }
 };
