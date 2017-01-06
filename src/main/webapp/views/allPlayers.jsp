@@ -26,6 +26,11 @@
 
 	    <p><a href="/services/playersForm">Update another player.</a></p>
 	</div>
+
+	<audio controls autoplay loop>
+        <source src="/static/Virgo_Rosa.ogg" type="audio/ogg">
+        Your browser does not support the audio element.
+    </audio>
 	
 </body>
 </html>
