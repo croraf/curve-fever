@@ -29,8 +29,7 @@ public class Player {
     }
 
     public Player(String name) {
-        this.coins = coins;
-        this.points = points;
+        this.name = name;
     }
 
     public int getPoints() {
