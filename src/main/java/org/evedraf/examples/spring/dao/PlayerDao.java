@@ -22,7 +22,7 @@ public class PlayerDao {
         Session session = sessionFactory.getCurrentSession();
 
         List<Player> players =
-                session.createQuery("FROM Player", Player.class).list();
+                session.createQuery("FROM Player p ORDER BY p.id ASC", Player.class).list();
 
         return players;
     }
