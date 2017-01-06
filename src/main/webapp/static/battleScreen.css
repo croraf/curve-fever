@@ -26,6 +26,6 @@
 }
 
 #myCanvas {
-	//border: 1px solid white;
-	background-image: ;  
+	border: 1px solid white;
+	background-image: url("/static/tableTop.jpg");  
 }

@@ -47,7 +47,7 @@
 
 
 
-	    <canvas id="myCanvas" width="400" height="400" style="border: 1px solid white;" />
+	    <canvas id="myCanvas" width="400" height="400" />
 
 	    
 

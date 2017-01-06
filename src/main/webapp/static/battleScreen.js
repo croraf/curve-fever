@@ -37,7 +37,7 @@ window.onload = function() {
     canvasImage.src = "/static/tableTop.jpg";
     canvasImage.onload = function () {
         
-        ctx.drawImage(canvasImage, 0, 0);
+        //ctx.drawImage(canvasImage, 0, 0);
     }
 };
 
