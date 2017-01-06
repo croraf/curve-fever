@@ -48,14 +48,15 @@ public class PlayerDao {
 
         if (player == null) {
 
-            player = new Player(playerName);
-            session.persist(player);
+            Player newplayer = new Player(playerName);
+            session.persist(newplayer);
+            return newplayer;
 
-        } else {
-
-            player.setCoins(player.getCoins() + 1);
         }
 
+        player.setCoins(player.getCoins() + 1);
         return player;
+
+
     }
 }
