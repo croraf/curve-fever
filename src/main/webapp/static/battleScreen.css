@@ -4,6 +4,10 @@
 	top: 80px;
 	text-align: right;
 	border: 1px solid white;
+	background-image: url("/static/tableTop.jpg");
+	background-size: 400px, 400px;
+	width: 400px;
+	height: 400px;  
 }
 
 #playersListContent {
@@ -23,12 +27,4 @@
     left: 950px;
     top: 620px;
     color: chocolate;
-}
-
-#myCanvas {
-	border: 1px solid white;
-	background-image: url("/static/tableTop.jpg");
-	background-size: 400px, 400px;
-	width: 400px;
-	height: 400px;  
 }

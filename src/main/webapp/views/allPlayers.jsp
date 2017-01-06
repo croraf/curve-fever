@@ -24,9 +24,7 @@
 
 <body>
 
-		<div id = "board">
-			<img src="/static/tableTop.jpg" height="520" width="600" title="battleField">
-		</div>
+		<canvas id="board" width="400" height="400" />
 
 		<div id = "mute">
 			MUTE
@@ -47,7 +45,7 @@
 
 
 
-	    <canvas id="myCanvas" width="400" height="400" />
+	    
 
 	    
 
