@@ -43,8 +43,19 @@ public class PlayerDao {
 
     public Player increasePlayerCoins(String playerName) {
 
-        Player player = sessionFactory.getCurrentSession().get(Player.class, playerName);
-        player.setCoins(player.getCoins() + 1);
+        Session session = sessionFactory.getCurrentSession();
+        Player player = session.get(Player.class, playerName);
+
+        if (player == null) {
+
+            player = new Player(playerName);
+            session.persist(player);
+
+        } else {
+
+            player.setCoins(player.getCoins() + 1);
+        }
+
         return player;
     }
 }

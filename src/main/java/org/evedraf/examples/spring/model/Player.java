@@ -1,6 +1,7 @@
 package org.evedraf.examples.spring.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Size;
@@ -13,7 +14,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Entity
 public class Player {
 
-
+    @GeneratedValue
     private int id;
 
     @Id
