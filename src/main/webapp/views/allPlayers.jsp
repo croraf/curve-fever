@@ -12,7 +12,7 @@
 <body>
 
 	<div id = "board">
-		<img src="/static/tableTop.jpg" height="450" width="600" title="Ja sam ploca">
+		<img src="/static/tableTop.jpg" height="450" width="600" title="battleField">
 	</div>
 
 	<div id = "playersList">
