@@ -24,7 +24,7 @@
 
 <body>
 
-		<canvas id="board" width="400" height="400" />
+		<canvas id="board" />
 
 		<div id = "mute">
 			MUTE
