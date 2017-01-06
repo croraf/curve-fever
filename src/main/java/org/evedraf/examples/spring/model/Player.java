@@ -13,9 +13,10 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Entity
 public class Player {
 
-    @Id
+
     private int id;
 
+    @Id
     private String name;
 
     @Max(value = 100, message = "prevelika vrijednost bodova")
