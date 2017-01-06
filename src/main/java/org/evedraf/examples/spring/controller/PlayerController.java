@@ -4,6 +4,7 @@ import org.evedraf.examples.spring.business.PlayerLogic;
 import org.evedraf.examples.spring.model.Player;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.*;
@@ -21,12 +22,20 @@ public class PlayerController {
     @Autowired
     private PlayerLogic playerLogic;
 
-    @GetMapping
+    @GetMapping ("/a")
     @ResponseBody
-    public List<Player> getPlayers(){
+    public List<Player> getPlayersA(){
 
         //return new Wrapper(playerLogic.getPlayers());
         return playerLogic.getPlayers();
+    }
+
+    @GetMapping
+    public String getPlayers(Model model){
+
+        model.addAttribute("players", playerLogic.getPlayers());
+
+        return "allPlayers";
     }
 
     @GetMapping(value = "{id}")

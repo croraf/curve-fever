@@ -1,7 +1,5 @@
 <!DOCTYPE HTML>
 
-<!-- <html xmlns:th="http://www.thymeleaf.org"> -->
-
 <head>
     <title>Getting Started: Handling Form Submission</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -17,5 +15,6 @@
     <p> coins: ${player.coins} </p>
 
     <a href="/services/playersForm">Update another player.</a>
+    <a href="/services/players">List active players.</a>
 </body>
 </html>
