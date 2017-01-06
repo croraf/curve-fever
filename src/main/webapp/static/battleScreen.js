@@ -64,6 +64,7 @@ window.onload = function() {
     var currentCoordX = 5;
     var currentCoordY = 5;
     var direction = Math.PI/3;
+    var speed = 4;
 
     function drawCircle(){
 
@@ -71,12 +72,38 @@ window.onload = function() {
         ctx.arc(currentCoordX, currentCoordY, 5, 0, 2*Math.PI);
         ctx.stroke();
 
-        currentCoordX = (currentCoordX + 3*Math.cos(direction)) % canvas.width;
-        currentCoordY = (currentCoordY + 3*Math.sin(direction)) % canvas.height;
+        if (steerDirection === "left"){
+            direction = direction - Math.PI/64;
+        } else if (steerDirection === "right"){
+            direction = direction + Math.PI/64;
+        }
+
+        currentCoordX = (currentCoordX + speed*Math.cos(direction)) % canvas.width;
+        currentCoordY = (currentCoordY + speed*Math.sin(direction)) % canvas.height;
 
         if (started === true) {
          
-            setTimeout(drawCircle, 100);
+            setTimeout(drawCircle, 80);
+        }
+    }
+
+    var body = document.getElementById("body");
+
+    var steerDirection = "ahead";
+
+    body.onkeydown = function steer(event){
+
+        if (event.keyCode === 37){
+            steerDirection = "left";
+        } else if (event.keyCode === 39){
+            steerDirection = "right";
+        }
+
+    }
+
+    body.onkeyup = function unSteer(event){
+        if (event.keyCode === 37 || event.keyCode === 39){
+            steerDirection = "ahead";
         }
     }
 };
