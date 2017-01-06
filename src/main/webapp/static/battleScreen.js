@@ -36,8 +36,8 @@ window.onload = function() {
     canvas.onclick = function(event){
 
         var rect = canvas.getBoundingClientRect();
-        var x = event.pageX - rect.left;
-        var y = event.pageY - rect.top;
+        var x = event.pageX - canvas.offsetLeft;
+        var y = event.pageY - canvas.offsetTop;
 
         ctx.beginPath();
         ctx.arc(x, y, 5, 0, 2*Math.PI);
