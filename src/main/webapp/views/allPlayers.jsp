@@ -12,7 +12,7 @@
 	<h1>All players</h1>
 
 	<c:forEach items = "${players}" var = "player">
-	    <p>${player}</p>
+	    <p>Id: ${player.id},  Name: ${player.name},  Points: ${player.points},  Coins: ${player.coins} </p>
 	</c:forEach>
 
     <p><a href="/services/playersForm">Update another player.</a></p>
