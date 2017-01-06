@@ -92,8 +92,8 @@ window.onload = function() {
     var steerDirection = "ahead";
 
     //TODO check what true means
-    body.addEventListener("keydown", steer, true);
-    body.addEventListener("keyup", unSteer, true);
+    canvas.addEventListener("keydown", steer, true);
+    canvas.addEventListener("keyup", unSteer, true);
 
     function steer(event){
 
