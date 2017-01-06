@@ -8,3 +8,6 @@ body {
     font-style: italic;
 }
 
+a:visited {
+    color: blue;
+}
