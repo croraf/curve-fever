@@ -25,7 +25,7 @@
 		    
 		    var backgroundAudio=document.getElementById("backgroundAudio");
 		    backgroundAudio.volume=0.1;
-		    //backgroundAudio.play();
+		    backgroundAudio.play();
 
 		    var mute=document.getElementById("mute");
 		
