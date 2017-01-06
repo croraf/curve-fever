@@ -39,6 +39,15 @@
 					backgroundAudio.pause();
 				}
 			};
+
+			var board=document.getElementById("board");
+
+			board.onclick = function(event) {
+				
+				var boardAudio=document.getElementById("boardAudio");
+
+				boardAudio.play();
+			};
 		};
 
 		
@@ -70,6 +79,11 @@
 
 	<audio id= "backgroundAudio" loop>
         <source src="/static/Virgo_Rosa.ogg" type="audio/ogg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <audio id= "boardAudio">
+        <source src="/static/soundOnBoardClick.ogg" type="audio/ogg">
         Your browser does not support the audio element.
     </audio>
 
