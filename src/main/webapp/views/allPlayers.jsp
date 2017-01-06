@@ -11,7 +11,7 @@
     
     <script type="text/javascript">
 
-    	var backgroundAudio=document.getElementById("backgroundAudio");
+    	backgroundAudio=document.getElementById("backgroundAudio");
     	
     	window.onload = function() {
 		    
@@ -19,7 +19,7 @@
 		    backgroundAudio.play();
 		};
 
-		var mute=document.getElementById("mute");
+		mute=document.getElementById("mute");
 		
 		mute.onclick = function(event) {
 			
