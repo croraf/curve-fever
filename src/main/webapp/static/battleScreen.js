@@ -91,7 +91,7 @@ window.onload = function() {
 
     var steerDirection = "ahead";
 
-    body.onkeydown = function steer(event){
+    canvas.onkeydown = function steer(event){
 
         if (event.keyCode === 37){
             steerDirection = "left";
@@ -101,7 +101,7 @@ window.onload = function() {
 
     }
 
-    body.onkeyup = function unSteer(event){
+    canvas.onkeyup = function unSteer(event){
         if (event.keyCode === 37 || event.keyCode === 39){
             steerDirection = "ahead";
         }
