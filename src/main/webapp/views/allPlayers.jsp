@@ -22,7 +22,7 @@
 
 <body>
 
-		<canvas id="board" width="600" height="520"></canvas>
+		<canvas id="board" width="600" height="520" tabindex="1"></canvas>
 
         <div id = "start">
             START/STOP
