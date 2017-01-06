@@ -43,5 +43,38 @@ window.onload = function() {
         ctx.arc(x, y, 5, 0, 2*Math.PI);
         ctx.stroke();
     }
+
+    //start functionality
+    var start = document.getElementById("start");
+    var started = false;
+    start.onclick = function (event) {
+        
+        if (started){
+
+                started = false;
+        } else {
+
+                started = true;
+                drawCircle();
+
+        }
+
+    }
+
+    var currentCoord = 5;
+
+    function drawCircle(){
+
+        ctx.beginPath();
+        ctx.arc(currentCoord, currentCoord, 5, 0, 2*Math.PI);
+        ctx.stroke();
+
+        currentCoord = currentCoord + 3;
+
+        if (started === true) {
+         
+            setTimeout(drawCircle, 1000);
+        }
+    }
 };
 

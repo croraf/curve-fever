@@ -24,6 +24,10 @@
 
 		<canvas id="board" width="600" height="520"></canvas>
 
+        <div id = "start">
+            START/STOP
+        </div>
+
 		<div id = "mute">
 			MUTE
 		</div>
