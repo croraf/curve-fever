@@ -63,6 +63,7 @@ window.onload = function() {
 
     var currentCoordX = 5;
     var currentCoordY = 5;
+    var direction = Math.PI/3;
 
     function drawCircle(){
 
@@ -70,12 +71,12 @@ window.onload = function() {
         ctx.arc(currentCoordX, currentCoordY, 5, 0, 2*Math.PI);
         ctx.stroke();
 
-        currentCoordX = (currentCoordX + 3) % canvas.width;
-        currentCoordY = (currentCoordY + 3) % canvas.height;
+        currentCoordX = (currentCoordX + 3*Math.cos(direction)) % canvas.width;
+        currentCoordY = (currentCoordY + 3*Math.sin(direction)) % canvas.height;
 
         if (started === true) {
          
-            setTimeout(drawCircle, 300);
+            setTimeout(drawCircle, 100);
         }
     }
 };
