@@ -9,10 +9,10 @@
 <body>
 	<h1>Player was successfully updated</h1>
 
-    <p> id: ${player.id} </p>
-    <p> name: ${player.name} </p>
-    <p> points: ${player.points} </p>
-    <p> coins: ${player.coins} </p>
+    <p> Id: ${player.id} </p>
+    <p> Name: ${player.name} </p>
+    <p> Points: ${player.points} </p>
+    <p> Coins: ${player.coins} </p>
 
     <p><a href="/services/playersForm">Update another player.</a></p>
     <p><a href="/services/players">List active players.</a></p>
