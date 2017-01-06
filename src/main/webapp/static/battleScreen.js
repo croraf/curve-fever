@@ -30,7 +30,7 @@ window.onload = function() {
     };
 
 
-    var canvas = document.getElementById("myCanvas");
+    var canvas = document.getElementById("board");
     var ctx = canvas.getContext("2d");
 
     canvas.onclick = function(event){
