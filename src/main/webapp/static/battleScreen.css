@@ -1,9 +1,10 @@
 #board {
     position: absolute;
 	left: 450px;
-	top: 50px;
+	top: 100px;
 	text-align: right;
 	border-color: white;
-	border-width: 2px;
+	border-style: solid;
+	border-width: 1px;
 }
 
