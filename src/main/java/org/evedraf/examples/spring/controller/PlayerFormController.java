@@ -29,9 +29,9 @@ public class PlayerFormController {
     }
 
     @PostMapping
-    public String enterPlayer(@ModelAttribute Player player1, Model model){
+    public String enterPlayer(@RequestParam String playerName, Model model){
 
-        Player player = playerLogic.increasePlayerCoins(player1.getName());
+        Player player = playerLogic.increasePlayerCoins(playerName);
 
         model.addAttribute(player);
 
