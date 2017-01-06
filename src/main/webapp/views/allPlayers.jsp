@@ -17,17 +17,19 @@
 		    
 		    backgroundAudio.volume=0.1;
 		    backgroundAudio.play();
-		}
+		};
 
 		var mute=document.getElementById("mute");
-		mute.click(function(event) {
+		
+		mute.onclick = function(event) {
 			
 			if (backgroundAudio.paused) {
 				backgroundAudio.play();
 			} else {
 				backgroundAudio.pause();
 			}
-		});
+		};
+
     </script>
 </head>
 <body>
