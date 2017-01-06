@@ -11,10 +11,11 @@
     
     <script type="text/javascript">
 
-    	backgroundAudio=document.getElementById("backgroundAudio");
+    	
     	
     	window.onload = function() {
 		    
+		    var backgroundAudio=document.getElementById("backgroundAudio");
 		    backgroundAudio.volume=0.1;
 		    backgroundAudio.play();
 		};
@@ -22,6 +23,8 @@
 		mute=document.getElementById("mute");
 		
 		mute.onclick = function(event) {
+			
+			var backgroundAudio=document.getElementById("backgroundAudio");
 			
 			if (backgroundAudio.paused) {
 				backgroundAudio.play();
