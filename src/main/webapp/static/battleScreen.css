@@ -12,6 +12,7 @@
 	height: 520px;
 	overflow-y: scroll;
 	border: 1px solid white;
+	border-radius: 15px;
 }
 
 #playersList {
@@ -20,6 +21,7 @@
 
 #mute {
 	position: absolute;
-	left: 800;
-	top: 620;
+    left: 950px;
+    top: 620px;
+    color: chocolate;
 }

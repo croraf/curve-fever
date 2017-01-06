@@ -10,11 +10,24 @@
     <link rel="stylesheet" type="text/css" href="/static/battleScreen.css" />
     
     <script type="text/javascript">
+
+    	var backgroundAudio=document.getElementById("backgroundAudio");
+    	
     	window.onload = function() {
-		    var backgroundAudio=document.getElementById("backgroundAudio");
+		    
 		    backgroundAudio.volume=0.1;
 		    backgroundAudio.play();
 		}
+
+		var mute=document.getElementById("mute");
+		mute.click(function(event) {
+			
+			if (backgroundAudio.paused) {
+				backgroundAudio.play();
+			} else {
+				backgroundAudio.pause();
+			}
+		});
     </script>
 </head>
 <body>
