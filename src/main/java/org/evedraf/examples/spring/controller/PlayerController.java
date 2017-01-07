@@ -35,7 +35,7 @@ public class PlayerController {
 
         model.addAttribute("players", playerLogic.getPlayers());
 
-        return "allPlayers";
+        return "battleScreen";
     }
 
     @GetMapping(value = "{id}")

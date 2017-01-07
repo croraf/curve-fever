@@ -77,8 +77,10 @@ window.onload = function() {
             direction = direction + Math.PI/24;
         }
 
-        currentCoordX = (((currentCoordX + speed*Math.cos(direction)) % canvas.width) + canvas.width) % canvas.width;
-        currentCoordY = (((currentCoordY + speed*Math.sin(direction)) % canvas.height) + canvas.height) % canvas.height;
+        currentCoordX = (currentCoordX + speed*Math.cos(direction)) % canvas.width;
+        if (currentCoordX < 0) { currentCoordX += canvas.width};
+        currentCoordY = (currentCoordY + speed*Math.sin(direction)) % canvas.height;
+        if (currentCoordY < 0) { currentCoordY += canvas.height};
 
         if (started === true) {
          
