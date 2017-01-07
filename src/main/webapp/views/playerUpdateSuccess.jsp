@@ -15,6 +15,6 @@
     <p> Coins: ${player.coins} </p>
 
     <p><a href="/services/playersForm">Pick another player</a></p>
-    <p><a href="/services/players">List active players</a></p>
+    <p><a href="/services/players">Go to battlefield</a></p>
 </body>
 </html>

@@ -1,25 +1,25 @@
 
-window.onload = function() {
+$(function() {
 
     var backgroundAudio=document.getElementById("backgroundAudio");
     backgroundAudio.volume=0.1;
     //TODO temprorary disable play background on start
     backgroundAudio.play();
 
-    var mute=document.getElementById("mute");
+    var mute=$("#mute");
 
-    mute.onclick = function(event) {
+    mute.click( function(event) {
 
         backgroundAudio=document.getElementById("backgroundAudio");
 
         if (backgroundAudio.paused) {
             backgroundAudio.play();
-            mute.getElementsByTagName("i")[0].innerHTML = "volume_up"
+            mute.html = "volume_up"
         } else {
             backgroundAudio.pause();
-            mute.getElementsByTagName("i")[0].innerHTML = "volume_off"
+            mute.html = "volume_off"
         }
-    };
+    });
 
     var canvas=document.getElementById("board");
 
@@ -132,5 +132,5 @@ window.onload = function() {
             }
         }
     }
-};
+});
 
