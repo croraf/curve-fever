@@ -18,17 +18,19 @@
     <div class="container">
 
         <div class = "row">
-            <div class = "col s6 offset-s3">
+            <div class = "col s4 offset-s4 section">
         	    <h4>Pick player</h4>
         	</div>
-
-            <div class = "col s6 offset-s3">
+        </div>    
+        
+        <div class = "row">
+            <div class = "col s4 offset-s4">
                 <form action="/services/playersForm" method="post">
                             <p>
                                 Name: <input type="text" name="name" />
                             </p>
 
-                            <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+                            <p><input type="submit" value="Submit" class="waves-effect waves-light btn"/></p>
                 </form>
             </div>
         </div>

@@ -1,8 +1,66 @@
+#container {
+    position: relative;
+	margin-top: 30px;
+}
+
+#playersListCollumn {
+	width: 20%;
+	margin-left: 10%;
+}
+
+#playersList {
+	height: 520px;
+	overflow-y: scroll;
+	border: 1px solid white;
+	border-right: 0px;
+}
+
+#playersList a {
+	color: white;
+	background-color: black;
+	padding:5px;
+}
+
+#playersList a:hover {
+	background-color: rgb(70,70,70);
+}
+
+.scrollbar-style-2::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: darkgray;
+}
+
+.scrollbar-style-2::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: black;
+	border-radius: 5px;
+}
+
+.scrollbar-style-2::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: white;
+}
+
+#playersListCollumn > a {
+	color: chocolate;
+}
+
+#boardCollumn {
+	/*needed positioning for absolute positioning of childs*/
+	position: absolute;
+	left: 33%;
+	top: 0%;
+
+}
+
 #board {
-    position: absolute;
-	left: 400px;
-	top: 80px;
-	text-align: right;
+	position: absolute;
+    top: 35px;
 	border: 1px solid white;
 	background-image: url("/static/tableTop.jpg");
 	background-size: 600px, 520px;
@@ -11,30 +69,33 @@
 	cursor: crosshair;
 }
 
-#playersListContent {
-	height: 520px;
-	overflow-y: scroll;
-	border: 1px solid white;
-	border-radius: 0px;
-}
-
-#playersList {
-	width: 300px;
-	margin-top: 45px;
-}
-
 #mute {
 	position: absolute;
-    left: 950px;
-    top: 620px;
+    left: 550px;
+    top: 570px;
     color: chocolate;
     cursor: pointer;
 }
 
 #start {
 	position: absolute;
-    left: 420px;
-    top: 620px;
+    left: 10px;
+    top: 570px;
     color: chocolate;
     cursor: pointer;
+}
+
+.glowingShaddow {
+
+	border-radius: 8px;
+
+	box-shadow: 0px 0px 20px 0px #fafafa, 
+				0 0px 14px 2px #9e9e9e, 
+				0 0px 5px -3px #9e9e9e;
+}
+
+.collectionItem {
+
+	background-color: black;
+	padding: 0px;
 }

@@ -16,8 +16,8 @@ $(function() {
 
     canvas.onclick = function(event){
 
-        var x = event.pageX - canvas.offsetLeft;
-        var y = event.pageY - canvas.offsetTop;
+        var x = event.pageX - $("#board").offset().left;
+        var y = event.pageY - $("#board").offset().top;
 
         ctx.beginPath();
         ctx.arc(x, y, 5, 0, 2*Math.PI);

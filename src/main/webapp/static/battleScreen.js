@@ -5,13 +5,11 @@ $(function() {
     var backgroundAudio=document.getElementById("backgroundAudio");
     backgroundAudio.volume=0.1;
     //comment to disable background music on start
-    backgroundAudio.play();
+    //backgroundAudio.play();
 
     var mute=$("#mute i");
 
     mute.click( function(event) {
-
-        backgroundAudio=document.getElementById("backgroundAudio");
 
         if (backgroundAudio.paused) {
             backgroundAudio.play();

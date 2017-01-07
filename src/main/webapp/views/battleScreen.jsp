@@ -22,28 +22,35 @@
 
 <body tabindex="1" id="body">
 
-		<canvas id="board" width="600" height="520"></canvas>
+		<div id = "container">
 
-        <div id = "start">
-            START/STOP
-        </div>
+			<div id = "playersListCollumn">
+				
+				<h5 class="center-align">All players</h5>
 
-		<div id = "mute">
-			<i class="material-icons">volume_up</i>
-		</div>
+				<div id = "playersList" class="glowingShaddow center-align collection scrollbar-style-2">
+					<c:forEach items = "${players}" var = "player">
+					    <a href="#!" class="collection-item">${player.name} :  ${player.points} </a>
+					</c:forEach>
+				</div>
 
-		<div id = "playersList">
-			
-			<h5>All players</h5>
-
-			<div id = "playersListContent">
-				<c:forEach items = "${players}" var = "player">
-				    <p>Id: ${player.id},  Name: ${player.name},  Points: ${player.points},  Coins: ${player.coins} </p>
-				</c:forEach>
+			    <a href="/services/playersForm">Pick another player</a>
 			</div>
 
-		    <p><a href="/services/playersForm">Pick another player</a></p>
+			<div id = "boardCollumn">
+				<canvas id="board" width="600" height="520" class="glowingShaddow"></canvas>
+
+		        <div id = "start">
+		            START/STOP
+		        </div>
+
+				<div id = "mute">
+					<i class="material-icons">volume_up</i>
+				</div>
+			</div>
+
 		</div>
+
 
 
 
