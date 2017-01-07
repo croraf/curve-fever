@@ -8,6 +8,7 @@
 	background-size: 600px, 520px;
 	width: 600px;
 	height: 520px;  
+	cursor: crosshair;
 }
 
 #playersListContent {
@@ -27,6 +28,7 @@
     left: 950px;
     top: 620px;
     color: chocolate;
+    cursor: pointer;
 }
 
 #start {
@@ -34,4 +36,5 @@
     left: 420px;
     top: 620px;
     color: chocolate;
+    cursor: pointer;
 }
