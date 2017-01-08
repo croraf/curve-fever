@@ -62,7 +62,7 @@
 	position: absolute;
     top: 35px;
 	border: 1px solid white;
-	background-image: url("/static/tableTop.jpg");
+	background-image: url("/static/battleScreen/tableTop.jpg");
 	background-size: 600px, 520px;
 	width: 600px;
 	height: 520px;  
