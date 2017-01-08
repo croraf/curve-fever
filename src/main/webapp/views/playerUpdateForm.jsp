@@ -25,13 +25,15 @@
         
         <div class = "row">
             <div class = "col s4 offset-s4">
-                <form action="/services/playersForm" method="post">
+
+                <form action="/services/playersForm" method="post" id="pickPlayerForm">
                             <p>
                                 Name: <input type="text" name="name" />
                             </p>
-
-                            <p><input type="submit" value="Submit" class="waves-effect waves-light btn"/></p>
                 </form>
+
+                <button type="submit" form="pickPlayerForm" class="waves-effect waves-light btn"/>submit</button>
+
             </div>
         </div>
 
@@ -60,6 +62,6 @@
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
-        
+
 </body>
 </html>
