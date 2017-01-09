@@ -22,7 +22,7 @@ $(function() {
         ctx.beginPath();
         ctx.arc(x, y, 5, 0, 2*Math.PI);
         ctx.stroke();
-    }
+    };
 
     //start functionality
     var start = $("#start");
