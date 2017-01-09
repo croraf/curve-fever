@@ -9,7 +9,7 @@ $(function() {
         var boardAudio=document.getElementById("boardAudio");
         boardAudio.volume = 0.4
         //TODO temporary disable narration
-        //boardAudio.play();
+        boardAudio.play();
     };
 
     var ctx = canvas.getContext("2d");
