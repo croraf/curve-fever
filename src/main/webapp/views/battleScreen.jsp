@@ -1,8 +1,5 @@
 <!DOCTYPE HTML>
 
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
 <head>
 	    <title>Battlefield</title>
 	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -29,9 +26,6 @@
 				<h5 class="center-align">All players</h5>
 
 				<div id = "playersList" class="glowingShaddow center-align collection scrollbar-style-2">
-					<c:forEach items = "${players}" var = "player">
-					    <a href="#!" class="collection-item">${player.name} :  ${player.points} </a>
-					</c:forEach>
 				</div>
 
 			    <a href="/services/playersForm">Pick another player</a>
