@@ -13,6 +13,7 @@ $(function() {
     };
 
     var ctx = canvas.getContext("2d");
+    ctx.strokeStyle="#FFFFFF";
 
     canvas.onclick = function(event){
 
