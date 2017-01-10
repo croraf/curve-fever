@@ -31,11 +31,17 @@ public class PlayerController {
     }
 
     @GetMapping
-    public String getPlayers(Model model){
+    public String getPlayersJSP(Model model){
 
         model.addAttribute("players", playerLogic.getPlayers());
 
         return "battleScreen";
+    }
+
+    @GetMapping ("/all")
+    @ResponseBody
+    public List<Player> getPlayers (){
+        return playerLogic.getPlayers();
     }
 
     @GetMapping(value = "{id}")
