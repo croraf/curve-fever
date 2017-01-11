@@ -1,5 +1,9 @@
 <!DOCTYPE HTML>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> e584fb4... Eclipse merge
 <head>
     <base href="/curve-fever/" />
 
@@ -31,18 +35,42 @@
                             </p>
                 </form>
 
-                <button type="submit" form="pickPlayerForm" class="waves-effect waves-light btn"/>submit</button>
+                <button type="submit" form="pickPlayerForm" class="waves-effect waves-light btn">submit</button>
 
             </div>
         </div>
 
     </div>
+<<<<<<< HEAD
 
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
 
 
+
+
+    <%--
+    <form:form action="/services/playersForm" method="post"
+               modelAttribute = "player1">
+        <p>
+            Name: <form:input type="text" path="name" /> <form:errors path="name" cssClass="error"/>
+        </p>
+        <p>
+            Points: <form:input type="text" path="points" /> <form:errors path="points" cssClass="error" />
+        </p>
+        <p>
+            Coins: <form:input type="text" path="coins" /> <form:errors path="coins" cssClass="error" />
+        </p>
+
+        <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+    </form:form>--%>
+=======
+
+   <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+>>>>>>> e584fb4... Eclipse merge
 
 
     <%--

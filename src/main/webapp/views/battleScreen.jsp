@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-
+<html>
 <head>
         <base href="/curve-fever/" />
 
@@ -51,12 +51,20 @@
 
 
 		<audio id= "backgroundAudio" loop>
+<<<<<<< HEAD
 	        <source src="static/battleScreen/Virgo_Rosa.ogg" type="audio/ogg">
+=======
+	        <source src="/static/battleScreen/Virgo_Rosa.ogg" type="audio/ogg" />
+>>>>>>> e584fb4... Eclipse merge
 	        Your browser does not support the audio element.
 	    </audio>
 
 		<audio id= "boardAudio">
+<<<<<<< HEAD
 	        <source src="static/battleScreen/soundOnBoardClick.ogg" type="audio/ogg">
+=======
+	        <source src="/static/battleScreen/soundOnBoardClick.ogg" type="audio/ogg" />
+>>>>>>> e584fb4... Eclipse merge
 	        Your browser does not support the audio element.
 	    </audio>
 

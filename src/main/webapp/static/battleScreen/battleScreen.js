@@ -23,9 +23,9 @@ $(function() {
 
 
     $.get(
-        "/services/players/all", 
+        "/services/players/all",
 
-        undefined, 
+        undefined,
 
         function(allPlayers){
 
@@ -35,12 +35,12 @@ $(function() {
                 $("#playersList").append('<a heref="#!"  class="collection-item">' + allPlayers[i].name + ' : ' + allPlayers[i].coins + '</a>');
 
             };
-        }, 
+        },
 
         "json"
     );
-    
-     
+
+
 
     /*<a href="#!" class="collection-item">${player.name} :  ${player.points} </a>*/
 
