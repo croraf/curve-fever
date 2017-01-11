@@ -1,10 +1,15 @@
 <!DOCTYPE HTML>
+
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
 <html>
 <head>
-        <base href="/curve-fever/" />
+        <base href="${pageContext.request.contextPath}/" />
 
 	    <title>Battlefield</title>
 	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
 
 	    <!--Import Google Icon Font-->
 	    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -16,11 +21,12 @@
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 	    <link rel="stylesheet" type="text/css" href="static/style1.css" />
-	    <link rel="stylesheet" type="text/css" href="static/battleScreen/battleScreen.css" />
+
 </head>
 
 <body tabindex="1" id="body">
 
+        <link rel="stylesheet" type="text/css" href="static/battleScreen/battleScreen.css" />
 		<div id = "container">
 
 			<div id = "playersListCollumn">
@@ -41,7 +47,7 @@
 		        </div>
 
 				<div id = "mute">
-					<i class="material-icons">volume_up</i>
+					<i class="material-icons">volume_off</i>
 				</div>
 			</div>
 

@@ -1,11 +1,16 @@
 <!DOCTYPE HTML>
+
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
 <html>
 <head>
-    <base href="/curve-fever/" />
+    <base href="${pageContext.request.contextPath}/" />
 
     <title>Player entered</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link rel="stylesheet" type="text/css" href="/static/style1.css" />
+
+    <link rel="stylesheet" type="text/css" href="static/style1.css" />
 
 </head>
 
