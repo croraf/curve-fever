@@ -1,14 +1,15 @@
 <!DOCTYPE HTML>
 
 <head>
+    <base href="/curve-fever/" />
+
     <title>Log in</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
     <!--Import materialize.css-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
 
-    <link rel="stylesheet" type="text/css" href="/static/style1.css" />
-
+    <link rel="stylesheet" type="text/css" href="static/style1.css" />
 
 </head>
 <body>
@@ -24,7 +25,7 @@
         <div class = "row">
             <div class = "col s4 offset-s4">
 
-                <form action="/services/playersForm" method="post" id="pickPlayerForm">
+                <form action="services/playersForm" method="post" id="pickPlayerForm">
                             <p>
                                 Name: <input type="text" name="name" />
                             </p>
