@@ -23,6 +23,7 @@
 
 #playersList a:hover {
 	background-color: rgb(70,70,70);
+	cursor:pointer;
 }
 
 .scrollbar-style-2::-webkit-scrollbar-track

@@ -28,8 +28,8 @@ public class DaoConfig {
         sessionFactory.scanPackages("org.evedraf.examples.spring.model");
 
         Properties properties = new Properties();
-        //properties.put("dialect", "org.hibernate.dialect.PostgreSQL95Dialect");
-        properties.put("dialect", "org.hibernate.dialect.HSQLDialect");
+        properties.put("dialect", "org.hibernate.dialect.PostgreSQL95Dialect");
+        //properties.put("dialect", "org.hibernate.dialect.HSQLDialect");
 
         properties.put("hibernate.show_sql", "true");
         properties.put("hibernate.hbm2ddl.auto", "update");
@@ -65,19 +65,19 @@ public class DaoConfig {
         }*/
 
 
-        /*String dbUrl = System.getenv("JDBC_DATABASE_URL");
+        String dbUrl = System.getenv("JDBC_DATABASE_URL");
         String username = System.getenv("JDBC_DATABASE_USERNAME");
         String password = System.getenv("JDBC_DATABASE_PASSWORD");
         dataSource.setUrl(dbUrl);
         dataSource.setUsername(username);
-        dataSource.setPassword(password);*/
+        dataSource.setPassword(password);
 
 
 
-        dataSource.setDriverClassName("org.hsqldb.jdbc.JDBCDriver");
+        /*dataSource.setDriverClassName("org.hsqldb.jdbc.JDBCDriver");
         dataSource.setUrl("jdbc:hsqldb:hsql://localhost:9001");
         dataSource.setUsername("sa");
-        dataSource.setPassword("");
+        dataSource.setPassword("");*/
 
         return dataSource;
     }
