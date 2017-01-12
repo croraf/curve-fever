@@ -10,6 +10,7 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
 import javax.servlet.Filter;
 import javax.servlet.FilterRegistration;
 import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
 
 /**
  * Created by Korisnik on 13.12.2016..
@@ -17,11 +18,22 @@ import javax.servlet.ServletContext;
 public class MyAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 
     @Override
+    public void onStartup(ServletContext servletContext) throws ServletException {
+        super.onStartup(servletContext);
+        servletContext.setInitParameter("spring.profiles.active", "dev");
+
+        //Set multiple active profile
+        //servletContext.setInitParameter("spring.profiles.active", "dev, testdb");
+    }
+
+    @Override
     protected Class<?>[] getRootConfigClasses() {
 
         return new Class<?>[]{
                 AspectsConfig.class,
                 BusinessConfig.class,
+                DaoConfigDevelopment.class,
+                DaoConfigProduction.class,
                 SecurityConfig.class
         };
     }
