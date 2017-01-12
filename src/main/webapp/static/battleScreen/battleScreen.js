@@ -23,10 +23,8 @@ $(function() {
 
 
     $.get(
-        "/services/players/all",
-
+        "services/players/all",
         undefined,
-
         function(allPlayers){
 
 
@@ -36,7 +34,6 @@ $(function() {
 
             };
         },
-
         "json"
     );
 

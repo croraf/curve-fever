@@ -49,6 +49,9 @@
 				<div id = "mute">
 					<i class="material-icons">volume_off</i>
 				</div>
+
+				<div id = "positionData">
+                </div>
 			</div>
 
 		</div>

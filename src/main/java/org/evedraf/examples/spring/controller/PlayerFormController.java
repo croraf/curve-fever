@@ -38,7 +38,7 @@ public class PlayerFormController {
         return "playerUpdateSuccess";
     }
 
-    @PostMapping (value = "/a")
+/*    @PostMapping (value = "/a")
     public String updatePlayer(@Valid @ModelAttribute Player player, BindingResult bindingResult){
 
         if (bindingResult.hasFieldErrors()){
@@ -52,5 +52,5 @@ public class PlayerFormController {
         playerLogic.updatePlayerById(player);
 
         return "playerUpdateSuccess";
-    }
+    }*/
 }

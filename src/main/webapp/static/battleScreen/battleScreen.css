@@ -70,17 +70,31 @@
 	cursor: crosshair;
 }
 
-#mute {
+
+
+
+
+#start {
 	position: absolute;
-    left: 550px;
+    left: 10px;
     top: 570px;
     color: chocolate;
     cursor: pointer;
 }
 
-#start {
+#positionData {
+    position: absolute;
+    left: 240px;
+    top: 570px;
+    color: white;
+    width: 100px;
+    border: 1px white solid;
+    text-align: center;
+}
+
+#mute {
 	position: absolute;
-    left: 10px;
+    left: 550px;
     top: 570px;
     color: chocolate;
     cursor: pointer;

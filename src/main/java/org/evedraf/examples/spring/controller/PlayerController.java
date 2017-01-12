@@ -1,6 +1,8 @@
 package org.evedraf.examples.spring.controller;
 
+import org.evedraf.examples.spring.business.GameLogic;
 import org.evedraf.examples.spring.business.PlayerLogic;
+import org.evedraf.examples.spring.business.Position;
 import org.evedraf.examples.spring.model.Player;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -21,19 +24,18 @@ public class PlayerController {
 
     @Autowired
     private PlayerLogic playerLogic;
+    @Autowired
+    private GameLogic gameLogic;
 
-    @GetMapping ("/a")
-    @ResponseBody
-    public List<Player> getPlayersA(){
-
-        //return new Wrapper(playerLogic.getPlayers());
-        return playerLogic.getPlayers();
-    }
 
     @GetMapping
     public String getPlayersJSP(Model model){
 
-        model.addAttribute("players", playerLogic.getPlayers());
+        //not needed when migrated to ajax instead of jsp
+        /*model.addAttribute("players", playerLogic.getPlayers());*/
+
+        //restart positions
+        gameLogic.setPositions(new ArrayList<>());
 
         return "battleScreen";
     }
@@ -50,7 +52,10 @@ public class PlayerController {
 
         return playerLogic.getPlayerById(id);
     }
+
+
 }
+
 
 /*
 @XmlRootElement (name = "players")

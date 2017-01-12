@@ -55,6 +55,8 @@ $(function() {
         ctx.arc(currentCoordX, currentCoordY, 5, 0, 2*Math.PI);
         ctx.stroke();
 
+        sendPositionToServer(currentCoordX, currentCoordY);
+
         if (steerDirection === "left"){
             direction = direction - Math.PI/24;
         } else if (steerDirection === "right"){
@@ -70,6 +72,19 @@ $(function() {
 
             setTimeout(drawCircle, 55);
         }
+    }
+
+    function sendPositionToServer(cordX, cordY){
+        $.ajax({
+            method: "POST",
+            url: "services/posUpdate",
+            dataType: "json",
+            contentType: "application/json; charset=UTF-8",
+            data: '{"x":' + cordX + ', "y":' + cordY + "}",
+            success: function(responseJson){
+                $("#positionData").html(responseJson.x.toFixed(0) + ", " + responseJson.y.toFixed(0));
+            }
+        });
     }
 
 
