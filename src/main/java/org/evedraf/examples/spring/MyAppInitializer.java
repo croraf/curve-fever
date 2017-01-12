@@ -3,6 +3,7 @@ package org.evedraf.examples.spring;
 import org.evedraf.examples.spring.config.*;
 
 import org.evedraf.examples.spring.filter.DirectViewAccessBlockFilter;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.Conventions;
 import org.springframework.util.Assert;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
@@ -15,6 +16,7 @@ import javax.servlet.ServletException;
 /**
  * Created by Korisnik on 13.12.2016..
  */
+
 public class MyAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 
     @Override
@@ -22,8 +24,6 @@ public class MyAppInitializer extends AbstractAnnotationConfigDispatcherServletI
         super.onStartup(servletContext);
         servletContext.setInitParameter("spring.profiles.active", "dev");
 
-        //Set multiple active profile
-        //servletContext.setInitParameter("spring.profiles.active", "dev, testdb");
     }
 
     @Override

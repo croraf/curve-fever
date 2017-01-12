@@ -2,10 +2,8 @@ package org.evedraf.examples.spring.config;
 
 import com.heroku.sdk.jdbc.DatabaseUrl;
 import org.hibernate.SessionFactory;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Profile;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.*;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
@@ -19,13 +17,18 @@ import java.sql.SQLException;
 import java.util.Properties;
 
 @Configuration
+@PropertySource("classpath:app.properties")
 @Profile("dev")
 @EnableTransactionManagement
 @ComponentScan(basePackages = "org.evedraf.examples.spring.dao")
 public class DaoConfigDevelopment {
 
+    @Value("${spring.profiles.active}") String testni;
+
     @Bean
     SessionFactory getSessionFactory(){
+
+        System.out.println("\n-------------------->" + testni);
 
         LocalSessionFactoryBuilder sessionFactory = new LocalSessionFactoryBuilder(getDataSource());
 
