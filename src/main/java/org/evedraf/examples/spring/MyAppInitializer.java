@@ -13,6 +13,8 @@ import javax.servlet.FilterRegistration;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 
+import static java.lang.System.getenv;
+
 /**
  * Created by Korisnik on 13.12.2016..
  */
@@ -22,7 +24,14 @@ public class MyAppInitializer extends AbstractAnnotationConfigDispatcherServletI
     @Override
     public void onStartup(ServletContext servletContext) throws ServletException {
         super.onStartup(servletContext);
-        servletContext.setInitParameter("spring.profiles.active", "dev");
+
+        String databaseUrl = System.getenv("JDBC_DATABASE_URL");
+
+        if (databaseUrl == null){
+            servletContext.setInitParameter("spring.profiles.active", "dev");
+        } else {
+            servletContext.setInitParameter("spring.profiles.active", "prod");
+        }
 
     }
 

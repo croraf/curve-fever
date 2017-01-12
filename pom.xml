@@ -111,6 +111,13 @@
           <version>0.1.1</version>
       </dependency>
 
+      <dependency>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-api</artifactId>
+          <version>1.7.22</version>
+      </dependency>
+
+
   </dependencies>
 
 
@@ -145,7 +152,9 @@
               <version>2.2</version>
               <configuration>
                   <url>http://localhost:8080/manager/text</url>
-                  <server>TomcatServer</server>
+                  <!-- <server>TomcatServer</server> -->
+                  <username>admin</username>
+                  <password>password</password>
                   <path>/curve-fever</path>
               </configuration>
           </plugin>
@@ -171,30 +180,36 @@
                   </execution>
               </executions>
           </plugin>
+
+          <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-help-plugin</artifactId>
+              <version>2.2</version>
+          </plugin>
       </plugins>
   </build>
 
     <profiles>
         <profile>
-        <id>copyResources</id>
-        <build>
-            <plugins>
-                <plugin>
-                    <artifactId>maven-resources-plugin</artifactId>
-                    <version>2.5</version>
-                    <configuration>
-                        <outputDirectory>
-                            C:\Users\Korisnik\Desktop\PROGRAMIRANJE\apache-tomcat-8.0.36\webapps/curve-fever
-                        </outputDirectory>
-                        <resources>
-                            <resource>
-                                <directory>src/main/webapp</directory>
-                            </resource>
-                        </resources>
-                    </configuration>
-                </plugin>
-            </plugins>
-        </build>
+            <id>copyResources</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-resources-plugin</artifactId>
+                        <version>2.6</version>
+                        <configuration>
+                            <outputDirectory>
+                                C:\Users\Korisnik\Desktop\PROGRAMIRANJE\apache-tomcat-8.0.36\webapps/curve-fever
+                            </outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>src/main/webapp</directory>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
         </profile>
     </profiles>
 
