@@ -29,7 +29,10 @@ public class PlayerDao {
 
     public Player getPlayerById(int id){
 
-        return sessionFactory.getCurrentSession().get(Player.class, id);
+        return null;
+        /*return sessionFactory.getCurrentSession().createQuery(
+                //"", Player.class
+        );*/
     }
 
     public void updatePlayer(Player player){

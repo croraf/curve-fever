@@ -50,8 +50,9 @@
 					<i class="material-icons">volume_off</i>
 				</div>
 
-				<div id = "positionData">
-                </div>
+				<div id = "positionData"></div>
+
+                <div id = "currentPlayer">${id}</div>
 			</div>
 
 		</div>

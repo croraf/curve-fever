@@ -42,11 +42,14 @@ public class PregameController {
         return "loginSuccess";
     }
 
-    @GetMapping ("enter")
-    public String getBattlefield(Model model){
+    @GetMapping ("enter/{id}")
+    public String getBattlefield(@PathVariable("id") int id, Model model){
 
         //restart positions
         gameLogic.setPositions(new ArrayList<>());
+
+        //model.addAttribute("player", playerLogic.getPlayerById(id));
+        model.addAttribute("id", id);
 
         return "battleScreen";
     }

@@ -40,6 +40,7 @@ var boardModule = (function() {
 
         if (started === true){
 
+            ctx2.strokeStyle = "#FFFFFF";
             ctx.beginPath();
             ctx.arc(currentCoordX, currentCoordY, 5, 0, 2*Math.PI);
             ctx.stroke();
@@ -62,20 +63,41 @@ var boardModule = (function() {
         }
     }
 
+    var posUpd = {
+        playerId : parseInt( $("#currentPlayer").html() ),
+        position : {
+            x : 0,
+            y : 0
+        }
+    }
+
     function sendPositionToServer(cordX, cordY){
+
+        posUpd.position.x = cordX;
+        posUpd.position.y = cordY;
+
         $.ajax({
             method: "POST",
             url: "services/posUpdate",
             dataType: "json",
             contentType: "application/json; charset=UTF-8",
-            data: '{"x":' + cordX + ', "y":' + cordY + "}",
+            data: JSON.stringify(posUpd),
             success: function(responseJson){
                 $("#positionData").html(responseJson.x.toFixed(0) + ", " + responseJson.y.toFixed(0));
+                drawEnemy(responseJson);
             }
         });
     }
 
+    var ctx2 = canvas.getContext("2d");
+    function drawEnemy(enemyCoordinates){
 
+        ctx2.strokeStyle = "#FF0000";
+        ctx2.beginPath();
+
+        ctx2.arc(enemyCoordinates.x, enemyCoordinates.y, 5, 0, 2*Math.PI);
+        ctx2.stroke();
+    }
 
 
     var body = document.getElementById("body");

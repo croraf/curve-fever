@@ -92,6 +92,16 @@
     text-align: center;
 }
 
+#currentPlayer {
+    position: absolute;
+    left: 240px;
+    top: 590px;
+    color: white;
+    width: 100px;
+    border: 1px white solid;
+    text-align: center;
+}
+
 #mute {
 	position: absolute;
     left: 550px;
