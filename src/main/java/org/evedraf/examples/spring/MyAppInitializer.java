@@ -5,12 +5,12 @@ import org.apache.commons.logging.LogFactory;
 /*import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;*/
 import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
+/*import org.apache.log4j.Logger;*/
 import org.evedraf.examples.spring.config.*;
 
 import org.evedraf.examples.spring.filter.DirectViewAccessBlockFilter;
-/*import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;*/
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.Conventions;
 import org.springframework.util.Assert;
@@ -33,7 +33,7 @@ import static java.lang.System.getenv;
 
 public class MyAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 
-    final Logger logger = LogManager.getLogger(MyAppInitializer.class);
+    final Logger logger = LoggerFactory.getLogger(MyAppInitializer.class);
     //final Log logger = LogFactory.getLog(MyAppInitializer.class);
 
     @Override
@@ -41,10 +41,6 @@ public class MyAppInitializer extends AbstractAnnotationConfigDispatcherServletI
         super.onStartup(servletContext);
 
         String databaseUrl = System.getenv("JDBC_DATABASE_URL");
-
-        /*for (Map.Entry<Object, Object> p: System.getProperties().entrySet()) {
-            System.out.println(p.getKey() + " : " + p.getValue());
-        }*/
 
         logger.info("-----------------------------------------------Database url is: " + databaseUrl);
 
