@@ -1,0 +1,12 @@
+#pickedPlayerCollumn {
+ 	/*needed positioning for absolute positioning of childs*/
+ 	position: absolute;
+    left: 45%;
+    top: 15%;
+
+}
+
+#pickedPlayerCollumn > p {
+
+	text-align: center;
+}

@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class MySimpleAspect {
 
-    @Before("execution(public * org.evedraf.examples.spring.business.PlayerLogic.*(..))")
+    @Before("execution(public * org.evedraf.examples.spring.business.playerSettings.PlayerLogic.*(..))")
     public void loggingAspect(JoinPoint joinPoint){
 
 

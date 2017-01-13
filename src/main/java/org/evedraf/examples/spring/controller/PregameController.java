@@ -1,19 +1,13 @@
 package org.evedraf.examples.spring.controller;
 
 import org.evedraf.examples.spring.business.GameLogic;
-import org.evedraf.examples.spring.business.PlayerLogic;
-import org.evedraf.examples.spring.model.Message;
+import org.evedraf.examples.spring.business.playerSettings.PlayerLogic;
 import org.evedraf.examples.spring.model.Player;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
-import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-import javax.validation.Valid;
 import java.util.ArrayList;
 
 @Controller

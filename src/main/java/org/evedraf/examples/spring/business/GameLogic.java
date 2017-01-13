@@ -1,5 +1,6 @@
 package org.evedraf.examples.spring.business;
 
+import org.evedraf.examples.spring.model.Player;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -10,6 +11,8 @@ import java.util.List;
  */
 @Component
 public class GameLogic {
+
+    private List<Player> ingamePlayers = new ArrayList<>();
 
     private List<Position> positions = new ArrayList<>();
 
@@ -39,5 +42,16 @@ public class GameLogic {
 
     public void addPosition2(Position position){
         positions2.add(position);
+    }
+
+
+
+
+    public List<Player> getIngamePlayers() {
+        return ingamePlayers;
+    }
+
+    public void setIngamePlayers(List<Player> ingamePlayers) {
+        this.ingamePlayers = ingamePlayers;
     }
 }

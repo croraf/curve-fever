@@ -21,22 +21,22 @@
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 	    <link rel="stylesheet" type="text/css" href="static/style1.css" />
-
+	    <link rel="stylesheet" type="text/css" href="static/containerWithList.css" />
+        <link rel="stylesheet" type="text/css" href="static/battleScreen/battleScreen.css" />
 </head>
 
 <body tabindex="1" id="body">
 
-        <link rel="stylesheet" type="text/css" href="static/battleScreen/battleScreen.css" />
 		<div id = "container">
 
 			<div id = "playersListCollumn">
 				
-				<h5 class="center-align">All players</h5>
+				<h5 class="center-align">In game</h5>
 
 				<div id = "playersList" class="glowingShaddow center-align collection scrollbar-style-2">
 				</div>
 
-			    <a href="services/pregame">Pick another player</a>
+			    <a href="services/pregame">Leave like chicken</a>
 			</div>
 
 			<div id = "boardCollumn">

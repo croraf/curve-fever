@@ -1,4 +1,4 @@
-package org.evedraf.examples.spring.business;
+package org.evedraf.examples.spring.business.playerSettings;
 
 import org.evedraf.examples.spring.dao.PlayerDao;
 import org.evedraf.examples.spring.model.Player;
