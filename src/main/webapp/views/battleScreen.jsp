@@ -36,14 +36,14 @@
 				<div id = "playersList" class="glowingShaddow center-align collection scrollbar-style-2">
 				</div>
 
-			    <a href="services/playersForm">Pick another player</a>
+			    <a href="services/pregame">Pick another player</a>
 			</div>
 
 			<div id = "boardCollumn">
 				<canvas id="board" width="600" height="520" class="glowingShaddow"></canvas>
 
-		        <div id = "start">
-		            START/STOP
+		        <div id = "startStop">
+		            START
 		        </div>
 
 				<div id = "mute">
@@ -83,5 +83,6 @@
 
 	    <script type="text/javascript" src="static/battleScreen/battleScreen.js"></script>
 	    <script type="text/javascript" src="static/battleScreen/battleScreenBoard.js"></script>
+	    <script type="text/javascript" src="static/battleScreen/startButton.js"></script>
 </body>
 </html>

@@ -22,7 +22,7 @@
     <p> Points: ${player.points} </p>
     <p> Coins: ${player.coins} </p>
 
-    <p><a href="services/playersForm">Pick another player</a></p>
+    <p><a href="services/pregame">Pick another player</a></p>
     <p><a href="services/players">Go to battlefield</a></p>
 </body>
 </html>

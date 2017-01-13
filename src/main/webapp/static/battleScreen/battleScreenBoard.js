@@ -1,16 +1,17 @@
 "use strict";
 
-$(function() {
+var boardModule = (function() {
+    var module = {};
 
     var canvas=document.getElementById("board");
 
-    canvas.onclick = function(event) {
+ /*   canvas.onclick = function(event) {
 
         var boardAudio=document.getElementById("boardAudio");
         boardAudio.volume = 0.4
         //TODO temporary disable narration
         boardAudio.play();
-    };
+    };*/
 
     var ctx = canvas.getContext("2d");
     ctx.strokeStyle="#FFFFFF";
@@ -25,50 +26,37 @@ $(function() {
         ctx.stroke();
     };
 
-    //start functionality
-    var start = $("#start");
-    var started = false;
-    start.click( function (event) {
 
-        if (started){
-
-                started = false;
-        } else {
-
-                started = true;
-                drawCircle();
-
-        }
-
-    });
 
 
     var currentCoordX = 5;
     var currentCoordY = 5;
     var direction = Math.PI/3;
     var speed = 3.6;
+    var started = false;
 
     //main drawing loop
     function drawCircle(){
 
-        ctx.beginPath();
-        ctx.arc(currentCoordX, currentCoordY, 5, 0, 2*Math.PI);
-        ctx.stroke();
+        if (started === true){
 
-        sendPositionToServer(currentCoordX, currentCoordY);
+            ctx.beginPath();
+            ctx.arc(currentCoordX, currentCoordY, 5, 0, 2*Math.PI);
+            ctx.stroke();
 
-        if (steerDirection === "left"){
-            direction = direction - Math.PI/24;
-        } else if (steerDirection === "right"){
-            direction = direction + Math.PI/24;
-        }
+            sendPositionToServer(currentCoordX, currentCoordY);
 
-        currentCoordX = (currentCoordX + speed*Math.cos(direction)) % canvas.width;
-        if (currentCoordX < 0) { currentCoordX += canvas.width};
-        currentCoordY = (currentCoordY + speed*Math.sin(direction)) % canvas.height;
-        if (currentCoordY < 0) { currentCoordY += canvas.height};
+            if (steerDirection === "left"){
+                direction = direction - Math.PI/24;
+            } else if (steerDirection === "right"){
+                direction = direction + Math.PI/24;
+            }
 
-        if (started === true) {
+            currentCoordX = (currentCoordX + speed*Math.cos(direction)) % canvas.width;
+            if (currentCoordX < 0) { currentCoordX += canvas.width};
+            currentCoordY = (currentCoordY + speed*Math.sin(direction)) % canvas.height;
+            if (currentCoordY < 0) { currentCoordY += canvas.height};
+
 
             setTimeout(drawCircle, 55);
         }
@@ -132,4 +120,12 @@ $(function() {
         }
     }
 
-});
+
+    module.startStop = function(flag){
+        started = flag;
+        if(started === true){
+            drawCircle();
+        }
+    };
+    return module;
+})();

@@ -28,13 +28,13 @@
         <div class = "row">
             <div class = "col s4 offset-s4">
 
-                <form action="services/playersForm" method="post" id="pickPlayerForm">
+                <form action="services/pregame" method="post" id="loginScreen">
                             <p>
                                 Name: <input type="text" name="name" />
                             </p>
                 </form>
 
-                <button type="submit" form="pickPlayerForm" class="waves-effect waves-light btn">submit</button>
+                <button type="submit" form="loginScreen" class="waves-effect waves-light btn">submit</button>
 
             </div>
         </div>
@@ -49,7 +49,7 @@
 
 
     <%--
-    <form:form action="/services/playersForm" method="post"
+    <form:form action="/services/pregame" method="post"
                modelAttribute = "player1">
         <p>
             Name: <form:input type="text" path="name" /> <form:errors path="name" cssClass="error"/>
