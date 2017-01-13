@@ -16,7 +16,7 @@ import java.util.List;
  */
 @Controller
 @RequestMapping("/posUpdate")
-public class PlayerUpdate {
+public class GameUpdateController {
 
     @Autowired
     private GameLogic gameLogic;

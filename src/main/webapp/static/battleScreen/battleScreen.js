@@ -23,7 +23,7 @@ $(function() {
 
 
     $.get(
-        "services/players/all",
+        "services/players",
         undefined,
         function(allPlayers){
 

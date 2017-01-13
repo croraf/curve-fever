@@ -22,7 +22,22 @@ public class GameLogic {
     }
 
     public void addPosition(Position position){
-
         positions.add(position);
+    }
+
+
+
+    private List<Position> positions2 = new ArrayList<>();
+
+    public List<Position> getPositions2() {
+        return positions2;
+    }
+
+    public void setPositions2(List<Position> positions2) {
+        this.positions2 = positions2;
+    }
+
+    public void addPosition2(Position position){
+        positions2.add(position);
     }
 }

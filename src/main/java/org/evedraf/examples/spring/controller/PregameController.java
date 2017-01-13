@@ -1,5 +1,6 @@
 package org.evedraf.examples.spring.controller;
 
+import org.evedraf.examples.spring.business.GameLogic;
 import org.evedraf.examples.spring.business.PlayerLogic;
 import org.evedraf.examples.spring.model.Message;
 import org.evedraf.examples.spring.model.Player;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
+import java.util.ArrayList;
 
 @Controller
 @RequestMapping ("pregame")
@@ -20,20 +22,33 @@ public class PregameController {
 
     @Autowired
     private PlayerLogic playerLogic;
+    @Autowired
+    private GameLogic gameLogic;
 
     @GetMapping
     public String getLoginScreen(Model model){
 
-        model.addAttribute("player", new Player());
+
         return "loginScreen";
     }
 
     @PostMapping
-    public String playerPosted(@RequestParam("name") String playerName){
+    public String playerPosted(@RequestParam("name") String playerName, Model model){
+
 
         Player player = playerLogic.increasePlayerCoins(playerName);
+        model.addAttribute("player", player);
 
         return "loginSuccess";
+    }
+
+    @GetMapping ("enter")
+    public String getBattlefield(Model model){
+
+        //restart positions
+        gameLogic.setPositions(new ArrayList<>());
+
+        return "battleScreen";
     }
 
 /*    @PostMapping (value = "/a")

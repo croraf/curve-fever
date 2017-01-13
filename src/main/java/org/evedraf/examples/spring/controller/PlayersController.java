@@ -20,27 +20,12 @@ import java.util.List;
 
 @Controller
 @RequestMapping ("players")
-public class PlayerController {
+public class PlayersController {
 
     @Autowired
     private PlayerLogic playerLogic;
-    @Autowired
-    private GameLogic gameLogic;
-
 
     @GetMapping
-    public String getPlayersJSP(Model model){
-
-        //not needed when migrated to ajax instead of jsp
-        /*model.addAttribute("players", playerLogic.getPlayers());*/
-
-        //restart positions
-        gameLogic.setPositions(new ArrayList<>());
-
-        return "battleScreen";
-    }
-
-    @GetMapping ("/all")
     @ResponseBody
     public List<Player> getPlayers (){
         return playerLogic.getPlayers();
