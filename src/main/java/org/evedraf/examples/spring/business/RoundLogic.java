@@ -10,7 +10,7 @@ import java.util.List;
  * Created by Korisnik on 12.1.2017..
  */
 @Component
-public class GameLogic {
+public class RoundLogic {
 
     private List<Player> ingamePlayers = new ArrayList<>();
 
@@ -53,5 +53,31 @@ public class GameLogic {
 
     public void setIngamePlayers(List<Player> ingamePlayers) {
         this.ingamePlayers = ingamePlayers;
+    }
+
+    public Player getIngamePlayer(String name){
+        for (Player p : ingamePlayers){
+            if (p.getName() == name) {
+                return p;
+            }
+        }
+
+        return null;
+    }
+
+    public void addIngamePlayer(Player p){
+        ingamePlayers.add(p);
+    }
+
+    public boolean removeIngamePlayer(Player player){
+        for (int i = 0; i < ingamePlayers.size(); i++){
+            Player p = ingamePlayers.get(i);
+            if (p.getId() == player.getId()) {
+                ingamePlayers.remove(i);
+                return true;
+            }
+        }
+
+        return false;
     }
 }

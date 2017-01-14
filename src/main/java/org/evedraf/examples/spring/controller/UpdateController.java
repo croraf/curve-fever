@@ -1,14 +1,12 @@
 package org.evedraf.examples.spring.controller;
 
-import org.evedraf.examples.spring.business.GameLogic;
+import org.evedraf.examples.spring.business.RoundLogic;
 import org.evedraf.examples.spring.business.Position;
 import org.evedraf.examples.spring.business.UpdateMessageIn;
+import org.evedraf.examples.spring.model.Player;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -16,34 +14,34 @@ import java.util.List;
  * Created by Korisnik on 12.1.2017..
  */
 @Controller
-@RequestMapping("/posUpdate")
+@RequestMapping("/roundUpdate")
 public class UpdateController {
 
     @Autowired
-    private GameLogic gameLogic;
+    private RoundLogic roundLogic;
 
 
-    @PostMapping
+    @PostMapping ("/positions")
     @ResponseBody
     public Position updatePositions(@RequestBody UpdateMessageIn updateMessageIn){
 
         if (updateMessageIn.getPlayerId() == 0) {
-            gameLogic.addPosition(updateMessageIn.getPosition());
+            roundLogic.addPosition(updateMessageIn.getPosition());
 
-            int size = gameLogic.getPositions2().size();
+            int size = roundLogic.getPositions2().size();
             if (size > 0){
-                return gameLogic.getPositions2().get(size-1);
+                return roundLogic.getPositions2().get(size-1);
             } else {
                 return new Position();
             }
 
         }
         else {
-            gameLogic.addPosition2(updateMessageIn.getPosition());
+            roundLogic.addPosition2(updateMessageIn.getPosition());
 
-            int size = gameLogic.getPositions().size();
+            int size = roundLogic.getPositions().size();
             if (size > 0){
-                return gameLogic.getPositions().get(size-1);
+                return roundLogic.getPositions().get(size-1);
             } else {
                 return new Position();
             }
@@ -52,8 +50,14 @@ public class UpdateController {
 
 
 
-        //return gameLogic.getPositions();
+        //return roundLogic.getPositions();
     }
 
+    @GetMapping("/players")
+    @ResponseBody
+    public List<Player> updatePositions() {
+
+        return roundLogic.getIngamePlayers();
+    }
 
 }

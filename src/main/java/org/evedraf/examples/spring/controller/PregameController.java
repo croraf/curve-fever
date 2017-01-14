@@ -1,6 +1,5 @@
 package org.evedraf.examples.spring.controller;
 
-import org.evedraf.examples.spring.business.GameLogic;
 import org.evedraf.examples.spring.business.playerSettings.PlayerLogic;
 import org.evedraf.examples.spring.model.Player;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,20 +7,16 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-
 @Controller
 @RequestMapping ("pregame")
 public class PregameController {
 
     @Autowired
     private PlayerLogic playerLogic;
-    @Autowired
-    private GameLogic gameLogic;
+
 
     @GetMapping
     public String getLoginScreen(Model model){
-
 
         return "loginScreen";
     }
@@ -34,18 +29,6 @@ public class PregameController {
         model.addAttribute("player", player);
 
         return "loginSuccess";
-    }
-
-    @GetMapping ("enter/{id}")
-    public String getBattlefield(@PathVariable("id") int id, Model model){
-
-        //restart positions
-        gameLogic.setPositions(new ArrayList<>());
-
-        //model.addAttribute("player", playerLogic.getPlayerById(id));
-        model.addAttribute("id", id);
-
-        return "battleScreen";
     }
 
 /*    @PostMapping (value = "/a")

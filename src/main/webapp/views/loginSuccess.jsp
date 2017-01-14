@@ -7,7 +7,7 @@
 <head>
     <base href="${pageContext.request.contextPath}/" />
 
-    <title>Player entered</title>
+    <title>Login Success</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
     <!--Import Google Icon Font-->
@@ -44,7 +44,7 @@
             <p> Coins: ${player.coins} </p>
 
             <p><a href="services/pregame">Pick another player</a></p>
-            <p><a href="services/pregame/enter/${player.id}">Go to battlefield</a></p>
+            <p><a href="services/round/enter/${player.id}">Go to battlefield</a></p>
         </div>
     </div>
 

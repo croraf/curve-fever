@@ -78,7 +78,7 @@ var boardModule = (function() {
 
         $.ajax({
             method: "POST",
-            url: "services/posUpdate",
+            url: "services/roundUpdate/positions",
             dataType: "json",
             contentType: "application/json; charset=UTF-8",
             data: JSON.stringify(posUpd),

@@ -22,7 +22,7 @@
 
 	    <link rel="stylesheet" type="text/css" href="static/style1.css" />
 	    <link rel="stylesheet" type="text/css" href="static/containerWithList.css" />
-        <link rel="stylesheet" type="text/css" href="static/battleScreen/battleScreen.css" />
+        <link rel="stylesheet" type="text/css" href="static/roundScreen/roundScreen.css" />
 </head>
 
 <body tabindex="1" id="body">
@@ -36,7 +36,7 @@
 				<div id = "playersList" class="glowingShaddow center-align collection scrollbar-style-2">
 				</div>
 
-			    <a href="services/pregame">Leave like chicken</a>
+			    <a href="services/round/exit/${player.id}">Leave like chicken</a>
 			</div>
 
 			<div id = "boardCollumn">
@@ -52,7 +52,7 @@
 
 				<div id = "positionData"></div>
 
-                <div id = "currentPlayer">${id}</div>
+                <div id = "currentPlayer">${player.id}</div>
 			</div>
 
 		</div>
@@ -61,20 +61,13 @@
 
 
 		<audio id= "backgroundAudio" loop>
-<<<<<<< HEAD
 	        <source src="static/battleScreen/Virgo_Rosa.ogg" type="audio/ogg">
-=======
-	        <source src="/static/battleScreen/Virgo_Rosa.ogg" type="audio/ogg" />
->>>>>>> e584fb4... Eclipse merge
 	        Your browser does not support the audio element.
 	    </audio>
 
 		<audio id= "boardAudio">
-<<<<<<< HEAD
-	        <source src="static/battleScreen/soundOnBoardClick.ogg" type="audio/ogg">
-=======
-	        <source src="/static/battleScreen/soundOnBoardClick.ogg" type="audio/ogg" />
->>>>>>> e584fb4... Eclipse merge
+			
+	        <source src="static/roundScreen/soundOnBoardClick.ogg" type="audio/ogg">
 	        Your browser does not support the audio element.
 	    </audio>
 
@@ -82,8 +75,9 @@
 	    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 	    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
 
-	    <script type="text/javascript" src="static/battleScreen/battleScreen.js"></script>
-	    <script type="text/javascript" src="static/battleScreen/battleScreenBoard.js"></script>
-	    <script type="text/javascript" src="static/battleScreen/startButton.js"></script>
+	    <script type="text/javascript" src="static/roundScreen/roundScreen.js"></script>
+	    <script type="text/javascript" src="static/roundScreen/roundScreenBoard.js"></script>
+	    <script type="text/javascript" src="static/roundScreen/startButton.js"></script>
+	    <script type="text/javascript" src="static/roundScreen/playerList.js"></script>
 </body>
 </html>

@@ -4,6 +4,7 @@ package org.evedraf.examples.spring.dao;
 import org.evedraf.examples.spring.model.Player;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -29,10 +30,11 @@ public class PlayerDao {
 
     public Player getPlayerById(int id){
 
-        return null;
-        /*return sessionFactory.getCurrentSession().createQuery(
-                //"", Player.class
-        );*/
+        Query query = sessionFactory.getCurrentSession().createQuery(
+                "FROM Player p WHERE id = :id");
+        query.setParameter("id", id);
+
+        return (Player)query.uniqueResult();
     }
 
     public void updatePlayer(Player player){
