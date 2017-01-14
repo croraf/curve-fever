@@ -22,7 +22,12 @@ $(function() {
 
 
 
+    window.addEventListener("beforeunload", function (event) {
 
+        var confirmationMessage = "\o/";
+        event.returnValue = confirmationMessage;
+        return confirmationMessage;
+    });
 
 
 
