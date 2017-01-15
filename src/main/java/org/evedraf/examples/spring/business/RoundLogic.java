@@ -40,7 +40,7 @@ public class RoundLogic {
 
                 if (size == 0){
                     //todo return null instead of dummy empty position
-                    lastPositionsOfOthers.put(entry.getKey(), new Position()) ;
+                    lastPositionsOfOthers.put(entry.getKey(), null) ;
                 } else{
                     lastPositionsOfOthers.put(entry.getKey(), positionsOfOneOtherPlayer.get(size-1)) ;
                 }

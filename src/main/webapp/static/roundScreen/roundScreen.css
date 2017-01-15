@@ -31,9 +31,10 @@
 #positionDataBox {
     position: absolute;
     left: 240px;
-    top: 570px;
+    top: 590px;
     color: white;
     width: 100px;
+    height: 300px;
     border: 1px white solid;
     text-align: center;
 }
@@ -41,7 +42,7 @@
 #currentPlayer {
     position: absolute;
     left: 240px;
-    top: 590px;
+    top: 570px;
     color: white;
     width: 100px;
     border: 1px white solid;

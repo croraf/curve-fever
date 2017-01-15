@@ -6,16 +6,12 @@ var boardModule = (function() {
 
     var posUpd = {
         playerName : $("#currentPlayer").html(),
-        position : {
-            x : 0,
-            y : 0
-        }
+        position : null
     }
 
-    function sendPositionToServer(cordX, cordY){
+    function syncPositionsWithServer(newPosition){
 
-        posUpd.position.x = cordX;
-        posUpd.position.y = cordY;
+        posUpd.position = newPosition;
 
         $.ajax({
             method: "POST",
@@ -27,12 +23,29 @@ var boardModule = (function() {
 
                 var positionDataBox = $("#positionDataBox");
                 positionDataBox.html("");
-                responseJson.forEach(function(currentValue){
 
-                    positionDataBox.append(currentValue.x.toFixed(0) + ", " + currentValue.y.toFixed(0));
+                Object.keys(responseJson).forEach(function(userName){
 
-                    drawEnemy(currentValue);
-                })
+
+                   drawEnemy(userName, responseJson[userName]);
+
+                });
+
+                /*responseJson.forEach(function(currentValue){
+
+                    positionDataBox.append(userName + "<br/>");
+
+                    if (currentValue == null){
+                        positionDataBox.append("other player has not started! <br/>");
+                    }*/
+                    /*positionDataBox.append(currentValue.x.toFixed(0) + ", " + currentValue.y.toFixed(0));
+                    else{
+
+                    }
+
+
+
+                }*/
 
             }
         });
@@ -41,12 +54,12 @@ var boardModule = (function() {
 
 
 
-
-
     var canvas=document.getElementById("board");
 
     var ctx2 = canvas.getContext("2d");
-    function drawEnemy(enemyCoordinates){
+    function drawEnemy(userName, enemyCoordinates){
+
+        if (enemyCoordinates === null) return;
 
         ctx2.strokeStyle = "#FF0000";
         ctx2.beginPath();
@@ -109,12 +122,10 @@ var boardModule = (function() {
     var speed = 3.6;
     var started = false;
     var curveRadius = 4;
-    var refreshPeriod = 70; //55 ms as first assumption
+    var refreshPeriod = 100; //55 ms as first assumption
 
     //main drawing loop
-    function drawCircle(){
-
-        sendPositionToServer(currentCoordX, currentCoordY);
+    function mainLoop(){
 
         if (started === true){
 
@@ -133,15 +144,24 @@ var boardModule = (function() {
             currentCoordY = (currentCoordY + speed*Math.sin(direction)) % canvas.height;
             if (currentCoordY < 0) { currentCoordY += canvas.height};
 
+            syncPositionsWithServer(
+                {
+                    x : currentCoordX,
+                    y : currentCoordY
+                }
+            );
+        } else {
 
-
+            syncPositionsWithServer(null);
         }
 
-        setTimeout(drawCircle, refreshPeriod);
+
+
+        setTimeout(mainLoop, refreshPeriod);
     }
 
-    //start drawing loop
-    drawCircle();
+    //start main game loop
+    mainLoop();
 
 
 

@@ -23,9 +23,9 @@ $(function() {
 
 
 
-    $(window).bind("beforeunload",function(event) {
+    /*$(window).bind("beforeunload",function(event) {
         return "";
-    });
+    });*/
 
 
 });

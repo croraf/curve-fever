@@ -52,16 +52,17 @@ public class UpdateRoundController {
 
     @PostMapping("/update/positions")
     @ResponseBody
-    public Collection<Position> updatePositions(@RequestBody UpdateMessageFromClient updateMessageFromClient){
+    public Map<String, Position> updatePositions(@RequestBody UpdateMessageFromClient updateMessageFromClient){
 
-        roundLogic.addPosition(updateMessageFromClient.getPlayerName(), updateMessageFromClient.getPosition());
+        if (updateMessageFromClient.getPosition() != null){
+            roundLogic.addPosition(updateMessageFromClient.getPlayerName(), updateMessageFromClient.getPosition());
+        }
 
         Map<String, Position> otherPlayerPosition =
                 roundLogic.getLastPositionOfOtherPlayers(updateMessageFromClient.getPlayerName());
 
-        return otherPlayerPosition.values();
+        return otherPlayerPosition;
 
-        //TODO return all other players positions;
     }
 
     @GetMapping("/players")
