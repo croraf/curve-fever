@@ -23,7 +23,7 @@ public class MyHandler extends TextWebSocketHandler {
             UpdateMessageFromClient messageIn =
                     mapper.readValue(message.getPayload(), UpdateMessageFromClient.class);
 
-            System.out.println(messageIn);
+            System.out.println(messageIn.getPlayerName() + ": " + messageIn.getPosition().x + ", " + messageIn.getPosition().y);
         } catch (IOException e) {
 
             e.printStackTrace();

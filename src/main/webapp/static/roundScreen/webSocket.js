@@ -1,13 +1,27 @@
 
-var exampleWebSocket = new WebSocket(
-  "ws://localhost:8080/curve-fever/services/webSocket"
-  //, sub-protocol
-);
 
-exampleWebSocket.onopen = function(){
+var webSocketModule = (function(){
 
-    $("#testButton").click(function(){
+    var module = {};
 
-        exampleWebSocket.send("Here's some text that the server is urgently awaiting!");
-    });
-}
+    var myWebSocket = new WebSocket(
+      "ws://localhost:8080/curve-fever/services/webSocket"
+      //, sub-protocol
+    );
+
+    function sendPosition(posUpdMessageObject){
+
+        if(myWebSocket.readyState === myWebSocket.OPEN){
+
+           myWebSocket.send(
+               JSON.stringify(posUpdMessageObject)
+           );
+        }
+
+    }
+
+    module.sendPosition = sendPosition;
+
+    return module;
+})();
+

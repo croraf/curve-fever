@@ -13,6 +13,9 @@ var boardModule = (function() {
 
         posUpd.position = newPosition;
 
+
+        webSocketModule.sendPosition(posUpd);
+
         $.ajax({
             method: "POST",
             url: "services/round/update/positions",
@@ -150,6 +153,7 @@ var boardModule = (function() {
                     y : currentCoordY
                 }
             );
+
         } else {
 
             syncPositionsWithServer(null);
