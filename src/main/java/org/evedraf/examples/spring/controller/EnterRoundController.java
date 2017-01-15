@@ -28,10 +28,6 @@ public class EnterRoundController {
     @GetMapping("/enter/{id}")
     public String enterRound(@PathVariable("id") int id, Model model){
 
-        //restart positions
-        roundLogic.setPositions(new ArrayList<>());
-        roundLogic.setPositions2(new ArrayList<>());
-
         Player p = playerLogic.getPlayerById(id);
         roundLogic.addIngamePlayer(p);
 
@@ -42,7 +38,7 @@ public class EnterRoundController {
     }
 
     @GetMapping("/exit/{id}")
-    public String exitRound(@PathVariable("id") int id, Model model){
+    public String exitRound(@PathVariable("id") int id){
 
         Player p = playerLogic.getPlayerById(id);
         roundLogic.removeIngamePlayer(p);

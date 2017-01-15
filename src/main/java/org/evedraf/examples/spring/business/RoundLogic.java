@@ -4,7 +4,9 @@ import org.evedraf.examples.spring.model.Player;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Korisnik on 12.1.2017..
@@ -12,72 +14,76 @@ import java.util.List;
 @Component
 public class RoundLogic {
 
-    private List<Player> ingamePlayers = new ArrayList<>();
+    private Map<String, Player> ingamePlayers = new HashMap<>();
 
-    private List<Position> positions = new ArrayList<>();
 
-    public List<Position> getPositions() {
-        return positions;
-    }
+    private Map<String, List<Position>> positions = new HashMap<>();
 
-    public void setPositions(List<Position> positions) {
-        this.positions = positions;
-    }
 
-    public void addPosition(Position position){
-        positions.add(position);
+    public void addPosition(String playerName, Position position){
+
+        positions.get(playerName).add(position);
     }
 
 
+    //TODO currently return just one position other than ours
+    public Position getLastPositionOfOtherPlayers (String playerName){
 
-    private List<Position> positions2 = new ArrayList<>();
+        List<Position> lastPositions = new ArrayList<>();
 
-    public List<Position> getPositions2() {
-        return positions2;
+        for(Map.Entry <String, List<Position>> entry : positions.entrySet()){
+
+            if ( ! entry.getKey().equals(playerName)) {
+                List<Position> positionsOfOneOtherPlayer = entry.getValue();
+                int size = positionsOfOneOtherPlayer.size();
+
+                if (size == 0){
+                    return null;
+                } else{
+                    return positionsOfOneOtherPlayer.get(size-1);
+                }
+
+            }
+
+        }
+        return null;
     }
 
-    public void setPositions2(List<Position> positions2) {
-        this.positions2 = positions2;
-    }
 
-    public void addPosition2(Position position){
-        positions2.add(position);
-    }
-
-
-
-
-    public List<Player> getIngamePlayers() {
+    public Map<String, Player> getIngamePlayers() {
         return ingamePlayers;
     }
 
-    public void setIngamePlayers(List<Player> ingamePlayers) {
+    public void setIngamePlayers(Map<String, Player> ingamePlayers) {
         this.ingamePlayers = ingamePlayers;
     }
 
+    public void addIngamePlayer(Player p){
+
+        ingamePlayers.put(p.getName(), p);
+        positions.put(p.getName(), new ArrayList<>());
+    }
+
+    public Player removeIngamePlayer(Player player){
+
+
+        positions.remove(player.getName());
+
+        return ingamePlayers.remove(player.getName());
+    }
+
+
+
+    /* to remove
     public Player getIngamePlayer(String name){
         for (Player p : ingamePlayers){
-            if (p.getName() == name) {
+            if (p.getName().equals(name)) {
                 return p;
             }
         }
 
         return null;
-    }
+    }*/
 
-    public void addIngamePlayer(Player p){
-        ingamePlayers.add(p);
-    }
 
-    public boolean removeIngamePlayer(Player player){
-        for (int i = 0; i < ingamePlayers.size(); i++){
-            Player p = ingamePlayers.get(i);
-            if (p.getId() == player.getId()) {
-                ingamePlayers.remove(i);
-                return true;
-            }
-        }
-
-        return false;
-    }
 }

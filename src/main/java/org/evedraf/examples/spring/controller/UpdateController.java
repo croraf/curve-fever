@@ -2,12 +2,13 @@ package org.evedraf.examples.spring.controller;
 
 import org.evedraf.examples.spring.business.RoundLogic;
 import org.evedraf.examples.spring.business.Position;
-import org.evedraf.examples.spring.business.UpdateMessageIn;
+import org.evedraf.examples.spring.business.UpdateMessageFromClient;
 import org.evedraf.examples.spring.model.Player;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -23,41 +24,27 @@ public class UpdateController {
 
     @PostMapping ("/positions")
     @ResponseBody
-    public Position updatePositions(@RequestBody UpdateMessageIn updateMessageIn){
+    public Position getIngamePlayers(@RequestBody UpdateMessageFromClient updateMessageFromClient){
 
-        if (updateMessageIn.getPlayerId() == 0) {
-            roundLogic.addPosition(updateMessageIn.getPosition());
+        roundLogic.addPosition(updateMessageFromClient.getPlayerName(), updateMessageFromClient.getPosition());
 
-            int size = roundLogic.getPositions2().size();
-            if (size > 0){
-                return roundLogic.getPositions2().get(size-1);
-            } else {
-                return new Position();
-            }
+        Position otherPlayerPosition =
+                roundLogic.getLastPositionOfOtherPlayers(updateMessageFromClient.getPlayerName());
 
-        }
-        else {
-            roundLogic.addPosition2(updateMessageIn.getPosition());
-
-            int size = roundLogic.getPositions().size();
-            if (size > 0){
-                return roundLogic.getPositions().get(size-1);
-            } else {
-                return new Position();
-            }
-
+        if (otherPlayerPosition == null) {
+            return new Position();
+        } else {
+            return otherPlayerPosition;
         }
 
-
-
-        //return roundLogic.getPositions();
+        //TODO return all other players positions;
     }
 
     @GetMapping("/players")
     @ResponseBody
-    public List<Player> updatePositions() {
+    public Collection<Player> getIngamePlayers() {
 
-        return roundLogic.getIngamePlayers();
+        return roundLogic.getIngamePlayers().values();
     }
 
 }

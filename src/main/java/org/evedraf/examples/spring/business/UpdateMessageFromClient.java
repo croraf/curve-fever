@@ -2,11 +2,11 @@ package org.evedraf.examples.spring.business;
 
 /**
  */
-public class UpdateMessageIn {
+public class UpdateMessageFromClient {
 
     public Position position;
 
-    public int playerId;
+    public String playerName;
 
     public Position getPosition() {
         return position;
@@ -16,11 +16,11 @@ public class UpdateMessageIn {
         this.position = position;
     }
 
-    public int getPlayerId() {
-        return playerId;
+    public String getPlayerName() {
+        return playerName;
     }
 
-    public void setPlayerId(int playerId) {
-        this.playerId = playerId;
+    public void setPlayerName(String playerName) {
+        this.playerName = playerName;
     }
 }
