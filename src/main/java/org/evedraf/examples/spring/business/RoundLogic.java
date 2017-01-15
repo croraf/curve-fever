@@ -27,9 +27,9 @@ public class RoundLogic {
 
 
     //TODO currently return just one position other than ours
-    public Position getLastPositionOfOtherPlayers (String playerName){
+    public Map<String, Position> getLastPositionOfOtherPlayers (String playerName){
 
-        List<Position> lastPositions = new ArrayList<>();
+        Map<String, Position> lastPositionsOfOthers = new HashMap<>();
 
         for(Map.Entry <String, List<Position>> entry : positions.entrySet()){
 
@@ -38,15 +38,17 @@ public class RoundLogic {
                 int size = positionsOfOneOtherPlayer.size();
 
                 if (size == 0){
-                    return null;
+                    //todo return null instead of dummy empty position
+                    lastPositionsOfOthers.put(playerName, new Position()) ;
                 } else{
-                    return positionsOfOneOtherPlayer.get(size-1);
+                    lastPositionsOfOthers.put(playerName, positionsOfOneOtherPlayer.get(size-1)) ;
                 }
 
             }
 
         }
-        return null;
+
+        return lastPositionsOfOthers;
     }
 
 

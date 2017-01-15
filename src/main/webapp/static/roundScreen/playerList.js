@@ -2,7 +2,7 @@
 var refreshIngamePlayers = function(){
 
     $.get(
-            "services/roundUpdate/players",
+            "services/round/players",
             undefined,
             function(allPlayers){
 

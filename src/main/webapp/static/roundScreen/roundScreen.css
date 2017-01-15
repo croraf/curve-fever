@@ -15,7 +15,7 @@
 	background-size: 600px, 520px;
 	width: 600px;
 	height: 520px;  
-	cursor: crosshair;
+	/*cursor: crosshair;*/
 }
 
 
@@ -28,7 +28,7 @@
     cursor: pointer;
 }
 
-#positionData {
+#positionDataBox {
     position: absolute;
     left: 240px;
     top: 570px;

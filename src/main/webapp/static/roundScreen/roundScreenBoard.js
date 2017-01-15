@@ -19,13 +19,21 @@ var boardModule = (function() {
 
         $.ajax({
             method: "POST",
-            url: "services/roundUpdate/positions",
+            url: "services/update/positions",
             dataType: "json",
             contentType: "application/json; charset=UTF-8",
             data: JSON.stringify(posUpd),
             success: function(responseJson){
-                $("#positionData").html(responseJson.x.toFixed(0) + ", " + responseJson.y.toFixed(0));
-                drawEnemy(responseJson);
+
+                var positionDataBox = $("#positionDataBox");
+                positionDataBox.html("");
+                responseJson.forEach(function(currentValue){
+
+                    positionDataBox.append(currentValue.x.toFixed(0) + ", " + currentValue.y.toFixed(0));
+
+                    drawEnemy(currentValue);
+                })
+
             }
         });
     }

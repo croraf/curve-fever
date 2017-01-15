@@ -50,7 +50,7 @@
 					<i class="material-icons">volume_off</i>
 				</div>
 
-				<div id = "positionData"></div>
+				<div id = "positionDataBox"></div>
 
                 <div id = "currentPlayer">${player.name}</div>
 			</div>

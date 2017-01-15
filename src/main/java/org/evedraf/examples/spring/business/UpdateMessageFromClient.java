@@ -8,6 +8,7 @@ public class UpdateMessageFromClient {
 
     public String playerName;
 
+
     public Position getPosition() {
         return position;
     }

@@ -1,5 +1,6 @@
 //some js studies
 
+
 /*   canvas.onclick = function(event) {
 
         var boardAudio=document.getElementById("boardAudio");
