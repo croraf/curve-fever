@@ -60,7 +60,8 @@ public class MyAppInitializer extends AbstractAnnotationConfigDispatcherServletI
                 BusinessConfig.class,
                 DaoConfigDevelopment.class,
                 DaoConfigProduction.class,
-                SecurityConfig.class
+                SecurityConfig.class,
+                WebSocketConfig.class
         };
     }
 

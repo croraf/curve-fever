@@ -78,5 +78,7 @@
 	    <script type="text/javascript" src="static/roundScreen/roundScreenBoard.js"></script>
 	    <script type="text/javascript" src="static/roundScreen/startButton.js"></script>
 	    <script type="text/javascript" src="static/roundScreen/playerList.js"></script>
+
+	    <script type="text/javascript" src="static/roundScreen/webSocket.js"></script>
 </body>
 </html>
