@@ -101,6 +101,7 @@ var boardModule = (function() {
 
 
     var ctx = canvas.getContext("2d");
+    ctx.strokeStyle = "#FFFFFF";
 
     var currentCoordX = 5;
     var currentCoordY = 5;
@@ -108,7 +109,7 @@ var boardModule = (function() {
     var speed = 3.6;
     var started = false;
     var curveRadius = 4;
-    var refreshPeriod = 155; //55 ms as first assumption
+    var refreshPeriod = 70; //55 ms as first assumption
 
     //main drawing loop
     function drawCircle(){
