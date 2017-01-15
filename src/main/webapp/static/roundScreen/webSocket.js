@@ -6,5 +6,8 @@ var exampleWebSocket = new WebSocket(
 
 exampleWebSocket.onopen = function(){
 
-    exampleWebSocket.send("Here's some text that the server is urgently awaiting!");
+    $("#testButton").click(function(){
+
+        exampleWebSocket.send("Here's some text that the server is urgently awaiting!");
+    });
 }
