@@ -14,7 +14,6 @@ var boardModule = (function() {
     };*/
 
     var ctx = canvas.getContext("2d");
-    ctx.strokeStyle="#FFFFFF";
 
     canvas.onclick = function(event){
 
@@ -40,7 +39,6 @@ var boardModule = (function() {
 
         if (started === true){
 
-            ctx2.strokeStyle = "#FFFFFF";
             ctx.beginPath();
             ctx.arc(currentCoordX, currentCoordY, 5, 0, 2*Math.PI);
             ctx.stroke();
@@ -94,9 +92,10 @@ var boardModule = (function() {
 
         ctx2.strokeStyle = "#FF0000";
         ctx2.beginPath();
-
-        ctx2.arc(enemyCoordinates.x, enemyCoordinates.y, 5, 0, 2*Math.PI);
+        ctx2.arc(enemyCoordinates.x, enemyCoordinates.y, 4, 0, 2*Math.PI);
         ctx2.stroke();
+        ctx2.strokeStyle = "#FFFFFF";
+
     }
 
 

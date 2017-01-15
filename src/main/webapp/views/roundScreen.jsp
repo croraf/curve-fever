@@ -52,7 +52,7 @@
 
 				<div id = "positionData"></div>
 
-                <div id = "currentPlayer">${player.id}</div>
+                <div id = "currentPlayer">${player.name}</div>
 			</div>
 
 		</div>
@@ -65,11 +65,10 @@
 	        Your browser does not support the audio element.
 	    </audio>
 
-		<audio id= "boardAudio">
-			
+		 <%-- <audio id= "boardAudio">
 	        <source src="static/roundScreen/soundOnBoardClick.ogg" type="audio/ogg">
 	        Your browser does not support the audio element.
-	    </audio>
+	    </audio> --%>
 
 	    <!--Import jQuery before materialize.js-->
 	    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>

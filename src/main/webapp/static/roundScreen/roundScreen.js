@@ -22,16 +22,11 @@ $(function() {
 
 
 
-    window.addEventListener("beforeunload", function (event) {
 
-        var confirmationMessage = "\o/";
-        event.returnValue = confirmationMessage;
-        return confirmationMessage;
+    $(window).bind("beforeunload",function(event) {
+        return "";
     });
 
-
-
-    /*<a href="#!" class="collection-item">${player.name} :  ${player.points} </a>*/
 
 });
 
