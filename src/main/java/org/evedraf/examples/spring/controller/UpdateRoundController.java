@@ -50,7 +50,7 @@ public class UpdateRoundController {
 
 
 
-    @PostMapping("/positions")
+    @PostMapping("/update/positions")
     @ResponseBody
     public Collection<Position> updatePositions(@RequestBody UpdateMessageFromClient updateMessageFromClient){
 

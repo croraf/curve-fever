@@ -19,7 +19,7 @@ var boardModule = (function() {
 
         $.ajax({
             method: "POST",
-            url: "services/update/positions",
+            url: "services/round/update/positions",
             dataType: "json",
             contentType: "application/json; charset=UTF-8",
             data: JSON.stringify(posUpd),
@@ -108,6 +108,7 @@ var boardModule = (function() {
     var speed = 3.6;
     var started = false;
     var curveRadius = 4;
+    var refreshPeriod = 155; //55 ms as first assumption
 
     //main drawing loop
     function drawCircle(){
@@ -135,7 +136,7 @@ var boardModule = (function() {
 
         }
 
-        setTimeout(drawCircle, 55);
+        setTimeout(drawCircle, refreshPeriod);
     }
 
     //start drawing loop

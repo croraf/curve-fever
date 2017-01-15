@@ -31,6 +31,7 @@ public class RoundLogic {
 
         Map<String, Position> lastPositionsOfOthers = new HashMap<>();
 
+
         for(Map.Entry <String, List<Position>> entry : positions.entrySet()){
 
             if ( ! entry.getKey().equals(playerName)) {
@@ -39,9 +40,9 @@ public class RoundLogic {
 
                 if (size == 0){
                     //todo return null instead of dummy empty position
-                    lastPositionsOfOthers.put(playerName, new Position()) ;
+                    lastPositionsOfOthers.put(entry.getKey(), new Position()) ;
                 } else{
-                    lastPositionsOfOthers.put(playerName, positionsOfOneOtherPlayer.get(size-1)) ;
+                    lastPositionsOfOthers.put(entry.getKey(), positionsOfOneOtherPlayer.get(size-1)) ;
                 }
 
             }
