@@ -16,7 +16,7 @@ var webSocketModule = (function(){
            myWebSocket.send(
                JSON.stringify(posUpdMessageObject)
            );
-        }
+        };
 
     }
 
