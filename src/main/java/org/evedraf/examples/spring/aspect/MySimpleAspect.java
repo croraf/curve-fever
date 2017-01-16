@@ -13,10 +13,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class MySimpleAspect {
 
-    @Before("execution(public * org.evedraf.examples.spring.business.playerSettings.PlayerLogic.*(..))")
+    /*@Before("execution(public * org.evedraf.examples.spring.business.playerSettings.PlayerLogic.*(..))")
     public void loggingAspect(JoinPoint joinPoint){
 
 
         System.out.println("Logging Aspect: PlayerLogic's method " + joinPoint.getSignature().toString() + " started.");
-    }
+    }*/
 }
