@@ -5,7 +5,7 @@ var webSocketModule = (function(){
     var module = {};
 
     var myWebSocket = new WebSocket(
-      "ws://localhost:8080/curve-fever/services/webSocket"
+      window.document.baseURI.replace(location.protocol, "ws:") + "services/webSocket"
       //, sub-protocol
     );
 
