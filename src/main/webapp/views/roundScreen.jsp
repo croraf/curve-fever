@@ -53,8 +53,6 @@
 				<div id = "currentPlayer">${player.name}</div>
 
 				<div id = "positionDataBox"></div>
-
-				<button type="button" id="testButton">Send WebSocket</div>
 			</div>
 
 		</div>
