@@ -28,7 +28,7 @@ public class MyHandler extends TextWebSocketHandler {
     private RoundLogic roundLogic;
 
     @Override
-    public void afterConnectionEstablished(WebSocketSession session) throws Exception {
+    public synchronized void afterConnectionEstablished(WebSocketSession session) throws Exception {
 
         currentSessions.add(session);
     }
@@ -57,7 +57,7 @@ public class MyHandler extends TextWebSocketHandler {
 
     }
 
-    private void logPositions(UpdateMessageFromClient messageIn) {
+    private synchronized void logPositions(UpdateMessageFromClient messageIn) {
 
         if (messageIn.getPosition() == null){
             System.out.println(messageIn.getPlayerName() + ": null");
@@ -81,7 +81,7 @@ public class MyHandler extends TextWebSocketHandler {
     }
 
     @Override
-    public void afterConnectionClosed(WebSocketSession session, CloseStatus status) throws Exception {
+    public synchronized void afterConnectionClosed(WebSocketSession session, CloseStatus status) throws Exception {
 
         currentSessions.remove(session);
         System.out.println("WebSocket connection closed! - " + status);

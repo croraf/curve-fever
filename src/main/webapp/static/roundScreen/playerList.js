@@ -21,7 +21,7 @@ var refreshIngamePlayers = function(){
             "json"
     );
 
-    setTimeout(refreshIngamePlayers, 1000);
+    setTimeout(refreshIngamePlayers, 10000);
 }
 
 refreshIngamePlayers();
