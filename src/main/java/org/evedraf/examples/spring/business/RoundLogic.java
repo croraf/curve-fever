@@ -20,14 +20,14 @@ public class RoundLogic {
     private Map<String, List<Position>> positions = new HashMap<>();
 
 
-    public void addPosition(String playerName, Position position){
+    public synchronized void addPosition(String playerName, Position position){
 
         positions.get(playerName).add(position);
     }
 
 
     //TODO currently return just one position other than ours
-    public Map<String, Position> getLastPositionOfOtherPlayers (){
+    public synchronized Map<String, Position> getLastPositionOfOtherPlayers (){
 
         Map<String, Position> lastPositionsOfOthers = new HashMap<>();
 
@@ -49,21 +49,21 @@ public class RoundLogic {
     }
 
 
-    public Map<String, Player> getIngamePlayers() {
+    public synchronized Map<String, Player> getIngamePlayers() {
         return ingamePlayers;
     }
 
-    public void setIngamePlayers(Map<String, Player> ingamePlayers) {
+    public synchronized void setIngamePlayers(Map<String, Player> ingamePlayers) {
         this.ingamePlayers = ingamePlayers;
     }
 
-    public void addIngamePlayer(Player p){
+    public synchronized void addIngamePlayer(Player p){
 
         ingamePlayers.put(p.getName(), p);
         positions.put(p.getName(), new ArrayList<>());
     }
 
-    public Player removeIngamePlayer(Player player){
+    public synchronized Player removeIngamePlayer(Player player){
 
 
         positions.remove(player.getName());

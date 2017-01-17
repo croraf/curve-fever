@@ -21,7 +21,6 @@ import java.util.Map;
  */
 public class MyHandler extends TextWebSocketHandler {
 
-    private final ObjectMapper mapper = new ObjectMapper();
 
     private final List<WebSocketSession> currentSessions = new ArrayList<>();
 
@@ -36,6 +35,8 @@ public class MyHandler extends TextWebSocketHandler {
 
     @Override
     public void handleTextMessage(WebSocketSession session, TextMessage message) {
+
+        ObjectMapper mapper = new ObjectMapper();
 
         try {
             UpdateMessageFromClient messageIn =
@@ -66,6 +67,9 @@ public class MyHandler extends TextWebSocketHandler {
     }
 
     private void broadcastPositions() throws IOException{
+
+        //hack to check concurrency issues
+        ObjectMapper mapper = new ObjectMapper();
 
         Map<String, Position> otherPlayerPosition = roundLogic.getLastPositionOfOtherPlayers();
 
