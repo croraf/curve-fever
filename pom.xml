@@ -235,7 +235,7 @@
                         <version>2.6</version>
                         <configuration>
                             <outputDirectory>
-                                C:\Users\Korisnik\Desktop\PROGRAMIRANJE\apache-tomcat-8.0.36\webapps/curve-fever
+                                C:\Users\Korisnik\Desktop\PROGRAMIRANJE\apache-tomcat-8.5.9\webapps/curve-fever
                             </outputDirectory>
                             <resources>
                                 <resource>

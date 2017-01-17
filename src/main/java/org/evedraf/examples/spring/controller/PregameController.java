@@ -1,6 +1,6 @@
 package org.evedraf.examples.spring.controller;
 
-import org.evedraf.examples.spring.business.playerSettings.PlayerLogic;
+import org.evedraf.examples.spring.dao.PlayerDao;
 import org.evedraf.examples.spring.model.Player;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 public class PregameController {
 
     @Autowired
-    private PlayerLogic playerLogic;
+    private PlayerDao playerDao;
 
 
     @GetMapping
@@ -25,7 +25,7 @@ public class PregameController {
     public String playerPosted(@RequestParam("name") String playerName, Model model){
 
 
-        Player player = playerLogic.increasePlayerCoins(playerName);
+        Player player = playerDao.increasePlayerCoins(playerName);
         model.addAttribute("player", player);
 
         return "loginSuccess";
@@ -42,7 +42,7 @@ public class PregameController {
             return "loginScreen";
         }
 
-        playerLogic.updatePlayerById(player);
+        playerDao.updatePlayerById(player);
 
         return "playerUpdateSuccess";
     }*/

@@ -110,7 +110,7 @@ public class MyAppInitializer extends AbstractAnnotationConfigDispatcherServletI
         ApplicationContext ctx =
                 new AnnotationConfigApplicationContext("org/evedraf/examples/spring/config");
 
-        PlayerLogic p = ctx.getBean(PlayerLogic.class);
-        p.simpleLogicMethod(2);
+        PlayerDao p = ctx.getBean(PlayerDao.class);
+        p.method(2);
     }*/
 }

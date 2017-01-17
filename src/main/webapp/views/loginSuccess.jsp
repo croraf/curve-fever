@@ -44,7 +44,7 @@
             <p> Coins: ${player.coins} </p>
 
             <p><a href="services/pregame">Pick another player</a></p>
-            <p><a href="services/round/enter/${player.id}">Go to battlefield</a></p>
+            <p><a href="services/round/enter/${player.name}">Go to battlefield</a></p>
         </div>
     </div>
 

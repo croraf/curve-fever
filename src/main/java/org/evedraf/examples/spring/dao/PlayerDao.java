@@ -28,6 +28,12 @@ public class PlayerDao {
         return players;
     }
 
+    public Player getPlayerByPrimaryKey(String name){
+
+        Session session = sessionFactory.getCurrentSession();
+        return session.get(Player.class, name);
+    }
+
     public Player getPlayerById(int id){
 
         Query query = sessionFactory.getCurrentSession().createQuery(
@@ -61,7 +67,5 @@ public class PlayerDao {
 
         player.setCoins(player.getCoins() + 1);
         return player;
-
-
     }
 }

@@ -36,7 +36,7 @@
 				<div id = "playersList" class="glowingShaddow center-align collection scrollbar-style-2">
 				</div>
 
-			    <a href="services/round/exit/${player.id}">Leave</a>
+			    <a href="services/round/exit/${player.name}">Leave</a>
 			</div>
 
 			<div id = "boardCollumn">

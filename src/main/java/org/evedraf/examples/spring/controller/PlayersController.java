@@ -1,6 +1,6 @@
 package org.evedraf.examples.spring.controller;
 
-import org.evedraf.examples.spring.business.playerSettings.PlayerLogic;
+import org.evedraf.examples.spring.dao.PlayerDao;
 import org.evedraf.examples.spring.model.Player;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,19 +14,19 @@ import java.util.List;
 public class PlayersController {
 
     @Autowired
-    private PlayerLogic playerLogic;
+    private PlayerDao playerDao;
 
     @GetMapping
     @ResponseBody
     public List<Player> getPlayers (){
-        return playerLogic.getPlayers();
+        return playerDao.getPlayers();
     }
 
     @GetMapping(value = "{id}")
     @ResponseBody
     public Player getPlayerById(@PathVariable(name = "id") int id ){
 
-        return playerLogic.getPlayerById(id);
+        return playerDao.getPlayerById(id);
     }
 
 
