@@ -52,12 +52,8 @@ public class UpdateRoundController {
     @ResponseBody
     public Map<String, Position> updatePositions(@RequestBody UpdateMessageFromClient updateMessageFromClient){
 
-        if (updateMessageFromClient.getPosition() != null){
-            roundLogic.addPosition(updateMessageFromClient.getPlayerName(), updateMessageFromClient.getPosition());
-        }
-
         Map<String, Position> otherPlayerPosition =
-                roundLogic.getLastPositionOfOtherPlayers(updateMessageFromClient.getPlayerName());
+                roundLogic.getLastPositionOfOtherPlayers();
 
         return otherPlayerPosition;
 

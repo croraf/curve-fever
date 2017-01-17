@@ -27,24 +27,20 @@ public class RoundLogic {
 
 
     //TODO currently return just one position other than ours
-    public Map<String, Position> getLastPositionOfOtherPlayers (String playerName){
+    public Map<String, Position> getLastPositionOfOtherPlayers (){
 
         Map<String, Position> lastPositionsOfOthers = new HashMap<>();
 
-
         for(Map.Entry <String, List<Position>> entry : positions.entrySet()){
 
-            if ( ! entry.getKey().equals(playerName)) {
-                List<Position> positionsOfOneOtherPlayer = entry.getValue();
-                int size = positionsOfOneOtherPlayer.size();
+            List<Position> positionsOfOneOtherPlayer = entry.getValue();
+            int size = positionsOfOneOtherPlayer.size();
 
-                if (size == 0){
-                    //todo return null instead of dummy empty position
-                    lastPositionsOfOthers.put(entry.getKey(), null) ;
-                } else{
-                    lastPositionsOfOthers.put(entry.getKey(), positionsOfOneOtherPlayer.get(size-1)) ;
-                }
-
+            if (size == 0){
+                //todo check how null behaves, maybe remove completely
+                lastPositionsOfOthers.put(entry.getKey(), null) ;
+            } else{
+                lastPositionsOfOthers.put(entry.getKey(), positionsOfOneOtherPlayer.get(size-1)) ;
             }
 
         }

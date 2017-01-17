@@ -9,6 +9,8 @@ var boardModule = (function() {
         position : null
     }
 
+    /* old HTTP request response syncing with server, prior to WebSocket way
+
     function syncPositionsWithServer(newPosition){
 
         posUpd.position = newPosition;
@@ -27,50 +29,15 @@ var boardModule = (function() {
                 var positionDataBox = $("#positionDataBox");
                 positionDataBox.html("");
 
-                Object.keys(responseJson).forEach(function(userName){
-
-
-                   drawEnemy(userName, responseJson[userName]);
-
-                });
-
-                /*responseJson.forEach(function(currentValue){
-
-                    positionDataBox.append(userName + "<br/>");
-
-                    if (currentValue == null){
-                        positionDataBox.append("other player has not started! <br/>");
-                    }*/
-                    /*positionDataBox.append(currentValue.x.toFixed(0) + ", " + currentValue.y.toFixed(0));
-                    else{
-
-                    }
-
-
-
-                }*/
-
             }
         });
-    }
+    }*/
 
 
 
 
-    var canvas=document.getElementById("board");
 
-    var ctx2 = canvas.getContext("2d");
-    function drawEnemy(userName, enemyCoordinates){
 
-        if (enemyCoordinates === null) return;
-
-        ctx2.strokeStyle = "#FF0000";
-        ctx2.beginPath();
-        ctx2.arc(enemyCoordinates.x, enemyCoordinates.y, curveRadius, 0, 2*Math.PI);
-        ctx2.stroke();
-        ctx2.strokeStyle = "#FFFFFF";
-
-    }
 
 
     var body = document.getElementById("body");
@@ -116,6 +83,8 @@ var boardModule = (function() {
     }
 
 
+
+    var canvas=document.getElementById("board");
     var ctx = canvas.getContext("2d");
     ctx.strokeStyle = "#FFFFFF";
 
@@ -147,19 +116,9 @@ var boardModule = (function() {
             currentCoordY = (currentCoordY + speed*Math.sin(direction)) % canvas.height;
             if (currentCoordY < 0) { currentCoordY += canvas.height};
 
-            syncPositionsWithServer(
-                {
-                    x : currentCoordX,
-                    y : currentCoordY
-                }
-            );
 
-        } else {
 
-            syncPositionsWithServer(null);
         }
-
-
 
         setTimeout(mainLoop, refreshPeriod);
     }
