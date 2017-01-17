@@ -16,7 +16,7 @@ var boardModule = (function() {
         posUpd.position = newPosition;
 
 
-        webSocketModule.sendPosition(posUpd);
+
 
         $.ajax({
             method: "POST",
@@ -99,11 +99,21 @@ var boardModule = (function() {
     //main drawing loop
     function mainLoop(){
 
+
+
         if (started === true){
 
             ctx.beginPath();
             ctx.arc(currentCoordX, currentCoordY, curveRadius, 0, 2*Math.PI);
             ctx.stroke();
+
+
+            posUpd.position = {
+                                 x : currentCoordX,
+                                 y : currentCoordY
+                              };
+
+            webSocketModule.sendPosition(posUpd);
 
             if (steerDirection === "left"){
                 direction = direction - Math.PI/24;
@@ -115,8 +125,6 @@ var boardModule = (function() {
             if (currentCoordX < 0) { currentCoordX += canvas.width};
             currentCoordY = (currentCoordY + speed*Math.sin(direction)) % canvas.height;
             if (currentCoordY < 0) { currentCoordY += canvas.height};
-
-
 
         }
 

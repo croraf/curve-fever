@@ -30,7 +30,7 @@ var webSocketModule = (function(){
                 drawEnemy(userName, locationUpdates[userName]);
 
         });
-    }
+    };
 
 
     var canvas=document.getElementById("board");
@@ -40,6 +40,9 @@ var webSocketModule = (function(){
     function drawEnemy(userName, enemyCoordinates){
 
         if (enemyCoordinates === null) return;
+
+        //todo do not draw currently own player echo, because it is drawn before sync
+        if (userName === $("#currentPlayer").html()) {return;}
 
         ctx2.strokeStyle = "#FF0000";
         ctx2.beginPath();
