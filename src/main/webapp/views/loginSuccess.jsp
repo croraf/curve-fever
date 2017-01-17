@@ -20,6 +20,11 @@
     <link rel="stylesheet" type="text/css" href="static/containerWithList.css" />
     <link rel="stylesheet" type="text/css" href="static/loginSuccess/loginSuccess.css" />
 
+
+    <script>
+        var playerName = "${player.name}";
+    </script>
+
 </head>
 
 <body>
@@ -43,8 +48,18 @@
             <p> Points: ${player.points} </p>
             <p> Coins: ${player.coins} </p>
 
-            <p><a href="services/pregame">Pick another player</a></p>
-            <p><a href="services/round/enter/${player.name}">Go to battlefield</a></p>
+            <p>
+                <button type="button" id="startRound" class="waves-effect waves-light btn">
+                    Start round
+                </button>
+            </p>
+
+            <p>
+                <button type="button" id="logOut" class="waves-effect waves-light btn">
+                    Log out
+                </button>
+            </p>
+
         </div>
     </div>
 

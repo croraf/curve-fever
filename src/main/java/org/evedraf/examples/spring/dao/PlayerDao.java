@@ -7,6 +7,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.xml.bind.annotation.XmlRootElement;
 import java.util.List;
@@ -17,7 +18,7 @@ public class PlayerDao {
     @Autowired
     SessionFactory sessionFactory;
 
-
+    @Transactional
     public List<Player> getPlayers(){
 
         Session session = sessionFactory.getCurrentSession();
@@ -28,12 +29,14 @@ public class PlayerDao {
         return players;
     }
 
+    @Transactional
     public Player getPlayerByPrimaryKey(String name){
 
         Session session = sessionFactory.getCurrentSession();
         return session.get(Player.class, name);
     }
 
+    @Transactional
     public Player getPlayerById(int id){
 
         Query query = sessionFactory.getCurrentSession().createQuery(
@@ -43,6 +46,7 @@ public class PlayerDao {
         return (Player)query.uniqueResult();
     }
 
+    @Transactional
     public void updatePlayer(Player player){
 
         Player playerOld = sessionFactory.getCurrentSession().get(Player.class, player.getId());
@@ -52,6 +56,7 @@ public class PlayerDao {
         //TODO hopefully here it is commited
     }
 
+    @Transactional
     public Player increasePlayerCoins(String playerName) {
 
         Session session = sessionFactory.getCurrentSession();

@@ -46,19 +46,6 @@ public class UpdateRoundController {
         return "loginScreen";
     }
 
-
-
-    @PostMapping("/update/positions")
-    @ResponseBody
-    public Map<String, Position> updatePositions(@RequestBody UpdateMessageFromClient updateMessageFromClient){
-
-        Map<String, Position> otherPlayerPosition =
-                roundLogic.getLastPositionOfOtherPlayers();
-
-        return otherPlayerPosition;
-
-    }
-
     @GetMapping("/players")
     @ResponseBody
     public Collection<Player> getIngamePlayers() {

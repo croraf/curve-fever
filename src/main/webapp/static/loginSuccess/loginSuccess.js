@@ -17,3 +17,15 @@ $.get(
         },
         "json"
 );
+
+$("#startRound").click(function (){
+
+        window.location.href = "services/round/enter/" + playerName;
+});
+
+$("#logOut").click(function (){
+
+        window.location.href = "services/pregame";
+
+
+});

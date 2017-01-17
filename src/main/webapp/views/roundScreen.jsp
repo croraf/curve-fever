@@ -52,7 +52,7 @@
 
 				<div id = "currentPlayer">${player.name}</div>
 
-				<div id = "positionDataBox"></div>
+				<%-- <div id = "positionDataBox"></div> --%>
 			</div>
 
 		</div>

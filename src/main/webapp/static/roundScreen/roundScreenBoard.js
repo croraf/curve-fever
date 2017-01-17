@@ -9,14 +9,12 @@ var boardModule = (function() {
         position : null
     }
 
+
     /* old HTTP request response syncing with server, prior to WebSocket way
 
     function syncPositionsWithServer(newPosition){
 
         posUpd.position = newPosition;
-
-
-
 
         $.ajax({
             method: "POST",
@@ -91,10 +89,10 @@ var boardModule = (function() {
     var currentCoordX = 5;
     var currentCoordY = 5;
     var direction = Math.PI/3;
-    var speed = 3.6;
+    var speed = 3.5;
     var started = false;
     var curveRadius = 4;
-    var refreshPeriod = 2000; //55 ms as first assumption
+    var refreshPeriod = 55; //55 ms as first assumption
 
     //main drawing loop
     function mainLoop(){
