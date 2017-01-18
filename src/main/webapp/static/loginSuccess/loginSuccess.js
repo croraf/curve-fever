@@ -1,3 +1,4 @@
+"use strict";
 
 $.get(
         "services/players",
@@ -20,7 +21,7 @@ $.get(
 
 $("#startRound").click(function (){
 
-        window.location.href = "services/round/enter/" + playerName;
+        window.location.href = encodeURI("services/round/enter?name=" + playerName + "&color=" + chosenColor);
 });
 
 $("#logOut").click(function (){
@@ -28,8 +29,11 @@ $("#logOut").click(function (){
         window.location.href = "services/pregame";
 });
 
+var chosenColor = "rgb(255,255,255)";
 
-$("#dropdown1 a").click(function(){
+$("#dropdown1 span").click(function(){
 
+        chosenColor = $(this).css("background-color");
         $("#colorPicker").css("background-color", $(this).css("background-color"));
+
 });

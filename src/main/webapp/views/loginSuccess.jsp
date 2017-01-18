@@ -64,13 +64,13 @@
 
                 <!-- Dropdown Structure -->
                 <ul id='dropdown1' class='dropdown-content'>
-                    <li><a  style="background-color:white"> </a></li>
+                    <li><span  style="background-color:white"> </span></li>
                     <li class="divider"></li>
-                    <li><a  style="background-color:red"> </a></li>
+                    <li><span  style="background-color:red"> </span></li>
                     <li class="divider"></li>
-                    <li><a  style="background-color:yellow"> </a></li>
+                    <li><span  style="background-color:yellow"> </span></li>
                     <li class="divider"></li>
-                    <li><a  style="background-color:blue"> </a></li>
+                    <li><span  style="background-color:blue"> </span></li>
                 </ul>
             </p>
 

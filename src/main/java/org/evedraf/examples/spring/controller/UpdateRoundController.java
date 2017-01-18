@@ -26,8 +26,9 @@ public class UpdateRoundController {
     @Autowired
     private PlayerDao playerDao;
 
-    @GetMapping("/enter/{name}")
-    public String enterRound(@PathVariable("name") String name, Model model){
+    @GetMapping("/enter")
+    public String enterRound(
+            @RequestParam("name") String name, @RequestParam("color") String color, Model model){
 
         Player p = playerDao.getPlayerByPrimaryKey(name);
         roundLogic.addIngamePlayer(p);
@@ -37,7 +38,7 @@ public class UpdateRoundController {
         return "roundScreen";
     }
 
-    @GetMapping("/exit/{name}")
+    @GetMapping("/exit")
     public String exitRound(@PathVariable("name") String name){
 
         Player p = playerDao.getPlayerByPrimaryKey(name);
