@@ -60,17 +60,17 @@
                 </button>
 
                 <!-- Dropdown Trigger -->
-                <span id="colorPicker" class='dropdown-button btn' href='#' data-activates='dropdown1'></span>
+                <span id="colorPicker" class='dropdown-button btn' data-activates='dropdown1'></span>
 
                 <!-- Dropdown Structure -->
                 <ul id='dropdown1' class='dropdown-content'>
-                    <li><a href="#" style="background-color:white"> </a></li>
+                    <li><a  style="background-color:white"> </a></li>
                     <li class="divider"></li>
-                    <li><a href="#" style="background-color:red"> </a></li>
+                    <li><a  style="background-color:red"> </a></li>
                     <li class="divider"></li>
-                    <li><a href="#" style="background-color:yellow"> </a></li>
+                    <li><a  style="background-color:yellow"> </a></li>
                     <li class="divider"></li>
-                    <li><a href="#" style="background-color:blue"> </a></li>
+                    <li><a  style="background-color:blue"> </a></li>
                 </ul>
             </p>
 

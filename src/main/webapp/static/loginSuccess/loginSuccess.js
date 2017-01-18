@@ -26,6 +26,10 @@ $("#startRound").click(function (){
 $("#logOut").click(function (){
 
         window.location.href = "services/pregame";
+});
 
 
+$("#dropdown1 a").click(function(){
+
+        $("#colorPicker").css("background-color", $(this).css("background-color"));
 });
