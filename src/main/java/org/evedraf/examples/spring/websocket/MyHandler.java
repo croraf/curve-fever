@@ -34,7 +34,7 @@ public class MyHandler extends TextWebSocketHandler {
     }
 
     @Override
-    public void handleTextMessage(WebSocketSession session, TextMessage message) {
+    public synchronized void handleTextMessage(WebSocketSession session, TextMessage message) {
 
         ObjectMapper mapper = new ObjectMapper();
 

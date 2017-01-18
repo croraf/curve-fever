@@ -97,8 +97,6 @@ var boardModule = (function() {
     //main drawing loop
     function mainLoop(){
 
-
-
         if (started === true){
 
             ctx.beginPath();
