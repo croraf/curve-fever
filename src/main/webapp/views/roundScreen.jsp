@@ -75,13 +75,15 @@
 	    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
 
 
-        <!--Initialize webSocket first-->
+        <!--Initialize playerList then webSocket first-->
+
+	    <script type="text/javascript" src="static/roundScreen/playerList.js"></script>
 	    <script type="text/javascript" src="static/roundScreen/webSocket.js"></script>
 
 	    <script type="text/javascript" src="static/roundScreen/roundScreen.js"></script>
 	    <script type="text/javascript" src="static/roundScreen/roundScreenBoard.js"></script>
 	    <script type="text/javascript" src="static/roundScreen/startButton.js"></script>
-	    <script type="text/javascript" src="static/roundScreen/playerList.js"></script>
+
 
 </body>
 </html>

@@ -52,8 +52,8 @@ public class UpdateRoundController {
 
     @GetMapping("/players")
     @ResponseBody
-    public Collection<Player> getIngamePlayers() {
+    public Map<String, Player> getIngamePlayers() {
 
-        return roundLogic.getIngamePlayers().values();
+        return roundLogic.getIngamePlayers();
     }
 }

@@ -39,12 +39,15 @@ var webSocketModule = (function(){
 
     function drawEnemy(userName, enemyCoordinates){
 
-        if (enemyCoordinates === null) return;
+        if (enemyCoordinates === null) {
 
-        //todo do not draw currently own player echo, because it is drawn before sync
-        if (userName === $("#currentPlayer").html()) {return;}
+            console.log("coordinate su null!!!!!!")
+            return;
+        }
 
-        ctx2.strokeStyle = "#FF0000";
+
+        ctx2.strokeStyle = allPlayers[userName].color;
+        /*ctx2.strokeStyle = "#FF0000";*/
         ctx2.beginPath();
         ctx2.arc(enemyCoordinates.x, enemyCoordinates.y, curveRadius, 0, 2*Math.PI);
         ctx2.stroke();

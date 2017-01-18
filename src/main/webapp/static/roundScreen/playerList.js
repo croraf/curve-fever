@@ -1,4 +1,6 @@
 
+var allPlayers;
+
 var refreshIngamePlayers = function(){
 
     $.get(
@@ -8,9 +10,11 @@ var refreshIngamePlayers = function(){
 
             function(allPlayers){
 
+                window.allPlayers = allPlayers;
+
                 $("#playersList").html("");
 
-                allPlayers.forEach(function(player){
+                Object.values(allPlayers).forEach(function(player){
 
                     var playerElement = $("<a></a>").
                             text(player.name + ' : ' + player.coins).
