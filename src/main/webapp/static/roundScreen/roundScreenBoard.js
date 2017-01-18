@@ -92,7 +92,7 @@ var boardModule = (function() {
     var speed = 3.5;
     var started = false;
     var curveRadius = 4;
-    var refreshPeriod = 55; //55 ms as first assumption
+    var refreshPeriod = 50; //55 ms as first assumption
 
     //main drawing loop
     function mainLoop(){
