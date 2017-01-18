@@ -44,7 +44,13 @@
             <h4 class="center-align">Login success!</h4>
 
             <p> Id: ${player.id} </p>
-            <p> Name: ${player.name} </p>
+
+
+
+            <p>
+                Name: ${player.name}
+
+            </p>
             <p> Points: ${player.points} </p>
             <p> Coins: ${player.coins} </p>
 
@@ -52,6 +58,20 @@
                 <button type="button" id="startRound" class="waves-effect waves-light btn">
                     Start round
                 </button>
+
+                <!-- Dropdown Trigger -->
+                <span id="colorPicker" class='dropdown-button btn' href='#' data-activates='dropdown1'></span>
+
+                <!-- Dropdown Structure -->
+                <ul id='dropdown1' class='dropdown-content'>
+                    <li><a href="#" style="background-color:white"> </a></li>
+                    <li class="divider"></li>
+                    <li><a href="#" style="background-color:red"> </a></li>
+                    <li class="divider"></li>
+                    <li><a href="#" style="background-color:yellow"> </a></li>
+                    <li class="divider"></li>
+                    <li><a href="#" style="background-color:blue"> </a></li>
+                </ul>
             </p>
 
             <p>
