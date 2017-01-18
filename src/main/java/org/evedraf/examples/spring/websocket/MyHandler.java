@@ -1,6 +1,5 @@
 package org.evedraf.examples.spring.websocket;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.evedraf.examples.spring.business.Position;
 import org.evedraf.examples.spring.business.RoundLogic;
@@ -24,6 +23,8 @@ public class MyHandler extends TextWebSocketHandler {
 
     private final List<WebSocketSession> currentSessions = new ArrayList<>();
 
+    private final ObjectMapper mapper = new ObjectMapper();
+
     @Autowired
     private RoundLogic roundLogic;
 
@@ -36,8 +37,6 @@ public class MyHandler extends TextWebSocketHandler {
     @Override
     public synchronized void handleTextMessage(WebSocketSession session, TextMessage message) {
 
-        ObjectMapper mapper = new ObjectMapper();
-
         try {
             UpdateMessageFromClient messageIn =
                     mapper.readValue(message.getPayload(), UpdateMessageFromClient.class);
@@ -46,9 +45,9 @@ public class MyHandler extends TextWebSocketHandler {
                 roundLogic.addPosition(messageIn.getPlayerName(), messageIn.getPosition());
             }
 
-            broadcastPositions();
+            broadcastUpdate();
 
-            logPositions(messageIn);
+            /*logPositions(messageIn);*/
 
         } catch (IOException e) {
 
@@ -57,19 +56,16 @@ public class MyHandler extends TextWebSocketHandler {
 
     }
 
-    private synchronized void logPositions(UpdateMessageFromClient messageIn) {
+    /*private synchronized void logPositions(UpdateMessageFromClient messageIn) {
 
         if (messageIn.getPosition() == null){
             System.out.println(messageIn.getPlayerName() + ": null");
         } else {
             System.out.println(messageIn.getPlayerName() + ": " + messageIn.getPosition().x + ", " + messageIn.getPosition().y);
         }
-    }
+    }*/
 
-    private void broadcastPositions() throws IOException{
-
-        //hack to check concurrency issues
-        ObjectMapper mapper = new ObjectMapper();
+    private void broadcastUpdate() throws IOException{
 
         Map<String, Position> otherPlayerPosition = roundLogic.getLastPositionOfOtherPlayers();
 

@@ -9,35 +9,6 @@ var boardModule = (function() {
         position : null
     }
 
-
-    /* old HTTP request response syncing with server, prior to WebSocket way
-
-    function syncPositionsWithServer(newPosition){
-
-        posUpd.position = newPosition;
-
-        $.ajax({
-            method: "POST",
-            url: "services/round/update/positions",
-            dataType: "json",
-            contentType: "application/json; charset=UTF-8",
-            data: JSON.stringify(posUpd),
-            success: function(responseJson){
-
-                var positionDataBox = $("#positionDataBox");
-                positionDataBox.html("");
-
-            }
-        });
-    }*/
-
-
-
-
-
-
-
-
     var body = document.getElementById("body");
 
     //evaluate events in the capturing phase

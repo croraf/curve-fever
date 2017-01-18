@@ -3,25 +3,28 @@ var refreshIngamePlayers = function(){
 
     $.get(
             "services/round/players",
+
             undefined,
+
             function(allPlayers){
 
                 $("#playersList").html("");
 
-                for (var i = 0; i < allPlayers.length; i++){
+                allPlayers.forEach(function(player){
 
-                    $("#playersList").append(
-                        '<a heref="#!"  class="collection-item">' +
-                        allPlayers[i].name + ' : ' + allPlayers[i].coins
-                        + '</a>'
-                    );
+                    var playerElement = $("<a></a>").
+                            text(player.name + ' : ' + player.coins).
+                            css("color", player.color).
+                            addClass("collection-item");
 
-                };
+                    $("#playersList").append(playerElement);
+                });
             },
+
             "json"
     );
 
-    setTimeout(refreshIngamePlayers, 10000);
+    setTimeout(refreshIngamePlayers, 2000);
 }
 
 refreshIngamePlayers();

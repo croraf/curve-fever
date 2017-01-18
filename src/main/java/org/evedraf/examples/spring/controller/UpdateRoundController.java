@@ -33,13 +33,16 @@ public class UpdateRoundController {
         Player p = playerDao.getPlayerByPrimaryKey(name);
         roundLogic.addIngamePlayer(p);
 
+        //todo can be set after the player is added to roundLogic because it is a reference
+        p.setColor(color);
+
         model.addAttribute("player", p);
 
         return "roundScreen";
     }
 
     @GetMapping("/exit")
-    public String exitRound(@PathVariable("name") String name){
+    public String exitRound(@RequestParam("name") String name){
 
         Player p = playerDao.getPlayerByPrimaryKey(name);
         roundLogic.removeIngamePlayer(p);
