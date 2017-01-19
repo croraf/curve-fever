@@ -57,23 +57,18 @@ var boardModule = (function() {
     var ctx = canvas.getContext("2d");
     ctx.strokeStyle = "#FFFFFF";
 
-    var currentCoordX = 5;
-    var currentCoordY = 5;
+    var currentCoordX = Math.random() * canvas.width;
+    var currentCoordY = Math.random() * canvas.height;
     var direction = Math.PI/3;
     var speed = 3.5;
     var started = false;
-    var curveRadius = 4;
+    var curveRadius = 3.8;
     var refreshPeriod = 50; //55 ms as first assumption
 
     //main drawing loop
     function mainLoop(){
 
         if (started === true){
-
-            /*ctx.beginPath();
-            ctx.arc(currentCoordX, currentCoordY, curveRadius, 0, 2*Math.PI);
-            ctx.stroke();*/
-
 
             posUpd.position = {
                                  x : currentCoordX,

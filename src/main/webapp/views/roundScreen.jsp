@@ -42,17 +42,23 @@
 			<div id = "boardCollumn">
 				<canvas id="board" width="600" height="520" class="glowingShaddow"></canvas>
 
-		        <div id = "startStop">
-		            START
-		        </div>
+                <div id = "controlRow">
 
-				<div id = "mute">
-					<i class="material-icons">volume_off</i>
-				</div>
+                    <div id = "startStop" class="controlRowElement">
+                        START
+                    </div>
 
-				<div id = "currentPlayer">${player.name}</div>
+                    <div id = "currentPlayer"  class="controlRowElement">${player.name}</div>
 
-				<%-- <div id = "positionDataBox"></div> --%>
+                    <div id = "mute" class="controlRowElement">
+                        <i class="material-icons">volume_off</i>
+                    </div>
+
+
+                    <%-- <div id = "positionDataBox"></div> --%>
+
+                </div>
+
 			</div>
 
 		</div>
@@ -76,7 +82,7 @@
 
 
         <!--Initialize playerList then webSocket first-->
-
+        <script type="text/javascript" src="static/roundScreen/drawPlayer.js"></script>
 	    <script type="text/javascript" src="static/roundScreen/playerList.js"></script>
 	    <script type="text/javascript" src="static/roundScreen/webSocket.js"></script>
 

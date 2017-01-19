@@ -11,24 +11,48 @@
 	position: absolute;
     top: 35px;
 	border: 1px solid white;
-	background-image: url("tableTop.jpg");
-	background-size: 600px, 520px;
+	/*background-image: url("tableTop.jpg");*/
+	/*background-size: 600px, 520px;*/
 	width: 600px;
 	height: 520px;  
 	/*cursor: crosshair;*/
 }
 
+#controlRow {
+    position: absolute;
+    top: 570px;
+    width: 600px;
+}
 
+.controlRowElement{
+    position:absolute;
+    text-align:center;
+
+}
 
 #startStop {
-	position: absolute;
-    left: 10px;
-    top: 570px;
+    left: 0%;
+    width:10%;
+    color:chocolate;
+    cursor: pointer;
+}
+
+#currentPlayer {
+    left: 40%;
+    color: white;
+    width: 20%;
+    border: 1px white solid;
+}
+
+#mute {
+    right: 0%;
+    width: 10%;
     color: chocolate;
     cursor: pointer;
 }
 
-#positionDataBox {
+
+/*#positionDataBox {
     position: absolute;
     left: 240px;
     top: 590px;
@@ -37,24 +61,4 @@
     height: 300px;
     border: 1px white solid;
     text-align: center;
-}
-
-#currentPlayer {
-    position: absolute;
-    left: 240px;
-    top: 570px;
-    color: white;
-    width: 100px;
-    border: 1px white solid;
-    text-align: center;
-}
-
-#mute {
-	position: absolute;
-    left: 550px;
-    top: 570px;
-    color: chocolate;
-    cursor: pointer;
-}
-
-
+}*/
