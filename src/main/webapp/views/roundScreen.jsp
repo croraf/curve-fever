@@ -80,7 +80,7 @@
 	    <script type="text/javascript" src="static/roundScreen/playerList.js"></script>
 	    <script type="text/javascript" src="static/roundScreen/webSocket.js"></script>
 
-	    <script type="text/javascript" src="static/roundScreen/roundScreen.js"></script>
+	    <script type="text/javascript" src="static/roundScreen/backgroundAudio.js"></script>
 	    <script type="text/javascript" src="static/roundScreen/roundScreenBoard.js"></script>
 	    <script type="text/javascript" src="static/roundScreen/startButton.js"></script>
 

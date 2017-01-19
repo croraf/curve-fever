@@ -70,9 +70,9 @@ var boardModule = (function() {
 
         if (started === true){
 
-            ctx.beginPath();
+            /*ctx.beginPath();
             ctx.arc(currentCoordX, currentCoordY, curveRadius, 0, 2*Math.PI);
-            ctx.stroke();
+            ctx.stroke();*/
 
 
             posUpd.position = {
