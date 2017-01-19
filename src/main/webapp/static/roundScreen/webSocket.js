@@ -26,6 +26,7 @@ var webSocketModule = (function(){
 
         Object.keys(locationUpdates).forEach(function(userName){
 
+                drawOnGlassModule.checkItemPickup(locationUpdates[userName]);
 
                 drawPlayerModule.drawPlayer(userName, locationUpdates[userName]);
 

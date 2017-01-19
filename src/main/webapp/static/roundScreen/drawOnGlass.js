@@ -1,41 +1,68 @@
 
-var glassLoopRefreshPeriod = 20000;
+var drawOnGlassModule = {};
 
 (function (){
 
-    var canvas=document.getElementById("glass");
-    var ctx2 = canvas.getContext("2d");
-    var curveRadius = 8;
-
-    var i = 0;
+    var itemsLoopRefreshPeriod = 3000;
+    var glassCanvas=document.getElementById("glass");
+    var ctx2 = glassCanvas.getContext("2d");
+    ctx2.strokeStyle = "#FFFFFF";
+    var itemRadius = 12;
+    
+    var itemsList = [];
 
     //main drawing loop
-    function glassLoop(){
+    function itemsLoop(){
 
-        i++;
-        if (i === 10) {
-            ctx2.clearRect(0,0,canvas.width, canvas.height);
-            i = 0;
-        }
-        /*if (started === true){}*/
+        var item = {
+                      x : Math.random()*glassCanvas.width,
+                      y : Math.random()*glassCanvas.height
+                   };
+                          
+        itemsList.push(item);
 
-        var playerCoordinates = {
-                             x : Math.random()*canvas.width,
-                             y : Math.random()*canvas.height
-                          };
+        redrawItems();
 
-        ctx2.strokeStyle = "#FFFFFF";
-        ctx2.beginPath();
-        ctx2.arc(playerCoordinates.x, playerCoordinates.y, curveRadius, 0, 2*Math.PI);
-        ctx2.stroke();
-        ctx2.strokeStyle = "#FFFFFF";
+        setTimeout(itemsLoop, itemsLoopRefreshPeriod);
+    }
+    
+    function redrawItems(){
+        
+        ctx2.clearRect(0,0,glassCanvas.width, glassCanvas.height);
 
+        itemsList.forEach(function(item, i){
 
-        setTimeout(glassLoop, glassLoopRefreshPeriod);
+               ctx2.beginPath();
+               ctx2.arc(item.x, item.y, itemRadius, 0, 2*Math.PI);
+               ctx2.stroke();
+        });
     }
 
-    //start main game loop
-    glassLoop();
+    //start main loop
+    itemsLoop();
+    
+    
+    drawOnGlassModule.clearItems = function(){
+        ctx2.clearRect(0,0,glassCanvas.width, glassCanvas.height);
+        itemsList = [];
+    };
 
+    drawOnGlassModule.checkItemPickup = function(playerCoordinates){
+
+        var itemPickupHappened = false;
+
+        itemsList.forEach(function(item, i){
+
+            // todo take curve radius from somewhere
+            if (Math.hypot(playerCoordinates.x - item.x, playerCoordinates.y - item.y) < itemRadius+4){
+                itemsList.splice(i, 1);
+                itemPickupHappened = true;
+            }
+        });
+
+        if (itemPickupHappened === true){
+            redrawItems();
+        }
+    };
 
 })();
