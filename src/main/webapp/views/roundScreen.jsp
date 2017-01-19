@@ -40,7 +40,9 @@
 			</div>
 
 			<div id = "boardCollumn">
+
 				<canvas id="board" width="600" height="520" class="glowingShaddow"></canvas>
+				<canvas id="glass" width="600" height="520"></canvas>
 
                 <div id = "controlRow">
 
@@ -82,14 +84,16 @@
 
 
         <!--Initialize playerList then webSocket first-->
-        <script type="text/javascript" src="static/roundScreen/drawPlayer.js"></script>
 	    <script type="text/javascript" src="static/roundScreen/playerList.js"></script>
+        <script type="text/javascript" src="static/roundScreen/drawPlayer.js"></script>
 	    <script type="text/javascript" src="static/roundScreen/webSocket.js"></script>
 
 	    <script type="text/javascript" src="static/roundScreen/backgroundAudio.js"></script>
 	    <script type="text/javascript" src="static/roundScreen/roundScreenBoard.js"></script>
 	    <script type="text/javascript" src="static/roundScreen/startButton.js"></script>
 
+	    <!--Testing-->
+        <script type="text/javascript" src="static/roundScreen/drawOnGlass.js"></script>
 
 </body>
 </html>

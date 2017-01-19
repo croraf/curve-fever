@@ -7,7 +7,7 @@
 
 }
 
-#board {
+#board{
 	position: absolute;
     top: 35px;
 	border: 1px solid white;
@@ -16,6 +16,16 @@
 	width: 600px;
 	height: 520px;  
 	/*cursor: crosshair;*/
+}
+
+#glass {
+    position: absolute;
+    top: 35px;
+    /*background-image: url("tableTop.jpg");*/
+    /*background-size: 600px, 520px;*/
+    width: 600px;
+    height: 520px;
+    /*cursor: crosshair;*/
 }
 
 #controlRow {

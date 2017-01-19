@@ -62,8 +62,7 @@ var boardModule = (function() {
     var direction = Math.PI/3;
     var speed = 3.5;
     var started = false;
-    var curveRadius = 3.8;
-    var refreshPeriod = 50; //55 ms as first assumption
+    var refreshPeriod = 55; //55 ms as first assumption
 
     //main drawing loop
     function mainLoop(){
