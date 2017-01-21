@@ -31,10 +31,11 @@ public class UpdateRoundController {
             @RequestParam("name") String name, @RequestParam("color") String color, Model model){
 
         Player p = playerDao.getPlayerByPrimaryKey(name);
-        roundLogic.addIngamePlayer(p);
-
         //todo can be set after the player is added to roundLogic because it is a reference
+        //better set before to avoid concurrency issues because addIngamePlayer establishes happens-before
         p.setColor(color);
+
+        roundLogic.addIngamePlayer(p);
 
         model.addAttribute("player", p);
 

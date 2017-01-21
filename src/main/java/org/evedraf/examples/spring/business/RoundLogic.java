@@ -80,7 +80,7 @@ public class RoundLogic {
 
 
 
-    public synchronized boolean checkCollision(String playerName, Position newPosition){
+    public boolean checkCollision(String playerName, Position newPosition){
 
         for (Map.Entry<String, List<Position>> entryOfOnePlayer : allPositions.entrySet()) {
 
