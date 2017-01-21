@@ -1,7 +1,7 @@
 "use strict";
 
 $.get(
-        "services/players",
+        "services/login/players",
         undefined,
         function(allPlayers){
 

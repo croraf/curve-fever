@@ -1,91 +1,57 @@
-<!DOCTYPE HTML>
 
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<link rel="stylesheet" type="text/css" href="static/loginSuccess/loginSuccess.css" />
+<script>
+        var playerName = "${player.name}";
+</script>
 
-<html>
-<head>
-    <base href="${pageContext.request.contextPath}/" />
+<div id = "playersListCollumn">
 
-    <title>Login Success</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <h5 class="center-align">All players</h5>
 
-    <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Import materialize.css-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
-
-    <link rel="stylesheet" type="text/css" href="static/style1.css" />
-    <link rel="stylesheet" type="text/css" href="static/containerWithList.css" />
-
-</head>
-<body>
-
-    <link rel="stylesheet" type="text/css" href="static/loginSuccess/loginSuccess.css" />
-    <script>
-            var playerName = "${player.name}";
-    </script>
-
-    <div class="myContainer">
-
-
-
-        <div id = "playersListCollumn">
-
-                <h5 class="center-align">All players</h5>
-
-                <div id = "playersList" class="glowingShaddow center-align collection scrollbar-style-2">
-                </div>
-
+        <div id = "playersList" class="glowingShaddow center-align collection scrollbar-style-2">
         </div>
 
-        <div id = "pickedPlayerCollumn">
+</div>
 
-            <h4 class="center-align">Login success!</h4>
+<div id = "pickedPlayerCollumn">
 
-            <p> Id: ${player.id} </p>
+    <h4 class="center-align">Login success!</h4>
+
+    <p> Id: ${player.id} </p>
 
 
 
-            <p>
-                Name: ${player.name}
+    <p>
+        Name: ${player.name}
 
-            </p>
-            <p> Points: ${player.points} </p>
-            <p> Coins: ${player.coins} </p>
+    </p>
+    <p> Points: ${player.points} </p>
+    <p> Coins: ${player.coins} </p>
 
-            <p>
-                <button type="button" id="startRound" class="waves-effect waves-light btn">
-                    Start round
-                </button>
+    <p>
+        <button type="button" id="startRound" class="waves-effect waves-light btn">
+            Start round
+        </button>
 
-                <!-- Dropdown Trigger -->
-                <span id="colorPicker" class='dropdown-button btn' data-activates='dropdown1'></span>
+        <!-- Dropdown Trigger -->
+        <span id="colorPicker" class='dropdown-button btn' data-activates='dropdown1'></span>
 
-                <!-- Dropdown Structure -->
-                <ul id='dropdown1' class='dropdown-content'>
-                    <li><span  style="background-color:white"> </span></li>
-                    <li class="divider"></li>
-                    <li><span  style="background-color:red"> </span></li>
-                    <li class="divider"></li>
-                    <li><span  style="background-color:yellow"> </span></li>
-                    <li class="divider"></li>
-                    <li><span  style="background-color:blue"> </span></li>
-                </ul>
-            </p>
+        <!-- Dropdown Structure -->
+        <ul id='dropdown1' class='dropdown-content'>
+            <li><span  style="background-color:white"> </span></li>
+            <li class="divider"></li>
+            <li><span  style="background-color:red"> </span></li>
+            <li class="divider"></li>
+            <li><span  style="background-color:yellow"> </span></li>
+            <li class="divider"></li>
+            <li><span  style="background-color:blue"> </span></li>
+        </ul>
+    </p>
 
-            <p>
-                <button type="button" id="logOut" class="waves-effect waves-light btn">
-                    Log out
-                </button>
-            </p>
+    <p>
+        <button type="button" id="logOut" class="waves-effect waves-light btn">
+            Log out
+        </button>
+    </p>
 
-        </div>
-    </div>
-
-    <!--Import jQuery before materialize.js-->
-	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
-    <script type="text/javascript" src="static/loginSuccess/loginSuccess.js"></script>
-</body>
-</html>
+</div>
