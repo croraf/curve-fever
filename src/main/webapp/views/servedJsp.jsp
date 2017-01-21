@@ -1,26 +1,3 @@
-<!DOCTYPE HTML>
-
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-
-<html>
-<head>
-    <base href="${pageContext.request.contextPath}/" />
-
-    <title>Login Success</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-
-    <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Import materialize.css-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
-
-    <link rel="stylesheet" type="text/css" href="static/style1.css" />
-    <link rel="stylesheet" type="text/css" href="static/containerWithList.css" />
-
-</head>
-<body>
-
     <link rel="stylesheet" type="text/css" href="static/loginSuccess/loginSuccess.css" />
     <script>
             var playerName = "${player.name}";
@@ -87,5 +64,3 @@
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
     <script type="text/javascript" src="static/loginSuccess/loginSuccess.js"></script>
-</body>
-</html>

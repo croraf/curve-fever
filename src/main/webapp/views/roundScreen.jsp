@@ -27,7 +27,7 @@
 
 <body tabindex="1" id="body">
 
-		<div id = "container">
+		<div class = "myContainer">
 
 			<div id = "playersListCollumn">
 				

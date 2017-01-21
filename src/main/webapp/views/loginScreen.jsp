@@ -3,21 +3,25 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
+<html>
 <head>
     <base href="${pageContext.request.contextPath}/" />
 
     <title>Log in</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+
     <link rel="stylesheet" type="text/css" href="static/style1.css" />
+    <link rel="stylesheet" type="text/css" href="static/containerWithList.css" />
 
 </head>
 <body>
 
-    <div class="container">
+    <div class="myContainer">
 
         <div class = "row">
             <div class = "col s4 offset-s4 section">
@@ -28,7 +32,7 @@
         <div class = "row">
             <div class = "col s4 offset-s4">
 
-                <form action="services/pregame" method="post" id="loginScreen">
+                <form action="services/login" method="post" id="loginScreen">
                             <p>
                                 Name: <input type="text" name="name" />
                             </p>

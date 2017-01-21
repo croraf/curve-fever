@@ -26,7 +26,7 @@ $("#startRound").click(function (){
 
 $("#logOut").click(function (){
 
-        window.location.href = "services/pregame";
+        window.location.href = "services/login";
 });
 
 var chosenColor = "rgb(255,255,255)";
