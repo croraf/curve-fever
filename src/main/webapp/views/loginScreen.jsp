@@ -18,6 +18,15 @@
     <link rel="stylesheet" type="text/css" href="static/style1.css" />
     <link rel="stylesheet" type="text/css" href="static/containerWithList.css" />
 
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.js"></script>
+    <script>
+        $( function(){
+
+            $.getScript("https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js");
+            $.getScript("static/loginScreen/loginScreen.js");
+        });
+    </script>
+
 </head>
 <body>
 
@@ -32,23 +41,18 @@
         <div class = "row">
             <div class = "col s4 offset-s4">
 
-                <form action="services/login" method="post" id="loginScreen">
+                <form action="services/login" method="post" id="loginScreenForm">
                             <p>
                                 Name: <input type="text" name="name" />
                             </p>
                 </form>
 
-                <button type="submit" form="loginScreen" class="waves-effect waves-light btn">submit</button>
+                <button type="submit" form="loginScreenForm" class="waves-effect waves-light btn">submit</button>
 
             </div>
         </div>
 
     </div>
-
-    <!--Import jQuery before materialize.js-->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
-
 
 </body>
 </html>

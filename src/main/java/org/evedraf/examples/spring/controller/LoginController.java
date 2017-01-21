@@ -28,7 +28,7 @@ public class LoginController {
         Player player = playerDao.increasePlayerCoins(playerName);
         model.addAttribute("player", player);
 
-        return "loginSuccess";
+        return "servedJsp";
     }
 
 /*    @PostMapping (value = "/a")
