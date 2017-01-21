@@ -1,5 +1,6 @@
 package org.evedraf.examples.spring.business;
 
+import javafx.geometry.Pos;
 import org.evedraf.examples.spring.model.Player;
 import org.springframework.stereotype.Component;
 
@@ -17,21 +18,28 @@ public class RoundLogic {
     private Map<String, Player> ingamePlayers = new HashMap<>();
 
 
-    private Map<String, List<Position>> positions = new HashMap<>();
+    private Map<String, List<Position>> allPositions = new HashMap<>();
 
 
     public synchronized void addPosition(String playerName, Position position){
 
-        positions.get(playerName).add(position);
+        if (! allPositions.containsKey(playerName)){return;}
+
+
+        allPositions.get(playerName).add(position);
+
+        if ( checkCollision(playerName, position) == true ){
+            System.out.println("sudar");
+            allPositions.remove(playerName);
+        };
     }
 
 
-    //TODO currently return just one position other than ours
     public synchronized Map<String, Position> getLastPositionOfOtherPlayers (){
 
         Map<String, Position> lastPositionsOfOthers = new HashMap<>();
 
-        for(Map.Entry <String, List<Position>> entry : positions.entrySet()){
+        for(Map.Entry <String, List<Position>> entry : allPositions.entrySet()){
 
             List<Position> positionsOfOneOtherPlayer = entry.getValue();
             int size = positionsOfOneOtherPlayer.size();
@@ -60,29 +68,53 @@ public class RoundLogic {
     public synchronized void addIngamePlayer(Player p){
 
         ingamePlayers.put(p.getName(), p);
-        positions.put(p.getName(), new ArrayList<>());
+        allPositions.put(p.getName(), new ArrayList<>());
     }
 
     public synchronized Player removeIngamePlayer(Player player){
 
 
-        positions.remove(player.getName());
+        allPositions.remove(player.getName());
 
         return ingamePlayers.remove(player.getName());
     }
 
 
 
-    /* to remove
-    public Player getIngamePlayer(String name){
-        for (Player p : ingamePlayers){
-            if (p.getName().equals(name)) {
-                return p;
+    public synchronized boolean checkCollision(String playerName, Position newPosition){
+
+        for (Map.Entry<String, List<Position>> entryOfOnePlayer : allPositions.entrySet()) {
+
+            if (playerName.equals(entryOfOnePlayer.getKey())){
+                //if this is the same player than take care his head doesn't collide with head~1
+
+                List<Position> positionsOfCurrentPlayer = allPositions.get(playerName);
+
+                for (int i = 0; i < positionsOfCurrentPlayer.size() - 5; i++) {
+
+                    if (checkPointCollision (positionsOfCurrentPlayer.get(i), newPosition)){
+                        return true;
+                    };
+                }
+            } else{
+
+                for (Position position : entryOfOnePlayer.getValue()) {
+
+                    if (checkPointCollision(position, newPosition)){
+                        return true;
+                    }
+                }
             }
         }
 
-        return null;
-    }*/
+        return false;
+    }
+
+    private boolean checkPointCollision(Position position1, Position position2) {
+
+        return Math.sqrt( Math.pow(position1.x-position2.x, 2) + Math.pow(position1.y-position2.y, 2) )
+                < 8;
+    }
 
 
 }
