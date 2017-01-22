@@ -5,7 +5,7 @@ var webSocketModule = (function(){
     var module = {};
 
     var myWebSocket = new WebSocket(
-      window.document.baseURI.replace(location.protocol, "ws:") + "services/webSocket"
+      window.document.baseURI.replace(location.protocol, "ws:") + "services/positionsSocket"
       //, sub-protocol
     );
 
@@ -26,9 +26,17 @@ var webSocketModule = (function(){
 
         Object.keys(locationUpdates).forEach(function(userName){
 
-                drawOnGlassModule.checkItemPickup(locationUpdates[userName]);
+                var positionUpdateForOnePlayer = locationUpdates[userName];
 
-                drawPlayerModule.drawPlayer(userName, locationUpdates[userName]);
+                if (positionUpdateForOnePlayer === null) {
+
+                            console.log("coordinate su null!!!!!!")
+                            return;
+                }
+
+                drawOnGlassModule.checkItemPickup(positionUpdateForOnePlayer);
+
+                drawPlayerModule.drawPlayer(userName, positionUpdateForOnePlayer);
 
         });
     };

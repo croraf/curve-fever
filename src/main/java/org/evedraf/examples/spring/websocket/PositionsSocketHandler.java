@@ -18,7 +18,7 @@ import java.util.Map;
 /**
  * Created by Korisnik on 15.1.2017..
  */
-public class MyHandler extends TextWebSocketHandler {
+public class PositionsSocketHandler extends TextWebSocketHandler {
 
 
     private final List<WebSocketSession> currentSessions = new ArrayList<>();

@@ -96,7 +96,7 @@
         <script type="text/javascript" src="static/roundScreen/chatSocket.js"></script>
 	    <script type="text/javascript" src="static/roundScreen/playerList.js"></script>
         <script type="text/javascript" src="static/roundScreen/drawPlayer.js"></script>
-	    <script type="text/javascript" src="static/roundScreen/webSocket.js"></script>
+	    <script type="text/javascript" src="static/roundScreen/positionsSocket.js"></script>
 
 	    <script type="text/javascript" src="static/roundScreen/backgroundAudio.js"></script>
 	    <script type="text/javascript" src="static/roundScreen/roundScreenBoard.js"></script>
