@@ -48,7 +48,7 @@ public class UpdateRoundController {
         Player p = playerDao.getPlayerByPrimaryKey(name);
         roundLogic.removeIngamePlayer(p);
 
-        return "loginScreen";
+        return "redirect:/services/login";
     }
 
     @GetMapping("/players")
