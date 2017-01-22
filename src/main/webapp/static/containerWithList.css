@@ -47,11 +47,7 @@
 	background-color: white;
 }
 
-#playersListCollumn > a {
-	color: chocolate;
-}
-
-.glowingShaddow {
+.glowingShadow {
 
 	border-radius: 8px;
 

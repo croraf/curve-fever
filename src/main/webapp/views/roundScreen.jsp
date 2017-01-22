@@ -33,15 +33,24 @@
 				
 				<h5 class="center-align">In game</h5>
 
-				<div id = "playersList" class="glowingShaddow center-align collection scrollbar-style-2">
+				<div id = "playersList" class="glowingShadow center-align collection scrollbar-style-2"></div>
+
+				<div id = "chat" class="glowingShadow collection scrollbar-style-2"> </div>
+
+				<div id = "chatInputBox" class="glowingShadow collection scrollbar-style-2">
+
+				    <form id = "chatForm">
+				        <input type="text" name="text" autocomplete="off" autocorrect="off" autocapitalize="off"
+                                                       spellcheck="false"/>
+				    </form>
 				</div>
 
-			    <a href="services/round/exit?name=${player.name}">Leave</a>
+			    <a href="services/round/exit?name=${player.name}">Log out</a>
 			</div>
 
 			<div id = "boardCollumn">
 
-				<canvas id="board" width="600" height="520" class="glowingShaddow"></canvas>
+				<canvas id="board" width="600" height="520" class="glowingShadow"></canvas>
 				<canvas id="glass" width="600" height="520"></canvas>
 
                 <div id = "controlRow">
@@ -84,6 +93,7 @@
 
 
         <!--Initialize playerList then webSocket first-->
+        <script type="text/javascript" src="static/roundScreen/chatSocket.js"></script>
 	    <script type="text/javascript" src="static/roundScreen/playerList.js"></script>
         <script type="text/javascript" src="static/roundScreen/drawPlayer.js"></script>
 	    <script type="text/javascript" src="static/roundScreen/webSocket.js"></script>

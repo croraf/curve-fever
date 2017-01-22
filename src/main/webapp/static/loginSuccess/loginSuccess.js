@@ -1,4 +1,4 @@
-//@ sourceURL=foo.js
+//@ sourceURL=loginSuccess-dynamic.js
 
 "use strict";
 

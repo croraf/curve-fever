@@ -1,4 +1,36 @@
 
+#playersList {
+    height: 200px;
+}
+
+#playersListCollumn > a {
+	color: chocolate;
+}
+
+#chat {
+    height: 240px;
+    overflow-y: auto;
+    border: 1px solid white;
+    border-right: 0px;
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+#chatInputBox {
+    height: 50px;
+    overflow-y: auto;
+    border: 1px solid white;
+    border-right: 0px;
+}
+
+#chatForm input{
+    margin: 0px;
+    border-style: none;
+    box-shadow: none;
+    padding-left: 10px;
+}
+
+
 #boardCollumn {
 	/*needed positioning for absolute positioning of childs*/
 	position: absolute;

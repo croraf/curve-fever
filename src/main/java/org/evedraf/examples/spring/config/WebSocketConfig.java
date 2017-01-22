@@ -1,6 +1,7 @@
 package org.evedraf.examples.spring.config;
 
 
+import org.evedraf.examples.spring.websocket.ChatSocketHandler;
 import org.evedraf.examples.spring.websocket.MyHandler;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -20,11 +21,17 @@ public class WebSocketConfig implements WebSocketConfigurer {
     @Override
     public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
         registry.addHandler(mySocketHandler(), "/webSocket");
+        registry.addHandler(chatSocketHandler(), "/chatSocket");
     }
 
     @Bean
     public WebSocketHandler mySocketHandler() {
         return new MyHandler();
+    }
+
+    @Bean
+    public WebSocketHandler chatSocketHandler() {
+        return new ChatSocketHandler();
     }
 
 }

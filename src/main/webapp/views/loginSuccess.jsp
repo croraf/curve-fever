@@ -8,7 +8,7 @@
 
         <h5 class="center-align">All players</h5>
 
-        <div id = "playersList" class="glowingShaddow center-align collection scrollbar-style-2">
+        <div id = "playersList" class="glowingShadow center-align collection scrollbar-style-2">
         </div>
 
 </div>
@@ -18,13 +18,7 @@
     <h4 class="center-align">Login success!</h4>
 
     <p> Id: ${player.id} </p>
-
-
-
-    <p>
-        Name: ${player.name}
-
-    </p>
+    <p> Name: ${player.name} </p>
     <p> Points: ${player.points} </p>
     <p> Coins: ${player.coins} </p>
 

@@ -1,3 +1,5 @@
+//@ sourceURL=loginScreen-dynamic.js
+
 "use strict";
 
 $("#loginScreenForm").submit(function(e) {
