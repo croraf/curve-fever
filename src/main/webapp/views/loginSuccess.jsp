@@ -28,22 +28,23 @@
     <p> Points: ${player.points} </p>
     <p> Coins: ${player.coins} </p>
 
-    <p>
+    <p id = "startRoundRow">
         <button type="button" id="startRound" class="waves-effect waves-light btn">
             Start round
         </button>
 
         <select name="colorpicker-picker-delay">
-              <option value="#7bd148">Green</option>
-              <option value="#5484ed">Bold blue</option>
-              <option value="#a4bdfc">Blue</option>
-              <option value="#46d6db">Turquoise</option>
-              <option value="#7ae7bf">Light green</option>
-              <option value="#51b749">Bold green</option>
+              <option value="#FFFFFF">White</option>
+              <option value="#7bd148">Lime</option>
+              <option value="#5484ed">Blue</option>
+              <%--<option value="#a4bdfc">Blue</option>--%>
+              <option value="#46d6db">Cyan</option>
+              <%--<option value="#7ae7bf">Lime</option>--%>
+              <option value="#51b749">Green</option>
               <option value="#fbd75b">Yellow</option>
               <option value="#ffb878">Orange</option>
-              <option value="#ff887c">Red</option>
-              <option value="#dc2127">Bold red</option>
+              <%--<option value="#ff887c">Red</option>--%>
+              <option value="#dc2127">Red</option>
               <option value="#dbadff">Purple</option>
               <option value="#e1e1e1">Gray</option>
         </select>
@@ -56,9 +57,6 @@
                  //$('select[name="colorpicker-longlist"]').simplecolorpicker('destroy');
         </script>
 
-
-
-
     </p>
 
     <p>
@@ -67,23 +65,5 @@
         </button>
     </p>
 
-
-
-
-    <!-- Dropdown Trigger -->
-    <span id="colorPicker" class='dropdown-button btn' data-activates='dropdown1'></span>
-
-    <!-- Dropdown Structure -->
-    <ul id='dropdown1' class='dropdown-content'>
-        <li><span  style="background-color:white"> </span></li>
-        <li class="divider"></li>
-        <li><span  style="background-color:red"> </span></li>
-        <li class="divider"></li>
-        <li><span  style="background-color:yellow"> </span></li>
-        <li class="divider"></li>
-        <li><span  style="background-color:blue"> </span></li>
-    </ul>
-
-    <i class="material-icons">arrow_drop_down</i>
 </div>
 

@@ -11,26 +11,32 @@
 	text-align: center;
 }
 
-.dropdown-content {
-    background-color: #fff;
-    margin: 0;
-    display: none;
-    min-width: initial; /*override*/
-    max-height: 650px;
-    overflow-y: auto;
-    opacity: 0;
-    position: absolute;
-    z-index: 999;
-    will-change: width, height;
+
+.simplecolorpicker.icon {
+    border-radius: 2px;
+    padding: 4px 4px;
+    position:absolute;
+    right: 0%;
+    top: 5%;
+    height: 90%;
 }
 
+#startRoundRow {
+    position:relative;
+}
+
+/*
 .dropdown-content li {
     clear: both;
     color: rgba(0,0,0,0.87);
     cursor: pointer;
-    min-height: initial; /*override*/
+    min-height: initial; */
+/*override*//*
+
     line-height: 1.5rem;
-    width: initial; /*override*/
+    width: initial; */
+/*override*//*
+
     text-align: left;
     text-transform: none;
 }
@@ -40,4 +46,4 @@
 #colorPicker {
     //padding-left: 50px;
     background-color: white;
-}
+}*/
