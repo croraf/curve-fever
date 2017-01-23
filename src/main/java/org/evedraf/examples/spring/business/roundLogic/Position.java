@@ -1,4 +1,4 @@
-package org.evedraf.examples.spring.business;
+package org.evedraf.examples.spring.business.roundLogic;
 
 /**
  * Created by Korisnik on 12.1.2017..

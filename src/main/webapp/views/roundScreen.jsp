@@ -23,6 +23,10 @@
 	    <link rel="stylesheet" type="text/css" href="static/style1.css" />
 	    <link rel="stylesheet" type="text/css" href="static/containerWithList.css" />
         <link rel="stylesheet" type="text/css" href="static/roundScreen/roundScreen.css" />
+
+        <script>
+                var playerName = "${player.name}";
+        </script>
 </head>
 
 <body tabindex="1" id="body">

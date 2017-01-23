@@ -1,8 +1,6 @@
 package org.evedraf.examples.spring.controller;
 
-import org.evedraf.examples.spring.business.Position;
-import org.evedraf.examples.spring.business.RoundLogic;
-import org.evedraf.examples.spring.business.UpdateMessageFromClient;
+import org.evedraf.examples.spring.business.roundLogic.RoundLogic;
 import org.evedraf.examples.spring.dao.PlayerDao;
 import org.evedraf.examples.spring.model.Player;
 import org.evedraf.examples.spring.websocket.ChatSocketHandler;

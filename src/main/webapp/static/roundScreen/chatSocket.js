@@ -4,7 +4,7 @@ var chatSocketModule = (function(){
 
     var myWebSocket = new WebSocket(
       window.document.baseURI.replace(location.protocol, "ws:") + "services/chatSocket"
-      //, sub-protocol
+      /*, playerName*/
     );
 
     function sendMessage(chatMessage){

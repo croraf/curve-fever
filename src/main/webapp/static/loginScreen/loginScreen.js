@@ -4,7 +4,6 @@
 
 $("#loginScreenForm").submit(function(e) {
 
-
     $.ajax({
            type: "POST",
            url: "services/login",

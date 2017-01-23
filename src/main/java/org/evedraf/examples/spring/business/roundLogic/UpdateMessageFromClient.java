@@ -1,4 +1,6 @@
-package org.evedraf.examples.spring.business;
+package org.evedraf.examples.spring.business.roundLogic;
+
+import org.evedraf.examples.spring.business.roundLogic.Position;
 
 /**
  */

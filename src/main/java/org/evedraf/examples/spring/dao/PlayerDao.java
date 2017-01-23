@@ -57,7 +57,7 @@ public class PlayerDao {
     }
 
     @Transactional
-    public Player increasePlayerCoins(String playerName) {
+    public Player loginPlayer(String playerName) {
 
         Session session = sessionFactory.getCurrentSession();
         Player player = session.get(Player.class, playerName);

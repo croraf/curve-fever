@@ -31,6 +31,9 @@ public class Player {
     @Transient
     private String color;
 
+    @Transient
+    private boolean loggedIn;
+
     public Player() {
     }
 
@@ -76,5 +79,13 @@ public class Player {
 
     public void setColor(String color) {
         this.color = color;
+    }
+
+    public boolean isLoggedIn() {
+        return loggedIn;
+    }
+
+    public void setLoggedIn(boolean loggedIn) {
+        this.loggedIn = loggedIn;
     }
 }

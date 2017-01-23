@@ -1,5 +1,6 @@
 package org.evedraf.examples.spring.controller;
 
+import org.evedraf.examples.spring.business.playerSettings.LoginLogic;
 import org.evedraf.examples.spring.dao.PlayerDao;
 import org.evedraf.examples.spring.model.Player;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,9 @@ public class LoginController {
     @Autowired
     private PlayerDao playerDao;
 
+    @Autowired
+    private LoginLogic loginLogic;
+
 
     @GetMapping
     public String getLoginScreen(Model model){
@@ -26,25 +30,19 @@ public class LoginController {
     @PostMapping
     public String loginAttempt(@RequestParam("name") String playerName, Model model){
 
+        Player player = playerDao.loginPlayer(playerName);
 
-        Player player = playerDao.increasePlayerCoins(playerName);
         model.addAttribute("player", player);
-
         return "loginSuccess";
     }
 
     @GetMapping ("players")
     @ResponseBody
     public List<Player> getPlayers (){
+
         return playerDao.getPlayers();
     }
 
-    @GetMapping(value = "players/{id}")
-    @ResponseBody
-    public Player getPlayerById(@PathVariable(name = "id") int id ){
-
-        return playerDao.getPlayerById(id);
-    }
 
 
 

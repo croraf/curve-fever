@@ -1,9 +1,9 @@
 package org.evedraf.examples.spring.websocket;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.evedraf.examples.spring.business.Position;
-import org.evedraf.examples.spring.business.RoundLogic;
-import org.evedraf.examples.spring.business.UpdateMessageFromClient;
+import org.evedraf.examples.spring.business.roundLogic.Position;
+import org.evedraf.examples.spring.business.roundLogic.RoundLogic;
+import org.evedraf.examples.spring.business.roundLogic.UpdateMessageFromClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.socket.CloseStatus;
 import org.springframework.web.socket.TextMessage;
@@ -80,7 +80,7 @@ public class PositionsSocketHandler extends TextWebSocketHandler {
     public synchronized void afterConnectionClosed(WebSocketSession session, CloseStatus status) throws Exception {
 
         currentSessions.remove(session);
-        System.out.println("WebSocket connection closed! - " + status);
+        System.out.println("PositionsSocket connection of '" + "..." + "' closed! - " + status);
     }
 
 }

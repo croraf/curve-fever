@@ -3,7 +3,6 @@ package org.evedraf.examples.spring.business.playerSettings;
 import org.evedraf.examples.spring.dao.PlayerDao;
 import org.evedraf.examples.spring.model.Player;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
@@ -40,6 +39,6 @@ public class PlayerLogic {
     @Transactional
     public Player increasePlayerCoins(String playerName) {
 
-        return playerDao.increasePlayerCoins(playerName);
+        return playerDao.loginPlayer(playerName);
     }
 }
