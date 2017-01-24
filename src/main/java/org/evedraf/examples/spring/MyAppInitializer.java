@@ -99,6 +99,8 @@ public class MyAppInitializer extends AbstractAnnotationConfigDispatcherServletI
         return registration;
     }
 
+
+
     @Override
     protected String[] getServletMappings() {
         return new String[]{"/services/*"};

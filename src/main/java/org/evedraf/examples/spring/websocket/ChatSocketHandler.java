@@ -24,6 +24,7 @@ public class ChatSocketHandler extends TextWebSocketHandler {
     @Autowired
     private RoundLogic roundLogic;
 
+
     @Override
     public synchronized void afterConnectionEstablished(WebSocketSession session) throws Exception {
 

@@ -9,6 +9,7 @@ import org.springframework.web.socket.WebSocketHandler;
 import org.springframework.web.socket.config.annotation.EnableWebSocket;
 import org.springframework.web.socket.config.annotation.WebSocketConfigurer;
 import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry;
+import org.springframework.web.socket.server.HandshakeInterceptor;
 import org.springframework.web.socket.server.support.HttpSessionHandshakeInterceptor;
 
 import java.util.Arrays;
@@ -26,7 +27,8 @@ public class WebSocketConfig implements WebSocketConfigurer {
         registry.addHandler(mySocketHandler(), "/positionsSocket");
 
         registry.addHandler(chatSocketHandler(), "/chatSocket").
-                addInterceptors(new HttpSessionHandshakeInterceptor(Arrays.asList("username")));
+                addInterceptors(handshakeInterceptor());
+
     }
 
     @Bean
@@ -38,5 +40,14 @@ public class WebSocketConfig implements WebSocketConfigurer {
     public WebSocketHandler chatSocketHandler() {
         return new ChatSocketHandler();
     }
+
+
+    @Bean HandshakeInterceptor handshakeInterceptor(){
+
+        return new HttpSessionHandshakeInterceptor(
+                Arrays.asList("username")
+        );
+    }
+
 
 }

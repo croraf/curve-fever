@@ -25,6 +25,8 @@ public class PositionsSocketHandler extends TextWebSocketHandler {
 
     private final ObjectMapper mapper = new ObjectMapper();
 
+
+
     @Autowired
     private RoundLogic roundLogic;
 
