@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.Collection;
 import java.util.Map;
@@ -28,21 +29,15 @@ public class UpdateRoundController {
 
     @GetMapping("/enter")
     public String enterRound(
-            @RequestParam("name") String name, @RequestParam("color") String color, Model model){
+            @RequestParam("username") String username, @RequestParam("color") String color, Model model, HttpSession httpSession){
 
-        Player p = playerDao.getPlayerByPrimaryKey(name);
+        Player p = playerDao.getPlayerByPrimaryKey(username);
         //todo can be set after the player is added to roundLogic because it is a reference
         //better set before to avoid concurrency issues because addIngamePlayer establishes happens-before
         p.setColor(color);
 
-        roundLogic.addIngamePlayer(p);
+        httpSession.setAttribute("user", p);
 
-        //temporary broadcast here
-        try {
-            ChatSocketHandler.broadcastChatMessage("[ " + name + " connected ]");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
 
         model.addAttribute("player", p);
 
@@ -50,18 +45,15 @@ public class UpdateRoundController {
     }
 
     @GetMapping("/exit")
-    public String exitRound(@RequestParam("name") String name){
-
-        Player p = playerDao.getPlayerByPrimaryKey(name);
-        roundLogic.removeIngamePlayer(p);
+    public String exitRound(){
 
         return "redirect:/services/login";
     }
 
-    @GetMapping("/players")
+    /*@GetMapping("/players")
     @ResponseBody
     public Map<String, Player> getIngamePlayers() {
 
         return roundLogic.getIngamePlayers();
-    }
+    }*/
 }

@@ -20,11 +20,9 @@ import java.util.Map;
  */
 public class PositionsSocketHandler extends TextWebSocketHandler {
 
-
     private final List<WebSocketSession> currentSessions = new ArrayList<>();
 
     private final ObjectMapper mapper = new ObjectMapper();
-
 
 
     @Autowired
@@ -49,23 +47,11 @@ public class PositionsSocketHandler extends TextWebSocketHandler {
 
             broadcastUpdate();
 
-            /*logPositions(messageIn);*/
-
         } catch (IOException e) {
-
             e.printStackTrace();
         }
 
     }
-
-    /*private synchronized void logPositions(PositionMessageFromClient messageIn) {
-
-        if (messageIn.getPosition() == null){
-            System.out.println(messageIn.getPlayerName() + ": null");
-        } else {
-            System.out.println(messageIn.getPlayerName() + ": " + messageIn.getPosition().x + ", " + messageIn.getPosition().y);
-        }
-    }*/
 
     private void broadcastUpdate() throws IOException{
 

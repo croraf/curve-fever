@@ -2,6 +2,7 @@ package org.evedraf.examples.spring.config;
 
 
 import org.evedraf.examples.spring.websocket.ChatSocketHandler;
+import org.evedraf.examples.spring.websocket.ControlSocketHandler;
 import org.evedraf.examples.spring.websocket.PositionsSocketHandler;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -26,7 +27,9 @@ public class WebSocketConfig implements WebSocketConfigurer {
     public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
         registry.addHandler(mySocketHandler(), "/positionsSocket");
 
-        registry.addHandler(chatSocketHandler(), "/chatSocket").
+        registry.addHandler(chatSocketHandler(), "/chatSocket");
+
+        registry.addHandler(controlSocketHandler(), "/controlSocket").
                 addInterceptors(handshakeInterceptor());
 
     }
@@ -41,11 +44,16 @@ public class WebSocketConfig implements WebSocketConfigurer {
         return new ChatSocketHandler();
     }
 
+    @Bean
+    public WebSocketHandler controlSocketHandler() {
+        return new ControlSocketHandler();
+    }
+
 
     @Bean HandshakeInterceptor handshakeInterceptor(){
 
         return new HttpSessionHandshakeInterceptor(
-                Arrays.asList("username")
+                Arrays.asList("user")
         );
     }
 

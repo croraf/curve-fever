@@ -24,7 +24,7 @@ $.get(
 $("#startRound").click(function (){
 
         var chosenColor = $(".simplecolorpicker.icon").css("background-color");
-        window.location.href = encodeURI("services/round/enter?name=" + playerName + "&color=" + chosenColor);
+        window.location.href = encodeURI("services/round/enter?username=" + playerName + "&color=" + chosenColor);
 });
 
 $("#logOut").click(function (){

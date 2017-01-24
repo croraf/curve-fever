@@ -49,7 +49,7 @@
 				    </form>
 				</div>
 
-			    <a href="services/round/exit?name=${player.name}">Log out</a>
+			    <a href="services/round/exit">Log out</a>
 			</div>
 
 			<div id = "boardCollumn">
@@ -68,6 +68,7 @@
                     <div id = "mute" class="controlRowElement">
                         <i class="material-icons">volume_off</i>
                     </div>
+
 
 
                     <%-- <div id = "positionDataBox"></div> --%>
@@ -97,8 +98,8 @@
 
 
         <!--Initialize playerList then webSocket first-->
+        <script type="text/javascript" src="static/roundScreen/controlSocket.js"></script>
         <script type="text/javascript" src="static/roundScreen/chatSocket.js"></script>
-	    <script type="text/javascript" src="static/roundScreen/playerList.js"></script>
         <script type="text/javascript" src="static/roundScreen/drawPlayer.js"></script>
 	    <script type="text/javascript" src="static/roundScreen/positionsSocket.js"></script>
 

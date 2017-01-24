@@ -56,10 +56,6 @@ public class ChatSocketHandler extends TextWebSocketHandler {
     @Override
     public synchronized void afterConnectionClosed(WebSocketSession session, CloseStatus status) throws Exception {
 
-        String username = (String)session.getAttributes().get("username");
-        roundLogic.removeIngamePlayerByName(username);
         currentSessions.remove(session);
-        broadcastChatMessage("[ " + username + " disconnected ]");
-        System.out.println("ChatSocket connection of '" + username + "' closed! - " + status);
     }
 }

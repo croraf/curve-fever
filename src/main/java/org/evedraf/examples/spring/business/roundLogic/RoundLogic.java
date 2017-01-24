@@ -79,19 +79,12 @@ public class RoundLogic {
         allPositions.put(p.getName(), new ArrayList<>());
     }
 
-    public synchronized Player removeIngamePlayer(Player player){
+    public synchronized void removeIngamePlayer(Player player){
 
-
-        return removeIngamePlayerByName(player.getName());
+        allPositions.remove(player.getName());
+        ingamePlayers.remove(player.getName());
     }
 
-    public synchronized Player removeIngamePlayerByName(String playerName){
-
-
-        allPositions.remove(playerName);
-
-        return ingamePlayers.remove(playerName);
-    }
 
 
 

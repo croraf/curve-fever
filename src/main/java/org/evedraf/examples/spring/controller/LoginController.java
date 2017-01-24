@@ -33,8 +33,6 @@ public class LoginController {
 
         Player player = playerDao.loginPlayer(username);
 
-        httpSession.setAttribute("username", username);
-
         model.addAttribute("player", player);
         return "loginSuccess";
     }
