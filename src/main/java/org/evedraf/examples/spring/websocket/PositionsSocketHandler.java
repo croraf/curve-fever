@@ -59,6 +59,7 @@ public class PositionsSocketHandler extends TextWebSocketHandler {
 
         for (WebSocketSession session: currentSessions) {
 
+            if (!session.isOpen()) {continue;}
             session.sendMessage(new TextMessage(mapper.writeValueAsString(otherPlayerPosition)));
         }
 

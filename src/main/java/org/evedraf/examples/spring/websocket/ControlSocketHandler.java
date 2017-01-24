@@ -51,6 +51,7 @@ public class ControlSocketHandler extends TextWebSocketHandler {
 
         for (WebSocketSession session: currentSessions.keySet()) {
 
+            if (!session.isOpen()) {continue;}
             session.sendMessage(new TextMessage(message));
         }
 
