@@ -13,17 +13,19 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-        auth.inMemoryAuthentication().withUser("evedraf").password("admin").roles("USER");
-        auth.inMemoryAuthentication().withUser("admin").password("admin").roles("ADMIN");
+        /*auth.inMemoryAuthentication().withUser("evedraf").password("admin").roles("USER");
+        auth.inMemoryAuthentication().withUser("admin").password("admin").roles("ADMIN");*/
     }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
-        http.authorizeRequests()
-        .antMatchers("/services/playersXYZ/**").access("hasRole('ROLE_ADMIN')")
-                //.antMatchers("/dba/**").access("hasRole('ROLE_ADMIN') or hasRole('ROLE_DBA')")
-                .and().formLogin(); //httpBasic();
+        /*http.csrf().disable();
 
+        http.authorizeRequests()
+        .antMatchers("/services/playersXYZ*//**").access("hasRole('ROLE_ADMIN')")
+                //.antMatchers("/dba*//**").access("hasRole('ROLE_ADMIN') or hasRole('ROLE_DBA')")
+                .and().formLogin(); //httpBasic();
+*/
     }
 }

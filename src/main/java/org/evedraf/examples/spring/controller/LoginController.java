@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
@@ -28,9 +29,11 @@ public class LoginController {
     }
 
     @PostMapping
-    public String loginAttempt(@RequestParam("name") String playerName, Model model){
+    public String loginAttempt(@RequestParam("name") String username, Model model, HttpSession httpSession){
 
-        Player player = playerDao.loginPlayer(playerName);
+        Player player = playerDao.loginPlayer(username);
+
+        httpSession.setAttribute("username", username);
 
         model.addAttribute("player", player);
         return "loginSuccess";

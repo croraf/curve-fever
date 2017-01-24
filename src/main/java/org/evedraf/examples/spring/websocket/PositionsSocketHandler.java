@@ -2,8 +2,8 @@ package org.evedraf.examples.spring.websocket;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.evedraf.examples.spring.business.roundLogic.Position;
+import org.evedraf.examples.spring.business.roundLogic.PositionMessageFromClient;
 import org.evedraf.examples.spring.business.roundLogic.RoundLogic;
-import org.evedraf.examples.spring.business.roundLogic.UpdateMessageFromClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.socket.CloseStatus;
 import org.springframework.web.socket.TextMessage;
@@ -38,8 +38,8 @@ public class PositionsSocketHandler extends TextWebSocketHandler {
     public synchronized void handleTextMessage(WebSocketSession session, TextMessage message) {
 
         try {
-            UpdateMessageFromClient messageIn =
-                    mapper.readValue(message.getPayload(), UpdateMessageFromClient.class);
+            PositionMessageFromClient messageIn =
+                    mapper.readValue(message.getPayload(), PositionMessageFromClient.class);
 
             if (messageIn.getPosition() != null){
                 roundLogic.addPosition(messageIn.getPlayerName(), messageIn.getPosition());
@@ -56,7 +56,7 @@ public class PositionsSocketHandler extends TextWebSocketHandler {
 
     }
 
-    /*private synchronized void logPositions(UpdateMessageFromClient messageIn) {
+    /*private synchronized void logPositions(PositionMessageFromClient messageIn) {
 
         if (messageIn.getPosition() == null){
             System.out.println(messageIn.getPlayerName() + ": null");

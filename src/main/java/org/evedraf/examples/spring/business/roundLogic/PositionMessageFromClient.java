@@ -4,7 +4,7 @@ import org.evedraf.examples.spring.business.roundLogic.Position;
 
 /**
  */
-public class UpdateMessageFromClient {
+public class PositionMessageFromClient {
 
     public Position position;
 

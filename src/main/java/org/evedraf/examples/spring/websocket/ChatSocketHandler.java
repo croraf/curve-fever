@@ -27,7 +27,7 @@ public class ChatSocketHandler extends TextWebSocketHandler {
     @Override
     public synchronized void afterConnectionEstablished(WebSocketSession session) throws Exception {
 
-        String username = session.getUri().getUserInfo();
+        String username = (String)session.getAttributes().get("username");
         currentSessions.put(session, username);
     }
 
@@ -55,10 +55,10 @@ public class ChatSocketHandler extends TextWebSocketHandler {
     @Override
     public synchronized void afterConnectionClosed(WebSocketSession session, CloseStatus status) throws Exception {
 
-        String disconnectedPlayerName = currentSessions.get(session);
-        roundLogic.removeIngamePlayerByName(disconnectedPlayerName);
+        String username = (String)session.getAttributes().get("username");
+        roundLogic.removeIngamePlayerByName(username);
         currentSessions.remove(session);
-        broadcastChatMessage("[ " + disconnectedPlayerName + " disconnected ]");
-        System.out.println("ChatSocket connection of '" + disconnectedPlayerName + "' closed! - " + status);
+        broadcastChatMessage("[ " + username + " disconnected ]");
+        System.out.println("ChatSocket connection of '" + username + "' closed! - " + status);
     }
 }

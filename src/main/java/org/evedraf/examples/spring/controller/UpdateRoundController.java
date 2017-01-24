@@ -39,7 +39,7 @@ public class UpdateRoundController {
 
         //temporary broadcast here
         try {
-            ChatSocketHandler.broadcastChatMessage("[ " + name + " entered ]");
+            ChatSocketHandler.broadcastChatMessage("[ " + name + " connected ]");
         } catch (IOException e) {
             e.printStackTrace();
         }
