@@ -11,6 +11,7 @@ import org.springframework.web.socket.config.annotation.EnableWebSocket;
 import org.springframework.web.socket.config.annotation.WebSocketConfigurer;
 import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry;
 import org.springframework.web.socket.server.HandshakeInterceptor;
+import org.springframework.web.socket.server.standard.ServletServerContainerFactoryBean;
 import org.springframework.web.socket.server.support.HttpSessionHandshakeInterceptor;
 
 import java.util.Arrays;
@@ -56,6 +57,14 @@ public class WebSocketConfig implements WebSocketConfigurer {
                 Arrays.asList("user")
         );
     }
+
+    @Bean
+    public ServletServerContainerFactoryBean createWebSocketContainer() {
+        ServletServerContainerFactoryBean container = new ServletServerContainerFactoryBean();
+        container.setMaxSessionIdleTimeout(10*60*1000);
+        return container;
+    }
+
 
 
 }
