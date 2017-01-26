@@ -6,9 +6,11 @@
 
 }
 
-#pickedPlayerCollumn > p {
+#pickedPlayerCollumn > div {
 
 	text-align: center;
+	margin: 1em 0em;
+
 }
 
 

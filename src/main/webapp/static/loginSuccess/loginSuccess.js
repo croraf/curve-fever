@@ -23,10 +23,13 @@ $.get(
         "json"
 );
 
-$("#startRound").click(function (){
+$("#startRound").click(function (e){
 
         var chosenColor = $(".simplecolorpicker.icon").css("background-color");
-        window.location.href = encodeURI("services/round/enter?username=" + playerName + "&color=" + chosenColor);
+
+        $("#startRoundForm input[name=color]").attr("value", chosenColor);
+
+        $("#startRoundForm").submit();
 });
 
 $("#logOut").click(function (){

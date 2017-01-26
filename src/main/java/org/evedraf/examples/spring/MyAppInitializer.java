@@ -1,21 +1,16 @@
 package org.evedraf.examples.spring;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 /*import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;*/
-import org.apache.log4j.LogManager;
 /*import org.apache.log4j.Logger;*/
 import org.evedraf.examples.spring.config.*;
 
 import org.evedraf.examples.spring.filter.DirectViewAccessBlockFilter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.context.annotation.PropertySource;
-import org.springframework.core.Conventions;
+        import org.springframework.core.Conventions;
 import org.springframework.util.Assert;
-import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping;
-import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
+        import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 
 import javax.servlet.Filter;
@@ -23,9 +18,7 @@ import javax.servlet.FilterRegistration;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 
-import java.util.Map;
-
-import static java.lang.System.getenv;
+        import static java.lang.System.getenv;
 
 /**
  * Created by Korisnik on 13.12.2016..
@@ -60,7 +53,7 @@ public class MyAppInitializer extends AbstractAnnotationConfigDispatcherServletI
                 BusinessConfig.class,
                 DaoConfigDevelopment.class,
                 DaoConfigProduction.class,
-                SecurityConfig.class,
+                WebSecurityConfig.class,
                 WebSocketConfig.class
         };
     }
@@ -69,7 +62,7 @@ public class MyAppInitializer extends AbstractAnnotationConfigDispatcherServletI
     protected Class<?>[] getServletConfigClasses() {
 
         return new Class<?>[]{
-                WebConfig.class
+                WebMvcConfig.class
         };
     }
 

@@ -13,7 +13,7 @@ $("#loginScreenForm").submit(function(e) {
            success: function(returnData)
            {
                $(".myContainer").html(returnData);
-               $.getScript("static/loginSuccess/loginSuccess.js", test);
+               $.getScript("static/loginSuccess/loginSuccess.js");
            }
          });
 

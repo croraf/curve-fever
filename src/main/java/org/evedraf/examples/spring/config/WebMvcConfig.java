@@ -13,7 +13,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 @Configuration
 @EnableWebMvc
 @ComponentScan("org.evedraf.examples.spring.controller")
-public class WebConfig {
+public class WebMvcConfig {
 
     @Bean
     ViewResolver getViewResolver(){

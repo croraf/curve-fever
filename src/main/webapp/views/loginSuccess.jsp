@@ -1,8 +1,7 @@
 
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+
 <link rel="stylesheet" type="text/css" href="static/loginSuccess/loginSuccess.css" />
-<script>
-        var playerName = "${player.name}";
-</script>
 
 <div id = "playersListCollumn">
 
@@ -17,12 +16,21 @@
 
     <h4 class="center-align">Login success!</h4>
 
-    <p> Id: ${player.id} </p>
-    <p> Name: ${player.name} </p>
-    <p> Points: ${player.points} </p>
-    <p> Coins: ${player.coins} </p>
+    <div> Id: ${player.id} </div>
+    <div> Name: ${player.name} </div>
+    <div> Points: ${player.points} </div>
+    <div> Coins: ${player.coins} </div>
 
-    <p id = "startRoundRow">
+
+
+    <div id="startRoundRow">
+
+        <form id="startRoundForm" name="startRoundForm" method="get" action="services/round/enter" hidden>
+                        <sec:csrfInput />
+                        <input type="hidden" name="username" value="${player.name}"/>
+                        <input type="hidden" name="color" />
+        </form>
+
         <button type="button" id="startRound" class="waves-effect waves-light btn">
             Start round
         </button>
@@ -44,20 +52,20 @@
         </select>
 
         <script src="static/plugins/jquery.simplecolorpicker.js"></script>
-        <link rel="stylesheet" href="static/plugins/jquery.simplecolorpicker.css">
+        <link rel="stylesheet" href="static/plugins/jquery.simplecolorpicker.css" />
 
         <script>
                  $('select[name="colorpicker-picker-delay"]').simplecolorpicker({picker: true, theme: 'glyphicons', pickerDelay: 1000});
                  //$('select[name="colorpicker-longlist"]').simplecolorpicker('destroy');
         </script>
 
-    </p>
+    </div>
 
-    <p>
+    <div>
         <button type="button" id="logOut" class="waves-effect waves-light btn">
             Log out
         </button>
-    </p>
+    </div>
 
 </div>
 

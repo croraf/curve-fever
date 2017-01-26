@@ -2,6 +2,7 @@
 
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
 <html>
 <head>
@@ -52,6 +53,7 @@
             <div class = "col s4 offset-s4">
 
                 <form action="services/login" method="post" id="loginScreenForm">
+                            <sec:csrfInput />
                             <p>
                                 Name: <input type="text" name="name" />
                             </p>
