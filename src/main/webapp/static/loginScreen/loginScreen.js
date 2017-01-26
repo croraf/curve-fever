@@ -11,9 +11,15 @@ $("#loginScreenForm").submit(function(e) {
            success: function(returnData)
            {
                $(".myContainer").html(returnData);
-               $.getScript("static/loginSuccess/loginSuccess.js");
+               $.getScript("static/loginSuccess/loginSuccess.js", test);
            }
          });
 
     e.preventDefault(); // avoid to execute the actual submit of the form.
+
+    function test(data){
+
+        console.log(data);
+        var i = 3;
+    }
 });
