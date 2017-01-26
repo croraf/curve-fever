@@ -1,6 +1,8 @@
+"use strict";
+
 //@ sourceURL=loginScreen-dynamic.js
 
-"use strict";
+
 
 $("#loginScreenForm").submit(function(e) {
 
@@ -17,9 +19,4 @@ $("#loginScreenForm").submit(function(e) {
 
     e.preventDefault(); // avoid to execute the actual submit of the form.
 
-    function test(data){
-
-        console.log(data);
-        var i = 3;
-    }
 });

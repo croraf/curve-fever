@@ -58,10 +58,11 @@ public class WebSocketConfig implements WebSocketConfigurer {
         );
     }
 
+
     @Bean
     public ServletServerContainerFactoryBean createWebSocketContainer() {
         ServletServerContainerFactoryBean container = new ServletServerContainerFactoryBean();
-        container.setMaxSessionIdleTimeout(10*60*1000);
+        container.setMaxSessionIdleTimeout(60*60*1000); //one hour
         return container;
     }
 

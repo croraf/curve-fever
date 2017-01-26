@@ -1,6 +1,8 @@
+"use strict";
+
 //@ sourceURL=loginSuccess-dynamic.js
 
-"use strict";
+
 
 $.get(
         "services/login/players",
