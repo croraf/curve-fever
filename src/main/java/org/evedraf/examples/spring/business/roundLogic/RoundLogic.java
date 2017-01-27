@@ -1,5 +1,6 @@
 package org.evedraf.examples.spring.business.roundLogic;
 
+import javafx.geometry.Pos;
 import org.evedraf.examples.spring.model.Player;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -29,17 +30,28 @@ public class RoundLogic {
     private CollisionDetection collisionDetection;
 
 
-    public synchronized void addPosition(String playerName, Position newPosition){
+    /**
+     *
+     * @param playerName The player whose position is added to map.
+     * @param newPosition The new position for that player.
+     * @return true if there is collision for this position.
+     */
+    public synchronized boolean addPositionAndCheckCollision(String playerName, Position newPosition){
 
-        if ( ! allPositions.containsKey(playerName) ){return;}
+        if ( ! allPositions.containsKey(playerName) ){return false;}
 
 
         allPositions.get(playerName).add(newPosition);
 
         if ( collisionDetection.checkCollision(playerName, newPosition, allPositions)){
+
             System.out.println("sudar");
             allPositions.remove(playerName);
-        };
+            return true;
+        } else {
+
+            return false;
+        }
     }
 
 
@@ -85,7 +97,13 @@ public class RoundLogic {
         ingamePlayers.remove(player.getName());
     }
 
+    public synchronized void restartRound(){
 
+        for (String username : ingamePlayers.keySet()){
+            allPositions.put(username, new ArrayList<>());
+        }
+        System.gc();
+    }
 
 
 

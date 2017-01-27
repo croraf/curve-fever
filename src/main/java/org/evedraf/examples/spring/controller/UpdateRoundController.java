@@ -3,16 +3,12 @@ package org.evedraf.examples.spring.controller;
 import org.evedraf.examples.spring.business.roundLogic.RoundLogic;
 import org.evedraf.examples.spring.dao.PlayerDao;
 import org.evedraf.examples.spring.model.Player;
-import org.evedraf.examples.spring.websocket.ChatSocketHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
-import java.io.IOException;
-import java.util.Collection;
-import java.util.Map;
 
 /**
  * Created by Korisnik on 14.1.2017..
@@ -48,6 +44,14 @@ public class UpdateRoundController {
     public String exitRound(){
 
         return "redirect:/services/login";
+    }
+
+
+    @GetMapping("/restart")
+    @ResponseBody
+    public void restartRound(){
+
+        roundLogic.restartRound();
     }
 
     /*@GetMapping("/players")

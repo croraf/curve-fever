@@ -3,6 +3,14 @@
 //start functionality
 $("#restart").click( function (event) {
 
-    boardModule.startStop(true);
-    drawPlayerModule.clearCanvas();
+    $.get(
+            "services/round/restart",
+            undefined,
+            function(){
+                mainLoopModule.restartPositions();
+                drawPlayerModule.clearCanvas();
+            },
+            "text"
+    );
+
 });

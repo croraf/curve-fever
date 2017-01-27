@@ -1,15 +1,22 @@
-package org.evedraf.examples.spring.business.roundLogic;
+package org.evedraf.examples.spring.business.roundLogic.messages;
 
 import org.evedraf.examples.spring.business.roundLogic.Position;
 
 /**
  */
-public class PositionMessageFromClient {
-
-    public Position position;
+public class PositionMessageFromClient{
 
     public String playerName;
 
+    public Position position;
+
+    public PositionMessageFromClient() {
+    }
+
+    public PositionMessageFromClient(String playerName, Position position) {
+        this.playerName = playerName;
+        this.position = position;
+    }
 
     public Position getPosition() {
         return position;

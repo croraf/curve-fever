@@ -1,6 +1,6 @@
 "use strict";
 
-var boardModule = (function() {
+var mainLoopModule = (function() {
     var module = {};
 
 
@@ -61,7 +61,6 @@ var boardModule = (function() {
     var currentCoordY = Math.random() * canvas.height;
     var direction = Math.PI/3;
     var speed = 3.5;
-    var started = false;
     var refreshPeriod = 55; //55 ms as first assumption
 
     //main drawing loop
@@ -72,7 +71,7 @@ var boardModule = (function() {
                              y : currentCoordY
                           };
 
-        positionsSocketModule.sendPosition(posUpd);
+        controlSocketModule.sendMessage("positionsUpdate", posUpd);
 
         if (steerDirection === "left"){
             direction = direction - Math.PI/24;
@@ -93,8 +92,9 @@ var boardModule = (function() {
 
 
 
-    module.startStop = function(flag){
-        started = flag;
+    module.restartPositions = function(){
+         currentCoordX = Math.random() * canvas.width;
+         currentCoordY = Math.random() * canvas.height;
     };
     return module;
 })();

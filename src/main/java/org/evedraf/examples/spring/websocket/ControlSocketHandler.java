@@ -2,8 +2,9 @@ package org.evedraf.examples.spring.websocket;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.evedraf.examples.spring.business.roundLogic.ControlMessage;
+import org.evedraf.examples.spring.business.roundLogic.MessageInHandlerLogic;
 import org.evedraf.examples.spring.business.roundLogic.RoundLogic;
+import org.evedraf.examples.spring.business.roundLogic.messages.PositionMessageFromClient;
 import org.evedraf.examples.spring.model.Player;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.socket.CloseStatus;
@@ -20,12 +21,16 @@ import java.util.Map;
  */
 public class ControlSocketHandler extends TextWebSocketHandler {
 
-    private final Map<WebSocketSession, Player> currentSessions = new HashMap<>();
+    private static Map<WebSocketSession, Player> currentSessions = new HashMap<>();
 
     @Autowired
     private RoundLogic roundLogic;
 
-    private final ObjectMapper mapper = new ObjectMapper();
+    @Autowired
+    private MessageInHandlerLogic messageInHandlerLogic;
+
+    private static ObjectMapper mapper = new ObjectMapper();
+
 
     @Override
     public synchronized void afterConnectionEstablished(WebSocketSession session) throws Exception {
@@ -33,36 +38,55 @@ public class ControlSocketHandler extends TextWebSocketHandler {
         Player user = (Player)session.getAttributes().get("user");
         currentSessions.put(session, user);
 
-        sendPreviousUsers(session);
+        /**
+         * Sends previously connected users to newly established session only.
+         */
+        session.sendMessage(createGenericSocketMessage("previousUsers", roundLogic.getIngamePlayers()));
 
         roundLogic.addIngamePlayer(user);
 
-        broadcastControlMessage(mapper.writeValueAsString(new ControlMessage("userConnected", user)));
-
-        ChatSocketHandler.broadcastChatMessage("[ " + user.getName() + " connected ]");
-    }
-
-    @Override
-    public synchronized void handleTextMessage(WebSocketSession session, TextMessage message) {
+        /**
+         * Sends genericPayload to all sessions that we have a newly connected user.
+         */
+        broadcastMessage("userConnected", user);
 
     }
 
-    public void broadcastControlMessage(String message) throws IOException{
+
+    /**
+     * Brodcast message to all connected sessions.
+     * @param type Type of message
+     * @param genericPayload Payload of message
+     * @throws IOException
+     */
+    public static void broadcastMessage(String type, Object genericPayload) throws IOException{
+
+        TextMessage message = createGenericSocketMessage(type, genericPayload);
 
         for (WebSocketSession session: currentSessions.keySet()) {
 
             if (!session.isOpen()) {continue;}
-            session.sendMessage(new TextMessage(message));
+            session.sendMessage(message);
         }
 
     }
 
-    public void sendPreviousUsers (WebSocketSession session) throws IOException {
+    private static TextMessage createGenericSocketMessage(String type, Object genericPayload) throws JsonProcessingException {
 
-        session.sendMessage(new TextMessage(
-                mapper.writeValueAsString(
-                        new ControlMessage("previousUsers", roundLogic.getIngamePlayers()))));
+        return new TextMessage(mapper.writeValueAsString(new GenericSocketMessage(type, genericPayload)));
     }
+
+
+    @Override
+    public synchronized void handleTextMessage(WebSocketSession session, TextMessage message) throws IOException {
+
+        GenericSocketMessage genericSocketMessage =
+                mapper.readValue(message.getPayload(), GenericSocketMessage.class);
+
+        messageInHandlerLogic.handleMessage(genericSocketMessage.getType(), genericSocketMessage.getGenericPayload());
+
+    }
+
 
     @Override
     public synchronized void afterConnectionClosed(WebSocketSession session, CloseStatus status) throws Exception {
@@ -70,7 +94,38 @@ public class ControlSocketHandler extends TextWebSocketHandler {
         Player user = (Player)session.getAttributes().get("user");
         roundLogic.removeIngamePlayer(user);
         currentSessions.remove(session);
-        broadcastControlMessage(mapper.writeValueAsString(new ControlMessage("userDisconnected", user)));
-        ChatSocketHandler.broadcastChatMessage("[ " + user.getName() + " disconnected ]");
+        broadcastMessage("userDisconnected", user);
+    }
+
+
+    private static class GenericSocketMessage {
+
+        private String type;
+
+        private Object genericPayload;
+
+        public GenericSocketMessage() {
+        }
+
+        public GenericSocketMessage(String type, Object genericPayload) {
+            this.type = type;
+            this.genericPayload = genericPayload;
+        }
+
+        public String getType() {
+            return type;
+        }
+
+        public void setType(String type) {
+            this.type = type;
+        }
+
+        public Object getGenericPayload() {
+            return genericPayload;
+        }
+
+        public void setGenericPayload(Object genericPayload) {
+            this.genericPayload = genericPayload;
+        }
     }
 }

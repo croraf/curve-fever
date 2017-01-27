@@ -96,12 +96,10 @@
 
         <!--Initialize playerList then webSocket first-->
         <script type="text/javascript" src="static/roundScreen/controlSocket.js"></script>
-        <script type="text/javascript" src="static/roundScreen/chatSocket.js"></script>
         <script type="text/javascript" src="static/roundScreen/drawPlayer.js"></script>
-	    <script type="text/javascript" src="static/roundScreen/positionsSocket.js"></script>
 
 	    <script type="text/javascript" src="static/roundScreen/backgroundAudio.js"></script>
-	    <script type="text/javascript" src="static/roundScreen/roundScreenBoard.js"></script>
+	    <script type="text/javascript" src="static/roundScreen/mainLoop.js"></script>
 	    <script type="text/javascript" src="static/roundScreen/restartButton.js"></script>
 
 	    <!--Testing-->
