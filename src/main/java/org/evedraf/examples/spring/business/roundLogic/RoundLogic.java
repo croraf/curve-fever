@@ -55,9 +55,9 @@ public class RoundLogic {
     }
 
 
-    public synchronized Map<String, Position> getLastPositionOfOtherPlayers (){
+    public synchronized Map<String, Position> getLastPositionOfAllPlayers(){
 
-        Map<String, Position> lastPositionsOfOthers = new HashMap<>();
+        Map<String, Position> lastPositionOfAllPlayers = new HashMap<>();
 
         for(Map.Entry <String, List<Position>> entry : allPositions.entrySet()){
 
@@ -66,14 +66,14 @@ public class RoundLogic {
 
             if (size == 0){
                 //todo check how null behaves, maybe remove completely
-                lastPositionsOfOthers.put(entry.getKey(), null) ;
+                lastPositionOfAllPlayers.put(entry.getKey(), null) ;
             } else{
-                lastPositionsOfOthers.put(entry.getKey(), positionsOfOneOtherPlayer.get(size-1)) ;
+                lastPositionOfAllPlayers.put(entry.getKey(), positionsOfOneOtherPlayer.get(size-1)) ;
             }
 
         }
 
-        return lastPositionsOfOthers;
+        return lastPositionOfAllPlayers;
     }
 
 

@@ -1,6 +1,5 @@
 package org.evedraf.examples.spring.business.roundLogic;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.evedraf.examples.spring.business.roundLogic.messages.PositionMessageFromClient;
@@ -43,12 +42,14 @@ public class MessageInHandlerLogic {
                     roundLogic.addPositionAndCheckCollision(
                             positionMessageFromClient.getPlayerName(), positionMessageFromClient.getPosition());
 
-            /*if (collision)*/
+
+
+            if (collision) {/*todo*/ }
         }
 
-        Map<String, Position> otherPlayerPosition = roundLogic.getLastPositionOfOtherPlayers();
+        /*Map<String, Position> lastPositionOfAllPlayers = roundLogic.getLastPositionOfAllPlayers();
 
-        ControlSocketHandler.broadcastMessage("positionsUpdate", otherPlayerPosition);
+        ControlSocketHandler.broadcastMessage("positionsUpdate", lastPositionOfAllPlayers);*/
 
     }
 
