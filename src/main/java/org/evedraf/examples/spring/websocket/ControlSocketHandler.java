@@ -1,6 +1,7 @@
 package org.evedraf.examples.spring.websocket;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.evedraf.examples.spring.business.roundLogic.MessageInHandlerLogic;
 import org.evedraf.examples.spring.business.roundLogic.RoundLogic;
@@ -80,10 +81,13 @@ public class ControlSocketHandler extends TextWebSocketHandler {
     @Override
     public synchronized void handleTextMessage(WebSocketSession session, TextMessage message) throws IOException {
 
-        GenericSocketMessage genericSocketMessage =
-                mapper.readValue(message.getPayload(), GenericSocketMessage.class);
+        JsonNode rootNode =
+                mapper.readTree(message.getPayload());
 
-        messageInHandlerLogic.handleMessage(genericSocketMessage.getType(), genericSocketMessage.getGenericPayload());
+        JsonNode type = rootNode.path("type");
+        JsonNode genericPayload = rootNode.path("genericPayload");
+
+        messageInHandlerLogic.handleMessage(type, genericPayload);
 
     }
 

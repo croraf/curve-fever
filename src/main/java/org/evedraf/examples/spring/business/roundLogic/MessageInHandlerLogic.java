@@ -1,6 +1,8 @@
 package org.evedraf.examples.spring.business.roundLogic;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.evedraf.examples.spring.business.roundLogic.messages.PositionMessageFromClient;
 import org.evedraf.examples.spring.websocket.ControlSocketHandler;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,14 +17,16 @@ public class MessageInHandlerLogic {
     @Autowired
     private RoundLogic roundLogic;
 
-    public void handleMessage(String type, Object genericPayload) throws IOException {
+    ObjectMapper mapper = new ObjectMapper();
 
-        switch (type){
+    public void handleMessage(JsonNode type, JsonNode genericPayload) throws IOException {
+
+        switch (type.textValue()){
             case "positionsUpdate":
                 handlePositionInMessage(genericPayload);
                 break;
             case "chatMessage":
-                ControlSocketHandler.broadcastMessage("chatMessage", genericPayload);
+                ControlSocketHandler.broadcastMessage("chatMessage", genericPayload.textValue());
                 break;
             default:
                 System.out.println("Message in type unrecognized!");
@@ -30,14 +34,9 @@ public class MessageInHandlerLogic {
     }
 
 
-    private void handlePositionInMessage(Object positionMessageFromClient) throws IOException {
+    private void handlePositionInMessage(JsonNode genericPayload) throws IOException {
 
-        Map<String, >
-
-        PositionMessageFromClient positionMessage =
-                new PositionMessageFromClient(
-
-                        (Map)positionMessageFromClient);
+        PositionMessageFromClient positionMessageFromClient = mapper.treeToValue(genericPayload, PositionMessageFromClient.class);
 
         if (positionMessageFromClient.getPosition() != null){
             boolean collision =
