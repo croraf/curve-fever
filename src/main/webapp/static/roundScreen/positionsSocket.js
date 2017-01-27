@@ -1,6 +1,6 @@
 
 
-var webSocketModule = (function(){
+var positionsSocketModule = (function(){
 
     var module = {};
 

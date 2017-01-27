@@ -59,9 +59,11 @@
 
                 <div id = "controlRow">
 
-                    <div id = "startStop" class="controlRowElement">
-                        START
-                    </div>
+                    <c:if test="${player.name==\"rafa\"}">
+                        <div id = "restart" class="controlRowElement">
+                            RESTART
+                        </div>
+                    </c:if>
 
                     <div id = "currentPlayer"  class="controlRowElement">${player.name}</div>
 
@@ -81,16 +83,11 @@
 
 
 
-
 		<audio id= "backgroundAudio" loop>
 	        <source src="static/battleScreen/Virgo_Rosa.ogg" type="audio/ogg">
 	        Your browser does not support the audio element.
 	    </audio>
 
-		 <%-- <audio id= "boardAudio">
-	        <source src="static/roundScreen/soundOnBoardClick.ogg" type="audio/ogg">
-	        Your browser does not support the audio element.
-	    </audio> --%>
 
 	    <!--Import jQuery before materialize.js-->
 	    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
@@ -105,7 +102,7 @@
 
 	    <script type="text/javascript" src="static/roundScreen/backgroundAudio.js"></script>
 	    <script type="text/javascript" src="static/roundScreen/roundScreenBoard.js"></script>
-	    <script type="text/javascript" src="static/roundScreen/startButton.js"></script>
+	    <script type="text/javascript" src="static/roundScreen/restartButton.js"></script>
 
 	    <!--Testing-->
         <script type="text/javascript" src="static/roundScreen/drawOnGlass.js"></script>

@@ -67,33 +67,29 @@ var boardModule = (function() {
     //main drawing loop
     function mainLoop(){
 
-        if (started === true){
+        posUpd.position = {
+                             x : currentCoordX,
+                             y : currentCoordY
+                          };
 
-            posUpd.position = {
-                                 x : currentCoordX,
-                                 y : currentCoordY
-                              };
+        positionsSocketModule.sendPosition(posUpd);
 
-            webSocketModule.sendPosition(posUpd);
-
-            if (steerDirection === "left"){
-                direction = direction - Math.PI/24;
-            } else if (steerDirection === "right"){
-                direction = direction + Math.PI/24;
-            }
-
-            currentCoordX = (currentCoordX + speed*Math.cos(direction)) % canvas.width;
-            if (currentCoordX < 0) { currentCoordX += canvas.width};
-            currentCoordY = (currentCoordY + speed*Math.sin(direction)) % canvas.height;
-            if (currentCoordY < 0) { currentCoordY += canvas.height};
-
+        if (steerDirection === "left"){
+            direction = direction - Math.PI/24;
+        } else if (steerDirection === "right"){
+            direction = direction + Math.PI/24;
         }
 
-        setTimeout(mainLoop, refreshPeriod);
+        currentCoordX = (currentCoordX + speed*Math.cos(direction)) % canvas.width;
+        if (currentCoordX < 0) { currentCoordX += canvas.width};
+        currentCoordY = (currentCoordY + speed*Math.sin(direction)) % canvas.height;
+        if (currentCoordY < 0) { currentCoordY += canvas.height};
+
+        //setTimeout(mainLoop, refreshPeriod);
     }
 
     //start main game loop
-    mainLoop();
+    var mainLoopInterval = setInterval(mainLoop, refreshPeriod);
 
 
 

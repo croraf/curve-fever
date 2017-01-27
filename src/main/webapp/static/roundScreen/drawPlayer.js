@@ -1,21 +1,28 @@
 "use strict";
 
-var drawPlayerModule = {};
-
-(function(){
+var drawPlayerModule = (function(){
+    var module = {};
 
     var canvas=document.getElementById("board");
-    var ctx2 = canvas.getContext("2d");
+    var ctx = canvas.getContext("2d");
     var curveRadius = 4;
 
-    drawPlayerModule.drawPlayer = function(userName, playerCoordinates){
+    function drawPlayer(userName, playerCoordinates){
 
-        ctx2.strokeStyle = allPlayers[userName].color;
-        ctx2.beginPath();
-        ctx2.arc(playerCoordinates.x, playerCoordinates.y, curveRadius, 0, 2*Math.PI);
-        ctx2.stroke();
-        ctx2.strokeStyle = "#FFFFFF";
+        ctx.strokeStyle = allPlayers[userName].color;
+        ctx.beginPath();
+        ctx.arc(playerCoordinates.x, playerCoordinates.y, curveRadius, 0, 2*Math.PI);
+        ctx.stroke();
+        ctx.strokeStyle = "#FFFFFF";
 
     }
 
+    function clearCanvas(){
+
+        ctx.clearRect(0,0,canvas.width, canvas.height);
+    }
+
+    module.drawPlayer = drawPlayer;
+    module.clearCanvas = clearCanvas;
+    return module;
 })();
