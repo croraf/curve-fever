@@ -21,8 +21,8 @@ public class MessageInHandlerLogic {
     public void handleMessage(JsonNode type, JsonNode genericPayload) throws IOException {
 
         switch (type.textValue()){
-            case "positionsUpdate":
-                handlePositionInMessage(genericPayload);
+            case "directionUpdate":
+                changeDirection(genericPayload);
                 break;
             case "chatMessage":
                 ControlSocketHandler.broadcastMessage("chatMessage", genericPayload.textValue());
@@ -33,23 +33,10 @@ public class MessageInHandlerLogic {
     }
 
 
-    private void handlePositionInMessage(JsonNode genericPayload) throws IOException {
+    private void changeDirection(JsonNode genericPayload){
 
-        PositionMessageFromClient positionMessageFromClient = mapper.treeToValue(genericPayload, PositionMessageFromClient.class);
-
-        if (positionMessageFromClient.getPosition() != null){
-            boolean collision =
-                    roundLogic.addPositionAndCheckCollision(
-                            positionMessageFromClient.getPlayerName(), positionMessageFromClient.getPosition());
-
-
-
-            if (collision) {/*todo*/ }
-        }
-
-        /*Map<String, Position> lastPositionOfAllPlayers = roundLogic.getLastPositionOfAllPlayers();
-
-        ControlSocketHandler.broadcastMessage("positionsUpdate", lastPositionOfAllPlayers);*/
+        String direction = genericPayload.asText();
+        MainLoop.setSteerDirection(direction);
 
     }
 

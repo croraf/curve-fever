@@ -24,6 +24,11 @@ var controlSocketModule = (function(){
             };
     }
 
+    myWebSocket.onopen = function(event){
+
+        var i = 5;
+    }
+
     myWebSocket.onmessage = function (event){
 
         var controlEvent = JSON.parse(event.data);

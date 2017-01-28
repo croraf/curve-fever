@@ -60,14 +60,20 @@ public class ControlSocketHandler extends TextWebSocketHandler {
      * @param genericPayload Payload of message
      * @throws IOException
      */
-    public static void broadcastMessage(String type, Object genericPayload) throws IOException{
+    public static void broadcastMessage(String type, Object genericPayload){
 
-        TextMessage message = createGenericSocketMessage(type, genericPayload);
+        try {
+            TextMessage message = createGenericSocketMessage(type, genericPayload);
 
-        for (WebSocketSession session: currentSessions.keySet()) {
+            for (WebSocketSession session : currentSessions.keySet()) {
 
-            if (!session.isOpen()) {continue;}
-            session.sendMessage(message);
+                if (!session.isOpen()) {
+                    continue;
+                }
+                session.sendMessage(message);
+            }
+        } catch (IOException ex){
+            throw new RuntimeException();
         }
 
     }

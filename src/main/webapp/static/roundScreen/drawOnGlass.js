@@ -1,7 +1,6 @@
 
-var drawOnGlassModule = {};
-
-(function (){
+var drawOnGlassModule = (function (){
+    var module = {};
 
     var itemsLoopRefreshPeriod = 3000;
     var glassCanvas=document.getElementById("glass");
@@ -42,12 +41,12 @@ var drawOnGlassModule = {};
     itemsLoop();
     
     
-    drawOnGlassModule.clearItems = function(){
+    clearItems = function(){
         ctx2.clearRect(0,0,glassCanvas.width, glassCanvas.height);
         itemsList = [];
     };
 
-    drawOnGlassModule.checkItemPickup = function(playerCoordinates){
+    checkItemPickup = function(playerCoordinates){
 
         var itemPickupHappened = false;
 
@@ -65,4 +64,7 @@ var drawOnGlassModule = {};
         }
     };
 
+    module.clearItems = clearItems;
+    module.checkItemPickup = checkItemPickup;
+    return module;
 })();

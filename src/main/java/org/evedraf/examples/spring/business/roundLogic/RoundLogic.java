@@ -3,7 +3,11 @@ package org.evedraf.examples.spring.business.roundLogic;
 import javafx.geometry.Pos;
 import org.evedraf.examples.spring.model.Player;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
+import org.springframework.web.context.WebApplicationContext;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -97,16 +101,33 @@ public class RoundLogic {
         ingamePlayers.remove(player.getName());
     }
 
-    public synchronized void restartRound(){
+    private Thread mainThread = null;
 
-        for (String username : ingamePlayers.keySet()){
-            allPositions.put(username, new ArrayList<>());
+    public synchronized boolean restartRound(){
+
+        if (mainThread == null || !mainThread.isAlive()){
+
+            for (String username : ingamePlayers.keySet()){
+                allPositions.put(username, new ArrayList<>());
+            }
+            System.gc();
+
+            mainThread = new Thread(getRunnable());
+            mainThread.start();
+
+            return true;
         }
-        System.gc();
+
+        return false;
     }
 
-
-
+    @Bean
+    @Scope (ConfigurableBeanFactory.SCOPE_PROTOTYPE)
+    private Runnable getRunnable (){
+        MainLoop mainLoop = new MainLoop();
+        mainLoop.setRoundLogic(this);
+        return mainLoop;
+    }
 
 
 }

@@ -5,12 +5,8 @@ var chatModule = (function(){
 
     $("#chatForm").submit(function (e) {
         e.preventDefault();
-        // Get input field values
-        var text = $('input[name=text]').val();
 
-        // Simple validation at client's end
-        // We simply change border color to red if empty field using .css()
-        var proceed = true;
+        var text = $('input[name=text]').val();
 
         if (text === "") {
             return;

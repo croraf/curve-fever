@@ -16,7 +16,7 @@ import javax.servlet.http.HttpSession;
 
 @Controller
 @RequestMapping("/round")
-public class UpdateRoundController {
+public class RoundController {
 
     @Autowired
     private RoundLogic roundLogic;
@@ -28,15 +28,13 @@ public class UpdateRoundController {
             @RequestParam("username") String username, @RequestParam("color") String color, Model model, HttpSession httpSession){
 
         Player p = playerDao.getPlayerByPrimaryKey(username);
-        //todo can be set after the player is added to roundLogic because it is a reference
-        //better set before to avoid concurrency issues because addIngamePlayer establishes happens-before
         p.setColor(color);
+
 
         httpSession.setAttribute("user", p);
 
 
         model.addAttribute("player", p);
-
         return "roundScreen";
     }
 
@@ -49,9 +47,9 @@ public class UpdateRoundController {
 
     @GetMapping("/restart")
     @ResponseBody
-    public void restartRound(){
+    public boolean restartRound(){
 
-        roundLogic.restartRound();
+        return roundLogic.restartRound();
     }
 
     /*@GetMapping("/players")

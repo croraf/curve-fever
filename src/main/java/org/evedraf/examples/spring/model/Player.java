@@ -1,5 +1,6 @@
 package org.evedraf.examples.spring.model;
 
+import org.evedraf.examples.spring.business.roundLogic.Position;
 import org.hibernate.annotations.Generated;
 import org.hibernate.annotations.GenerationTime;
 
@@ -33,6 +34,15 @@ public class Player {
 
     @Transient
     private boolean loggedIn;
+
+    @Transient
+    public double direction;
+
+    @Transient
+    public double speed = 4;
+
+    @Transient
+    public Position position;
 
     public Player() {
     }
@@ -87,5 +97,29 @@ public class Player {
 
     public void setLoggedIn(boolean loggedIn) {
         this.loggedIn = loggedIn;
+    }
+
+    public double getDirection() {
+        return direction;
+    }
+
+    public void setDirection(double direction) {
+        this.direction = direction;
+    }
+
+    public double getSpeed() {
+        return speed;
+    }
+
+    public void setSpeed(double speed) {
+        this.speed = speed;
+    }
+
+    public Position getPosition() {
+        return position;
+    }
+
+    public void setPosition(Position position) {
+        this.position = position;
     }
 }

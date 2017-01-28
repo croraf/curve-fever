@@ -6,9 +6,11 @@ $("#restart").click( function (event) {
     $.get(
             "services/round/restart",
             undefined,
-            function(){
-                mainLoopModule.restartPositions();
-                drawPlayerModule.clearCanvas();
+            function(data){
+                if (data === "true") {
+                    drawPlayerModule.clearCanvas();
+                    drawOnGlassModule.clearItems();
+                }
             },
             "text"
     );
