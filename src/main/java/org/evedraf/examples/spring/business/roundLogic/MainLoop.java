@@ -30,7 +30,9 @@ public class MainLoop implements Runnable {
     @Override
     public void run() {
 
+        ControlSocketHandler.broadcastMessage("restartConfirmed", null);
         ControlSocketHandler.broadcastMessage("chatMessage", "New round starting...");
+
 
         /**
          * initial player positions and direction setup
