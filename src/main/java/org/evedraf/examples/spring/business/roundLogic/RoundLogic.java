@@ -95,30 +95,43 @@ public class RoundLogic {
 
         allPositions.remove(player.getName());
         ingamePlayers.remove(player.getName());
+
+        /**
+         * shut down MainLoop thread if all players left from round.
+         */
+        if (ingamePlayers.isEmpty()){
+
+            mainLoop.setRoundAlive(false);
+        }
     }
 
+
+
+
+
     private Thread mainThread = null;
+    @Autowired
     private MainLoop mainLoop;
     /**
      * Check if round is alive. If so then shut it and open it, if not than just open it.
      */
     public synchronized void restartRound(){
 
-        if (mainThread == null || !mainThread.isAlive()){
-
-            startNewRound();
-        } else {
+        /**
+         * If MainLoop thread is alive shut it down.
+         */
+        if (mainThread != null && mainThread.isAlive()){
 
             mainLoop.setRoundAlive(false);
             try {
                 mainThread.join();
+                System.out.println("MainLoop thread was shut down!");
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            startNewRound();
-
         }
 
+        startNewRound();
     }
 
     /**
@@ -126,7 +139,7 @@ public class RoundLogic {
      */
     private void startNewRound(){
 
-        mainLoop = getFreshMainLoop();
+        /*mainLoop = getFreshMainLoop();*/
         mainLoop.setRoundAlive(true);
 
         for (String username : ingamePlayers.keySet()){
@@ -139,10 +152,10 @@ public class RoundLogic {
         mainThread.start();
     }
 
-    @Lookup
+    /*@Lookup
     protected MainLoop getFreshMainLoop(){
         return null;
-    };
+    };*/
 
 
 }
