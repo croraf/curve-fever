@@ -30,7 +30,6 @@ public class MessageInHandlerLogic {
             case "restart":
                 if (roundLogic.restartRound()){
                     ControlSocketHandler.broadcastMessage("restartConfirmed", null);
-                    ControlSocketHandler.broadcastMessage("chatMessage", "New round starting...");
                 }
                 break;
             default:

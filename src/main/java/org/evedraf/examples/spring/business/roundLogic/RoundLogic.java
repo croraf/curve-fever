@@ -121,8 +121,8 @@ public class RoundLogic {
         return false;
     }
 
-    @Lookup ("mainLoop")
-    protected Runnable getRunnable (){
+    @Lookup
+    protected MainLoop getRunnable (){
         return null;
     };
 
