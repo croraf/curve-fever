@@ -3,6 +3,7 @@ package org.evedraf.examples.spring.business.roundLogic;
 import javafx.geometry.Pos;
 import org.evedraf.examples.spring.model.Player;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Lookup;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Scope;
@@ -121,13 +122,10 @@ public class RoundLogic {
         return false;
     }
 
-    @Bean
-    @Scope (ConfigurableBeanFactory.SCOPE_PROTOTYPE)
-    private Runnable getRunnable (){
-        MainLoop mainLoop = new MainLoop();
-        mainLoop.setRoundLogic(this);
-        return mainLoop;
-    }
+    @Lookup ("mainLoop")
+    protected Runnable getRunnable (){
+        return new MainLoop();
+    };
 
 
 }

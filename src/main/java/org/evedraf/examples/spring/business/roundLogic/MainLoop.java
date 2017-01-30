@@ -3,6 +3,8 @@ package org.evedraf.examples.spring.business.roundLogic;
 import org.evedraf.examples.spring.model.Player;
 import org.evedraf.examples.spring.websocket.ControlSocketHandler;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Configurable;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
@@ -11,15 +13,18 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Declared as a Spring component of prototype cardinality in Round Logic component.
+ * Used in round logic when host restarts the round.
  * Created by Korisnik on 27.1.2017..
  */
+@Component
+@Scope (ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public class MainLoop implements Runnable {
 
     private static final double CANVAS_WIDTH = 600;
     private static final double CANVAS_HEIGHT = 520;
     private static final int refreshPeriod = 64;
 
+    @Autowired
     private RoundLogic roundLogic;
 
     @Override
@@ -27,13 +32,18 @@ public class MainLoop implements Runnable {
 
         ControlSocketHandler.broadcastMessage("chatMessage", "new round starting...");
 
+        /**
+         * initial player positions and direction setup
+         */
         for (Player player : roundLogic.getIngamePlayers().values() ){
 
             player.position = new Position( Math.random() * CANVAS_WIDTH, Math.random() * CANVAS_HEIGHT);
             player.direction = Math.random() * 2 * Math.PI;
         }
 
-
+        /**
+         * main game loop
+         */
         for (int i = 0; i < 500; i++) {
 
             for (Player player : roundLogic.getIngamePlayers().values() ) {
@@ -63,13 +73,5 @@ public class MainLoop implements Runnable {
             }
         }
 
-    }
-
-    public RoundLogic getRoundLogic() {
-        return roundLogic;
-    }
-
-    public void setRoundLogic(RoundLogic roundLogic) {
-        this.roundLogic = roundLogic;
     }
 }
