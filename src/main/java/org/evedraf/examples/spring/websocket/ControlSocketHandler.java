@@ -53,6 +53,28 @@ public class ControlSocketHandler extends TextWebSocketHandler {
 
     }
 
+    @Override
+    public synchronized void handleTextMessage(WebSocketSession session, TextMessage message) throws IOException {
+
+        JsonNode rootNode =
+                mapper.readTree(message.getPayload());
+
+        JsonNode type = rootNode.path("type");
+        JsonNode genericPayload = rootNode.path("genericPayload");
+
+        messageInHandlerLogic.handleMessage(type, genericPayload, currentSessions.get(session).getName());
+
+    }
+
+    @Override
+    public synchronized void afterConnectionClosed(WebSocketSession session, CloseStatus status) throws Exception {
+
+        Player user = (Player)session.getAttributes().get("user");
+        roundLogic.removeIngamePlayer(user);
+        currentSessions.remove(session);
+        broadcastMessage("userDisconnected", user);
+    }
+
 
     /**
      * Brodcast message to all connected sessions.
@@ -81,30 +103,6 @@ public class ControlSocketHandler extends TextWebSocketHandler {
     private static TextMessage createGenericSocketMessage(String type, Object genericPayload) throws JsonProcessingException {
 
         return new TextMessage(mapper.writeValueAsString(new GenericSocketMessage(type, genericPayload)));
-    }
-
-
-    @Override
-    public synchronized void handleTextMessage(WebSocketSession session, TextMessage message) throws IOException {
-
-        JsonNode rootNode =
-                mapper.readTree(message.getPayload());
-
-        JsonNode type = rootNode.path("type");
-        JsonNode genericPayload = rootNode.path("genericPayload");
-
-        messageInHandlerLogic.handleMessage(type, genericPayload, currentSessions.get(session).getName());
-
-    }
-
-
-    @Override
-    public synchronized void afterConnectionClosed(WebSocketSession session, CloseStatus status) throws Exception {
-
-        Player user = (Player)session.getAttributes().get("user");
-        roundLogic.removeIngamePlayer(user);
-        currentSessions.remove(session);
-        broadcastMessage("userDisconnected", user);
     }
 
 

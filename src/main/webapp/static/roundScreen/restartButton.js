@@ -1,18 +1,20 @@
 "use strict";
 
-//start functionality
-$("#restart").click( function (event) {
+var restartModule = {};
 
-    $.get(
-            "services/round/restart",
-            undefined,
-            function(data){
-                if (data === "true") {
-                    drawPlayerModule.clearCanvas();
-                    drawOnGlassModule.clearItems();
-                }
-            },
-            "text"
-    );
+(function(){
 
-});
+    $("#restart").click( function (event) {
+
+        controlSocketModule.sendMessage("restart", null);
+    });
+
+
+    function restartCanvas(){
+        drawPlayerModule.clearCanvas();
+        drawOnGlassModule.clearItems();
+    }
+
+
+    restartModule.restartCanvas = restartCanvas;
+})();

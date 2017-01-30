@@ -44,7 +44,7 @@ public class MainLoop implements Runnable {
         /**
          * main game loop
          */
-        for (int i = 0; i < 500; i++) {
+        for (int i = 0; i < 300; i++) {
 
             for (Player player : roundLogic.getIngamePlayers().values() ) {
 

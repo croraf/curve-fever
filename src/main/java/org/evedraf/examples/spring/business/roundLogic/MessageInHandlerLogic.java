@@ -27,6 +27,12 @@ public class MessageInHandlerLogic {
             case "chatMessage":
                 ControlSocketHandler.broadcastMessage("chatMessage", genericPayload.textValue());
                 break;
+            case "restart":
+                if (roundLogic.restartRound()){
+                    ControlSocketHandler.broadcastMessage("restartConfirmed", null);
+                    ControlSocketHandler.broadcastMessage("chatMessage", "New round starting...");
+                }
+                break;
             default:
                 System.out.println("Message in type unrecognized!");
         }

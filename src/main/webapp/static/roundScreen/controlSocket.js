@@ -54,6 +54,9 @@ var controlSocketModule = (function(){
             case "chatMessage":
                 chatUpdate(controlEvent.genericPayload);
                 break;
+            case "restartConfirmed":
+                restartModule.restartCanvas();
+                break;
             default:
                 console.log("control websocket: unrecognized control event type");
         }

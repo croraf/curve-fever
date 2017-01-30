@@ -44,14 +44,6 @@ public class RoundController {
         return "redirect:/services/login";
     }
 
-
-    @GetMapping("/restart")
-    @ResponseBody
-    public boolean restartRound(){
-
-        return roundLogic.restartRound();
-    }
-
     /*@GetMapping("/players")
     @ResponseBody
     public Map<String, Player> getIngamePlayers() {

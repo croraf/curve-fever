@@ -1,6 +1,5 @@
 package org.evedraf.examples.spring.business.roundLogic;
 
-import javafx.geometry.Pos;
 import org.evedraf.examples.spring.model.Player;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Lookup;
@@ -124,7 +123,7 @@ public class RoundLogic {
 
     @Lookup ("mainLoop")
     protected Runnable getRunnable (){
-        return new MainLoop();
+        return null;
     };
 
 
