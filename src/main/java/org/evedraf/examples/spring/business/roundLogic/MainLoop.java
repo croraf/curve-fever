@@ -1,7 +1,7 @@
 package org.evedraf.examples.spring.business.roundLogic;
 
 import org.evedraf.examples.spring.model.Player;
-import org.evedraf.examples.spring.websocket.ControlSocketHandler;
+import org.evedraf.examples.spring.websocket.WebSocketHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;
@@ -27,9 +27,18 @@ public class MainLoop implements Runnable {
     @Override
     public void run() {
 
-        ControlSocketHandler.broadcastMessage("restartConfirmed", null);
-        ControlSocketHandler.broadcastMessage("chatMessage", "New round starting...");
+        WebSocketHandler.broadcastMessage("restartConfirmed", null);
 
+        for (int i = 5; i > 0; i--) {
+            WebSocketHandler.broadcastMessage("chatMessage", i + "...");
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+
+        WebSocketHandler.broadcastMessage("chatMessage", "New round starting...");
 
         /**
          * initial player positions and direction setup
@@ -39,6 +48,7 @@ public class MainLoop implements Runnable {
             player.position = new Position( Math.random() * CANVAS_WIDTH, Math.random() * CANVAS_HEIGHT);
             player.direction = Math.random() * 2 * Math.PI;
         }
+
 
         /**
          * main game loop
@@ -63,7 +73,7 @@ public class MainLoop implements Runnable {
 
             }
 
-            ControlSocketHandler.broadcastMessage("positionsUpdate", roundLogic.getLastPositionOfAllPlayers());
+            WebSocketHandler.broadcastMessage("positionsUpdate", roundLogic.getLastPositionOfAllPlayers());
 
             try {
                 Thread.sleep(refreshPeriod);

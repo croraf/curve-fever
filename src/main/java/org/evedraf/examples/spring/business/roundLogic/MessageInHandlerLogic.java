@@ -2,13 +2,11 @@ package org.evedraf.examples.spring.business.roundLogic;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.evedraf.examples.spring.business.roundLogic.messages.PositionMessageFromClient;
-import org.evedraf.examples.spring.websocket.ControlSocketHandler;
+import org.evedraf.examples.spring.websocket.WebSocketHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
-import java.util.Map;
 
 @Component
 public class MessageInHandlerLogic {
@@ -25,7 +23,7 @@ public class MessageInHandlerLogic {
                 changeDirection(genericPayload, username);
                 break;
             case "chatMessage":
-                ControlSocketHandler.broadcastMessage("chatMessage", genericPayload.textValue());
+                WebSocketHandler.broadcastMessage("chatMessage", username + ": " + genericPayload.textValue());
                 break;
             case "restart":
                 roundLogic.restartRound();

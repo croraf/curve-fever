@@ -20,7 +20,7 @@ import java.util.Map;
 /**
  * Created by Korisnik on 24.1.2017..
  */
-public class ControlSocketHandler extends TextWebSocketHandler {
+public class WebSocketHandler extends TextWebSocketHandler {
 
     private static Map<WebSocketSession, Player> currentSessions = new HashMap<>();
 
