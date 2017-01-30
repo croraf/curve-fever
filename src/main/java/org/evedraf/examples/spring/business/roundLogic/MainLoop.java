@@ -3,14 +3,9 @@ package org.evedraf.examples.spring.business.roundLogic;
 import org.evedraf.examples.spring.model.Player;
 import org.evedraf.examples.spring.websocket.ControlSocketHandler;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
-
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Used in round logic when host restarts the round.
@@ -26,6 +21,8 @@ public class MainLoop implements Runnable {
 
     @Autowired
     private RoundLogic roundLogic;
+
+    private volatile boolean roundAlive;
 
     @Override
     public void run() {
@@ -46,7 +43,7 @@ public class MainLoop implements Runnable {
         /**
          * main game loop
          */
-        for (int i = 0; i < 300; i++) {
+        while (roundAlive) {
 
             for (Player player : roundLogic.getIngamePlayers().values() ) {
 
@@ -75,5 +72,13 @@ public class MainLoop implements Runnable {
             }
         }
 
+    }
+
+    public boolean isRoundAlive() {
+        return roundAlive;
+    }
+
+    public void setRoundAlive(boolean roundAlive) {
+        this.roundAlive = roundAlive;
     }
 }

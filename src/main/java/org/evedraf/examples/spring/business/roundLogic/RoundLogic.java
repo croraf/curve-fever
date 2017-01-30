@@ -3,11 +3,7 @@ package org.evedraf.examples.spring.business.roundLogic;
 import org.evedraf.examples.spring.model.Player;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Lookup;
-import org.springframework.beans.factory.config.ConfigurableBeanFactory;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
-import org.springframework.web.context.WebApplicationContext;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -102,27 +98,49 @@ public class RoundLogic {
     }
 
     private Thread mainThread = null;
-
-    public synchronized boolean restartRound(){
+    private MainLoop mainLoop;
+    /**
+     * Check if round is alive. If so then shut it and open it, if not than just open it.
+     */
+    public synchronized void restartRound(){
 
         if (mainThread == null || !mainThread.isAlive()){
 
-            for (String username : ingamePlayers.keySet()){
-                allPositions.put(username, new ArrayList<>());
+            startNewRound();
+        } else {
+
+            mainLoop.setRoundAlive(false);
+            try {
+                mainThread.join();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
-            System.gc();
+            startNewRound();
 
-            mainThread = new Thread(getRunnable());
-            mainThread.start();
-
-            return true;
         }
 
-        return false;
+    }
+
+    /**
+     * Starts new round
+     */
+    private void startNewRound(){
+
+        mainLoop = getFreshMainLoop();
+        mainLoop.setRoundAlive(true);
+
+        for (String username : ingamePlayers.keySet()){
+            allPositions.put(username, new ArrayList<>());
+        }
+
+        mainThread = new Thread(mainLoop);
+
+        System.gc();
+        mainThread.start();
     }
 
     @Lookup
-    protected MainLoop getRunnable (){
+    protected MainLoop getFreshMainLoop(){
         return null;
     };
 
