@@ -68,7 +68,7 @@
                     <div id = "currentPlayer"  class="controlRowElement">${player.name}</div>
 
                     <div id = "mute" class="controlRowElement">
-                        <i class="material-icons">volume_off</i>
+                        <i class="material-icons">volume_up</i>
                     </div>
 
 
@@ -84,7 +84,8 @@
 
 
 		<audio id= "backgroundAudio" loop>
-	        <source src="static/battleScreen/Virgo_Rosa.ogg" type="audio/ogg">
+	        <!-- <source src="static/roundScreen/Virgo_Rosa.ogg" type="audio/ogg"> -->
+	        <source src="static/roundScreen/TheCurseOfMonkeyIsland.mp3" type="audio/ogg">
 	        Your browser does not support the audio element.
 	    </audio>
 
