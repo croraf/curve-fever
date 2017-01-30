@@ -18,9 +18,7 @@ public class MainLoop implements Runnable {
 
     private static final double CANVAS_WIDTH = 600;
     private static final double CANVAS_HEIGHT = 520;
-    private static final int refreshPeriod = 70;
-
-    private static volatile String steerDirection = "ahead";
+    private static final int refreshPeriod = 64;
 
     private RoundLogic roundLogic;
 
@@ -43,9 +41,9 @@ public class MainLoop implements Runnable {
                 roundLogic.addPositionAndCheckCollision(
                         player.getName(), new Position(player.position.x, player.position.y));
 
-                if (steerDirection.equals("left")){
+                if (player.steerDirection.equals("left")){
                     player.direction -= Math.PI/24;
-                } else if (steerDirection.equals("right")){
+                } else if (player.steerDirection.equals("right")){
                     player.direction += Math.PI/24;
                 }
 
@@ -66,11 +64,6 @@ public class MainLoop implements Runnable {
         }
 
     }
-
-    public static void setSteerDirection(String steerDirection) {
-        MainLoop.steerDirection = steerDirection;
-    }
-
 
     public RoundLogic getRoundLogic() {
         return roundLogic;

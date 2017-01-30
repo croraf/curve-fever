@@ -44,6 +44,9 @@ public class Player {
     @Transient
     public Position position;
 
+    @Transient
+    public String steerDirection = "ahead";
+
     public Player() {
     }
 

@@ -18,11 +18,11 @@ public class MessageInHandlerLogic {
 
     ObjectMapper mapper = new ObjectMapper();
 
-    public void handleMessage(JsonNode type, JsonNode genericPayload) throws IOException {
+    public void handleMessage(JsonNode type, JsonNode genericPayload, String username) throws IOException {
 
         switch (type.textValue()){
             case "directionUpdate":
-                changeDirection(genericPayload);
+                changeDirection(genericPayload, username);
                 break;
             case "chatMessage":
                 ControlSocketHandler.broadcastMessage("chatMessage", genericPayload.textValue());
@@ -33,10 +33,10 @@ public class MessageInHandlerLogic {
     }
 
 
-    private void changeDirection(JsonNode genericPayload){
+    private void changeDirection(JsonNode genericPayload, String username){
 
         String direction = genericPayload.asText();
-        MainLoop.setSteerDirection(direction);
+        roundLogic.getIngamePlayers().get(username).steerDirection = direction;
 
     }
 

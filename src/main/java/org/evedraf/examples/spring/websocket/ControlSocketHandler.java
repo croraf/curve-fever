@@ -93,7 +93,7 @@ public class ControlSocketHandler extends TextWebSocketHandler {
         JsonNode type = rootNode.path("type");
         JsonNode genericPayload = rootNode.path("genericPayload");
 
-        messageInHandlerLogic.handleMessage(type, genericPayload);
+        messageInHandlerLogic.handleMessage(type, genericPayload, currentSessions.get(session).getName());
 
     }
 
