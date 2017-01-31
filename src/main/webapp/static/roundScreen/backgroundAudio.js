@@ -2,10 +2,31 @@
 
 $(function() {
 
+    var songsList = [
+        "static/roundScreen/songs/TheCurseOfMonkeyIsland.mp3",
+        "static/roundScreen/songs/05 - Following The Shop Keeper.mp3"
+    ];
+
+    var currentSongIndex = 0;
+
     var backgroundAudio=document.getElementById("backgroundAudio");
     backgroundAudio.volume=0.1;
-    //comment to disable background music on start
-    backgroundAudio.play();
+
+
+
+    backgroundAudio.onended = function() {
+        currentSongIndex = (currentSongIndex + 1) % songsList.length;
+
+        startSong(currentSongIndex);
+    };
+
+    startSong(0);
+
+    function startSong(currentSongIndex){
+
+        backgroundAudio.src = songsList[currentSongIndex];
+        backgroundAudio.play();
+    }
 
     var mute=$("#mute i");
 
@@ -19,13 +40,6 @@ $(function() {
             mute.html("volume_off")
         }
     });
-
-
-
-
-    /*$(window).bind("beforeunload",function(event) {
-        return "";
-    });*/
 
 
 });
