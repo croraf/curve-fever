@@ -6,7 +6,7 @@ var restartModule = {};
 
     $("#restart").click( function (event) {
 
-        controlSocketModule.sendMessage("restart", null);
+        webSocketModule.sendMessage("restart", null);
     });
 
 

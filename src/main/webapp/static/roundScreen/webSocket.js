@@ -1,11 +1,11 @@
 var allPlayers = {};
 
-var controlSocketModule = (function(){
+var webSocketModule = (function(){
 
     var module = {};
 
     var myWebSocket = new WebSocket(
-      window.document.baseURI.replace(location.protocol, "ws:") + "services/controlSocket"
+      window.document.baseURI.replace(location.protocol, "ws:") + "services/webSocket"
       //, sub-protocol
     );
 
@@ -29,36 +29,36 @@ var controlSocketModule = (function(){
         var i = 5;
     }
 
-    myWebSocket.onmessage = function (event){
+    myWebSocket.onmessage = function (messageEvent){
 
-        var controlEvent = JSON.parse(event.data);
+        var message = JSON.parse(messageEvent.data);
 
-        switch (controlEvent.type){
+        switch (message.type){
             case "userDisconnected":
-                var user = controlEvent.genericPayload;
+                var user = message.genericPayload;
                 delete allPlayers[user.name];
                 break;
             case "userConnected":
-                var user = controlEvent.genericPayload;
+                var user = message.genericPayload;
                 allPlayers[user.name] = user;
                 break;
             case "previousUsers":
-                var previousUsers = controlEvent.genericPayload;
+                var previousUsers = message.genericPayload;
                 Object.keys(previousUsers).forEach(function(username){
                     allPlayers[username] = previousUsers[username];
                 })
                 break;
             case "positionsUpdate":
-                positionsUpdate(controlEvent.genericPayload);
+                positionsUpdate(message.genericPayload);
                 break;
             case "chatMessage":
-                chatUpdate(controlEvent.genericPayload);
+                chatUpdate(message.genericPayload);
                 break;
             case "restartConfirmed":
                 restartModule.restartCanvas();
                 break;
             default:
-                console.log("control websocket: unrecognized control event type");
+                console.log("websocket: unrecognized websocket message type");
         }
 
         redrawPlayersList();

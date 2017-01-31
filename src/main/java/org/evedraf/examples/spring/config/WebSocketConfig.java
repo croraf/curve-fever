@@ -24,13 +24,13 @@ public class WebSocketConfig implements WebSocketConfigurer {
     @Override
     public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
 
-        registry.addHandler(controlSocketHandler(), "/controlSocket").
+        registry.addHandler(webSocketHandler(), "/webSocket").
                 addInterceptors(handshakeInterceptor());
 
     }
 
     @Bean
-    public org.springframework.web.socket.WebSocketHandler controlSocketHandler() {
+    public org.springframework.web.socket.WebSocketHandler webSocketHandler() {
         return new WebSocketHandler();
     }
 

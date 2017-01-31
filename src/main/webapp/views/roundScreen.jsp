@@ -98,7 +98,7 @@
 
 
         <!--Initialize playerList then webSocket first-->
-        <script type="text/javascript" src="static/roundScreen/controlSocket.js"></script>
+        <script type="text/javascript" src="static/roundScreen/webSocket.js"></script>
         <script type="text/javascript" src="static/roundScreen/chat.js"></script>
         <script type="text/javascript" src="static/roundScreen/drawPlayer.js"></script>
 

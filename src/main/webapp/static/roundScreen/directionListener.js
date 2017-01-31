@@ -28,7 +28,7 @@ var directionListenerModule = (function() {
             steerDirection = "right";
         }
 
-        controlSocketModule.sendMessage("directionUpdate", steerDirection);
+        webSocketModule.sendMessage("directionUpdate", steerDirection);
     }
 
     function unSteer(event){
@@ -50,7 +50,7 @@ var directionListenerModule = (function() {
             }
         }
 
-        controlSocketModule.sendMessage("directionUpdate", steerDirection);
+        webSocketModule.sendMessage("directionUpdate", steerDirection);
     }
 
     return module;

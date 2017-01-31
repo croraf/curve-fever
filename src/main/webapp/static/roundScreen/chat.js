@@ -11,7 +11,7 @@ var chatModule = (function(){
         if (text === "") {
             return;
         } else {
-            controlSocketModule.sendMessage("chatMessage", text);
+            webSocketModule.sendMessage("chatMessage", text);
             $('input[name=text]').val("");
         }
 
