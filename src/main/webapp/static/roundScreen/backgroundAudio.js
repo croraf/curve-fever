@@ -4,7 +4,9 @@ $(function() {
 
     var songsList = [
         "static/roundScreen/songs/TheCurseOfMonkeyIsland.mp3",
-        "static/roundScreen/songs/05 - Following The Shop Keeper.mp3"
+        "static/roundScreen/songs/05 - Following The Shop Keeper.mp3",
+        "static/roundScreen/songs/14 - Monkey Island.mp3",
+        "static/roundScreen/songs/24 - Monkey Island - Remix.mp3"
     ];
 
     var currentSongIndex = 0;

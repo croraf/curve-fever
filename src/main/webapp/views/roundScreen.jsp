@@ -85,9 +85,6 @@
 
 		<audio id= "backgroundAudio">
 		    <!-- List of songs set in audio.js -->
-	        <!-- <source src="static/roundScreen/songs/Virgo_Rosa.ogg" type="audio/ogg"> -->
-	        <!-- <source src="static/roundScreen/songs/TheCurseOfMonkeyIsland.mp3" type="audio/ogg"> -->
-	        <!-- <source src="static/roundScreen/songs/05 - Following The Shop Keeper.mp3" type="audio/ogg"> -->
 	        Your browser does not support the audio element.
 	    </audio>
 
