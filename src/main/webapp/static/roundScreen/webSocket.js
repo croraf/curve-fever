@@ -26,7 +26,7 @@ var webSocketModule = (function(){
 
     myWebSocket.onopen = function(event){
 
-        var i = 5;
+        console.log("websocket opened");
     }
 
     myWebSocket.onmessage = function (messageEvent){
@@ -52,7 +52,7 @@ var webSocketModule = (function(){
                 positionsUpdate(message.genericPayload);
                 break;
             case "chatMessage":
-                chatUpdate(message.genericPayload);
+                chatModule.chatUpdate(message.genericPayload);
                 break;
             case "restartConfirmed":
                 restartModule.restartRound();
@@ -97,13 +97,6 @@ var webSocketModule = (function(){
 
         });
     }
-
-    function chatUpdate(receivedMessage){
-
-        $("#chat").append(receivedMessage + "<br/>");
-        $("#chat").scrollTop($("#chat")[0].scrollHeight);
-    }
-
 
 
     module.sendMessage = sendMessage;

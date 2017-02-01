@@ -2,6 +2,7 @@ package org.evedraf.examples.spring.business.roundLogic;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.evedraf.examples.spring.business.roundLogic.messages.ChatMessageOut;
 import org.evedraf.examples.spring.websocket.WebSocketHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -23,7 +24,7 @@ public class MessageInHandlerLogic {
                 changeDirection(genericPayload, username);
                 break;
             case "chatMessage":
-                WebSocketHandler.broadcastMessage("chatMessage", username + ": " + genericPayload.textValue());
+                WebSocketHandler.broadcastMessage("chatMessage", new ChatMessageOut(username, genericPayload.textValue()));
                 break;
             case "restart":
                 roundLogic.restartRound();

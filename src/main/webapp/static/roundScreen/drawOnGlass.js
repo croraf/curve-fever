@@ -75,7 +75,7 @@ var drawOnGlassModule = (function (){
 
             clearGlassCanvas();
 
-            ctx2.strokeText(count, 10, 50);
+            ctx2.strokeText(count, ctx2.canvas.width / 2, ctx2.canvas.height / 2);
 
             if (count === 0) {
                 clearGlassCanvas();

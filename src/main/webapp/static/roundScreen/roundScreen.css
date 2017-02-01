@@ -16,6 +16,10 @@
     padding-top: 5px;
 }
 
+#chat i {
+    color: red;
+}
+
 #chatInputBox {
     height: 50px;
     overflow-y: auto;

@@ -17,8 +17,17 @@ var chatModule = (function(){
 
     });
 
+    function chatUpdate(receivedMessage){
 
+        var username = receivedMessage.username;
 
+        var usernameText =  $("<i>").html(username + ": ").css("color", allPlayers[username].color);
+
+        $("#chat").append(usernameText).append(receivedMessage.chatMessagePayload + "<br/>");
+        $("#chat").scrollTop($("#chat")[0].scrollHeight);
+    }
+
+    module.chatUpdate = chatUpdate;
     return module;
 })();
 
