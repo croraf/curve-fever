@@ -29,7 +29,7 @@ public class LoginController {
     }
 
     @PostMapping
-    public String loginAttempt(@RequestParam("name") String username, Model model, HttpSession httpSession){
+    public String loginAttempt(@RequestParam("name") String username, Model model){
 
         Player player = playerDao.loginPlayer(username);
 

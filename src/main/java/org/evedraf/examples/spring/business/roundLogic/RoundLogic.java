@@ -31,7 +31,7 @@ public class RoundLogic {
 
 
     /**
-     *
+     * Add position and check if there is a collision. If so, remove player from round.
      * @param playerName The player whose position is added to map.
      * @param newPosition The new position for that player.
      * @return true if there is collision for this position.

@@ -26,7 +26,7 @@ public class CollisionDetection {
 
                     if (checkPointCollision (positionsOfCurrentPlayer.get(i), newPosition)){
                         return true;
-                    };
+                    }
                 }
             } else{
 

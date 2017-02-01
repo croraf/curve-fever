@@ -5,7 +5,6 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.evedraf.examples.spring.business.roundLogic.MessageInHandlerLogic;
 import org.evedraf.examples.spring.business.roundLogic.RoundLogic;
-import org.evedraf.examples.spring.business.roundLogic.messages.PositionMessageFromClient;
 import org.evedraf.examples.spring.model.Player;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.socket.CloseStatus;
@@ -80,7 +79,6 @@ public class WebSocketHandler extends TextWebSocketHandler {
      * Brodcast message to all connected sessions.
      * @param type Type of message
      * @param genericPayload Payload of message
-     * @throws IOException
      */
     public static void broadcastMessage(String type, Object genericPayload){
 

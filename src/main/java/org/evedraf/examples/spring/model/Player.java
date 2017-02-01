@@ -7,7 +7,6 @@ import org.hibernate.annotations.GenerationTime;
 import javax.persistence.*;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Size;
-import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * Created by Korisnik on 13.12.2016..
@@ -21,7 +20,7 @@ public class Player {
     @Column (insertable = true)
     private int id;
 
-    @Id
+    @Id @Size(min = 1, max = 64)
     private String name;
 
     @Max(value = 100, message = "prevelika vrijednost bodova")

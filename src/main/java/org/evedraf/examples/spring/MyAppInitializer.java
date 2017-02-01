@@ -18,7 +18,6 @@ import javax.servlet.FilterRegistration;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 
-        import static java.lang.System.getenv;
 
 /**
  * Created by Korisnik on 13.12.2016..

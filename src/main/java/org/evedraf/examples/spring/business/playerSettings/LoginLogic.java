@@ -4,9 +4,7 @@ package org.evedraf.examples.spring.business.playerSettings;
 import org.evedraf.examples.spring.model.Player;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 @Component

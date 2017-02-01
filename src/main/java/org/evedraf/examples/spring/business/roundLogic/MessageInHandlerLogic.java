@@ -17,7 +17,7 @@ public class MessageInHandlerLogic {
 
     ObjectMapper mapper = new ObjectMapper();
 
-    public void handleMessage(JsonNode type, JsonNode genericPayload, String username) throws IOException {
+    public void handleMessage(JsonNode type, JsonNode genericPayload, String username) {
 
         switch (type.textValue()){
             case "directionUpdate":

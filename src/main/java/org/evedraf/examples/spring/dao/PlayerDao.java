@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.xml.bind.annotation.XmlRootElement;
 import java.util.List;
 
 @Repository
@@ -53,7 +52,7 @@ public class PlayerDao {
         playerOld.setCoins(player.getCoins());
         playerOld.setPoints(player.getPoints());
 
-        //TODO hopefully here it is commited
+        //TODO hopefully here it is committed
     }
 
     @Transactional
@@ -64,9 +63,9 @@ public class PlayerDao {
 
         if (player == null) {
 
-            Player newplayer = new Player(playerName);
-            session.persist(newplayer);
-            return newplayer;
+            Player newPlayer = new Player(playerName);
+            session.persist(newPlayer);
+            return newPlayer;
 
         }
 
