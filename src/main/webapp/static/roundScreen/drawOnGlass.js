@@ -34,9 +34,17 @@ var drawOnGlassModule = (function (){
         });
     }
 
+    var image = $("<img>")
+        .attr("src", "static/roundScreen/images/turtle2.png")
+        .attr("width", itemRadius*2)
+        .attr("height", itemRadius*2)[0];
+
     function drawItem(item){
+
+
         ctx2.beginPath();
-        ctx2.arc(item.x, item.y, itemRadius, 0, 2*Math.PI);
+        //ctx2.arc(item.x, item.y, itemRadius, 0, 2*Math.PI);
+        ctx2.drawImage(image, item.x-itemRadius, item.y-itemRadius, itemRadius*2, itemRadius*2);
         ctx2.stroke();
     }
 
