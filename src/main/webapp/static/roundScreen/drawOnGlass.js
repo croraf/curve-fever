@@ -20,7 +20,7 @@ var drawOnGlassModule = (function (){
                           
         itemsList.push(item);
 
-        redrawItems();
+        drawItem(item);
 
         setTimeout(itemsLoop, itemsLoopRefreshPeriod);
     }
@@ -29,24 +29,27 @@ var drawOnGlassModule = (function (){
         
         ctx2.clearRect(0,0,glassCanvas.width, glassCanvas.height);
 
-        itemsList.forEach(function(item, i){
-
-               ctx2.beginPath();
-               ctx2.arc(item.x, item.y, itemRadius, 0, 2*Math.PI);
-               ctx2.stroke();
+        itemsList.forEach(function(item){
+            drawItem(item);
         });
+    }
+
+    function drawItem(item){
+        ctx2.beginPath();
+        ctx2.arc(item.x, item.y, itemRadius, 0, 2*Math.PI);
+        ctx2.stroke();
     }
 
     //start main loop
     itemsLoop();
     
     
-    clearItems = function(){
+    clearGlassCanvas = function(){
         ctx2.clearRect(0,0,glassCanvas.width, glassCanvas.height);
         itemsList = [];
     };
 
-    checkItemPickup = function(playerCoordinates){
+    function checkItemPickup(playerCoordinates){
 
         var itemPickupHappened = false;
 
@@ -64,7 +67,28 @@ var drawOnGlassModule = (function (){
         }
     };
 
-    module.clearItems = clearItems;
+    function drawStartRoundScreen(){
+
+        ctx2.font = '48px serif';
+
+        function drawCount(count){
+
+            clearGlassCanvas();
+
+            ctx2.strokeText(count, 10, 50);
+
+            if (count === 0) {
+                clearGlassCanvas();
+            } else {
+                setTimeout(drawCount, 1000, count-1);
+            }
+        }
+
+        drawCount(5);
+    }
+
+    module.clearGlassCanvas = clearGlassCanvas;
     module.checkItemPickup = checkItemPickup;
+    module.drawStartRoundScreen = drawStartRoundScreen;
     return module;
 })();

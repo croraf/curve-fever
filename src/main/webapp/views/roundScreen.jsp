@@ -101,7 +101,7 @@
 
 	    <script type="text/javascript" src="static/roundScreen/backgroundAudio.js"></script>
 	    <script type="text/javascript" src="static/roundScreen/directionListener.js"></script>
-	    <script type="text/javascript" src="static/roundScreen/restartButton.js"></script>
+	    <script type="text/javascript" src="static/roundScreen/restartRound.js"></script>
 
 	    <!--Testing-->
         <script type="text/javascript" src="static/roundScreen/drawOnGlass.js"></script>

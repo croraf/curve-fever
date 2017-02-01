@@ -29,16 +29,12 @@ public class MainLoop implements Runnable {
 
         WebSocketHandler.broadcastMessage("restartConfirmed", null);
 
-        for (int i = 5; i > 0; i--) {
-            WebSocketHandler.broadcastMessage("chatMessage", i + "...");
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
 
-        WebSocketHandler.broadcastMessage("chatMessage", "New round starting...");
 
         /**
          * initial player positions and direction setup

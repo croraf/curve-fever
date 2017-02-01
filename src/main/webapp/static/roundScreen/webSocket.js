@@ -55,7 +55,7 @@ var webSocketModule = (function(){
                 chatUpdate(message.genericPayload);
                 break;
             case "restartConfirmed":
-                restartModule.restartCanvas();
+                restartModule.restartRound();
                 break;
             default:
                 console.log("websocket: unrecognized websocket message type");

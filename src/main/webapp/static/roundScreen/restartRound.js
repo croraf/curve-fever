@@ -10,11 +10,11 @@ var restartModule = {};
     });
 
 
-    function restartCanvas(){
+    function restartRound(){
         drawPlayerModule.clearCanvas();
-        drawOnGlassModule.clearItems();
+        drawOnGlassModule.drawStartRoundScreen();
     }
 
 
-    restartModule.restartCanvas = restartCanvas;
+    restartModule.restartRound = restartRound;
 })();

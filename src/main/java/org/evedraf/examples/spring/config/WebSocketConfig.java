@@ -34,7 +34,9 @@ public class WebSocketConfig implements WebSocketConfigurer {
         return new WebSocketHandler();
     }
 
-    @Bean HandshakeInterceptor handshakeInterceptor(){
+
+    @Bean
+    HandshakeInterceptor handshakeInterceptor(){
 
         return new HttpSessionHandshakeInterceptor(
                 Arrays.asList("user")
