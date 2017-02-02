@@ -2,7 +2,6 @@ package org.evedraf.examples.spring.business.roundLogic;
 
 import org.evedraf.examples.spring.model.Player;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Lookup;
 import org.springframework.stereotype.Component;
 
 import java.util.*;
@@ -28,7 +27,7 @@ public class RoundLogic {
     private CollisionDetection collisionDetection;
 
     @Autowired
-    private ItemPickupDetection itemPickupDetection;
+    private ItemPickupLogic itemPickupLogic;
 
     /**
      * Add position and check if there is a collision. If so, remove player from round.
@@ -45,7 +44,8 @@ public class RoundLogic {
             ingamePlayers.get(playerName).setAlive(false);
         }
 
-        itemPickupDetection.checkItemPickup(newPosition, allItems);
+        itemPickupLogic.checkItemPickup(newPosition, allItems, ingamePlayers.get(playerName));
+
     }
 
 

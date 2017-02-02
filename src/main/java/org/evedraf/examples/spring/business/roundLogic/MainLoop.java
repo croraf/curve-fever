@@ -70,9 +70,9 @@ public class MainLoop implements Runnable {
                     player.direction += Math.PI/24;
                 }
 
-                player.position.x = (player.position.x + player.speed*Math.cos(player.direction)) % CANVAS_WIDTH;
+                player.position.x = (player.position.x + player.getSpeed()*Math.cos(player.direction)) % CANVAS_WIDTH;
                 if (player.position.x < 0) { player.position.x += CANVAS_WIDTH; }
-                player.position.y = (player.position.y + player.speed*Math.sin(player.direction)) % CANVAS_HEIGHT;
+                player.position.y = (player.position.y + player.getSpeed()*Math.sin(player.direction)) % CANVAS_HEIGHT;
                 if (player.position.y < 0) { player.position.y += CANVAS_HEIGHT; }
 
             }
@@ -90,7 +90,7 @@ public class MainLoop implements Runnable {
 
     private void itemsLogic(){
 
-        if (Math.random() < 0.01){
+        if (Math.random() < 0.008){
 
             double x = Math.random()*CANVAS_WIDTH;
             double y = Math.random()*CANVAS_HEIGHT;

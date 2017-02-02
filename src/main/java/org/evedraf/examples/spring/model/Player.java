@@ -39,7 +39,7 @@ public class Player {
     public double direction;
 
     @Transient
-    public double speed = 4;
+    private double speed = 4;
 
     @Transient
     public Position position;
@@ -113,12 +113,16 @@ public class Player {
         this.direction = direction;
     }
 
-    public double getSpeed() {
+    public synchronized double getSpeed() {
         return speed;
     }
 
-    public void setSpeed(double speed) {
-        this.speed = speed;
+    public synchronized void reduceSpeed() {
+        this.speed *= 0.65;
+    }
+
+    public synchronized void increaseSpeed() {
+        this.speed /= 0.65;
     }
 
     public Position getPosition() {
