@@ -24,6 +24,7 @@ public class ItemPickupLogic {
             if ( Math.sqrt( Math.pow(item.getPosition().x-newPosition.x, 2) +
                     Math.pow(item.getPosition().y-newPosition.y, 2) ) < Item.itemRadius+4){
 
+                //iterator.nextIndex() is ok if it is last element because it returns list size then
                 WebSocketHandler.broadcastMessage("itemPickup", iterator.nextIndex()-1);
                 iterator.remove();
                 applyItemEffect(player);
