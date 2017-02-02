@@ -73,7 +73,6 @@ var drawOnGlassModule = (function (){
         drawCount(5);
     }
 
-    module.clearGlassCanvas = clearGlassCanvas;
     module.itemPickup = itemPickup;
     module.drawStartRoundScreen = drawStartRoundScreen;
     module.addItem = addItem;
