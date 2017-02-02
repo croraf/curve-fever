@@ -1,6 +1,7 @@
 package org.evedraf.examples.spring.model;
 
 import org.evedraf.examples.spring.business.roundLogic.Position;
+import org.evedraf.examples.spring.validation.ValidationConstants;
 import org.hibernate.annotations.Generated;
 import org.hibernate.annotations.GenerationTime;
 
@@ -20,7 +21,7 @@ public class Player {
     @Column (insertable = true)
     private int id;
 
-    @Id @Size(min = 1, max = 64)
+    @Id @Size(min = 1, max = ValidationConstants.usernameMaxLength)
     private String name;
 
     @Max(value = 100, message = "prevelika vrijednost bodova")
@@ -45,6 +46,9 @@ public class Player {
 
     @Transient
     public String steerDirection = "ahead";
+
+    @Transient
+    public volatile boolean alive;
 
     public Player() {
     }
@@ -123,5 +127,13 @@ public class Player {
 
     public void setPosition(Position position) {
         this.position = position;
+    }
+
+    public boolean isAlive() {
+        return alive;
+    }
+
+    public void setAlive(boolean alive) {
+        this.alive = alive;
     }
 }

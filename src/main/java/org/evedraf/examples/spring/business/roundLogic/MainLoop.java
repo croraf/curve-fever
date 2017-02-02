@@ -17,7 +17,7 @@ public class MainLoop implements Runnable {
 
     private static final double CANVAS_WIDTH = 600;
     private static final double CANVAS_HEIGHT = 520;
-    private static final int refreshPeriod = 64;
+    private static final int refreshPeriod = 60;
 
     @Autowired
     private RoundLogic roundLogic;
@@ -43,6 +43,7 @@ public class MainLoop implements Runnable {
 
             player.position = new Position( Math.random() * CANVAS_WIDTH, Math.random() * CANVAS_HEIGHT);
             player.direction = Math.random() * 2 * Math.PI;
+            player.setAlive(true);
         }
 
 
@@ -51,9 +52,16 @@ public class MainLoop implements Runnable {
          */
         while (roundAlive) {
 
+
+            itemsLogic();
+
+
             for (Player player : roundLogic.getIngamePlayers().values() ) {
 
-                roundLogic.addPositionAndCheckCollision(
+                //skip update of dead players
+                if ( ! player.isAlive()) continue;
+
+                roundLogic.addPositionAndCheckCollisionAndItemPickup(
                         player.getName(), new Position(player.position.x, player.position.y));
 
                 if (player.steerDirection.equals("left")){
@@ -78,6 +86,19 @@ public class MainLoop implements Runnable {
             }
         }
 
+    }
+
+    private void itemsLogic(){
+
+        if (Math.random() < 0.01){
+
+            double x = Math.random()*CANVAS_WIDTH;
+            double y = Math.random()*CANVAS_HEIGHT;
+            Item newItem = new Item(null, new Position(x, y));
+            WebSocketHandler.broadcastMessage("addItem", newItem);
+
+            roundLogic.getAllItems().add(newItem);
+        }
     }
 
     public boolean isRoundAlive() {

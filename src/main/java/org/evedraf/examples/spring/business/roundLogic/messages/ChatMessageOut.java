@@ -1,6 +1,9 @@
 package org.evedraf.examples.spring.business.roundLogic.messages;
 
+import org.evedraf.examples.spring.validation.ValidationConstants;
+
 import javax.validation.ConstraintViolationException;
+import javax.validation.ValidationException;
 
 /**
  * Created by Korisnik on 1.2.2017..
@@ -12,11 +15,17 @@ public class ChatMessageOut {
     private String chatMessagePayload;
 
     public ChatMessageOut(String username, String chatMessagePayload) {
-        if (chatMessagePayload.length() >= 100 ){
-            throw new ConstraintViolationException("too big chat message", null);
-        }
+
         this.username = username;
-        this.chatMessagePayload = chatMessagePayload;
+
+        if (chatMessagePayload.length() >= ValidationConstants.chatMessageMaxLength){
+            this.chatMessagePayload =
+                    "[message too big: " + chatMessagePayload.length() +
+                            " tokens, limit is " +  ValidationConstants.chatMessageMaxLength + "]";
+        } else {
+            this.chatMessagePayload = chatMessagePayload;
+        }
+
     }
 
     public String getChatMessagePayload() {

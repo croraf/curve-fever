@@ -51,6 +51,12 @@ var webSocketModule = (function(){
             case "positionsUpdate":
                 positionsUpdate(message.genericPayload);
                 break;
+            case "addItem":
+                drawOnGlassModule.addItem(message.genericPayload);
+                break;
+            case "itemPickup":
+                drawOnGlassModule.itemPickup(message.genericPayload);
+                break;
             case "chatMessage":
                 chatModule.chatUpdate(message.genericPayload);
                 break;
@@ -90,8 +96,6 @@ var webSocketModule = (function(){
                             console.log("coordinate su null!!!!!!")
                             return;
                 }
-
-                drawOnGlassModule.checkItemPickup(positionUpdateForOnePlayer);
 
                 drawPlayerModule.drawPlayer(userName, positionUpdateForOnePlayer);
 

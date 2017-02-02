@@ -3,12 +3,12 @@ package org.evedraf.examples.spring.controller;
 import org.evedraf.examples.spring.business.playerSettings.LoginLogic;
 import org.evedraf.examples.spring.dao.PlayerDao;
 import org.evedraf.examples.spring.model.Player;
+import org.evedraf.examples.spring.validation.ValidationConstants;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
@@ -21,9 +21,10 @@ public class LoginController {
     @Autowired
     private LoginLogic loginLogic;
 
-
     @GetMapping
     public String getLoginScreen(Model model){
+
+        model.addAttribute("usernameMaxLength", ValidationConstants.usernameMaxLength);
 
         return "loginScreen";
     }

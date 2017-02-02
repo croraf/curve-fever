@@ -11,20 +11,13 @@ var drawOnGlassModule = (function (){
     var itemsList = [];
 
     //main drawing loop
-    function itemsLoop(){
-
-        var item = {
-                      x : Math.random()*glassCanvas.width,
-                      y : Math.random()*glassCanvas.height
-                   };
+    function addItem(item){
                           
         itemsList.push(item);
-
         drawItem(item);
-
-        setTimeout(itemsLoop, itemsLoopRefreshPeriod);
     }
-    
+
+
     function redrawItems(){
         
         ctx2.clearRect(0,0,glassCanvas.width, glassCanvas.height);
@@ -39,17 +32,14 @@ var drawOnGlassModule = (function (){
         .attr("width", itemRadius*2)
         .attr("height", itemRadius*2)[0];
 
-    function drawItem(item){
 
+    function drawItem(item){
 
         ctx2.beginPath();
         //ctx2.arc(item.x, item.y, itemRadius, 0, 2*Math.PI);
-        ctx2.drawImage(image, item.x-itemRadius, item.y-itemRadius, itemRadius*2, itemRadius*2);
+        ctx2.drawImage(image, item.position.x-itemRadius, item.position.y-itemRadius, itemRadius*2, itemRadius*2);
         ctx2.stroke();
     }
-
-    //start main loop
-    itemsLoop();
     
     
     clearGlassCanvas = function(){
@@ -57,22 +47,10 @@ var drawOnGlassModule = (function (){
         itemsList = [];
     };
 
-    function checkItemPickup(playerCoordinates){
+    function itemPickup(itemIndex){
 
-        var itemPickupHappened = false;
-
-        itemsList.forEach(function(item, i){
-
-            // todo take curve radius from somewhere
-            if (Math.hypot(playerCoordinates.x - item.x, playerCoordinates.y - item.y) < itemRadius+4){
-                itemsList.splice(i, 1);
-                itemPickupHappened = true;
-            }
-        });
-
-        if (itemPickupHappened === true){
-            redrawItems();
-        }
+        itemsList.splice(itemIndex, 1);
+        redrawItems();
     };
 
     function drawStartRoundScreen(){
@@ -96,7 +74,8 @@ var drawOnGlassModule = (function (){
     }
 
     module.clearGlassCanvas = clearGlassCanvas;
-    module.checkItemPickup = checkItemPickup;
+    module.itemPickup = itemPickup;
     module.drawStartRoundScreen = drawStartRoundScreen;
+    module.addItem = addItem;
     return module;
 })();

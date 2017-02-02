@@ -3,6 +3,7 @@ package org.evedraf.examples.spring.controller;
 import org.evedraf.examples.spring.business.roundLogic.RoundLogic;
 import org.evedraf.examples.spring.dao.PlayerDao;
 import org.evedraf.examples.spring.model.Player;
+import org.evedraf.examples.spring.validation.ValidationConstants;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -33,7 +34,7 @@ public class RoundController {
 
         httpSession.setAttribute("user", p);
 
-
+        model.addAttribute("chatMessageMaxLength", ValidationConstants.chatMessageMaxLength);
         model.addAttribute("player", p);
         return "roundScreen";
     }

@@ -44,8 +44,8 @@
 				<div id = "chatInputBox" class="glowingShadow collection scrollbar-style-2">
 
 				    <form id = "chatForm">
-				        <input type="text" name="text" autocomplete="off" autocorrect="off" autocapitalize="off"
-                                                       spellcheck="false"/>
+				        <input type="text" name="text" maxlength="${chatMessageMaxLength}"
+				                autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
 				    </form>
 				</div>
 

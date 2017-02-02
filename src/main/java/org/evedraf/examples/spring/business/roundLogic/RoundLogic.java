@@ -5,10 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Lookup;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  *
@@ -25,10 +22,13 @@ public class RoundLogic {
      */
     private Map<String, List<Position>> allPositions = new HashMap<>();
 
+    private List<Item> allItems = new LinkedList<>();
 
     @Autowired
     private CollisionDetection collisionDetection;
 
+    @Autowired
+    private ItemPickupDetection itemPickupDetection;
 
     /**
      * Add position and check if there is a collision. If so, remove player from round.
@@ -36,22 +36,16 @@ public class RoundLogic {
      * @param newPosition The new position for that player.
      * @return true if there is collision for this position.
      */
-    public synchronized boolean addPositionAndCheckCollision(String playerName, Position newPosition){
-
-        if ( ! allPositions.containsKey(playerName) ){return false;}
-
+    public synchronized void addPositionAndCheckCollisionAndItemPickup(String playerName, Position newPosition){
 
         allPositions.get(playerName).add(newPosition);
 
         if ( collisionDetection.checkCollision(playerName, newPosition, allPositions)){
-
-            System.out.println("sudar");
             allPositions.remove(playerName);
-            return true;
-        } else {
-
-            return false;
+            ingamePlayers.get(playerName).setAlive(false);
         }
+
+        itemPickupDetection.checkItemPickup(newPosition, allItems);
     }
 
 
@@ -143,8 +137,10 @@ public class RoundLogic {
         mainLoop.setRoundAlive(true);
 
         for (String username : ingamePlayers.keySet()){
-            allPositions.put(username, new ArrayList<>());
+            allPositions.put(username, new LinkedList<>());
         }
+
+        allItems = new ArrayList<>();
 
         mainThread = new Thread(mainLoop);
 
@@ -158,4 +154,11 @@ public class RoundLogic {
     };*/
 
 
+    public List<Item> getAllItems() {
+        return allItems;
+    }
+
+    public void setAllItems(List<Item> allItems) {
+        this.allItems = allItems;
+    }
 }

@@ -1,4 +1,4 @@
-package org.evedraf.examples.spring;
+package org.evedraf.examples.spring.validation;
 
 
 import org.evedraf.examples.spring.model.Player;

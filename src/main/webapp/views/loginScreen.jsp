@@ -55,7 +55,7 @@
                 <form action="services/login" method="post" id="loginScreenForm">
                             <sec:csrfInput />
                             <p>
-                                Name: <input type="text" name="name" />
+                                Name: <input type="text" name="name" maxlength="${usernameMaxLength}" />
                             </p>
                 </form>
 
