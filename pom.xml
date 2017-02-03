@@ -286,7 +286,7 @@
                         <version>2.6</version>
                         <configuration>
                             <outputDirectory>
-                                C:\Users\evedraf\M2M\apache-tomcat-9.0.0.M13\webapps\curve-fever
+                                ${env.CATALINA_HOME}\webapps\curve-fever
                             </outputDirectory>
                             <resources>
                                 <resource>
