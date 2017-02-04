@@ -58,7 +58,7 @@ var webSocketModule = (function(){
                 drawOnGlassModule.itemPickup(message.genericPayload);
                 break;
             case "chatMessage":
-                chatModule.chatUpdate(message.genericPayload);
+                chatModule.writeMessageToChatBox(message.genericPayload);
                 break;
             case "restartConfirmed":
                 restartModule.restartRound();

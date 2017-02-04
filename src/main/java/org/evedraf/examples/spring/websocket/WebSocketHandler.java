@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.socket.CloseStatus;
 import org.springframework.web.socket.TextMessage;
 import org.springframework.web.socket.WebSocketSession;
+import org.springframework.web.socket.handler.ConcurrentWebSocketSessionDecorator;
 import org.springframework.web.socket.handler.TextWebSocketHandler;
 
 import java.io.IOException;
@@ -21,7 +22,7 @@ import java.util.Map;
  */
 public class WebSocketHandler extends TextWebSocketHandler {
 
-    private static Map<WebSocketSession, Player> currentSessions = new HashMap<>();
+    private static Map<Player, WebSocketSession> currentSessions = new HashMap<>();
 
     @Autowired
     private RoundLogic roundLogic;
@@ -36,12 +37,17 @@ public class WebSocketHandler extends TextWebSocketHandler {
     public synchronized void afterConnectionEstablished(WebSocketSession session) throws Exception {
 
         Player user = (Player)session.getAttributes().get("user");
-        currentSessions.put(session, user);
+
+        /**
+         * Use of ConcurrentWebSocketSessionDecorator to make session writes thread safe.
+         */
+        WebSocketSession threadSafeSession = new ConcurrentWebSocketSessionDecorator(session, 1000_000, 100_000);
+        currentSessions.put(user, threadSafeSession);
 
         /**
          * Sends previously connected users to newly established session only.
          */
-        session.sendMessage(createGenericSocketMessage("previousUsers", roundLogic.getIngamePlayers()));
+        threadSafeSession.sendMessage(createGenericSocketMessage("previousUsers", roundLogic.getIngamePlayers()));
 
         roundLogic.addIngamePlayer(user);
 
@@ -55,13 +61,15 @@ public class WebSocketHandler extends TextWebSocketHandler {
     @Override
     public synchronized void handleTextMessage(WebSocketSession session, TextMessage message) throws IOException {
 
+        Player user = (Player)session.getAttributes().get("user");
+
         JsonNode rootNode =
                 mapper.readTree(message.getPayload());
 
         JsonNode type = rootNode.path("type");
         JsonNode genericPayload = rootNode.path("genericPayload");
 
-        messageInHandlerLogic.handleMessage(type, genericPayload, currentSessions.get(session).getName());
+        messageInHandlerLogic.handleMessage(type, genericPayload, user.getName());
 
     }
 
@@ -70,7 +78,7 @@ public class WebSocketHandler extends TextWebSocketHandler {
 
         Player user = (Player)session.getAttributes().get("user");
         roundLogic.removeIngamePlayer(user);
-        currentSessions.remove(session);
+        currentSessions.remove(user);
         broadcastMessage("userDisconnected", user);
     }
 
@@ -85,7 +93,7 @@ public class WebSocketHandler extends TextWebSocketHandler {
         try {
             TextMessage message = createGenericSocketMessage(type, genericPayload);
 
-            for (WebSocketSession session : currentSessions.keySet()) {
+            for (WebSocketSession session : currentSessions.values()) {
 
                 if (!session.isOpen()) {
                     continue;

@@ -17,17 +17,32 @@ var chatModule = (function(){
 
     });
 
-    function chatUpdate(receivedMessage){
+    function writeSystemMessageToChatBox(plainMessage){
+
+        var element = $.("<span>").html("CURVE FEVER:" + plainMessage);
+
+        appendElementToChatBox(element);
+    }
+
+    function writeMessageToChatBox(receivedMessage){
 
         var username = receivedMessage.username;
 
         var usernameText =  $("<i>").html(username + ": ").css("color", allPlayers[username].color);
 
-        $("#chat").append(usernameText).append(receivedMessage.chatMessagePayload + "<br/>");
+        var element = usernameText.add(receivedMessage.chatMessagePayload + "<br/>");
+
+        appendElementToChatBox(element);
+    }
+
+    function appendElementToChatBox(element){
+
+        $("#chat").append(element);
         $("#chat").scrollTop($("#chat")[0].scrollHeight);
     }
 
-    module.chatUpdate = chatUpdate;
+    module.writeMessageToChatBox = writeMessageToChatBox;
+    module.writeSystemMessageToChatBox = writeSystemMessageToChatBox;
     return module;
 })();
 
