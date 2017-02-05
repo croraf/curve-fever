@@ -1,10 +1,19 @@
 
+#playersListCollumn {
+    margin-left: 8%;
+    width: 18%;
+}
+
 #playersList {
     height: 200px;
 }
 
 #playersListCollumn > a {
-	color: chocolate;
+	color: darkkhaki;
+}
+
+#playersListCollumn > h5 {
+	color: darkkhaki;
 }
 
 #chat {
@@ -14,10 +23,11 @@
     border-right: 0px;
     padding-left: 10px;
     padding-top: 5px;
+    font-family: "Roboto";
 }
 
 #chat i {
-    color: red;
+    font-family: 'Abril Fatface';
 }
 
 #chatInputBox {
@@ -32,13 +42,15 @@
     border-style: none;
     box-shadow: none;
     padding-left: 10px;
+    font-family: "Roboto";
+    font-size: 14px;
 }
 
 
 #boardCollumn {
 	/*needed positioning for absolute positioning of childs*/
 	position: absolute;
-	left: 33%;
+	left: 29%;
 	top: 0%;
 
 }
@@ -66,6 +78,15 @@
     /*cursor: crosshair;*/
 }
 
+#snakeImageColumn {
+    position: absolute;
+    top: 40px;
+    left: 630px;
+    background-image: url("images/snakeImage.jpg");
+    width: 230px;
+    height: 520px;
+}
+
 #controlRow {
     position: absolute;
     top: 570px;
@@ -81,22 +102,22 @@
 #restart {
     left: 0%;
     width:10%;
-    color:chocolate;
     cursor: pointer;
+    color: darkkhaki;
 }
 
 #currentPlayer {
     left: 40%;
     color: white;
     width: 20%;
-    border: 1px white solid;
+    border: 1px darkkhaki solid;
 }
 
 #mute {
     right: 0%;
     width: 10%;
-    color: chocolate;
     cursor: pointer;
+    color: darkkhaki;
 }
 
 

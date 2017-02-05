@@ -19,7 +19,13 @@ var chatModule = (function(){
 
     function writeSystemMessageToChatBox(plainMessage){
 
-        var element = $("<span>").html("[" + plainMessage + "]<br/>");
+        var element = $("<div>").css(
+                                        {
+                                            "text-align": "center",
+                                            "color": "darkkhaki"
+                                        }
+                                    )
+                                .html("[" + plainMessage + "]<br/>");
 
         appendElementToChatBox(element);
     }

@@ -65,7 +65,11 @@
                         </div>
                     </c:if>
 
-                    <div id = "currentPlayer"  class="controlRowElement">${player.name}</div>
+                    <div id = "currentPlayer"
+                         class="controlRowElement"
+                         style="color: ${player.color};">
+                                ${player.name}
+                    </div>
 
                     <div id = "mute" class="controlRowElement">
                         <i class="material-icons">volume_up</i>
@@ -73,7 +77,11 @@
 
                 </div>
 
+                <div id = "snakeImageColumn">
+                </div>
 			</div>
+
+
 
 		</div>
 

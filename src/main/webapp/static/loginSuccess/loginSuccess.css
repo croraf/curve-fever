@@ -10,8 +10,15 @@
 
 	text-align: center;
 	margin: 1em 0em;
+    font-family: "Roboto";
 
 }
+
+#loginSuccessHeading{
+
+    margin-bottom: 35px;
+}
+
 
 
 .simplecolorpicker.icon {

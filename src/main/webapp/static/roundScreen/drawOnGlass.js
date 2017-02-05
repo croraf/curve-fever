@@ -72,6 +72,7 @@ var drawOnGlassModule = (function (){
     function drawStartRoundScreen(){
 
         ctx2.font = '48px serif';
+        ctx2.strokeStyle = "darkkhaki";
 
         function drawCount(count){
 

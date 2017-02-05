@@ -14,7 +14,7 @@
 
 <div id = "pickedPlayerCollumn">
 
-    <h4 class="center-align">Login success!</h4>
+    <h4 id="loginSuccessHeading" class="center-align">Login success!</h4>
 
     <div> Name: ${player.name} </div>
     <div> Rating: ${player.rating} </div>

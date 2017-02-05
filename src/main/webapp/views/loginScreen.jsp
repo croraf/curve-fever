@@ -45,21 +45,30 @@
 
         <div class = "row">
             <div class = "col s4 offset-s4 section">
-        	    <h4>Pick player</h4>
+        	    <h3 class="center-align">Pick player</h3>
         	</div>
         </div>    
         
         <div class = "row">
-            <div class = "col s4 offset-s4">
+            <div class = "col s4 offset-s4 center-align">
 
                 <form action="services/login" method="post" id="loginScreenForm">
                             <sec:csrfInput />
                             <p>
-                                Name: <input type="text" name="name" maxlength="${usernameMaxLength}" />
+                                <input type="text"
+                                       name="name"
+                                       class="center-align"
+                                       maxlength="${usernameMaxLength}"
+                                       autofocus
+                                       autocorrect="off" autocapitalize="off" spellcheck="false"/>
                             </p>
                 </form>
 
-                <button type="submit" form="loginScreenForm" class="waves-effect waves-light btn">submit</button>
+                <button type="submit"
+                        form="loginScreenForm"
+                        class="waves-effect waves-light btn">
+                            submit
+                </button>
 
             </div>
         </div>
