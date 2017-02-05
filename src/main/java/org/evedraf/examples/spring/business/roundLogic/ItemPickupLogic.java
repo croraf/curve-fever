@@ -27,25 +27,39 @@ public class ItemPickupLogic {
                 //iterator.nextIndex() is ok if it is last element because it returns list size then
                 WebSocketHandler.broadcastMessage("itemPickup", iterator.nextIndex()-1);
                 iterator.remove();
-                applyItemEffect(player);
+                applyItemEffect(player, item);
             };
         }
 
     }
 
-    private void applyItemEffect(Player player){
+    private void applyItemEffect(Player player, Item item){
 
-        player.reduceSpeed();
+        switch (item.getType()){
 
-        new Thread(new RemoveItemEffectRunnable(player)).start();
+            case "slow":
+                player.reduceSpeed();
+                break;
+            case "fast":
+                player.increaseSpeed();
+                break;
+        }
+
+
+        new Thread(new RemoveItemEffectRunnable(player, item)).start();
     }
 
     private class RemoveItemEffectRunnable implements Runnable{
 
         Player player;
-        public RemoveItemEffectRunnable(Player player){
+        private Item item;
+
+        public RemoveItemEffectRunnable(Player player, Item item){
+
             this.player = player;
+            this.item = item;
         }
+
         @Override
         public void run() {
             try {
@@ -54,7 +68,15 @@ public class ItemPickupLogic {
                 e.printStackTrace();
             }
 
-            player.increaseSpeed();
+            switch (item.getType()){
+
+                case "slow":
+                    player.increaseSpeed();
+                    break;
+                case "fast":
+                    player.reduceSpeed();
+                    break;
+            }
         }
     }
 }

@@ -90,11 +90,18 @@ public class MainLoop implements Runnable {
 
     private void itemsLogic(){
 
-        if (Math.random() < 0.008){
+        double randomValue;
+        if ( (randomValue = Math.random()) < 0.008){
 
+            String itemType;
+            if (randomValue < 0.008/2) {
+                itemType = "slow";
+            } else {//if (randomValue >= 0.008/2){
+                itemType = "fast";
+            }
             double x = Math.random()*CANVAS_WIDTH;
             double y = Math.random()*CANVAS_HEIGHT;
-            Item newItem = new Item(null, new Position(x, y));
+            Item newItem = new Item(itemType, new Position(x, y));
             WebSocketHandler.broadcastMessage("addItem", newItem);
 
             roundLogic.getAllItems().add(newItem);

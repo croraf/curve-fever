@@ -27,13 +27,29 @@ var drawOnGlassModule = (function (){
         });
     }
 
-    var itemImage = $("<img>")
-        .attr("src", "static/roundScreen/images/turtle2mini.png")
-        .attr("width", itemRadius*2)
-        .attr("height", itemRadius*2)[0];
+    var itemImageSlow = $("<img>")
+                                .attr("src", "static/roundScreen/images/turtle2mini.png")
+                                .attr("width", itemRadius*2)
+                                .attr("height", itemRadius*2)[0];
 
+    var itemImageFast = $("<img>")
+                                .attr("src", "static/roundScreen/images/cheetahMini.png")
+                                .attr("width", itemRadius*2)
+                                .attr("height", itemRadius*2)[0];
 
     function drawItem(item){
+
+        var itemImage;
+        switch(item.type){
+            case "slow":
+                itemImage = itemImageSlow;
+                break;
+            case "fast":
+                itemImage = itemImageFast;
+                break;
+            default:
+                console.log("unrecognized item type");
+        }
 
         ctx2.beginPath();
         //ctx2.arc(item.x, item.y, itemRadius, 0, 2*Math.PI);
