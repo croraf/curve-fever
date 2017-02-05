@@ -16,9 +16,8 @@
 
     <h4 class="center-align">Login success!</h4>
 
-    <div> Id: ${player.id} </div>
     <div> Name: ${player.name} </div>
-    <div> Points: ${player.points} </div>
+    <div> Rating: ${player.rating} </div>
     <div> Coins: ${player.coins} </div>
 
 

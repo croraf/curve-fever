@@ -75,7 +75,7 @@ public class DaoConfigDevelopment {
         String username = System.getenv("JDBC_DATABASE_USERNAME");
         String password = System.getenv("JDBC_DATABASE_PASSWORD");
         dataSource.setUrl(dbUrl);
-        dataSource.setUsername(username);
+        dataSource.setName(username);
         dataSource.setPassword(password);*/
 
 

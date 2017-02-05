@@ -36,26 +36,6 @@ public class PlayerDao {
     }
 
     @Transactional
-    public Player getPlayerById(int id){
-
-        Query query = sessionFactory.getCurrentSession().createQuery(
-                "FROM Player p WHERE id = :id");
-        query.setParameter("id", id);
-
-        return (Player)query.uniqueResult();
-    }
-
-    @Transactional
-    public void updatePlayer(Player player){
-
-        Player playerOld = sessionFactory.getCurrentSession().get(Player.class, player.getId());
-        playerOld.setCoins(player.getCoins());
-        playerOld.setPoints(player.getPoints());
-
-        //TODO hopefully here it is committed
-    }
-
-    @Transactional
     public Player loginPlayer(String playerName) {
 
         Session session = sessionFactory.getCurrentSession();
@@ -71,5 +51,8 @@ public class PlayerDao {
 
         player.setCoins(player.getCoins() + 1);
         return player;
+
+        //TODO hopefully here it is committed
+        // also, some small business logic is in DAO which is not best practice
     }
 }

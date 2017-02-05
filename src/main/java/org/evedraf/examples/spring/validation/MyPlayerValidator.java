@@ -24,10 +24,10 @@ public class MyPlayerValidator implements Validator {
 
         ValidationUtils.rejectIfEmpty(e, "id", "id.empty");
         Player p = (Player) target;
-        if (p.getId() < 1) {
+        /*if (p.getId() < 1) {
             e.rejectValue("id", "too.low.id");
         } else if (p.getId() > 2) {
             e.rejectValue("id", "too.big.id");
-        }
+        }*/
     }
 }

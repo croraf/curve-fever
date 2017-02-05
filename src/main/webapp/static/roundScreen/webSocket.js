@@ -1,4 +1,3 @@
-var allPlayers = {};
 
 var webSocketModule = (function(){
 
@@ -36,19 +35,15 @@ var webSocketModule = (function(){
         switch (message.type){
             case "userDisconnected":
                 var user = message.genericPayload;
-                delete allPlayers[user.name];
-                chatModule.writeSystemMessageToChatBox(user.name + " disconnected")
+                playersListModule.removeUser(user);
                 break;
             case "userConnected":
                 var user = message.genericPayload;
-                allPlayers[user.name] = user;
-                chatModule.writeSystemMessageToChatBox(user.name + " connected")
+                playersListModule.addUser(user);
                 break;
             case "previousUsers":
                 var previousUsers = message.genericPayload;
-                Object.keys(previousUsers).forEach(function(username){
-                    allPlayers[username] = previousUsers[username];
-                })
+                playersListModule.addPreviousUsers(previousUsers);
                 break;
             case "positionsUpdate":
                 positionsUpdate(message.genericPayload);
@@ -69,23 +64,11 @@ var webSocketModule = (function(){
                 console.log("websocket: unrecognized websocket message type");
         }
 
-        redrawPlayersList();
+        playersListModule.updateListOfPlayers();
 
     };
 
-    function redrawPlayersList(){
-        $("#playersList").html("");
 
-        Object.values(allPlayers).forEach(function(player){
-
-            var playerElement = $("<a></a>").
-                    text(player.name + ' : ' + player.coins).
-                    css("color", player.color).
-                    addClass("collection-item");
-
-            $("#playersList").append(playerElement);
-        });
-    }
 
     function positionsUpdate(locationUpdates){
 

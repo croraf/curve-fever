@@ -11,7 +11,7 @@ import java.util.List;
 //@Component
 public class PlayerLogic {
 
-    @Autowired
+    /*@Autowired
     private PlayerDao playerDao;
 
     public PlayerLogic(){
@@ -40,5 +40,5 @@ public class PlayerLogic {
     public Player increasePlayerCoins(String playerName) {
 
         return playerDao.loginPlayer(playerName);
-    }
+    }*/
 }

@@ -80,7 +80,7 @@ public class DaoConfigProduction {
 
         /*dataSource.setDriverClassName("org.hsqldb.jdbc.JDBCDriver");
         dataSource.setUrl("jdbc:hsqldb:hsql://localhost:9001");
-        dataSource.setUsername("sa");
+        dataSource.setName("sa");
         dataSource.setPassword("");*/
 
         return dataSource;

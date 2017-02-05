@@ -71,10 +71,6 @@
                         <i class="material-icons">volume_up</i>
                     </div>
 
-
-
-                    <%-- <div id = "positionDataBox"></div> --%>
-
                 </div>
 
 			</div>
@@ -96,9 +92,12 @@
 
         <!--Initialize chat to enable system messages then webSocket-->
         <script type="text/javascript" src="static/roundScreen/chat.js"></script>
+        <script type="text/javascript" src="static/roundScreen/playersList.js"></script>
+        <script type="text/javascript" src="static/roundScreen/drawPlayer.js"></script>
+
+
         <script type="text/javascript" src="static/roundScreen/webSocket.js"></script>
 
-        <script type="text/javascript" src="static/roundScreen/drawPlayer.js"></script>
 
 	    <script type="text/javascript" src="static/roundScreen/backgroundAudio.js"></script>
 	    <script type="text/javascript" src="static/roundScreen/directionListener.js"></script>
