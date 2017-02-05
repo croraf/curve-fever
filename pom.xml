@@ -254,31 +254,10 @@
       </plugins>
   </build>
 
+
     <profiles>
         <profile>
-            <id>copyResourcesHome</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <artifactId>maven-resources-plugin</artifactId>
-                        <version>2.6</version>
-                        <configuration>
-                            <outputDirectory>
-                                C:\Users\Korisnik\Desktop\PROGRAMIRANJE\apache-tomcat-9.0.0.M17\webapps\curve-fever
-                            </outputDirectory>
-                            <resources>
-                                <resource>
-                                    <directory>src/main/webapp</directory>
-                                </resource>
-                            </resources>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-
-        <profile>
-            <id>copyResourcesOffice</id>
+            <id>copyResources</id>
             <build>
                 <plugins>
                     <plugin>

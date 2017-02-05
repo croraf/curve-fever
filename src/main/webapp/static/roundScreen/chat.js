@@ -19,7 +19,7 @@ var chatModule = (function(){
 
     function writeSystemMessageToChatBox(plainMessage){
 
-        var element = $.("<span>").html("CURVE FEVER:" + plainMessage);
+        var element = $("<span>").html("[" + plainMessage + "]<br/>");
 
         appendElementToChatBox(element);
     }
@@ -30,7 +30,7 @@ var chatModule = (function(){
 
         var usernameText =  $("<i>").html(username + ": ").css("color", allPlayers[username].color);
 
-        var element = usernameText.add(receivedMessage.chatMessagePayload + "<br/>");
+        var element = usernameText.add($("<span>").html(receivedMessage.chatMessagePayload + "<br/>"));
 
         appendElementToChatBox(element);
     }

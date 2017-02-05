@@ -94,9 +94,10 @@
 	    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
 
 
-        <!--Initialize playerList then webSocket first-->
-        <script type="text/javascript" src="static/roundScreen/webSocket.js"></script>
+        <!--Initialize chat to enable system messages then webSocket-->
         <script type="text/javascript" src="static/roundScreen/chat.js"></script>
+        <script type="text/javascript" src="static/roundScreen/webSocket.js"></script>
+
         <script type="text/javascript" src="static/roundScreen/drawPlayer.js"></script>
 
 	    <script type="text/javascript" src="static/roundScreen/backgroundAudio.js"></script>

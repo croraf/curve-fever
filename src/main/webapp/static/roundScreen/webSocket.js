@@ -37,10 +37,12 @@ var webSocketModule = (function(){
             case "userDisconnected":
                 var user = message.genericPayload;
                 delete allPlayers[user.name];
+                chatModule.writeSystemMessageToChatBox(user.name + " disconnected")
                 break;
             case "userConnected":
                 var user = message.genericPayload;
                 allPlayers[user.name] = user;
+                chatModule.writeSystemMessageToChatBox(user.name + " connected")
                 break;
             case "previousUsers":
                 var previousUsers = message.genericPayload;
