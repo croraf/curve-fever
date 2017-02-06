@@ -38,7 +38,7 @@ public class DaoConfigDevelopment {
         properties.put("dialect", "org.hibernate.dialect.HSQLDialect");
 
         properties.put("hibernate.show_sql", "true");
-        properties.put("hibernate.hbm2ddl.auto", "update");
+        /*properties.put("hibernate.hbm2ddl.auto", "update");*/
         //properties.put("hibernate.generate_statistics", "true");
 
 

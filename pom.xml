@@ -137,6 +137,13 @@
       <version>1.2.17</version>
     </dependency>
 
+    <!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-taglibs -->
+    <dependency>
+      <groupId>org.springframework.security</groupId>
+      <artifactId>spring-security-taglibs</artifactId>
+      <version>4.2.1.RELEASE</version>
+    </dependency>
+
 
     <!-- https://mvnrepository.com/artifact/org.springframework/spring-websocket -->
     <dependency>
@@ -152,12 +159,7 @@
       <version>9.0.0.M15</version>
     </dependency>
 
-    <!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-taglibs -->
-    <!--<dependency>
-      <groupId>org.springframework.security</groupId>
-      <artifactId>spring-security-taglibs</artifactId>
-      <version>4.2.1.RELEASE</version>
-    </dependency>-->
+
 
   </dependencies>
 
