@@ -28,7 +28,7 @@ public class ItemPickupLogic {
                 WebSocketHandler.broadcastMessage("itemPickup", iterator.nextIndex()-1);
                 iterator.remove();
                 applyItemEffect(player, item);
-            };
+            }
         }
 
     }

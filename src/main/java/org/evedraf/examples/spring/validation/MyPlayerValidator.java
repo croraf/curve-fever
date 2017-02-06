@@ -11,11 +11,7 @@ public class MyPlayerValidator implements Validator {
     @Override
     public boolean supports(Class<?> clazz) {
 
-        if (clazz.equals(Player.class)) {
-            return true;
-        } else {
-            return false;
-        }
+        return clazz.equals(Player.class);
 
     }
 
