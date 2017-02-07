@@ -1,5 +1,7 @@
 "use strict";
 
+import webSocketModule1 from './webSocket1';
+
 var directionListenerModule = (function() {
     var module = {};
 
@@ -28,7 +30,7 @@ var directionListenerModule = (function() {
             steerDirection = "right";
         }
 
-        webSocketModule.sendMessage("directionUpdate", steerDirection);
+        webSocketModule1.sendMessage("directionUpdate", steerDirection);
     }
 
     function unSteer(event){
@@ -50,7 +52,7 @@ var directionListenerModule = (function() {
             }
         }
 
-        webSocketModule.sendMessage("directionUpdate", steerDirection);
+        webSocketModule1.sendMessage("directionUpdate", steerDirection);
     }
 
     return module;

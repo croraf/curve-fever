@@ -1,0 +1,26 @@
+{
+  "name": "spring-curve-fever",
+  "version": "1.0.0",
+  "description": "Multiplayer web game. You can test it on http://curve-fever.herokuapp.com. Host of the round must have username \"rafa\".",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node_modules/.bin/webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/croraf/curve-fever.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/croraf/curve-fever/issues"
+  },
+  "homepage": "https://github.com/croraf/curve-fever#readme",
+  "dependencies": {
+    "lodash": "^4.17.4"
+  },
+  "devDependencies": {
+    "webpack": "^2.2.1"
+  }
+}

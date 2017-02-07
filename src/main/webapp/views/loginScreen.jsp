@@ -21,15 +21,6 @@
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.js"></script>
     <script>
-        <%--var oReq = new XMLHttpRequest();
-        oReq.addEventListener("load", reqListener);
-        oReq.open("GET", "https://code.jquery.com/jquery-2.1.1.js");
-        oReq.send();
-
-        function reqListener(){
-            eval(this.request());
-            $.getScript("static/loginScreen/loginScreen.js");
-        }--%>
 
         $( function(){
 

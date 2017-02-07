@@ -76,3 +76,5 @@ hs_err_pid*
 #original fat resources <evedraf>
 originalResources/
 .idea/
+
+node_modules

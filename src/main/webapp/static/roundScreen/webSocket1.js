@@ -91,3 +91,5 @@ var webSocketModule = (function(){
     module.sendMessage = sendMessage;
     return module;
 })();
+
+export default webSocketModule;
