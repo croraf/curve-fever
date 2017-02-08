@@ -1,6 +1,7 @@
 var path = require('path');
 
 module.exports = {
+  devtool: 'inline-sourcemap',
   entry: './src/main/webapp/indexRoundScreen.js',
   output: {
     filename: 'bundle.js',

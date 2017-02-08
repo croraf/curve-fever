@@ -1,4 +1,6 @@
 
+import './z_BoardColumn';
+
 var itemsLoopRefreshPeriod = 3000;
 var glassCanvas=document.getElementById("glass");
 var ctx2 = glassCanvas.getContext("2d");

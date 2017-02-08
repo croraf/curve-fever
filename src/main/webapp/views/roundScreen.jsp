@@ -22,32 +22,20 @@
         <script>
                 var maxLengthVariable = "${chatMessageMaxLength}";
                 var playerName = "${player.name}";
+                var playerColor = "${player.color}"
         </script>
 </head>
 
 <body tabindex="1" id="body">
 
-		<div class = "myContainer">
-
-			<div id = "playersListCollumn">
-
-			</div>
-
-			<div id = "boardCollumn">
+        <div id = "root">
+        </div>
 
 
-			</div>
-
-		</div>
-
-
-
-		<audio id= "backgroundAudio">
-		    <!-- Playing of songs done with js -->
-	        Your browser does not support the audio element.
-	    </audio>
-
-
+        <audio id= "backgroundAudio">
+             {/*Playing of songs done with js*/}
+             Your browser does not support the audio element.
+         </audio>
 
 	    <!--Import jQuery before materialize.js-->
 	    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>

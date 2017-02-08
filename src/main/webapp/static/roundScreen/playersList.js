@@ -1,4 +1,5 @@
 
+import './z_PlayerListColumn'
 import chatModule from './chat';
 
 

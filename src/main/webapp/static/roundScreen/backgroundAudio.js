@@ -1,4 +1,4 @@
-
+import './z_BoardColumn';
 
 var songsList = [
     "static/roundScreen/songs/TheCurseOfMonkeyIsland.mp3",
