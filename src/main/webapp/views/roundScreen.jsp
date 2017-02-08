@@ -20,6 +20,7 @@
 
 
         <script>
+                var maxLengthVariable = "${chatMessageMaxLength}";
                 var playerName = "${player.name}";
         </script>
 </head>
@@ -29,51 +30,12 @@
 		<div class = "myContainer">
 
 			<div id = "playersListCollumn">
-				
-				<h5 class="center-align">In game</h5>
 
-				<div id = "playersList" class="glowingShadow center-align collection scrollbar-style-2"></div>
-
-				<div id = "chat" class="glowingShadow collection scrollbar-style-2"> </div>
-
-				<div id = "chatInputBox" class="glowingShadow collection scrollbar-style-2">
-
-				    <form id = "chatForm">
-				        <input type="text" name="text" maxlength="${chatMessageMaxLength}"
-				                autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
-				    </form>
-				</div>
-
-			    <a href="services/round/exit">Log out</a>
 			</div>
 
 			<div id = "boardCollumn">
 
-				<canvas id="board" width="600" height="520" class="glowingShadow"></canvas>
-				<canvas id="glass" width="600" height="520"></canvas>
 
-                <div id = "controlRow">
-
-                    <c:if test="${player.name==\"rafa\"}">
-                        <div id = "restart" class="controlRowElement">
-                            RESTART
-                        </div>
-                    </c:if>
-
-                    <div id = "currentPlayer"
-                         class="controlRowElement"
-                         style="color: ${player.color};">
-                                ${player.name}
-                    </div>
-
-                    <div id = "mute" class="controlRowElement">
-                        <i class="material-icons">volume_up</i>
-                    </div>
-
-                </div>
-
-                <div id = "snakeImageColumn">
-                </div>
 			</div>
 
 		</div>

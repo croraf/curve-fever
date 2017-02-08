@@ -8,11 +8,11 @@
     height: 200px;
 }
 
-#playersListCollumn > a {
+#playersListCollumn a {
 	color: darkkhaki;
 }
 
-#playersListCollumn > h5 {
+#playersListCollumn h5 {
 	color: darkkhaki;
 }
 

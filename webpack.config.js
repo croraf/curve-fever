@@ -15,7 +15,7 @@ module.exports = {
                 loader: "file-loader?name=[name].[ext]&publicPath=dist/",
               },
             ],
-          },
+         },
         {
           test: /\.css$/,
           use: [
@@ -23,6 +23,12 @@ module.exports = {
             { loader: "css-loader" },
           ],
         },
+        {
+          test: /\.js$/,
+          use: [
+            { loader: "babel-loader" },
+          ],
+        }
 
       ],
     },

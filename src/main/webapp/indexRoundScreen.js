@@ -14,3 +14,5 @@ import './static/roundScreen/chat.js';
         // import playersList
 
 import './static/roundScreen/directionListener.js';
+
+import './static/roundScreen/zzzReact.js';
