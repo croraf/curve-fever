@@ -17,7 +17,10 @@
     "url": "https://github.com/croraf/curve-fever/issues"
   },
   "homepage": "https://github.com/croraf/curve-fever#readme",
-  "dependencies": {},
+  "dependencies": {
+    "react-redux": "^5.0.2",
+    "redux": "^3.6.0"
+  },
   "devDependencies": {
     "babel-cli": "^6.22.2",
     "babel-loader": "^6.2.10",

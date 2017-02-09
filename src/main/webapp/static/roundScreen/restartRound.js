@@ -1,4 +1,4 @@
-"use strict";
+import './components/root';
 
 import drawOnGlassModule from './drawOnGlass';
 import drawPlayerModule from './drawPlayer';

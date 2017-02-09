@@ -1,3 +1,4 @@
+import './components/root';
 
 import drawOnGlassModule from './drawOnGlass';
 import chatModule from './chat';

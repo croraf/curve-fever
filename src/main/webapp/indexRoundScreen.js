@@ -6,7 +6,7 @@ var style3 = require("./static/roundScreen/roundScreen.css");
 import './static/roundScreen/backgroundAudio.js';
 
 
-import './static/roundScreen/root.js';
+import './static/roundScreen/components/root.js';
 
 import './static/roundScreen/chat.js';
     //import './static/roundScreen/webSocket.js'
@@ -16,6 +16,3 @@ import './static/roundScreen/chat.js';
         // import playersList
 
 import './static/roundScreen/directionListener.js';
-
-import './static/roundScreen/z_PlayerListColumn.js';
-import './static/roundScreen/z_BoardColumn.js';

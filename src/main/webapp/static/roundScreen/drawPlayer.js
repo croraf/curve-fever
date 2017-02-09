@@ -1,5 +1,4 @@
-"use strict";
-
+import './components/root';
 import playersListModule from './playersList';
 
 

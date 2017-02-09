@@ -1,5 +1,5 @@
 
-import './z_BoardColumn';
+import './components/root';
 
 var itemsLoopRefreshPeriod = 3000;
 var glassCanvas=document.getElementById("glass");

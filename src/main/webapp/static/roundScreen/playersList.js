@@ -1,5 +1,6 @@
 
-import './z_PlayerListColumn'
+import './components/root';
+
 import chatModule from './chat';
 
 
