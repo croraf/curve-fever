@@ -1,26 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import toggleMute from './actions';
+import RestartButtonComponent from './RestartButtonComponent';
+import MuteComponent from './MuteComponent';
 
-import {store} from './root';
 
-function RestartButtonComponent () {
 
-    if (playerName == "rafa"){
-        return  (
-                    <div id = "restart" className="controlRowElement">
-                            RESTART
-                    </div>
-                );
-    } else {
-        return null;
-    }
-}
 
-function handleMuteClick (){
-    store.dispatch(toggleMute());
-}
+
+
+
 
 export default function BoardColumn(){
     return (
@@ -37,9 +26,8 @@ export default function BoardColumn(){
                                     {playerName}
                         </div>
 
-                        <div id = "mute" className="controlRowElement" onClick={handleMuteClick}>
-                            <i className="material-icons">volume_up</i>
-                        </div>
+                        <MuteComponent />
+
 
                     </div>
 

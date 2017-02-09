@@ -5,7 +5,7 @@ import drawPlayerModule from './drawPlayer';
 import webSocketModule from './webSocket';
 
 
-import './root'
+import './components/root'
 
 $("#restart").click( function (event) {
 
