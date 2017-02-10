@@ -34,10 +34,10 @@ mute.click( function(event) {
 
     if (backgroundAudio.paused) {
         backgroundAudio.play();
-        mute.html("volume_up")
+        /*mute.html("volume_up")*/
     } else {
         backgroundAudio.pause();
-        mute.html("volume_off")
+        /*mute.html("volume_off")*/
     }
 });
 

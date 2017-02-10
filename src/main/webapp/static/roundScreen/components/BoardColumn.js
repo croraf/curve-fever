@@ -7,10 +7,6 @@ import MuteComponent from './MuteComponent';
 
 
 
-
-
-
-
 export default function BoardColumn(){
     return (
                 <div id="boardCollumn">

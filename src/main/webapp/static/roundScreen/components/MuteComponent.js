@@ -4,12 +4,21 @@ import { connect } from 'react-redux';
 import {toggleMute} from '../actions/actions';
 
 
-let MuteComponent = function({muteClickHandler}){
+
+let MuteComponent = function({musicOnOff, muteClickHandler}){
+
+    let musicIcon;
+    if (musicOnOff === "ON") {
+        musicIcon = "volume_up";
+    }
+    else {
+        musicIcon = "volume_off";
+    }
 
     return (
         <div id = "mute" className="controlRowElement" >
             <i className="material-icons" onClick={muteClickHandler}>
-                volume_up
+                {musicIcon}
             </i>
         </div>
     );
@@ -21,7 +30,13 @@ const mapDispatchToProps = (dispatch) => {
          };
 }
 
-MuteComponent = connect(undefined, mapDispatchToProps)(MuteComponent);
+const mapStateToProps = (state) => {
+  return {
+               musicOnOff: state.audio
+         };
+}
+
+MuteComponent = connect(mapStateToProps, mapDispatchToProps)(MuteComponent);
 
 export default MuteComponent;
 
