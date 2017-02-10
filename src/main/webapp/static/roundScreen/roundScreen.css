@@ -1,5 +1,5 @@
 
-#playersListCollumn {
+#playersListColumn {
     margin-left: 8%;
     width: 18%;
 }
@@ -8,11 +8,11 @@
     height: 200px;
 }
 
-#playersListCollumn a {
+#playersListColumn a {
 	color: darkkhaki;
 }
 
-#playersListCollumn h5 {
+#playersListColumn h5 {
 	color: darkkhaki;
 }
 
@@ -47,7 +47,7 @@
 }
 
 
-#boardCollumn {
+#boardColumn {
 	/*needed positioning for absolute positioning of childs*/
 	position: absolute;
 	left: 29%;

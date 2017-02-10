@@ -3,7 +3,7 @@
 
 <link rel="stylesheet" type="text/css" href="static/loginSuccess/loginSuccess.css" />
 
-<div id = "playersListCollumn">
+<div id = "playersListColumn">
 
         <h5 class="center-align">All players</h5>
 
@@ -12,7 +12,7 @@
 
 </div>
 
-<div id = "pickedPlayerCollumn">
+<div id = "pickedPlayerColumn">
 
     <h4 id="loginSuccessHeading" class="center-align">Login success!</h4>
 

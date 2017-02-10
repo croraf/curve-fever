@@ -1,4 +1,5 @@
-import './components/root';
+import store from './components/root';
+import {networkAction} from './actions/networkAction';
 
 import drawOnGlassModule from './drawOnGlass';
 import chatModule from './chat';
@@ -35,6 +36,9 @@ myWebSocket.onopen = function(event){
 myWebSocket.onmessage = function (messageEvent){
 
     var message = JSON.parse(messageEvent.data);
+
+    console.log("ja sam rafo: " + networkAction(message).type + " " + networkAction(message).genericPayload);
+    store.dispatch(networkAction(message));
 
     switch (message.type){
         case "userDisconnected":

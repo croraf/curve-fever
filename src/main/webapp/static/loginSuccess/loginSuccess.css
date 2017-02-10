@@ -1,4 +1,4 @@
-#pickedPlayerCollumn {
+#pickedPlayerColumn {
  	/*needed positioning for absolute positioning of childs*/
  	position: absolute;
     left: 45%;
@@ -6,7 +6,7 @@
 
 }
 
-#pickedPlayerCollumn > div {
+#pickedPlayerColumn > div {
 
 	text-align: center;
 	margin: 1em 0em;

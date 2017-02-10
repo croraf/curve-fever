@@ -7,16 +7,18 @@ import BackgroundAudio from './BackgroundAudio';
 
 import {Provider} from 'react-redux';
 import {createStore} from 'redux';
+import {combineReducers} from 'redux';
 
-import mainReducer from '../reducers/reducers';
+import audioReducer from '../reducers/audioReducer';
+import networkReducer from '../reducers/networkReducer';;
 
 
+let store = createStore (combineReducers({audioReducer, networkReducer}));
 
-let store = createStore (mainReducer);
 store.subscribe(logger);
+
 function logger(){
-    console.log("store je pozvan");
-    console.log("in action listener:" + store.getState().audio);
+    console.log("store listener:" + store.getState());
 }
 
 
@@ -39,3 +41,6 @@ ReactDOM.render(
 
      document.getElementById('root')
 );
+
+
+export default store;
