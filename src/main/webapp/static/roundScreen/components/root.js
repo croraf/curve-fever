@@ -9,16 +9,18 @@ import {Provider} from 'react-redux';
 import {createStore} from 'redux';
 import {combineReducers} from 'redux';
 
-import audioReducer from '../reducers/audioReducer';
-import networkReducer from '../reducers/networkReducer';;
+import audio from '../reducers/audio';
+import chat from '../reducers/chat';
+import listOfPlayers from '../reducers/listOfPlayers';
 
+let store = createStore (combineReducers({audio, chat, listOfPlayers}));
 
-let store = createStore (combineReducers({audioReducer, networkReducer}));
-
-store.subscribe(logger);
-
-function logger(){
-    console.log("store listener:" + store.getState());
+let next = store.dispatch;
+store.dispatch = function (action) {
+  console.log('dispatching', action);
+  let result = next(action);
+  console.log('next state', store.getState());
+  return result;
 }
 
 

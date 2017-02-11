@@ -113,12 +113,18 @@
     border: 1px darkkhaki solid;
 }
 
-#mute {
+#muteContainer {
     right: 0%;
     width: 10%;
-    cursor: pointer;
-    color: darkkhaki;
 }
+
+#muteContainer i {
+
+    color: darkkhaki;
+    cursor: pointer;
+}
+
+
 
 
 /*#positionDataBox {

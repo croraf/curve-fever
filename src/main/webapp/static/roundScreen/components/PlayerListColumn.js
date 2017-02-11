@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import ChatComponent from './ChatComponent';
+import ListOfPlayersComponent from './ListOfPlayersComponent';
 
 export default function PlayerListColumn (){
     return (
@@ -9,7 +10,7 @@ export default function PlayerListColumn (){
 
                         <h5 className="center-align">In game</h5>
 
-                        <div id = "playersList" className="glowingShadow center-align collection scrollbar-style-2"></div>
+                        <ListOfPlayersComponent />
 
                         <ChatComponent />
 

@@ -14,6 +14,7 @@ var songsList = [
 let currentSongIndex = 3;
 
 class BackgroundAudio extends React.Component{
+
     constructor(props){
         super (props);
 
@@ -55,12 +56,7 @@ class BackgroundAudio extends React.Component{
     }
 
 
-
     render() {
-
-
-        console.log(this.props.musicOnOff);
-
 
         return (
 

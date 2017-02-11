@@ -79,4 +79,4 @@ originalResources
 
 node_modules
 
-**/dist/
+src/main/webapp/dist

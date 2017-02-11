@@ -1,5 +1,5 @@
 import store from './components/root';
-import {networkAction} from './actions/networkAction';
+import {networkInAction} from './actions/networkInAction';
 
 import drawOnGlassModule from './drawOnGlass';
 import chatModule from './chat';
@@ -37,8 +37,7 @@ myWebSocket.onmessage = function (messageEvent){
 
     var message = JSON.parse(messageEvent.data);
 
-    console.log("ja sam rafo: " + networkAction(message).type + " " + networkAction(message).genericPayload);
-    store.dispatch(networkAction(message));
+    store.dispatch(networkInAction(message));
 
     switch (message.type){
         case "userDisconnected":
@@ -72,7 +71,7 @@ myWebSocket.onmessage = function (messageEvent){
             console.log("websocket: unrecognized websocket message type");
     }
 
-    playersListModule.updateListOfPlayers();
+
 
 };
 

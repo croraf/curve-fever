@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import {toggleMute} from '../actions/actions';
+import {toggleMute} from '../actions/toggleMute';
 
 
 
@@ -16,7 +16,7 @@ let MuteComponent = function({musicOnOff, muteClickHandler}){
     }
 
     return (
-        <div id = "mute" className="controlRowElement" >
+        <div id = "muteContainer" className="controlRowElement" >
             <i className="material-icons" onClick={muteClickHandler}>
                 {musicIcon}
             </i>
