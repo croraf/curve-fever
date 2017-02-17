@@ -17,32 +17,40 @@ function ChatMessageComponent(props){
 }
 
 
-let allChatMessagesComponent = [];
-
 class ChatOutputBox extends React.Component{
 
-    constructor(){
-        super(props)
-        /* this.createChatMessage = this.createChatMessage.bind(this);*/
+    constructor(props){
+        super(props);
+        this.allChatMessagesComponent = [];
     }
 
 
+    componentWillUpdate(nextProps){
+        let newMessage = nextProps.allChatMessages[nextProps.allChatMessages.length-1];
+        let newChatMessageComponent = (
+                                             <ChatMessageComponent key={nextProps.allChatMessages.length}
+                                                                   username={newMessage.username}
+                                                                   color={newMessage.color}
+                                                                   payload={newMessage.chatMessagePayload}
+                                             />
+                                      );
+        this.allChatMessagesComponent.push(newChatMessageComponent);
+    }
 
 
     render(){
-        let newChatMessageComponent =
-              <ChatMessageComponent key={allChatMessagesComponent.length}
-                                    username={this.props.lastReceivedChatMessage.username}
-                                    color={this.props.listOfPlayers[this.props.lastReceivedChatMessage.username].color}
-                                    payload={this.props.lastReceivedChatMessage.chatMessagePayload}/>;
-
-        allChatMessagesComponent.push(newChatMessageComponent);
 
         return (
-            <div id = "chat" className="glowingShadow collection scrollbar-style-2">
-                {allChatMessagesComponent}
+            <div  id = "chat"
+                  className="glowingShadow collection scrollbar-style-2"
+                  ref = {(div) => this.chatOutDOM = div}>
+                {this.allChatMessagesComponent}
             </div>
         );
+    }
+
+    componentDidUpdate(){
+        $(this.chatOutDOM).scrollTop(this.chatOutDOM.scrollHeight);
     }
 
 }
@@ -70,10 +78,11 @@ export default function ChatComponent (){
             );
 }
 
-const mapStateToProps = (state) => ({
-               lastReceivedChatMessage: state.chat,
-               listOfPlayers: state.listOfPlayers
-});
+const mapStateToProps = (state) => (
+        {
+              allChatMessages: state.chat
+        }
+);
 
 
 ChatOutputBox = connect (mapStateToProps, undefined)(ChatOutputBox);

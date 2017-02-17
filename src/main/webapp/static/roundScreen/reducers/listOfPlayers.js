@@ -16,7 +16,7 @@ export default function(state = {}, action){
         case "previousUsers":
             let previousUsers = action.genericPayload;
             return previousUsers;
-            break
+            break;
 
         default:
             return state;

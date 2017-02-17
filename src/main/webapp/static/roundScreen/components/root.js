@@ -7,15 +7,13 @@ import BackgroundAudio from './BackgroundAudio';
 
 import {Provider} from 'react-redux';
 import {createStore} from 'redux';
-import {combineReducers} from 'redux';
 
-import audio from '../reducers/audio';
-import chat from '../reducers/chat';
-import listOfPlayers from '../reducers/listOfPlayers';
+import rootReducer from '../reducers/rootReducer.js';
 
-let store = createStore (combineReducers({audio, chat, listOfPlayers}));
 
+let store = createStore (rootReducer);
 let next = store.dispatch;
+
 store.dispatch = function (action) {
   console.log('dispatching', action);
   let result = next(action);

@@ -44,7 +44,7 @@ function writeMessageToChatBox(receivedMessage){
 function appendElementToChatBox(element){
 
     /*$("#chat").append(element);*/
-    $("#chat").scrollTop($("#chat")[0].scrollHeight);
+    /*$("#chat").scrollTop($("#chat")[0].scrollHeight);*/
 }
 
 
