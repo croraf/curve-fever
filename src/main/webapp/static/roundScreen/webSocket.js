@@ -13,6 +13,7 @@ var myWebSocket = new WebSocket(
   //, sub-protocol
 );
 
+
 function sendMessage(type, genericPayload){
 
         if(myWebSocket.readyState === myWebSocket.OPEN){
