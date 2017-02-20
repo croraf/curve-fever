@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import ChatComponent from './chat/ChatComponent.js';
+import ChatComponent from './ChatComponent';
 import ListOfPlayersComponent from './ListOfPlayersComponent';
 
-export default function (){
+export default function PlayerListColumn (){
     return (
                 <div id="playersListColumn">
 

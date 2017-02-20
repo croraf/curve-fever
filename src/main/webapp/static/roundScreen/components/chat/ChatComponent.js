@@ -1,26 +1,26 @@
 import React from 'react';
- import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom';
 
- import { connect } from 'react-redux';
+import { connect } from 'react-redux';
 
- import ChatOutputBox from './ChatOutputBox';
- import ChatInputBox from './ChatInputBox';
+import ChatAllMessagesComponent from './ChatAllMessagesComponent';
+import ChatInputBox from './ChatInputBox';
 
 
 
 const mapStateToProps = (state) => (
         {
-              allChatMessages: state.chat
+              allChatMessages: state.chat.re
         }
 );
 
-let ChatOutputBoxContainer = connect (mapStateToProps, undefined)(ChatOutputBox);
+let ChatAllMessagesComponentContainer = connect (mapStateToProps, undefined)(ChatAllMessagesComponent);
 
 
 export default function ChatComponent (){
     return (
                 <div>
-                    <ChatOutputBoxContainer />
+                    <ChatAllMessagesComponentContainer />
 
                     <ChatInputBox />
                 </div>

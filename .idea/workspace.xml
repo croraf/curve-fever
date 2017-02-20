@@ -1,0 +1,1383 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/evedraf/examples/spring/validation/MyPlayerValidator.java" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="be97e18f-e31e-41e2-862e-39e540954b29" name="Default" comment="Playing with git" />
+    <ignored path="CurveFever.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="CodeIris Favorites" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="chat.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/static/roundScreen/chat.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="41" column="1" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="webpack.config.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webpack.config.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="22" column="39" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="webSocket.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/static/roundScreen/webSocket.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="restartRound.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/static/roundScreen/restartRound.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="27" selection-start-line="0" selection-start-column="27" selection-end-line="0" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="roundScreen.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/views/roundScreen.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="38" column="20" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.16943522">
+              <caret line="41" column="7" selection-start-line="41" selection-start-column="7" selection-end-line="41" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-15.692307">
+              <caret line="146" column="25" selection-start-line="146" selection-start-column="25" selection-end-line="146" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="roundScreen.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/static/roundScreen/roundScreen.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="84" column="36" selection-start-line="84" selection-start-column="36" selection-end-line="84" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="drawOnGlass.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/static/roundScreen/drawOnGlass.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>surefire</find>
+      <find>requestMapping</find>
+      <find>corpora</find>
+      <find>logger</find>
+      <find>drawCircle</find>
+      <find>module.</find>
+      <find>module</find>
+      <find>playerUpdateS</find>
+      <find>playerUpdateForm</find>
+      <find>started</find>
+      <find>sendMessage</find>
+      <find>debug</find>
+      <find>compi</find>
+      <find>mes</find>
+      <find>spring</find>
+      <find>alive</find>
+      <find>postgre</find>
+      <find>spring-securit</find>
+      <find>export</find>
+      <find>128</find>
+      <find>tabindex</find>
+      <find>player.color</find>
+      <find>player.name</find>
+      <find>playerColor</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="UPDATE_TYPE" value="MERGE" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="test1SpringValidation" />
+      </map>
+    </option>
+    <push-targets>
+      <push-target-info repo="$PROJECT_DIR$" source="master" target-remote="github" target-branch="master" />
+    </push-targets>
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/main/java/org/evedraf/examples/spring/controller/RoundController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/evedraf/examples/spring/business/roundLogic/Item.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/evedraf/examples/spring/business/roundLogic/ItemPickupDetection.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/evedraf/examples/spring/business/roundLogic/ItemEffectLogic.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/evedraf/examples/spring/business/roundLogic/RoundLogic.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/evedraf/examples/spring/model/Player.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/evedraf/examples/spring/business/roundLogic/MainLoop.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/evedraf/examples/spring/business/roundLogic/ItemPickupLogic.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/evedraf/examples/spring/dao/PlayerDao.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/liquibase/db.changelog.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/org/evedraf/examples/spring/config/DaoConfigDevelopment.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/views/loginSuccess.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/webpack.confing.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/node_modules/lodash/lodash.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/package.json" />
+        <option value="$PROJECT_DIR$/src/main/webapp/webpack.config.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/static/roundScreen/directionListener.js" />
+        <option value="$PROJECT_DIR$/.babelrc" />
+        <option value="$PROJECT_DIR$/src/main/webapp/static/roundScreen/zzzReact.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/static/roundScreen/zzzReactBoard.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/static/roundScreen/z_PlayerListColumn.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/static/roundScreen/z_BoardColumn.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/static/roundScreen/root.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/static/roundScreen/drawPlayer.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/static/roundScreen/playersList.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/static/roundScreen/drawOnGlass.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/static/roundScreen/restartRound.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/static/roundScreen/components/actions.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/static/roundScreen/components/reducers.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/static/roundScreen/components/BoardColumn.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/static/roundScreen/backgroundAudio.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/static/roundScreen/components/ChatComponent.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/static/roundScreen/components/PlayerListColumn.js" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/static/roundScreen/chat.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/static/roundScreen/reducers/networkMessageReducer.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/static/roundScreen/reducers/audioReducer.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/static/roundScreen/actions/networkAction.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/static/roundScreen/webSocket.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/static/roundScreen/reducers/networkReducer.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/static/roundScreen/components/BackgroundAudio.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/static/roundScreen/reducers/rootReducer.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/static/roundScreen/components/root.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/views/loginScreen.jsp" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/src/main/webapp/indexRoundScreen.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/static/roundScreen/roundScreen.css" />
+        <option value="$PROJECT_DIR$/webpack.config.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/views/roundScreen.jsp" />
+        <option value="$PROJECT_DIR$/.idea/workspace.xml" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Bundled (Maven 3)" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1616" />
+    <option name="height" value="876" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Android &gt; Lint &gt; Correctness</id>
+          </State>
+          <State>
+            <id>Android Lint for Kotlin</id>
+          </State>
+          <State>
+            <id>Groovy</id>
+          </State>
+          <State>
+            <id>OtherGroovy</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>Android</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CurveFever" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CurveFever" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="curve-fever" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CurveFever" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="curve-fever" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value=".idea" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
+    <property name="prop_add_unversioned_files" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveMembersDialog.RECENTS_KEY">
+      <recent name="org.evedraf.examples.spring.validation.ValidationConstants" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\evedraf\IdeaProjects\Spring\SpringCurveFever\unused" />
+      <recent name="C:\Users\evedraf\IdeaProjects\Spring\SpringCurveFever\src\main\webapp\static\roundScreen\components" />
+      <recent name="C:\Users\evedraf\IdeaProjects\Spring\SpringCurveFever" />
+      <recent name="C:\Users\evedraf\IdeaProjects\Spring\SpringCurveFever\src\main\webapp" />
+      <recent name="C:\Users\evedraf\IdeaProjects\Spring\SpringCurveFever\src\main\webapp\static\roundScreen\songs" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.evedraf.examples.spring.config.unused" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\evedraf\IdeaProjects\Spring\SpringCurveFever\src\main\webapp\static\roundScreen" />
+      <recent name="C:\Users\evedraf\IdeaProjects\Spring\SpringCurveFever\src\main\webapp\static\roundScreen\songs" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Maven.copy-resource">
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="0" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="SELECTED_CLOUD_DEVICE_CONFIGURATION_ID" value="0" />
+      <option name="SELECTED_CLOUD_DEVICE_PROJECT_ID" value="" />
+      <option name="IS_VALID_CLOUD_MATRIX_SELECTION" value="false" />
+      <option name="INVALID_CLOUD_MATRIX_SELECTION_ERROR" value="" />
+      <option name="IS_VALID_CLOUD_DEVICE_SELECTION" value="false" />
+      <option name="INVALID_CLOUD_DEVICE_SELECTION_ERROR" value="" />
+      <option name="CLOUD_DEVICE_SERIAL_NUMBER" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
+      <module name="" />
+      <option name="TESTING_TYPE" value="0" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="0" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="SELECTED_CLOUD_DEVICE_CONFIGURATION_ID" value="0" />
+      <option name="SELECTED_CLOUD_DEVICE_PROJECT_ID" value="" />
+      <option name="IS_VALID_CLOUD_MATRIX_SELECTION" value="false" />
+      <option name="INVALID_CLOUD_MATRIX_SELECTION_ERROR" value="" />
+      <option name="IS_VALID_CLOUD_DEVICE_SELECTION" value="false" />
+      <option name="INVALID_CLOUD_DEVICE_SELECTION_ERROR" value="" />
+      <option name="CLOUD_DEVICE_SERIAL_NUMBER" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
+      <method />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <method />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="JarApplication" factoryName="JAR Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="Java Scratch" factoryName="Java Scratch">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="SCRATCH_FILE_ID" value="0" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="CurveFever" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list />
+            </option>
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Clean Tomcat7:Redeploy" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="clean" />
+                <option value="tomcat7:redeploy" />
+              </list>
+            </option>
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method />
+    </configuration>
+    <configuration default="false" name="copy-resource" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="resources:copy-resources" />
+              </list>
+            </option>
+            <option name="profilesMap">
+              <map>
+                <entry key="copyResources" value="true" />
+              </map>
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method />
+    </configuration>
+    <configuration default="false" name="Tomcat Debugger" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="8000" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="8000" />
+        <option name="LOCAL" value="false" />
+      </RunnerSettings>
+      <method />
+    </configuration>
+    <list size="3">
+      <item index="0" class="java.lang.String" itemvalue="Maven.Clean Tomcat7:Redeploy" />
+      <item index="1" class="java.lang.String" itemvalue="Maven.copy-resource" />
+      <item index="2" class="java.lang.String" itemvalue="Remote.Tomcat Debugger" />
+    </list>
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android App">
+      <module name="" />
+      <option name="DEPLOY" value="true" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="DEBUGGER_TYPE" value="Java" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <Java />
+      <Profilers>
+        <option name="ENABLE_ADVANCED_PROFILING" value="true" />
+        <option name="GAPID_ENABLED" value="false" />
+        <option name="GAPID_DISABLE_PCS" value="false" />
+        <option name="SUPPORT_LIB_ENABLED" value="true" />
+        <option name="INSTRUMENTATION_ENABLED" value="true" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <method />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="StructureViewFactory">
+    <option name="ACTIVE_ACTIONS" value=",SHOW_NON_PUBLIC" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\evedraf\AppData\Roaming\Subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="be97e18f-e31e-41e2-862e-39e540954b29" name="Default" comment="" />
+      <created>1481710549239</created>
+      <option name="number" value="Default" />
+      <updated>1481710549239</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Logger introduction&#10;">
+      <created>1484239573177</created>
+      <option name="number" value="00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1484239573177</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Logger introduction.&#10;">
+      <created>1484308308970</created>
+      <option name="number" value="00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1484308308970</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Javascript modularization. Renaming.&#10;">
+      <created>1484320440867</created>
+      <option name="number" value="00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1484320440867</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Fixing overflow-y and renaming urls.">
+      <created>1484322827674</created>
+      <option name="number" value="00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1484322827674</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Adding drawing of enemy.">
+      <created>1484327790404</created>
+      <option name="number" value="00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1484327790404</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Adding &quot;tomcat websocket upgrade&quot; maven dependency.">
+      <created>1484573389516</created>
+      <option name="number" value="00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1484573389516</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Home and office resource copy profile. Maven Tomcat websocket dependency.&#10;&#10;Adding home and office maven profile for resource copy, and upgrading maven tomcat websocket dependency to new version.">
+      <created>1484575218603</created>
+      <option name="number" value="00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1484575218603</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Reverting tomcat websocket maven dependency to older version">
+      <created>1484576877278</created>
+      <option name="number" value="00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1484576877278</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Removing postgre autoupdate.">
+      <created>1484577284096</created>
+      <option name="number" value="00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1484577284096</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Removing current testing aspect.">
+      <created>1484578519434</created>
+      <option name="number" value="00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1484578519434</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Changing ws address to heroku.">
+      <created>1484582189388</created>
+      <option name="number" value="00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1484582189388</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Changing ws address to heroku.">
+      <created>1484582719999</created>
+      <option name="number" value="00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1484582719999</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Using relative web socket address.">
+      <created>1484586726899</created>
+      <option name="number" value="00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1484586726899</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Moving position communication to WebSockets.">
+      <created>1484668238688</created>
+      <option name="number" value="00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1484668238688</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Moving position communication to WebSockets. &#10;&#10;Temprorarily do not draw own curve.">
+      <created>1484669432310</created>
+      <option name="number" value="00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1484669432310</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Adding synchronization on main websocket handle method.">
+      <created>1484736574288</created>
+      <option name="number" value="00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1484736574288</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Trying lower speed.">
+      <created>1484741478495</created>
+      <option name="number" value="00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1484741478495</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Trying lower speed.">
+      <created>1484756769523</created>
+      <option name="number" value="00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1484756769523</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Adding dummy cache config class.">
+      <created>1484926833578</created>
+      <option name="number" value="00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1484926833578</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Trying to add login/logout on player leave.">
+      <created>1485196898083</created>
+      <option name="number" value="00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1485196898083</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Trying to add login/logout on player leave.">
+      <created>1485197195429</created>
+      <option name="number" value="00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1485197195429</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Binding round screen login/logout to chat web socket.">
+      <created>1485249397355</created>
+      <option name="number" value="00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1485249397355</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Binding round screen login/logout to chat web socket.">
+      <created>1485274816702</created>
+      <option name="number" value="00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1485274816702</updated>
+    </task>
+    <task id="LOCAL-00042" summary="XO testing">
+      <created>1485427971143</created>
+      <option name="number" value="00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1485427971143</updated>
+    </task>
+    <task id="LOCAL-00043" summary="XO testing">
+      <created>1485445857948</created>
+      <option name="number" value="00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1485445857948</updated>
+    </task>
+    <task id="LOCAL-00044" summary="Addin CSRF token in post. Changing&#10;">
+      <created>1485455883589</created>
+      <option name="number" value="00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1485455883589</updated>
+    </task>
+    <task id="LOCAL-00045" summary="Modifying start/stop button to restart button, available only to user &quot;rafa&quot;">
+      <created>1485517754722</created>
+      <option name="number" value="00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1485517754722</updated>
+    </task>
+    <task id="LOCAL-00046" summary="Putting all websockets into one websocket.">
+      <created>1485535590977</created>
+      <option name="number" value="00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1485535590977</updated>
+    </task>
+    <task id="LOCAL-00047" summary="Refactoring ObjectMapper parsing to JsonNode+ObjectMapper parsing for (type,payloadObject) message.">
+      <created>1485538188620</created>
+      <option name="number" value="00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1485538188620</updated>
+    </task>
+    <task id="LOCAL-00048" summary="Broadcast of all positions from each player is not needed. Putting position update on server is necessary">
+      <created>1485539344255</created>
+      <option name="number" value="00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1485539344255</updated>
+    </task>
+    <task id="LOCAL-00049" summary="Adding a list of songs to play one after another instead of just one song.">
+      <created>1485871829287</created>
+      <option name="number" value="00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1485871829287</updated>
+    </task>
+    <task id="LOCAL-00050" summary="Renaming.">
+      <created>1485872247902</created>
+      <option name="number" value="00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1485872247902</updated>
+    </task>
+    <task id="LOCAL-00051" summary="Adding a couple more songs.">
+      <created>1485872857757</created>
+      <option name="number" value="00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1485872857757</updated>
+    </task>
+    <task id="LOCAL-00052" summary="Adding item generation on server.">
+      <created>1486045886317</created>
+      <option name="number" value="00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1486045886319</updated>
+    </task>
+    <task id="LOCAL-00053" summary="Add item effect and de-effect. To test in multi-player scenario.">
+      <created>1486048420179</created>
+      <option name="number" value="00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1486048420179</updated>
+    </task>
+    <task id="LOCAL-00054" summary="Remove unused method exposure in glassCanvas module.">
+      <created>1486048538912</created>
+      <option name="number" value="00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1486048538912</updated>
+    </task>
+    <task id="LOCAL-00055" summary="Small comment on iterator.nextIndex().">
+      <created>1486048916676</created>
+      <option name="number" value="00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1486048916676</updated>
+    </task>
+    <task id="LOCAL-00056" summary="Adding z-index to canvases. Hopefully the glitch will not happen any more when item is picked up.">
+      <created>1486054487428</created>
+      <option name="number" value="00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1486054487428</updated>
+    </task>
+    <task id="LOCAL-00057" summary="Env variable adding to server location.">
+      <created>1486133100756</created>
+      <option name="number" value="00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1486133100758</updated>
+    </task>
+    <task id="LOCAL-00058" summary="Doesnt work in Erics.">
+      <created>1486391069262</created>
+      <option name="number" value="00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1486391069262</updated>
+    </task>
+    <task id="LOCAL-00059" summary="Remove hibernate update and player id column reference">
+      <created>1486395598247</created>
+      <option name="number" value="00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1486395598247</updated>
+    </task>
+    <task id="LOCAL-00060" summary="Adding npm and webpack to frontend.">
+      <created>1486484376937</created>
+      <option name="number" value="00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1486484376937</updated>
+    </task>
+    <task id="LOCAL-00061" summary="Adding npm and webpack to frontend.">
+      <created>1486492156212</created>
+      <option name="number" value="00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1486492156212</updated>
+    </task>
+    <task id="LOCAL-00062" summary="Moved one component from roundScreen to React rendering.&#10;Issues, second moved component causes error &quot;getContext&quot;=null.&#10;Css styling happens after the page load so bad experience.">
+      <created>1486563732833</created>
+      <option name="number" value="00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1486563732834</updated>
+    </task>
+    <task id="LOCAL-00063" summary="Moving components to react, having just one root component.&#10;&#10;ISSUE: volume button not working.">
+      <created>1486572973385</created>
+      <option name="number" value="00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1486572973385</updated>
+    </task>
+    <task id="LOCAL-00064" summary="Include basic Redux. Also import root in logic to make all dependencies including volume to work.&#10;&#10;Include action/action-creator/store/reducer/subscriber pattern of Redux. TODO: include connect and component to listen.">
+      <created>1486662413452</created>
+      <option name="number" value="00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1486662413452</updated>
+    </task>
+    <task id="LOCAL-00065" summary="Audio logic moved to redux. Moving chat logic to redux.">
+      <created>1486743550103</created>
+      <option name="number" value="00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1486743550103</updated>
+    </task>
+    <task id="LOCAL-00066" summary="Playing with git">
+      <created>1487596573962</created>
+      <option name="number" value="00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1487596573962</updated>
+    </task>
+    <task id="LOCAL-00067" summary="Playing with git">
+      <created>1487596809056</created>
+      <option name="number" value="00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1487596809056</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
+    <servers />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35572687" sideWeight="0.36812297" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1625964" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29082775" sideWeight="0.4804401" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23387097" sideWeight="0.631877" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20115681" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32997763" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3277405" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Code Iris" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32997763" sideWeight="0.49755502" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2997763" sideWeight="0.66748166" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29418343" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.jsp" />
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.js" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="Binding round screen login/logout to chat web socket." />
+    <MESSAGE value="XO testing" />
+    <MESSAGE value="Addin CSRF token in post. Changing&#10;" />
+    <MESSAGE value="Modifying start/stop button to restart button, available only to user &quot;rafa&quot;" />
+    <MESSAGE value="Putting all websockets into one websocket." />
+    <MESSAGE value="Refactoring ObjectMapper parsing to JsonNode+ObjectMapper parsing for (type,payloadObject) message." />
+    <MESSAGE value="Broadcast of all positions from each player is not needed. Putting position update on server is necessary" />
+    <MESSAGE value="Adding a list of songs to play one after another instead of just one song." />
+    <MESSAGE value="Renaming." />
+    <MESSAGE value="Adding a couple more songs." />
+    <MESSAGE value="Adding item generation on server." />
+    <MESSAGE value="Add item effect and de-effect. To test in multi-player scenario." />
+    <MESSAGE value="Remove unused method exposure in glassCanvas module." />
+    <MESSAGE value="Small comment on iterator.nextIndex()." />
+    <MESSAGE value="Adding z-index to canvases. Hopefully the glitch will not happen any more when item is picked up." />
+    <MESSAGE value="Env variable adding to server location." />
+    <MESSAGE value="Doesnt work in Erics." />
+    <MESSAGE value="Remove hibernate update and player id column reference" />
+    <MESSAGE value="Adding npm and webpack to frontend." />
+    <MESSAGE value="Moved one component from roundScreen to React rendering.&#10;Issues, second moved component causes error &quot;getContext&quot;=null.&#10;Css styling happens after the page load so bad experience." />
+    <MESSAGE value="Moving components to react, having just one root component.&#10;&#10;ISSUE: volume button not working." />
+    <MESSAGE value="Include basic Redux. Also import root in logic to make all dependencies including volume to work.&#10;&#10;Include action/action-creator/store/reducer/subscriber pattern of Redux. TODO: include connect and component to listen." />
+    <MESSAGE value="Audio logic moved to redux. Moving chat logic to redux." />
+    <MESSAGE value="Playing with gitignore" />
+    <MESSAGE value="Playing with git" />
+    <option name="LAST_COMMIT_MESSAGE" value="Playing with git" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="29" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/roundScreen/chat.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="41" column="1" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpack.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="22" column="39" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/roundScreen/webSocket.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/roundScreen/restartRound.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="27" selection-start-line="0" selection-start-column="27" selection-end-line="0" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/roundScreen.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="38" column="20" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="66" column="7" selection-start-line="66" selection-start-column="7" selection-end-line="66" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/roundScreen/roundScreen.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="84" column="36" selection-start-line="84" selection-start-column="36" selection-end-line="84" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/roundScreen/drawOnGlass.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/evedraf/examples/spring/config/DaoConfigDevelopment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="40" column="48" selection-start-line="40" selection-start-column="48" selection-end-line="40" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/evedraf/examples/spring/config/DaoConfigProduction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="47" column="9" selection-start-line="47" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/loginScreen/loginScreen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/loginSuccess.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="26" column="8" selection-start-line="26" selection-start-column="8" selection-end-line="30" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/loginFailure.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/roundScreen/drawPlayer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="27" selection-start-line="0" selection-start-column="27" selection-end-line="0" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.babelrc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unused/XunusedX.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/roundScreen/playersList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="39" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/roundScreen/directionListener.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1" column="42" selection-start-line="1" selection-start-column="42" selection-end-line="1" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/roundScreen/components/RestartButtonComponent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="284" column="28" selection-start-line="284" selection-start-column="28" selection-end-line="284" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/roundScreen/components/MuteComponent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="28" column="61" selection-start-line="28" selection-start-column="39" selection-end-line="28" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/roundScreen/components/PlayerListColumn.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="41" selection-start-line="13" selection-start-column="41" selection-end-line="13" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/roundScreen/components/BoardColumn.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/roundScreen/reducers/rootReducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="29" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/roundScreen/components/BackgroundAudio.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="76" column="12" selection-start-line="76" selection-start-column="12" selection-end-line="76" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/roundScreen/components/root.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/loginScreen.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="19" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="31" column="23" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/indexRoundScreen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/roundScreen/chat.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="41" column="1" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/roundScreen/webSocket.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/roundScreen/restartRound.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="27" selection-start-line="0" selection-start-column="27" selection-end-line="0" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/roundScreen/roundScreen.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="84" column="36" selection-start-line="84" selection-start-column="36" selection-end-line="84" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/roundScreen/drawOnGlass.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpack.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="22" column="39" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/roundScreen.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="38" column="20" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.692307">
+          <caret line="146" column="25" selection-start-line="146" selection-start-column="25" selection-end-line="146" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.16943522">
+          <caret line="41" column="7" selection-start-line="41" selection-start-column="7" selection-end-line="41" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

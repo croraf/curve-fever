@@ -12,11 +12,11 @@ import rootReducer from '../reducers/rootReducer.js';
 
 
 let store = createStore (rootReducer);
-let oldDispatch = store.dispatch;
+let next = store.dispatch;
 
 store.dispatch = function (action) {
   console.log('dispatching', action);
-  let result = oldDispatch(action);
+  let result = next(action);
   console.log('next state', store.getState());
   return result;
 }

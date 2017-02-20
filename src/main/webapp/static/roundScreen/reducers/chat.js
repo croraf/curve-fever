@@ -1,6 +1,10 @@
 
+let initialState = {
+    allReceivedChat : [],
+    sending : false
+};
 
-export default function(state = [], action, listOfPlayers){
+export default function(state = initialState, action, listOfPlayers){
 
     switch (action.type){
         case "chatMessage":
@@ -9,9 +13,19 @@ export default function(state = [], action, listOfPlayers){
                 chatMessagePayload: action.genericPayload.chatMessagePayload,
                 color: listOfPlayers[action.genericPayload.username].color
             };
-            return [...state, chatMessage];
+
+            return {
+                allReceivedChat: [...state, chatMessage],
+                sending: false
+            }
             break;
 
+        case "SEND_CHAT":
+            return {
+                allReceivedChat: allReceivedChat,
+                sending: true
+            };
+            break;
         default:
             return state;
     }

@@ -26,7 +26,7 @@ let MuteComponent = function({musicOnOff, muteClickHandler}){
 
 const mapDispatchToProps = (dispatch) => {
   return {
-               muteClickHandler: () => {dispatch(toggleMute());}
+               muteClickHandler: () => dispatch(toggleMute())
          };
 }
 
