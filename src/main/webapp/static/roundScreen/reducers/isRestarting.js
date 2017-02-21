@@ -1,12 +1,13 @@
 
-export default function(state = false, action, items){
+export default function(state = false, action){
 
     switch (action.type){
         case "restartConfirmed":
-            items = [];
             return true;
             break;
-
+        case "END_IS_STARTING":
+            return false;
+            break;
         default:
             return state;
     }

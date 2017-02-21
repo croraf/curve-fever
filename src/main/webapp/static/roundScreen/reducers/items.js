@@ -8,10 +8,14 @@ export default function(state = [], action){
             return [...state, newItem];
             break;
 
-        /*case "itemPickup":
-            return {
-            };
-            break;*/
+        case "itemPickup":
+            let newItemsList = [...state];
+            newItemsList.splice(action.genericPayload, 1);
+            return newItemsList;
+            break;
+
+        case "restartConfirmed":
+            return [];
 
         default:
             return state;

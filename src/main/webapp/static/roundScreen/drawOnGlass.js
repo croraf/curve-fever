@@ -9,24 +9,23 @@ var itemRadius = 12;
 
 var itemsList = [];
 
-//main drawing loop
 function addItem(item){
 
-    itemsList.push(item);
-    drawItem(item);
+    /*itemsList.push(item);
+    drawItem(item);*/
 }
 
 
-function redrawItems(){
+/*function redrawItems(){
 
     ctx2.clearRect(0,0,glassCanvas.width, glassCanvas.height);
 
     itemsList.forEach(function(item){
         drawItem(item);
     });
-}
+}*/
 
-var itemImageSlow = $("<img>")
+/*var itemImageSlow = $("<img>")
                             .attr("src", "static/roundScreen/images/turtle2mini.png")
                             .attr("width", itemRadius*2)
                             .attr("height", itemRadius*2)[0];
@@ -54,18 +53,18 @@ function drawItem(item){
     //ctx2.arc(item.x, item.y, itemRadius, 0, 2*Math.PI);
     ctx2.drawImage(itemImage, item.position.x-itemRadius, item.position.y-itemRadius, itemRadius*2, itemRadius*2);
     ctx2.stroke();
-}
+}*/
 
 
-function clearGlassCanvas(){
+/*function clearGlassCanvas(){
     ctx2.clearRect(0,0,glassCanvas.width, glassCanvas.height);
     itemsList = [];
-};
+};*/
 
 function itemPickup(itemIndex){
 
-    itemsList.splice(itemIndex, 1);
-    redrawItems();
+    /*itemsList.splice(itemIndex, 1);
+    redrawItems();*/
 };
 
 

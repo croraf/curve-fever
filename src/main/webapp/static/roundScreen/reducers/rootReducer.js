@@ -13,5 +13,5 @@ export default (state = {}, action) => ({
     chat: chat(state.chat, action, state.listOfPlayers),
     listOfPlayers: listOfPlayers(state.listOfPlayers, action),
     items: items(state.items, action),
-    isRestarting: isRestarting(state.isRestarting, action, state.items)
+    isRestarting: isRestarting(state.isRestarting, action)
 });

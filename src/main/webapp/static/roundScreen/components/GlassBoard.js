@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 
 import { connect } from 'react-redux';
 
+import {endIsStartingAction} from '../actions/endIsStartingAction';
+
 
 var itemImageSlow = $("<img>")
                             .attr("src", "static/roundScreen/images/turtle2mini.png")
@@ -18,22 +20,23 @@ var itemRadius = 12;
 
 class GlassBoard extends React.Component{
 
-    componentDidUpdate(){
+    componentDidMount(){
         this.ctx = this.glassDOM.getContext("2d");
         this.ctx.strokeStyle = "#FFFFFF";
     }
 
     componentWillReceiveProps(nextProps){
 
-        if (isRestarting === true){
-            drawStartRoundScreen();
+        if (nextProps.isRestarting === true){
+            drawStartRoundScreen(this.ctx, nextProps.endIsStartingCallback);
         } else{
-            var itemImage = itemImageSlow;
-            var item = (nextProps.items)[nextProps.items.length-1];
 
-            this.ctx.beginPath();
-            this.ctx.drawImage(itemImage, item.position.x-itemRadius, item.position.y-itemRadius, itemRadius*2, itemRadius*2);
-            this.ctx.stroke();
+            clearGlassCanvas(this.ctx);
+            nextProps.items.forEach( (item) => {
+                    drawItem(this.ctx, item);
+                }
+            );
+
         }
     }
 
@@ -48,18 +51,22 @@ class GlassBoard extends React.Component{
 
 }
 
+let mapDispatchToProps = (dispatch) => ({
+    endIsStartingCallback: () => dispatch(endIsStartingAction())
+});
+
 let mapStateToProps = (state) => ({
     items: state.items,
     isRestarting: state.isRestarting
 });
 
 
-let GlassBoardContainer = connect(mapStateToProps, undefined)(GlassBoard);
+let GlassBoardContainer = connect(mapStateToProps, mapDispatchToProps)(GlassBoard);
 export default GlassBoardContainer;
 
 
 
-function drawStartRoundScreen(ctx){
+function drawStartRoundScreen(ctx, endIsStartingCallback){
 
     ctx.font = '48px serif';
     ctx.strokeStyle = "darkkhaki";
@@ -72,6 +79,7 @@ function drawStartRoundScreen(ctx){
 
         if (count === 0) {
             clearGlassCanvas(ctx);
+            endIsStartingCallback();
         } else {
             setTimeout(drawCount, 1000, count-1);
         }
@@ -83,3 +91,23 @@ function drawStartRoundScreen(ctx){
 function clearGlassCanvas(ctx){
     ctx.clearRect(0,0,ctx.canvas.width, ctx.canvas.height);
 };
+
+function drawItem(ctx, item){
+
+    var itemImage;
+    switch(item.type){
+        case "slow":
+            itemImage = itemImageSlow;
+            break;
+        case "fast":
+            itemImage = itemImageFast;
+            break;
+        default:
+            console.log("unrecognized item type");
+    }
+
+    ctx.beginPath();
+    //ctx2.arc(item.x, item.y, itemRadius, 0, 2*Math.PI);
+    ctx.drawImage(itemImage, item.position.x-itemRadius, item.position.y-itemRadius, itemRadius*2, itemRadius*2);
+    ctx.stroke();
+}
