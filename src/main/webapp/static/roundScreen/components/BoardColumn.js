@@ -35,3 +35,5 @@ class BoardColumn extends React.Component{
     }
 
 }
+
+export default BoardColumn;

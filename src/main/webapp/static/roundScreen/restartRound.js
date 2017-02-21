@@ -1,6 +1,5 @@
 import './components/root';
 
-import drawOnGlassModule from './drawOnGlass';
 import drawPlayerModule from './drawPlayer';
 import webSocketModule from './webSocket';
 
@@ -15,7 +14,6 @@ $("#restart").click( function (event) {
 
 function restartRound(){
     drawPlayerModule.clearCanvas();
-    drawOnGlassModule.drawStartRoundScreen();
 }
 
 var module = {};

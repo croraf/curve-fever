@@ -68,29 +68,9 @@ function itemPickup(itemIndex){
     redrawItems();
 };
 
-function drawStartRoundScreen(){
 
-    ctx2.font = '48px serif';
-    ctx2.strokeStyle = "darkkhaki";
-
-    function drawCount(count){
-
-        clearGlassCanvas();
-
-        ctx2.strokeText(count, ctx2.canvas.width / 2, ctx2.canvas.height / 2);
-
-        if (count === 0) {
-            clearGlassCanvas();
-        } else {
-            setTimeout(drawCount, 1000, count-1);
-        }
-    }
-
-    drawCount(5);
-}
 
 export default {
     itemPickup: itemPickup,
-    drawStartRoundScreen: drawStartRoundScreen,
     addItem: addItem
 };

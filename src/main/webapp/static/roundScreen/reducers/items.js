@@ -10,8 +10,6 @@ export default function(state = [], action){
 
         /*case "itemPickup":
             return {
-                allReceivedChat: state.allReceivedChat,
-                sending: true
             };
             break;*/
 

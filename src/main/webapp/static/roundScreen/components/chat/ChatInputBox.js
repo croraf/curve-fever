@@ -48,7 +48,7 @@ let mapDispatchToProps = (dispatch) => ({
         onChatSubmit: (event) => {
             let form = $(event.target);
             dispatch(sendChatMessage());
-            webSocket.sendMessage("chatMessage", form.find(input[type="text"]).val());
+            webSocket.sendMessage("chatMessage", form.find('input[type="text"]').val());
             form[0].reset();
             event.preventDefault();
         }
