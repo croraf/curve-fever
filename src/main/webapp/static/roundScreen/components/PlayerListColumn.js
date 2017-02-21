@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import ChatComponent from './ChatComponent';
+import ChatComponent from './chat/ChatComponent';
 import ListOfPlayersComponent from './ListOfPlayersComponent';
 
 export default function PlayerListColumn (){

@@ -3,7 +3,8 @@ import webSocketModule from './webSocket';
 import playersListModule from './playersList';
 
 
-$("#chatForm").submit(function (e) {
+
+/*$("#chatForm").submit(function (e) {
     e.preventDefault();
 
     var text = $('input[name=text]').val();
@@ -15,7 +16,8 @@ $("#chatForm").submit(function (e) {
         $('input[name=text]').val("");
     }
 
-});
+});*/
+
 
 function writeSystemMessageToChatBox(plainMessage){
 

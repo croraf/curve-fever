@@ -1,10 +1,10 @@
 
 import './components/root';
 
-var itemsLoopRefreshPeriod = 3000;
 var glassCanvas=document.getElementById("glass");
 var ctx2 = glassCanvas.getContext("2d");
 ctx2.strokeStyle = "#FFFFFF";
+
 var itemRadius = 12;
 
 var itemsList = [];

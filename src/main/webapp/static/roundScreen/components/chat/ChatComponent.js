@@ -10,7 +10,7 @@ import ChatInputBox from './ChatInputBox';
 
 const mapStateToProps = (state) => (
         {
-              allChatMessages: state.chat.re
+              allChatMessages: state.chat.allReceivedChat
         }
 );
 

@@ -3,32 +3,35 @@ import ReactDOM from 'react-dom';
 
 import RestartButtonComponent from './RestartButtonComponent';
 import MuteComponent from './MuteComponent';
+import GlassBoard from './GlassBoard';
 
+class BoardColumn extends React.Component{
 
+    render(){
 
+        return (
+            <div id="boardColumn">
+                <canvas id="board" width="600" height="520" className="glowingShadow"></canvas>
+                <GlassBoard />
 
-export default function BoardColumn(){
-    return (
-                <div id="boardColumn">
-                    <canvas id="board" width="600" height="520" className="glowingShadow"></canvas>
-                    <canvas id="glass" width="600" height="520"></canvas>
+                <div id = "controlRow">
 
-                    <div id = "controlRow">
+                    <RestartButtonComponent />
 
-                        <RestartButtonComponent />
-
-                        <div id = "currentPlayer"
-                             className="controlRowElement" style={{color: playerColor}}>
-                                    {playerName}
-                        </div>
-
-                        <MuteComponent />
-
-
+                    <div id = "currentPlayer"
+                         className="controlRowElement" style={{color: playerColor}}>
+                                {playerName}
                     </div>
 
-                    <div id = "snakeImageColumn">
-                    </div>
+                    <MuteComponent />
+
                 </div>
-            );
+
+
+                <div id = "snakeImageColumn">
+                </div>
+            </div>
+        );
+    }
+
 }

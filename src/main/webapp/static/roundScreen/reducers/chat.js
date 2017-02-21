@@ -15,17 +15,18 @@ export default function(state = initialState, action, listOfPlayers){
             };
 
             return {
-                allReceivedChat: [...state, chatMessage],
+                allReceivedChat: [...state.allReceivedChat, chatMessage],
                 sending: false
             }
             break;
 
         case "SEND_CHAT":
             return {
-                allReceivedChat: allReceivedChat,
+                allReceivedChat: state.allReceivedChat,
                 sending: true
             };
             break;
+
         default:
             return state;
     }
