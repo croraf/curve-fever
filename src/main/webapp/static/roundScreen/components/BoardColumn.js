@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import RestartButtonComponent from './RestartButtonComponent';
 import MuteComponent from './MuteComponent';
 import GlassBoard from './GlassBoard';
+import Board from './Board';
 
 class BoardColumn extends React.Component{
 
@@ -11,7 +12,7 @@ class BoardColumn extends React.Component{
 
         return (
             <div id="boardColumn">
-                <canvas id="board" width="600" height="520" className="glowingShadow"></canvas>
+                <Board />
                 <GlassBoard />
 
                 <div id = "controlRow">

@@ -4,7 +4,7 @@ import audio from './audio';
 import chat from './chat';
 import listOfPlayers from './listOfPlayers';
 import items from './items';
-import isRestarting from './isRestarting';
+import roundState from './roundState';
 
 
 /*custom root reducer to share listOfPlayers state to other reducers*/
@@ -13,5 +13,5 @@ export default (state = {}, action) => ({
     chat: chat(state.chat, action, state.listOfPlayers),
     listOfPlayers: listOfPlayers(state.listOfPlayers, action),
     items: items(state.items, action),
-    isRestarting: isRestarting(state.isRestarting, action)
+    roundState: roundState(state.roundState, action)
 });

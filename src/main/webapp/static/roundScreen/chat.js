@@ -1,22 +1,5 @@
 
-import webSocketModule from './webSocket';
-import playersListModule from './playersList';
 
-
-
-/*$("#chatForm").submit(function (e) {
-    e.preventDefault();
-
-    var text = $('input[name=text]').val();
-
-    if (text === "") {
-        return;
-    } else {
-        webSocketModule.sendMessage("chatMessage", text);
-        $('input[name=text]').val("");
-    }
-
-});*/
 
 
 function writeSystemMessageToChatBox(plainMessage){
@@ -32,7 +15,7 @@ function writeSystemMessageToChatBox(plainMessage){
     appendElementToChatBox(element);
 }
 
-function writeMessageToChatBox(receivedMessage){
+/*function writeMessageToChatBox(receivedMessage){
 
     var username = receivedMessage.username;
 
@@ -41,7 +24,7 @@ function writeMessageToChatBox(receivedMessage){
     var element = usernameText.add($("<span>").html(receivedMessage.chatMessagePayload + "<br/>"));
 
     appendElementToChatBox(element);
-}
+}*/
 
 function appendElementToChatBox(element){
 
@@ -52,7 +35,6 @@ function appendElementToChatBox(element){
 
 
 export default {
-    writeMessageToChatBox: writeMessageToChatBox,
     writeSystemMessageToChatBox: writeSystemMessageToChatBox
 };
 

@@ -1,5 +1,5 @@
 
-import webSocketModule from './webSocket';
+import {myWebSocketModule} from './webSocket';
 
 
 var directionUpdate = {
@@ -26,7 +26,7 @@ function steer(event){
         steerDirection = "right";
     }
 
-    webSocketModule.sendMessage("directionUpdate", steerDirection);
+    myWebSocketModule.sendMessage("directionUpdate", steerDirection);
 }
 
 function unSteer(event){
@@ -48,5 +48,5 @@ function unSteer(event){
         }
     }
 
-    webSocketModule.sendMessage("directionUpdate", steerDirection);
+    myWebSocketModule.sendMessage("directionUpdate", steerDirection);
 }

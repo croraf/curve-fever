@@ -18,7 +18,6 @@ export default function(state = initialState, action, listOfPlayers){
                 allReceivedChat: [...state.allReceivedChat, chatMessage],
             }
             break;
-
         case "SEND_CHAT":
             return {
                 allReceivedChat: state.allReceivedChat,

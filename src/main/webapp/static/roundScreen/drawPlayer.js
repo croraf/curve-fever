@@ -1,14 +1,13 @@
 import './components/root';
-import playersListModule from './playersList';
 
 
 var canvas=document.getElementById("board");
 var ctx = canvas.getContext("2d");
 var curveRadius = 4;
 
-function drawPlayer(userName, playerCoordinates){
+function drawPlayer(userName, playerCoordinates, color){
 
-    ctx.strokeStyle = playersListModule.allPlayers[userName].color;
+    ctx.strokeStyle = color;
     ctx.beginPath();
     ctx.arc(playerCoordinates.x, playerCoordinates.y, curveRadius, 0, 2*Math.PI);
     ctx.stroke();
@@ -16,12 +15,7 @@ function drawPlayer(userName, playerCoordinates){
 
 }
 
-function clearCanvas(){
-
-    ctx.clearRect(0,0,canvas.width, canvas.height);
-}
 
 export default {
     drawPlayer: drawPlayer,
-    clearCanvas: clearCanvas
 };

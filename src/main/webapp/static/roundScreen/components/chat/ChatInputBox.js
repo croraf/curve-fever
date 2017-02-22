@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 
 import sendChatMessage from '../../actions/sendChatMessage.js';
 
-import webSocket from '../../webSocket.js';
+import {myWebSocketModule} from '../../webSocket.js';
 
 class ChatInputBox extends React.Component{
     /*constructor(props){
@@ -48,7 +48,7 @@ let mapDispatchToProps = (dispatch) => ({
         onChatSubmit: (event) => {
             let form = $(event.target);
             dispatch(sendChatMessage());
-            webSocket.sendMessage("chatMessage", form.find('input[type="text"]').val());
+            myWebSocketModule.sendMessage("chatMessage", form.find('input[type="text"]').val());
             form[0].reset();
             event.preventDefault();
         }

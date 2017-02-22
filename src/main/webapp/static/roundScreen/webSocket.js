@@ -27,10 +27,8 @@ myWebSocket.onopen = function(event){
 }
 
 
+let myWebSocketModule = {};
+myWebSocketModule.sendMessage = sendMessage;
+myWebSocketModule.myWebSocket = myWebSocket;
 
-
-export default {
-    sendMessage: sendMessage
-};
-
-export {myWebSocket};
+export  { myWebSocketModule };

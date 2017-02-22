@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 import { connect } from 'react-redux';
 
-import {endIsStartingAction} from '../actions/endIsStartingAction';
+import {startRoundAction} from '../actions/startRoundAction';
 
 
 var itemImageSlow = $("<img>")
@@ -27,8 +27,8 @@ class GlassBoard extends React.Component{
 
     componentWillReceiveProps(nextProps){
 
-        if (nextProps.isRestarting === true){
-            drawStartRoundScreen(this.ctx, nextProps.endIsStartingCallback);
+        if (nextProps.roundState === "round_restarting"){
+            drawStartRoundScreen(this.ctx, nextProps.startRoundCallback);
         } else{
 
             clearGlassCanvas(this.ctx);
@@ -52,12 +52,12 @@ class GlassBoard extends React.Component{
 }
 
 let mapDispatchToProps = (dispatch) => ({
-    endIsStartingCallback: () => dispatch(endIsStartingAction())
+    startRoundCallback: () => dispatch(startRoundAction())
 });
 
 let mapStateToProps = (state) => ({
     items: state.items,
-    isRestarting: state.isRestarting
+    roundState: state.roundState
 });
 
 
@@ -66,7 +66,7 @@ export default GlassBoardContainer;
 
 
 
-function drawStartRoundScreen(ctx, endIsStartingCallback){
+function drawStartRoundScreen(ctx, startRoundCallback){
 
     ctx.font = '48px serif';
     ctx.strokeStyle = "darkkhaki";
@@ -79,7 +79,7 @@ function drawStartRoundScreen(ctx, endIsStartingCallback){
 
         if (count === 0) {
             clearGlassCanvas(ctx);
-            endIsStartingCallback();
+            startRoundCallback();
         } else {
             setTimeout(drawCount, 1000, count-1);
         }

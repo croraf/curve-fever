@@ -1,47 +1,43 @@
 import store from './components/root';
 import {networkInAction} from './actions/networkInAction';
 
-import drawOnGlassModule from './drawOnGlass';
 import chatModule from './chat';
 import drawPlayerModule from './drawPlayer';
-import restartModule from './restartRound';
 import playersListModule from './playersList';
 
-import {myWebSocket} from './webSocket';
+import {myWebSocketModule} from './webSocket';
 
-myWebSocket.onmessage = function (messageEvent){
+myWebSocketModule.myWebSocket.onmessage = function (messageEvent){
 
     var message = JSON.parse(messageEvent.data);
 
     store.dispatch(networkInAction(message));
 
     switch (message.type){
-        case "userDisconnected":
+        case "userDisconnected":/*
             var user = message.genericPayload;
-            playersListModule.removeUser(user);
+            playersListModule.removeUser(user);*/
             break;
-        case "userConnected":
+        case "userConnected":/*
             var user = message.genericPayload;
-            playersListModule.addUser(user);
+            playersListModule.addUser(user);*/
             break;
-        case "previousUsers":
+        case "previousUsers":/*
             var previousUsers = message.genericPayload;
-            playersListModule.addPreviousUsers(previousUsers);
+            playersListModule.addPreviousUsers(previousUsers);*/
             break;
         case "positionsUpdate":
             positionsUpdate(message.genericPayload);
             break;
         case "addItem":
-            drawOnGlassModule.addItem(message.genericPayload);
             break;
         case "itemPickup":
-            drawOnGlassModule.itemPickup(message.genericPayload);
             break;
         case "chatMessage":
-            chatModule.writeMessageToChatBox(message.genericPayload);
+
             break;
         case "restartConfirmed":
-            restartModule.restartRound();
+
             break;
         default:
             console.log("websocket: unrecognized websocket message type");
@@ -65,7 +61,11 @@ function positionsUpdate(locationUpdates){
                         return;
             }
 
-            drawPlayerModule.drawPlayer(userName, positionUpdateForOnePlayer);
+            console.log(store.getState());
+
+            drawPlayerModule.drawPlayer(
+                userName, positionUpdateForOnePlayer, store.getState().listOfPlayers[userName].color
+            );
 
     });
 }
