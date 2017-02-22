@@ -16,6 +16,7 @@ class ChatAllMessagesComponent extends React.Component{
                                           username={message.username}
                                           color={message.color}
                                           payload={message.chatMessagePayload}
+                                          isSystemMessage={message.isSystemMessage}
                     />
                 )
         );

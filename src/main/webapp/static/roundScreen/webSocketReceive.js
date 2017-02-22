@@ -1,9 +1,7 @@
 import store from './components/root';
 import {networkInAction} from './actions/networkInAction';
 
-import chatModule from './chat';
 import drawPlayerModule from './drawPlayer';
-import playersListModule from './playersList';
 
 import {myWebSocketModule} from './webSocket';
 
@@ -14,36 +12,26 @@ myWebSocketModule.myWebSocket.onmessage = function (messageEvent){
     store.dispatch(networkInAction(message));
 
     switch (message.type){
-        case "userDisconnected":/*
-            var user = message.genericPayload;
-            playersListModule.removeUser(user);*/
-            break;
-        case "userConnected":/*
-            var user = message.genericPayload;
-            playersListModule.addUser(user);*/
-            break;
-        case "previousUsers":/*
-            var previousUsers = message.genericPayload;
-            playersListModule.addPreviousUsers(previousUsers);*/
-            break;
         case "positionsUpdate":
             positionsUpdate(message.genericPayload);
+            break;
+        case "userDisconnected":
+            break;
+        case "userConnected":
+            break;
+        case "previousUsers":
             break;
         case "addItem":
             break;
         case "itemPickup":
             break;
         case "chatMessage":
-
             break;
         case "restartConfirmed":
-
             break;
         default:
             console.log("websocket: unrecognized websocket message type");
     }
-
-
 
 };
 
