@@ -14,16 +14,22 @@
 
 #playersListColumn h5 {
 	color: darkkhaki;
+	cursor: default;
 }
+
 
 #chatAllMessages {
     height: 240px;
     overflow-y: auto;
     border: 1px solid white;
     border-right: 0px;
-    padding-left: 10px;
     padding-top: 5px;
     font-family: "Roboto";
+    user-select: initial;
+}
+
+#chatAllMessages div::selection, #chatAllMessages i::selection, #chatAllMessages span::selection {
+	background-color: rgb(180,180,180);
 }
 
 #chatAllMessages i {
@@ -111,6 +117,7 @@
     color: white;
     width: 20%;
     border: 1px darkkhaki solid;
+    cursor: default;
 }
 
 #muteContainer {

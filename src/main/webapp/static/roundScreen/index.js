@@ -1,19 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import BoardColumn from './BoardColumn';
-import PlayerListColumn from './PlayerListColumn';
-import BackgroundAudio from './BackgroundAudio';
+import App from './components/App';
 
 import {Provider} from 'react-redux';
 import {createStore} from 'redux';
 
-import rootReducer from '../reducers/rootReducer.js';
+import rootReducer from './reducers/rootReducer.js';
 
 
 let store = createStore (rootReducer);
-let next = store.dispatch;
 
+let next = store.dispatch;
 store.dispatch = function (action) {
   console.log('dispatching', action);
   let result = next(action);
@@ -23,18 +21,9 @@ store.dispatch = function (action) {
 
 
 
-
 ReactDOM.render(
      <Provider store={store}>
-         <div className = "myContainer">
-
-             <PlayerListColumn />
-
-             <BoardColumn />
-
-             <BackgroundAudio />
-
-         </div>
+         <App />
      </Provider>
      ,
 

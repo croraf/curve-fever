@@ -1,4 +1,4 @@
-import './components/root';
+import './index';
 
 
 var canvas=document.getElementById("board");

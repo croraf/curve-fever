@@ -18,16 +18,17 @@ export default function (props){
         };
 
         return(
-            <div style={styleProps}> [{props.payload}] <br /> </div>
+            <div style={styleProps}> [{props.payload}] </div>
         );
     } else {
         let styleProps = {
-            color: props.color
+            color: props.color,
+            paddingLeft: "5px"
         };
 
         return(
             <div>
-                <i style={styleProps}>{props.username}:    </i><span>{props.payload}<br /></span>
+                <i style={styleProps}> {props.username}: </i>  <span>{props.payload}</span>
             </div>
         );
     }

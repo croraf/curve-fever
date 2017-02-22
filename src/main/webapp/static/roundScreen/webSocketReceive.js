@@ -1,4 +1,4 @@
-import store from './components/root';
+import store from './index';
 import {networkInAction} from './actions/networkInAction';
 
 import drawPlayerModule from './drawPlayer';
@@ -48,8 +48,6 @@ function positionsUpdate(locationUpdates){
                         console.log("coordinate su null!!!!!!")
                         return;
             }
-
-            console.log(store.getState());
 
             drawPlayerModule.drawPlayer(
                 userName, positionUpdateForOnePlayer, store.getState().listOfPlayers[userName].color

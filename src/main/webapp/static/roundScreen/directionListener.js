@@ -1,6 +1,7 @@
 
 import {myWebSocketModule} from './webSocket';
-
+import store from './index';
+import {directionChangeAction} from './actions/directionChangeAction';
 
 var directionUpdate = {
     position : null
@@ -21,15 +22,19 @@ function steer(event){
     if (event.keyCode === 37){
         leftPressed = true;
         steerDirection = "left";
+
     } else if (event.keyCode === 39){
         rightPressed = true;
         steerDirection = "right";
+        store.dispatch(directionChangeAction("right"));
     }
 
-    myWebSocketModule.sendMessage("directionUpdate", steerDirection);
+    store.dispatch(directionChangeAction(steerDirection));
+    myWebSocketModule.sendMessage("directionUpdate", store.getState().steerDirection);
 }
 
 function unSteer(event){
+
     if (event.keyCode === 37) {
 
         leftPressed = false;
@@ -48,5 +53,7 @@ function unSteer(event){
         }
     }
 
-    myWebSocketModule.sendMessage("directionUpdate", steerDirection);
+
+    store.dispatch(directionChangeAction(steerDirection));
+    myWebSocketModule.sendMessage("directionUpdate", store.getState().steerDirection);
 }
